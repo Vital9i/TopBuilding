@@ -58,54 +58,126 @@ body {
   color: white;
 }
 
-/* Contact Bar */
-.contact-bar {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-.contact-container {
+/* Fixed Contact Bar */
+.fixed-contact-bar {
+  position:absolute;
+  top: 20px;
+  right: 60%;
+   background-color: #4C5772;
+  border-radius: 30px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Добавлено для адаптивности */
+  flex-direction: row;
+  align-items:center;
+
+  gap: 25px;
+  max-width: 90%;
+  margin-right: -600px; /* Смещение в правую половину */
 }
 
 .contact-info {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* Добавлено для адаптивности */
+  flex-wrap: wrap;
+  
 }
 
-.contact-info a {
+.contact-link {
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: var(--transition);
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
+  
 }
 
-.contact-info a:hover {
-  color: var(--secondary-color);
+.contact-link:hover {
+  color: #FFE848;
+}
+
+.phone-icon {
+  color: #4CAF50;
+}
+
+.email-icon {
+  color: #FF5722;
 }
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
-.social-icons a {
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  font-size: 18px;
-  transition: var(--transition);
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: var(--secondary-color);
-  transform: translateY(-2px);
+.social-icon.viber {
+  background-color: #7360F2;
+}
+
+.social-icon.telegram {
+  background-color: #28A8E9;
+}
+
+.social-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 1200px) {
+  .fixed-contact-bar {
+    right: 20px;
+    transform: none;
+    margin-right: 0;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    padding: 12px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-contact-bar {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 12px;
+  }
+  
+  .contact-link span {
+    display: none;
+  }
+  
+  .contact-link i {
+    font-size: 18px;
+  }
 }
 
 /* Header */
@@ -1184,31 +1256,59 @@ address a:hover {
 /* Side Background Images */
 .main-content-wrapper {
   position: relative;
-  min-height: 100vh; /* Добавлено для корректного отображения */
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 0 2.5vw; /* Адаптивные отступы */
 }
 
-
-/* Боковые фоновые изображения
 .background-side-image {
-  position: fixed;
+  position: absolute;
   top: 0;
-  bottom: 0;
-  width: calc((100% - 1200px) / 2);
-  max-width: 300px;
-  z-index: -1;
+  height: 100%;
+  width: 25vw; /* Адаптивная ширина */
+  max-width: 400px;
+  z-index: 1;
   background-image: url('img/project.png');
   background-size: contain;
   background-repeat: repeat-y;
   background-position: center;
- 
+  overflow: hidden;
+  opacity: 0.5;
+  /* Плавное скрытие за краями */
+  clip-path: inset(0 50% 0 0);
 }
 
+.background-side-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; /* Полная ширина */
+  background: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Левое изображение */
 .background-side-image.left {
-  left: 0;
+  left: -12.5vw; /* Скрываем половину */
+  transform: none;
+  background-repeat: repeat-y;
+  clip-path: inset(0 0 0 50%); /* Показываем правую половину */
 }
 
+/* Правое изображение */
 .background-side-image.right {
-  right: 0;
+  right: -12.5vw; /* Скрываем половину */
+  transform: none;
+  background-repeat: repeat-y;
+  clip-path: inset(0 50% 0 0); /* Показываем левую половину */
+}
+
+@media (max-width: 1200px) {
+  .background-side-image {
+    display: none;
+  }
 }
 
 
