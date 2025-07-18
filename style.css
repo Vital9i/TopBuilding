@@ -42,7 +42,7 @@ body {
   background: var(--secondary-color);
   color: var(--dark-color); /* Изменено для лучшей читаемости */
   padding: 12px 30px;
-  border-radius: 4px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   border: none;
@@ -58,30 +58,36 @@ body {
   color: white;
 }
 
-/* Fixed Contact Bar */
+/* Fixed Contact Bar - Финальное решение */
 .fixed-contact-bar {
-  position:absolute;
+  position: absolute;
   top: 20px;
-  right: 60%;
-   background-color: #4C5772;
+  right: 20px;
+  background-color: #4C5772;
   border-radius: 30px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
-  flex-direction: row;
-  align-items:center;
-
-  gap: 25px;
-  max-width: 90%;
-  margin-right: -600px; /* Смещение в правую половину */
+  align-items: center;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: visible;
 }
 
 .contact-info {
   display: flex;
+  align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
-  
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-info > div {
+  display: flex;
+  align-items:baseline;
+  flex-shrink: 0;
 }
 
 .contact-link {
@@ -90,28 +96,22 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.3s ease;
   font-size: 14px;
   white-space: nowrap;
-  
-}
-
-.contact-link:hover {
-  color: #FFE848;
-}
-
-.phone-icon {
-  color: #4CAF50;
-}
-
-.email-icon {
-  color: #FF5722;
+  flex-shrink: 0;
 }
 
 .social-icons {
   display: flex;
+  align-items: center;
   gap: 12px;
+  margin-left: 20px;
+  flex-shrink: 0;
 }
+
+/* Стили иконок и эффектов */
+.phone-icon { color: #4CAF50; }
+.email-icon { color: #FF5722; }
 
 .social-icon {
   width: 32px;
@@ -125,67 +125,41 @@ body {
   transition: all 0.3s ease;
 }
 
-.social-icon.viber {
-  background-color: #7360F2;
-}
+.social-icon.viber { background-color: #7360F2; }
+.social-icon.telegram { background-color: #28A8E9; }
+.social-icon.whatsapp { background-color: #25D366; }
 
-.social-icon.telegram {
-  background-color: #28A8E9;
-}
-
-.social-icon.whatsapp {
-  background-color: #25D366;
-}
-
+.contact-link:hover { color: #FFE848; }
 .social-icon:hover {
   transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Адаптация для мобильных */
-@media (max-width: 1200px) {
-  .fixed-contact-bar {
-    right: 20px;
-    transform: none;
-    margin-right: 0;
-    flex-direction: column;
-    gap: 10px;
-    border-radius: 15px;
-    padding: 12px;
-  }
-  
-  .contact-info {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
 @media (max-width: 768px) {
   .fixed-contact-bar {
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    max-width: calc(100% - 20px);
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 8px 12px;
+    padding: 8px 15px;
   }
-  
   .contact-link span {
     display: none;
   }
-  
   .contact-link i {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .social-icons {
+    margin-left: 10px;
+    gap: 8px;
   }
 }
 
 /* Header */
 .header {
-  background-color: #1A1D25;
-  box-shadow: var(--shadow);
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1A1D25;
+  box-shadow: var(--shadow);
   z-index: 1000;
   transition: var(--transition);
 }
@@ -195,10 +169,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  flex-wrap: wrap; /* Добавлено для адаптивности */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.nav > a, .nav > ul {
+.nav > a, 
+.nav > ul {
   margin: 0 10px;
 }
 
@@ -209,9 +186,11 @@ body {
   position: relative;
   padding: 10px 15px;
   transition: var(--transition);
+  display: inline-block;
 }
 
-.nav > a:hover, .nav li:hover > a {
+.nav > a:hover, 
+.nav li:hover > a {
   color: var(--secondary-color);
 }
 
@@ -234,7 +213,7 @@ body {
   background: var(--card-color);
   min-width: 200px;
   box-shadow: var(--shadow);
-  z-index: 1000;
+  z-index: 1001;
   border-radius: 4px;
 }
 
@@ -243,7 +222,11 @@ body {
 }
 
 .nav ul ul li {
-  border-bottom: 1px solid var(--light-color);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav ul ul li:last-child {
+  border-bottom: none;
 }
 
 .nav ul ul a {
@@ -251,11 +234,50 @@ body {
   display: block;
   white-space: nowrap;
   color: var(--text-color);
+  transition: none;
 }
 
 .nav ul ul a:hover {
-  background: var(--light-color);
+  background: rgba(255,255,255,0.05);
   color: var(--secondary-color);
+}
+
+/* Стиль для активной вкладки */
+.nav > a.active,
+.nav > ul > li.active > a {
+  background-color: var(--secondary-color);
+  color: var(--dark-color) !important;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Для выпадающего меню */
+.nav ul ul li.active > a {
+  background-color: var(--secondary-color);
+  color: var(--dark-color) !important;
+}
+
+/* Фикс для мобильных устройств */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+  
+  .nav > a,
+  .nav > ul {
+    margin: 5px 0;
+    width: 100%;
+  }
+  
+  .nav ul ul {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
 }
 
 /* Hero Section */
@@ -734,7 +756,7 @@ body {
 /* Services Section */
 .services {
   background-color: var(--background-color);;
-  color: var(--primary-color);
+  color: white;
 }
 
 .services-grid {
@@ -745,7 +767,7 @@ body {
 }
 
 .service-card {
-  background: white;
+  background: #21242CC2;
   padding: 30px;
   border-radius: 10px;
   box-shadow: var(--shadow);
@@ -771,7 +793,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: white;
 }
 
 .service-details {
@@ -794,7 +816,7 @@ body {
 
 .service-details li:before {
   content: "•";
-  color: var(--accent-color);
+  color: white;
   font-size: 1.5rem;
   position: absolute;
   left: 0;
@@ -802,7 +824,7 @@ body {
 }
 
 .service-details strong {
-  color: var(--primary-color);
+  color: white;
   font-weight: 600;
 }
 
@@ -888,6 +910,143 @@ body {
   opacity: 1;
 }
 
+
+/* Стили для новой секции "Как с нами работать" */
+.workflow {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    color: #333;
+}
+
+.roadmap {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.roadmap-line {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #4C5772, #FFE848);
+    transform: translateX(-50%);
+}
+
+.roadmap-step {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 100px;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #4C5772;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.step-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-content h3 {
+    margin-top: 0;
+    color: #4C5772;
+    font-size: 20px;
+}
+
+.workflow-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.workflow-cta p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .fixed-contact-bar {
+        padding: 8px 15px;
+    }
+    .contact-link span {
+        display: none;
+    }
+    .contact-link i {
+        font-size: 16px;
+    }
+    .social-icons {
+        margin-left: 5px;
+        gap: 8px;
+    }
+    
+    .roadmap-step {
+        padding-left: 70px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .roadmap-line {
+        left: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .fixed-contact-bar {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+    
+    .social-icons {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .roadmap-step {
+        padding-left: 50px;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    .roadmap-line {
+        left: 20px;
+    }
+}
 
 /* Contact Section */
 .contact-wrapper {
