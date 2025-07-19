@@ -666,7 +666,7 @@
                 </div>
             </section>
             <!-- Новая секция "Как с нами работать" -->
-<section id="workflow" class="section workflow">
+<section id="workflow" class="section workflow" aria-label="Процесс строительства дома">
     <!-- Декоративные элементы -->
     <div class="decor decor-left-top"></div>
     <div class="decor decor-left-bottom"></div>
@@ -674,158 +674,232 @@
     <div class="decor decor-right-bottom"></div>
     
     <div class="container">
-        <h2 class="section-title">Как с нами работать(Оставить один из двух)</h2>
-        <p class="section-subtitle">Процесс строительства дома от первого звонка до сдачи объекта</p>
+        <h1 class="section-title">Как мы строим дома (Оставить один из двух)</h1>
+        <p class="section-subtitle">Пошаговый процесс строительства дома от проекта до сдачи под ключ</p>
         
         <div class="workflow-steps">
             <!-- Левая колонка -->
             <div class="workflow-column left-column">
                 <!-- Карточка 1 -->
-                <div class="workflow-card">
-                    <div class="card-step-number">01</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="1">
+                    <div class="card-step-number" aria-hidden="true">01</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Консультация</h3>
+                        <i class="fas fa-comments card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Консультация и планирование</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Консультация">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Архитектор консультирует клиентов" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>На первой встрече мы детально обсуждаем ваши пожелания, бюджет и сроки. Наш специалист выезжает на участок для оценки условий строительства и консультации.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Бесплатный выезд на участок</li>
+                            <li><i class="fas fa-check-circle"></i> 3 варианта планировки</li>
+                            <li><i class="fas fa-check-circle"></i> Предварительный расчет стоимости</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о консультации">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Обсуждение ваших пожеланий, бюджета и сроков. Выезд на участок для оценки условий строительства.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 3 -->
-                <div class="workflow-card">
-                    <div class="card-step-number">03</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="3">
+                    <div class="card-step-number" aria-hidden="true">03</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Заключение договора</h3>
+                        <i class="fas fa-file-signature card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Заключение договора</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Договор">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Подписание договора на строительство" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Формируем и подписываем договор с фиксацией сроков, стоимости и всех условий строительства. Предоставляем детальную смету.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Прозрачное ценообразование</li>
+                            <li><i class="fas fa-check-circle"></i> Фиксированная стоимость</li>
+                            <li><i class="fas fa-check-circle"></i> Поэтапная оплата</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о договоре">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Формирование и подписание договора с фиксацией сроков, стоимости и всех условий строительства.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 5 -->
-                <div class="workflow-card">
-                    <div class="card-step-number">05</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="5">
+                    <div class="card-step-number" aria-hidden="true">05</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Фундаментные работы</h3>
+                        <i class="fas fa-hard-hat card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Фундаментные работы</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Фундамент">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Заливка фундамента дома" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Выполняем земляные работы и устройство фундамента согласно проекту с соблюдением всех технологических норм и требований безопасности.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Геодезическая разметка</li>
+                            <li><i class="fas fa-check-circle"></i> Гидроизоляция и утепление</li>
+                            <li><i class="fas fa-check-circle"></i> Контроль качества бетона</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о фундаментных работах">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Земляные работы, устройство фундамента согласно проекту, гидроизоляция и утепление.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 7 -->
-                <div class="workflow-card">
-                    <div class="card-step-number">07</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="7">
+                    <div class="card-step-number" aria-hidden="true">07</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Инженерные коммуникации</h3>
+                        <i class="fas fa-bolt card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Инженерные коммуникации</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600566752225-3f8511f60c50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Коммуникации">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600566752225-3f8511f60c50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Монтаж инженерных коммуникаций" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Профессиональный монтаж всех инженерных систем: электрики, водоснабжения, канализации, отопления и вентиляции.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Скрытая разводка коммуникаций</li>
+                            <li><i class="fas fa-check-circle"></i> Сертифицированные материалы</li>
+                            <li><i class="fas fa-check-circle"></i> Тестирование всех систем</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о коммуникациях">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Прокладка электрики, сантехники, вентиляции, отопления и других инженерных систем.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                </div>
+                </article>
             </div>
             
             <!-- Правая колонка -->
             <div class="workflow-column right-column">
                 <!-- Карточка 2 -->
-                <div class="workflow-card">
-                    <div class="footstep-connector top"></div>
-                    <div class="card-step-number">02</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="2">
+                    <div class="footstep-connector top" aria-hidden="true"></div>
+                    <div class="card-step-number" aria-hidden="true">02</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Проектирование</h3>
+                        <i class="fas fa-drafting-compass card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Проектирование дома</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Проектирование">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Архитектор работает над проектом дома" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Разрабатываем индивидуальный проект или адаптируем готовый под ваши потребности. Согласовываем все детали и получаем разрешительную документацию.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> 3D-визуализация</li>
+                            <li><i class="fas fa-check-circle"></i> Инженерные расчеты</li>
+                            <li><i class="fas fa-check-circle"></i> Помощь в согласовании</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о проектировании">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Разработка индивидуального проекта или адаптация готового. Согласование всех деталей.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 4 -->
-                <div class="workflow-card">
-                    <div class="footstep-connector top"></div>
-                    <div class="card-step-number">04</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="4">
+                    <div class="footstep-connector top" aria-hidden="true"></div>
+                    <div class="card-step-number" aria-hidden="true">04</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Подготовка участка</h3>
+                        <i class="fas fa-tractor card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Подготовка участка</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Участок">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Подготовка строительного участка" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Комплексная подготовка территории к строительству: расчистка, разметка, подведение временных коммуникаций и организация строительной площадки.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Вывоз мусора и выравнивание</li>
+                            <li><i class="fas fa-check-circle"></i> Геодезическая разметка</li>
+                            <li><i class="fas fa-check-circle"></i> Организация подъездных путей</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о подготовке участка">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Расчистка территории, разметка, подведение временных коммуникаций.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 6 -->
-                <div class="workflow-card">
-                    <div class="footstep-connector top"></div>
-                    <div class="card-step-number">06</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="6">
+                    <div class="footstep-connector top" aria-hidden="true"></div>
+                    <div class="card-step-number" aria-hidden="true">06</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Возведение стен и крыши</h3>
+                        <i class="fas fa-home card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Возведение стен и крыши</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Стены">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Строительство стен дома" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Возведение несущих конструкций, монтаж межэтажных перекрытий и устройство кровельной системы с соблюдением всех строительных норм.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Контроль геометрии конструкций</li>
+                            <li><i class="fas fa-check-circle"></i> Качественные материалы</li>
+                            <li><i class="fas fa-check-circle"></i> Тепло- и гидроизоляция</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о строительстве стен">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Монтаж стеновых конструкций, межэтажных перекрытий, кровельной системы.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                    <div class="footstep-connector"></div>
-                </div>
+                    <div class="footstep-connector" aria-hidden="true"></div>
+                </article>
                 
                 <!-- Карточка 8 -->
-                <div class="workflow-card">
-                    <div class="footstep-connector top"></div>
-                    <div class="card-step-number">08</div>
+                <article class="workflow-card" itemscope itemtype="https://schema.org/HowToStep">
+                    <meta itemprop="position" content="8">
+                    <div class="footstep-connector top" aria-hidden="true"></div>
+                    <div class="card-step-number" aria-hidden="true">08</div>
                     <div class="card-header">
-                        <i class="fas fa-check-circle card-icon"></i>
-                        <h3 class="card-title">Отделка и сдача объекта</h3>
+                        <i class="fas fa-clipboard-check card-icon" aria-hidden="true"></i>
+                        <h2 class="card-title" itemprop="name">Отделка и сдача объекта</h2>
                     </div>
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Сдача">
+                    <figure class="card-image">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Готовый дом после отделки" 
+                             itemprop="image"
+                             loading="lazy">
+                    </figure>
+                    <div class="card-description" itemprop="text">
+                        <p>Выполнение внутренней и внешней отделки, благоустройство территории, финальная проверка всех систем и торжественная сдача объекта.</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Качественные отделочные материалы</li>
+                            <li><i class="fas fa-check-circle"></i> Авторский надзор</li>
+                            <li><i class="fas fa-check-circle"></i> Гарантия на все работы</li>
+                        </ul>
+                        <button class="card-btn" aria-label="Подробнее о сдаче объекта">Подробнее <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="card-description">
-                        <p>Внутренняя и внешняя отделка, благоустройство территории, финальная проверка.</p>
-                        <button class="card-btn">Подробнее</button>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
 
         <div class="workflow-cta">
-            <p>Хотите узнать подробности? Оставьте заявку и мы подготовим для вас индивидуальное предложение!</p>
-            <button class="btn">Оставить заявку</button>
+            <p>Готовы начать строительство вашего дома? Оставьте заявку и получите бесплатную консультацию нашего специалиста!</p>
+            <button class="btn" aria-label="Оставить заявку на консультацию">
+                <i class="fas fa-phone-alt"></i> Оставить заявку
+            </button>
         </div>
     </div>
 </section>
