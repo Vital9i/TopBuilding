@@ -35,6 +35,7 @@ body {
 
 .section {
   padding: 80px 0;
+  position: relative;
 }
 
 .btn {
@@ -58,97 +59,210 @@ body {
   color: white;
 }
 
-/* Fixed Contact Bar - Финальное решение */
 .fixed-contact-bar {
   position: absolute;
   top: 20px;
   right: 20px;
   background-color: #4C5772;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
   align-items: center;
+  gap: 15px;
   white-space: nowrap;
-  max-width: 100%;
-  overflow: visible;
-}
-
-.contact-info {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.contact-info > div {
-  display: flex;
-  align-items:baseline;
-  flex-shrink: 0;
 }
 
 .contact-link {
   color: white;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-size: 14px;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .social-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: 20px;
-  flex-shrink: 0;
+  gap: 10px;
+  margin-left: 5px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Стили иконок и эффектов */
-.phone-icon { color: #4CAF50; }
-.email-icon { color: #FF5722; }
-
 .social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   color: white;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .social-icon.viber { background-color: #7360F2; }
 .social-icon.telegram { background-color: #28A8E9; }
 .social-icon.whatsapp { background-color: #25D366; }
 
-.contact-link:hover { color: #FFE848; }
-.social-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Адаптация для мобильных */
 @media (max-width: 768px) {
   .fixed-contact-bar {
-    padding: 8px 15px;
+    padding: 6px 12px;
+    gap: 10px;
   }
   .contact-link span {
     display: none;
   }
-  .contact-link i {
-    font-size: 16px;
-  }
   .social-icons {
-    margin-left: 10px;
     gap: 8px;
+  }
+}
+
+/* Декоративные элементы (картинки по краям) */
+.decor {
+  position:absolute;
+    width: 500px;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  opacity: 30%;
+  transform: translateX(-50%);
+}
+/* Индивидуальные настройки для каждой секции */
+.hero .decor {
+  background-image: url('img/project.png');
+    transform: translateX(-50%)  rotate(180deg);
+}
+/* projects*/
+.our-projects .decor-left-top {
+  background-image: url('img/project.png');
+  top: 40%;
+  left: 0;
+   transform: translateX(-50%) ;
+}
+.our-projects .decor-right-top {
+  background-image: url('img/project.png');
+    top: 10%;
+  right: 0;
+  transform: translateX(50%)  rotate(270deg);
+}
+.our-projects .decor-right-bottom {
+  background-image: url('img/project.png');
+  bottom:10%;
+  right: 0;
+  transform: translateX(50%)  rotate(180deg);
+}
+/* about*/
+.about .decor-left-top {
+  background-image: url('img/project.png');
+  top: 0;
+  left: 0;
+   transform: translateX(-50%) rotate(180deg);
+}
+.about .decor-left-bottom {
+  background-image: url('img/project.png');
+  bottom: -25%;
+  left: 0;
+   transform: translateX(-50%)rotate(270deg);
+}
+.about .decor-right-top {
+  background-image: url('img/project.png');
+    top: 0;
+  right: 0;
+  transform: translateX(70%)  rotate(270deg);
+}
+.about .decor-right-bottom {
+  background-image: url('img/project.png');
+  bottom:-10%;
+  right: 0;
+  transform: translateX(50%)  rotate(180deg);
+}
+/* services*/
+.services .decor-left-top {
+  background-image: url('img/project.png');
+  top: 10%;
+  left: 0;
+   transform: translateX(-50%) 
+}
+.services .decor-left-bottom {
+  background-image: url('img/project.png');
+  bottom: 0;
+  left: 0;
+ transform: translateX(-60%)rotate(90deg);
+}
+.services .decor-right-top {
+  background-image: url('img/project.png');
+    top: 0;
+  right: 0;
+  transform: translateX(60%) rotate(180deg);
+}
+.services .decor-right-bottom {
+  background-image: url('img/project.png');
+  bottom:0;
+  right: 0;
+  transform: translateX(60%)  rotate(90deg);
+}
+/* workFlow*/
+.workflow .decor-left-top {
+  background-image: url('img/project.png');
+  top: 0;
+  left: 0;
+   transform: translateX(-50%) 
+}
+.workflow .decor-left-bottom {
+  background-image: url('img/project.png');
+  bottom: 0;
+  left: 0;
+ transform: translateX(-50%)rotate(180deg);
+}
+.workflow .decor-right-top {
+  background-image: url('img/project.png');
+    top: 0;
+  right: 0;
+  transform: translateX(50%);
+}
+.workflow .decor-right-bottom {
+  background-image: url('img/project.png');
+  bottom:0;
+  right: 0;
+  transform: translateX(50%)  rotate(180deg);
+}
+/* contact*/
+.contact .decor-left-top {
+  background-image: url('img/project.png');
+  top: 20%;
+  left: 0;
+  transform: translateX(-50%) 
+}
+.contact .decor-right-top {
+  background-image: url('img/project.png');
+  top: 0;
+  right: 0;
+  transform: translateX(50%);
+}
+.contact .decor-right-bottom {
+  background-image: url('img/project.png');
+  bottom:0;
+  right: 0;
+  transform: translateX(50%)  rotate(180deg);
+}
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .decor {
+    display: none; /* Скрываем на мобильных */
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .decor {
+    display: none; /* Скрываем на мобильных */
   }
 }
 
@@ -337,17 +451,17 @@ body {
 
 .stack-img {
   position: absolute;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+   box-shadow:none;
   transition: var(--transition);
   background: transparent;
   image-rendering: crisp-edges;
 }
 
 .project-img {
-  width: 90%;
+  width: 100%;
   top: 50%;
   left: 50%;
+  opacity: 0.4;
   transform: translate(-50%, -50%) rotate(-90deg);
   z-index: 1;
   transform-origin: center;
@@ -355,7 +469,7 @@ body {
 }
 
 .house-img {
-  width: 80%;
+  width: 100%;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
@@ -376,6 +490,7 @@ body {
 .our-projects {
   padding: 80px 0;
   background-color: var(--background-color);
+  position: relative;
 }
 
 .section-title {
@@ -502,8 +617,11 @@ body {
 }
 
 /* Team Section */
+.section-about{
+position: relative;
+}
 .team-section {
-  margin-top: 60px;
+   margin-top: 60px;
 }
 
 .team-tabs {
@@ -913,7 +1031,7 @@ body {
 
 /* Стили для новой секции "Как с нами работать" */
 .workflow {
-    background-color: #f8f9fa;
+    background-color:var(--background-color);
     padding: 80px 0;
     color: #333;
 }
@@ -1411,65 +1529,6 @@ address a:hover {
 .footer-links a:hover {
   color: white;
 }
-
-/* Side Background Images */
-.main-content-wrapper {
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding: 0 2.5vw; /* Адаптивные отступы */
-}
-
-.background-side-image {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 25vw; /* Адаптивная ширина */
-  max-width: 400px;
-  z-index: 1;
-  background-image: url('img/project.png');
-  background-size: contain;
-  background-repeat: repeat-y;
-  background-position: center;
-  overflow: hidden;
-  opacity: 0.5;
-  /* Плавное скрытие за краями */
-  clip-path: inset(0 50% 0 0);
-}
-
-.background-side-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%; /* Полная ширина */
-  background: inherit;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Левое изображение */
-.background-side-image.left {
-  left: -12.5vw; /* Скрываем половину */
-  transform: none;
-  background-repeat: repeat-y;
-  clip-path: inset(0 0 0 50%); /* Показываем правую половину */
-}
-
-/* Правое изображение */
-.background-side-image.right {
-  right: -12.5vw; /* Скрываем половину */
-  transform: none;
-  background-repeat: repeat-y;
-  clip-path: inset(0 50% 0 0); /* Показываем левую половину */
-}
-
-@media (max-width: 1200px) {
-  .background-side-image {
-    display: none;
-  }
-}
-
 
 /* Responsive Styles */
 @media (max-width: 1200px) {

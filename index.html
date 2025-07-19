@@ -11,39 +11,30 @@
 
 <body>
     <div class="main-content-wrapper">
-        <div class="background-side-image left"></div>
-        <div class="background-side-image right"></div>
-        <!-- Контактная панель -->
-        <div class="fixed-contact-bar">
-            <div class="contact-info">
-                <div>
-                    <a href="tel:+375296582950" class="contact-link">
-                        <i class="fas fa-phone phone-icon"></i> +375296582950
-                    </a>
-                </div>
-                <div>
-                    <a href="tel:+375291286217" class="contact-link">
-                        <i class="fas fa-phone phone-icon"></i> +375291286217
-                    </a>
-                </div>
-                <div>
-                    <a href="mailto:topagrobel@mail.ru" class="contact-link">
-                        <i class="fas fa-envelope email-icon"></i> topagrobel@mail.ru
-                    </a>
-                </div>
-                <div class="social-icons">
-                    <a href="#" class="social-icon viber"><i class="fab fa-viber"></i></a>
-                    <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-
         <!-- Основной контент -->
         <main class="main">
             <section id="home" class="section hero">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+
                 <div class="container">
                     <div class="hero-content-wrapper">
+                        <div class="fixed-contact-bar">
+  <a href="tel:+375296582950" class="contact-link">
+    <i class="fas fa-phone phone-icon"></i> +375296582950
+  </a>
+  <a href="tel:+375291286217" class="contact-link">
+    <i class="fas fa-phone phone-icon"></i> +375291286217
+  </a>
+  <a href="mailto:topagrobel@mail.ru" class="contact-link">
+    <i class="fas fa-envelope email-icon"></i> topagrobel@mail.ru
+  </a>
+  <div class="social-icons">
+    <a href="#" class="social-icon viber"><i class="fab fa-viber"></i></a>
+    <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
+    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
                         <div class="content-hero">
                             <img src="img/logo.webp" alt="Логотип компании" class="hero-logo">
                             <h1>ПРОЕКТИРОВАНИЕ И СТРОИТЕЛЬСТВО В РЕСПУБЛИКЕ БЕЛАРУСЬ</h1>
@@ -58,18 +49,27 @@
                     </div>
                 </div>
             </section>
-
             <!-- Шапка сайта -->
             <header class="header" id="mainHeader">
                 <div class="container">
                     <nav class="nav">
                         <ul>
-                         <li class="active">
- <a href="#home">Главная</a>
-                         </li>
+                            <li class="active">
+                                <a href="#home">Главная</a>
+                                <ul>
+                                    <li><a href="#home">Главная страница</a></li>
+                                    <li><a href="#our-projects">Наши проекты</a></li>
+                                    <li><a href="#about">Наша компания</a></li>
+                                    <li><a href="#tour-section">Экскурсия по объектам</a></li>
+                                    <li><a href="#services">Услуги</a></li>
+                                    <li><a href="#workflow">Как мы работаем</a></li>
+                                    <li><a href="#yandex-map">Карта готовых объектов</a></li>
+                                    <li><a href="#footer">Контакты</a></li>
+                                    
+                                    
+                                </ul>
+                            </li>
                         </ul>
-
-                       
                         <ul>
                             <li>
                                 <a href="#">Проектирование</a>
@@ -106,18 +106,20 @@
                                 </ul>
                             </li>
                         </ul>
-                        <a href="#contact">Контакты</a>
-                        <a href="#contact">Партнеры</a>
-                        <a href="#about">О нас</a>
+                        <a href="#">Контакты</a>
+                        <a href="#">Партнеры</a>
+                        <a href="#">О нас</a>
                     </nav>
                 </div>
             </header>
-
-            <section class="our-projects">
+            <section id="our-projects" class="our-projects">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2 class="section-title">Дома, которые мы построили</h2>
                     <p class="section-subtitle">5 популярных архитектурных стилей с гарантией 10 лет</p>
-
                     <div class="projects-grid">
                         <!-- Классический стиль -->
                         <div class="project-card">
@@ -244,74 +246,15 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Фахверк -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZhaGN3ZXJrJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
-                                    alt="Дом в стиле фахверк" loading="lazy">
-                                <div class="project-badge" style="background: #e74c3c;">Фахверк</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Немецкий фахверк</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 140-220 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 7-9 мес</li>
-                                    <li><i class="fas fa-palette"></i> Дерево/каркас</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 105 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Прованс -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1630585302229-1a080a6a1215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvdmVuY2UlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
-                                    alt="Дом в стиле прованс" loading="lazy">
-                                <div class="project-badge" style="background: #f39c12;">Прованс</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Французский прованс</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 130-210 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 5-7 мес</li>
-                                    <li><i class="fas fa-palette"></i> Камень/дерево</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 92 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Лофт -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9mdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Дом в стиле лофт" loading="lazy">
-                                <div class="project-badge" style="background: #7f8c8d;">Лофт</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Индустриальный лофт</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 150-230 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                    <li><i class="fas fa-palette"></i> Кирпич/металл</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 98 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
-
             <section id="about" class="section about">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2>О нас</h2>
                     <p>Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
@@ -553,9 +496,13 @@
                     </div>
                 </div>
             </section>
-
-            <section class="tour-section"
+            <section id="tour-section" class="tour-section"
                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/exhibition_house.jpg');">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <div class="tour-intro">
                         <h2 class="section-title">Экскурсия по нашим объектам</h2>
@@ -630,8 +577,12 @@
                     </div>
                 </div>
             </section>
-
             <section id="services" class="section services">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2>Наши услуги</h2>
                     <p class="section-subtitle">Каждую услугу можно заказать отдельно или в комплексе - под ключ</p>
@@ -714,32 +665,38 @@
                     </div>
                 </div>
             </section>
-
             <!-- Новая секция "Как с нами работать" -->
             <section id="workflow" class="section workflow">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2 class="section-title">Как с нами работать</h2>
+                    <h2 class="section-title">Как с нами работать сырая секция</h2>
                     <p class="section-subtitle">Пошаговый процесс строительства дома с нашей компанией</p>
 
                     <div class="roadmap">
                         <div class="roadmap-line"></div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">1</div>
                             <div class="step-content">
                                 <h3>Консультация</h3>
-                                <p>Обсуждение ваших пожеланий, бюджета и сроков. Выезд на участок для оценки условий строительства.</p>
+                                <p>Обсуждение ваших пожеланий, бюджета и сроков. Выезд на участок для оценки условий
+                                    строительства.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">2</div>
                             <div class="step-content">
                                 <h3>Проектирование</h3>
-                                <p>Разработка индивидуального проекта или адаптация готового. Согласование всех деталей и получение разрешительной документации.</p>
+                                <p>Разработка индивидуального проекта или адаптация готового. Согласование всех деталей
+                                    и получение разрешительной документации.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">3</div>
                             <div class="step-content">
@@ -747,7 +704,7 @@
                                 <p>Геодезические работы, разметка, подготовка территории к строительству.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">4</div>
                             <div class="step-content">
@@ -755,7 +712,7 @@
                                 <p>Земляные работы, устройство фундамента согласно проекту, гидроизоляция.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">5</div>
                             <div class="step-content">
@@ -763,15 +720,16 @@
                                 <p>Строительство стен, перекрытий, кровельные работы.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">6</div>
                             <div class="step-content">
                                 <h3>Инженерные сети</h3>
-                                <p>Прокладка коммуникаций: электрика, водоснабжение, канализация, отопление, вентиляция.</p>
+                                <p>Прокладка коммуникаций: электрика, водоснабжение, канализация, отопление, вентиляция.
+                                </p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">7</div>
                             <div class="step-content">
@@ -779,71 +737,27 @@
                                 <p>Внутренняя и внешняя отделка согласно выбранным материалам и дизайн-проекту.</p>
                             </div>
                         </div>
-                        
+
                         <div class="roadmap-step">
                             <div class="step-number">8</div>
                             <div class="step-content">
                                 <h3>Сдача объекта</h3>
-                                <p>Финальные проверки, устранение недочетов, подписание актов приемки, ввод в эксплуатацию.</p>
+                                <p>Финальные проверки, устранение недочетов, подписание актов приемки, ввод в
+                                    эксплуатацию.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="workflow-cta">
-                        <p>Хотите узнать подробности? Оставьте заявку и мы подготовим для вас индивидуальное предложение!</p>
+                        <p>Хотите узнать подробности? Оставьте заявку и мы подготовим для вас индивидуальное
+                            предложение!</p>
                         <button class="btn">Оставить заявку</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Обновленный блок Контакты -->
-            <section id="contact" class="section contact">
-                <div class="container">
-                    <h2>Контакты</h2>
-                    <div class="contact-wrapper">
-                        <!-- Блок с контактной информацией и картой -->
-                        <div class="contact-info">
-                            <div class="contact-img">
-                                <img src="img/contacts_img.png" alt="Наш офис" loading="lazy">
-                            </div>
-                        </div>
-
-                        <!-- Форма обратной связи -->
-                        <form class="contact-form">
-                            <h3>Остались вопросы?</h3>
-                            <p>Заполните форму и мы свяжемся с вами в течение 30 минут</p>
-
-                            <div class="form-group">
-                                <input type="text" placeholder="Ваше имя" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="tel" placeholder="Ваш телефон" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" placeholder="Ваш email">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea placeholder="Ваш вопрос или сообщение"></textarea>
-                            </div>
-
-                            <div class="form-footer">
-                                <button type="submit" class="btn">Отправить сообщение</button>
-                                <div class="form-agreement">
-                                    <input type="checkbox" id="agreement" required checked>
-                                    <label for="agreement">Я согласен на обработку персональных данных</label>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </section>
         </main>
         <!--Карта-->
-        <!--Карта-->
-        <section class="yandex-map">
+        <section id="yandex-map" class="yandex-map">
             <div class="container">
                 <h2>Наши выполненные объекты</h2>
                 <div id="map"
@@ -851,9 +765,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Подвал сайта -->
-        <footer class="footer">
+        <footer id="footer" class="footer">
             <div class="container">
                 <div class="footer-grid">
                     <!-- Колонка 1: О компании -->
@@ -932,9 +845,7 @@
             </div>
         </footer>
     </div>
-
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU" type="text/javascript"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Ждем загрузки API Яндекс.Карт
