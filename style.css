@@ -1031,141 +1031,218 @@ position: relative;
 
 /* Стили для новой секции "Как с нами работать" */
 .workflow {
-    background-color:var(--background-color);
+    position: relative;
     padding: 80px 0;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.roadmap {
-    position: relative;
-    max-width: 800px;
-    margin: 50px auto;
+.section-title {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.roadmap-line {
-    position: absolute;
-    left: 50px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, #4C5772, #FFE848);
-    transform: translateX(-50%);
-}
-
-.roadmap-step {
-    position: relative;
+.section-subtitle {
+    color: var(--light-color);
+    text-align: center;
+    opacity: 0.8;
     margin-bottom: 40px;
-    padding-left: 100px;
 }
 
-.step-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 60px;
-    height: 60px;
-    background-color: #4C5772;
-    color: white;
-    border-radius: 50%;
+.workflow-steps {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.workflow-column {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 45%;
+    position: relative;
+}
+
+.workflow-card {
+    background: rgba(33, 36, 44, 0.8); /* Полупрозрачный фон */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workflow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(33, 36, 44, 0.9);
+}
+
+.card-step-number {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-icon {
     font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: var(--accent-color);
 }
 
-.step-content {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.step-content h3 {
-    margin-top: 0;
-    color: #4C5772;
+.card-title {
+    margin: 0;
+    color: var(--text-color);
     font-size: 20px;
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.workflow-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-description {
+    padding: 20px;
+    color: var(--light-color);
+    line-height: 1.6;
+    position: relative;
+}
+
+.card-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-btn:hover {
+    background: var(--text-color);
+    transform: translateY(-2px);
+}
+
+.footstep-connector {
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.left-column .footstep-connector {
+    bottom: -30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>') no-repeat center center;
+    background-size: 20px;
+}
+
+.right-column .footstep-connector.top {
+    top: -30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>') no-repeat center center;
+    background-size: 20px;
+}
+
+.right-column .footstep-connector:not(.top) {
+    bottom: -30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>') no-repeat center center;
+    background-size: 20px;
 }
 
 .workflow-cta {
     text-align: center;
     margin-top: 60px;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 0 20px;
 }
 
 .workflow-cta p {
     font-size: 18px;
     margin-bottom: 20px;
+    color: var(--light-color);
 }
 
-/* Адаптация для мобильных */
+.btn {
+    background: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
-    .fixed-contact-bar {
-        padding: 8px 15px;
+    .workflow-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
-    .contact-link span {
+    
+    .workflow-column {
+        width: 100%;
+        max-width: 500px;
+        gap: 40px;
+    }
+    
+    .footstep-connector {
         display: none;
     }
-    .contact-link i {
-        font-size: 16px;
-    }
-    .social-icons {
-        margin-left: 5px;
-        gap: 8px;
-    }
     
-    .roadmap-step {
-        padding-left: 70px;
-    }
-    
-    .step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    
-    .roadmap-line {
-        left: 30px;
+    .workflow-card {
+        backdrop-filter: none;
     }
 }
-
-@media (max-width: 576px) {
-    .fixed-contact-bar {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 5px;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 5px;
-    }
-    
-    .social-icons {
-        margin-left: 0;
-        margin-top: 5px;
-    }
-    
-    .roadmap-step {
-        padding-left: 50px;
-    }
-    
-    .step-number {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-    
-    .roadmap-line {
-        left: 20px;
-    }
-}
-
 /* Contact Section */
 .contact-wrapper {
   display: grid;
