@@ -1,0 +1,985 @@
+/* Стили для страницы строительства */
+.stages-timeline {
+    margin-top: 50px;
+}
+
+.stage {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.stage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stage.reverse {
+    flex-direction: row-reverse;
+}
+
+.stage-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    min-width: 80px;
+    text-align: center;
+}
+
+.stage-content {
+    flex: 1;
+}
+
+.stage-content h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.stage-content p {
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.stage-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.stage-features li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.stage-features i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--accent-color);
+}
+
+.stage-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.stage-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.stage:hover .stage-image img {
+    transform: scale(1.05);
+}
+
+/* Технологии строительства */
+.tech-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 40px 0 30px;
+    flex-wrap: wrap;
+}
+
+.tech-tab {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.tech-tab.active, .tech-tab:hover {
+    background: var(--accent-color);
+    color: var(--dark-color);
+}
+
+.tech-content {
+    display: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.tech-content.active {
+    display: flex;
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.tech-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tech-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.tech-features li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.tech-features i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.tech-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+.tech-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.tech-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.tech-content:hover .tech-image img {
+    transform: scale(1.05);
+}
+
+/* Геология и геодезия */
+.geology-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.geology-info {
+    flex: 1;
+}
+
+.geology-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.geology-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.geology-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.geology-list li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.geology-list i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.geology-packages {
+    margin-top: 40px;
+}
+
+.geology-packages h4 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.package {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.package.popular {
+    border: 2px solid var(--accent-color);
+    transform: translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.package h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.package ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.package li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.package li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.package-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.geology-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.geology-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Фундамент */
+.foundation-types {
+    margin-top: 40px;
+}
+
+.foundation-card {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.foundation-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.foundation-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.foundation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.foundation-card:hover .foundation-image img {
+    transform: scale(1.05);
+}
+
+.foundation-info {
+    flex: 1;
+}
+
+.foundation-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.foundation-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.foundation-features {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.foundation-features li {
+    margin-bottom: 10px;
+}
+
+.foundation-features strong {
+    color: var(--accent-color);
+}
+
+.foundation-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* Стены */
+.walls-materials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.material-card {
+    background: var(--card-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.material-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.material-image {
+    height: 250px;
+}
+
+.material-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.material-card:hover .material-image img {
+    transform: scale(1.1);
+}
+
+.material-info {
+    padding: 25px;
+}
+
+.material-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.material-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.spec i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.material-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.material-btn {
+    width: 100%;
+    padding: 12px;
+}
+
+/* Крыша */
+.roof-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.roof-card {
+    background: var(--card-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.roof-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.roof-image {
+    height: 200px;
+}
+
+.roof-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.roof-card:hover .roof-image img {
+    transform: scale(1.1);
+}
+
+.roof-info {
+    padding: 25px;
+}
+
+.roof-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.roof-info p {
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.roof-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.roof-features li {
+    margin-bottom: 8px;
+}
+
+.roof-features strong {
+    color: var(--accent-color);
+}
+
+.roof-btn {
+    width: 100%;
+    padding: 12px;
+}
+
+.roof-materials {
+    margin-top: 60px;
+}
+
+.roof-materials h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.material-item {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.material-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.material-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.material-item h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.material-item p {
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.material-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Остекление */
+.glazing-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.glazing-info {
+    flex: 1;
+}
+
+.glazing-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.glazing-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.glazing-types {
+    margin-top: 30px;
+}
+
+.glazing-type {
+    margin-bottom: 30px;
+}
+
+.glazing-type h4 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.glazing-type h4 i {
+    color: var(--accent-color);
+}
+
+.glazing-type p {
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.glazing-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.glazing-features li {
+    margin-bottom: 8px;
+}
+
+.glazing-features strong {
+    color: var(--accent-color);
+}
+
+.glazing-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.glazing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Инженерные сети */
+.engineering-systems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.system-card {
+    background: var(--card-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.system-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.system-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.system-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.system-card p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.system-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.system-features li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    text-align: left;
+}
+
+.system-features i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--accent-color);
+}
+
+.system-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Внутренняя отделка */
+.interior-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.interior-info {
+    flex: 1;
+}
+
+.interior-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.interior-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.interior-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.option {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.option h4 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option h4 i {
+    color: var(--accent-color);
+}
+
+.option-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-list li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.option-list li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.interior-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.interior-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.interior-packages {
+    margin-top: 60px;
+}
+
+.interior-packages h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Наружная отделка */
+.exterior-materials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Форма заказа */
+.order-construction {
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    position: relative;
+}
+
+.order-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.order-form {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-footer {
+    margin-top: 20px;
+}
+
+.form-footer p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.form-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Адаптация */
+@media (max-width: 1200px) {
+    .stage, .stage.reverse {
+        flex-direction: column;
+    }
+    
+    .tech-content.active {
+        flex-direction: column;
+    }
+    
+    .geology-content {
+        flex-direction: column;
+    }
+    
+    .glazing-content {
+        flex-direction: column;
+    }
+    
+    .interior-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 992px) {
+    .foundation-card, .foundation-card.reverse {
+        flex-direction: column;
+    }
+    
+    .walls-materials {
+        grid-template-columns: 1fr;
+    }
+    
+    .exterior-materials {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-tabs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .interior-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .stage-number {
+        margin-bottom: 20px;
+    }
+    
+    .roof-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .engineering-systems {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-form {
+        padding: 20px;
+    }
+}

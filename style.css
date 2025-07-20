@@ -19,11 +19,15 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
   background-color: var(--background-color);
   position: relative;
+ 
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -134,24 +138,24 @@ body {
 }
 /* Индивидуальные настройки для каждой секции */
 .hero .decor {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
     transform: translateX(-50%)  rotate(180deg);
 }
 /* projects*/
 .our-projects .decor-left-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   top: 40%;
   left: 0;
    transform: translateX(-50%) ;
 }
 .our-projects .decor-right-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
     top: 10%;
   right: 0;
   transform: translateX(50%)  rotate(270deg);
 }
 .our-projects .decor-right-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom:10%;
   right: 0;
   transform: translateX(50%)  rotate(180deg);
@@ -164,88 +168,88 @@ body {
    transform: translateX(-50%) rotate(180deg);
 }
 .about .decor-left-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom: -25%;
   left: 0;
    transform: translateX(-50%)rotate(270deg);
 }
 .about .decor-right-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
     top: 0;
   right: 0;
   transform: translateX(70%)  rotate(270deg);
 }
 .about .decor-right-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom:-10%;
   right: 0;
   transform: translateX(50%)  rotate(180deg);
 }
 /* services*/
 .services .decor-left-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   top: 10%;
   left: 0;
    transform: translateX(-50%) 
 }
 .services .decor-left-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom: 0;
   left: 0;
  transform: translateX(-60%)rotate(90deg);
 }
 .services .decor-right-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
     top: 0;
   right: 0;
   transform: translateX(60%) rotate(180deg);
 }
 .services .decor-right-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom:0;
   right: 0;
   transform: translateX(60%)  rotate(90deg);
 }
 /* workFlow*/
 .workflow .decor-left-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   top: 0;
   left: 0;
    transform: translateX(-50%) 
 }
 .workflow .decor-left-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom: 0;
   left: 0;
  transform: translateX(-50%)rotate(180deg);
 }
 .workflow .decor-right-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
     top: 0;
   right: 0;
   transform: translateX(50%);
 }
 .workflow .decor-right-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom:0;
   right: 0;
   transform: translateX(50%)  rotate(180deg);
 }
 /* contact*/
 .contact .decor-left-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   top: 20%;
   left: 0;
   transform: translateX(-50%) 
 }
 .contact .decor-right-top {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   top: 0;
   right: 0;
   transform: translateX(50%);
 }
 .contact .decor-right-bottom {
-  background-image: url('img/project.png');
+  background-image: url('main_img/project.png');
   bottom:0;
   right: 0;
   transform: translateX(50%)  rotate(180deg);
@@ -634,13 +638,13 @@ position: relative;
 
 .team-tab {
   padding: 12px 24px;
-  background: var(--light-color);
-  border: none;
+  background: var(--background-color);
+  border: 1px solid var(--accent-color);
   border-radius: 30px;
   cursor: pointer;
   transition: var(--transition);
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .team-tab.active, 
