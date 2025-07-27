@@ -981,13 +981,14 @@ position: relative;
 .workflow-cards-container {
     position: relative;
     height: 650px;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     perspective: 1000px;
-}
+    }
 
 .workflow-card {
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -1003,7 +1004,6 @@ position: relative;
     border: 1px solid rgba(255, 232, 72, 0.2);
     pointer-events: none;
 }
-
 
 .workflow-card.active {
     opacity: 1;
