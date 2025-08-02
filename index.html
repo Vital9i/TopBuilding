@@ -103,9 +103,14 @@
                                     <li><a href="#">Монтаж ливневок и дренажа</a></li>
                                     <li><a href="#">Устройство газона</a></li>
                                     <li><a href="#">Монтаж автополива</a></li>
+                                    <li><a href="#">Искуственные водоемы</a></li>
+                                    <li><a href="#">Подпорки для участка</a></li>
+                                    <li><a href="#">Освещени участка</a></li>
                                 </ul>
                             </li>
                         </ul>
+                         <a href="#">Административные и производственные обьекты</a>
+                          <a href="#">Ремонт квартир</a>
                         <a href="#">Контакты</a>
                         <a href="#">Партнеры</a>
                         <a href="#">О нас</a>
@@ -137,10 +142,64 @@
                                 </ul>
                                 <div class="project-footer">
                                     <span class="project-price">от 85 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+                                    <button class="btn-details" onclick="openProjectModal('classic')">Пример проекта</button>
                                 </div>
                             </div>
                         </div>
+                        <!-- Модальное окно проекта -->
+<div id="projectModal" class="project-modal">
+    <div class="modal-overlay" onclick="closeProjectModal()"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Классический коттедж</h3>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="facade">Фасад здания</button>
+                <button class="modal-tab" data-tab="interior">Внутренняя отделка</button>
+                <button class="modal-tab" data-tab="layout">Планировка</button>
+            </div>
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Слайдер для фасадов -->
+            <div class="modal-slider active" data-tab-content="facade">
+                <div class="slider-container">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 1">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 2">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 3">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 4">
+                </div>
+                <button class="slider-prev">&lt;</button>
+                <button class="slider-next">&gt;</button>
+            </div>
+            
+            <!-- Слайдер для интерьеров -->
+            <div class="modal-slider" data-tab-content="interior">
+                <div class="slider-container">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 1">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 2">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 3">
+                    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 4">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 5">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 6">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 7">
+                </div>
+                <button class="slider-prev">&lt;</button>
+                <button class="slider-next">&gt;</button>
+            </div>
+            
+            <!-- Слайдер для планировок -->
+            <div class="modal-slider" data-tab-content="layout">
+                <div class="slider-container">
+                    <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 1">
+                    <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 2">
+                </div>
+                <button class="slider-prev">&lt;</button>
+                <button class="slider-next">&gt;</button>
+            </div>
+        </div>
+    </div>
+</div>
 
                         <!-- Барнхаус -->
                         <div class="project-card">
@@ -229,16 +288,16 @@
                         <!-- Современный -->
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                                <img src="/main_img/home.jpg"
                                     alt="Современный дом" loading="lazy">
-                                <div class="project-badge" style="background: #9b59b6;">Современный</div>
+                                <div class="project-badge" style="background: #9b59b6;">Ваш индивидуальный проект</div>
                             </div>
                             <div class="project-info">
-                                <h3>Современный дом</h3>
+                                <h3>Ваш индивидуальный проект</h3>
                                 <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 160-240 м²</li>
+                                    <li><i class="fas fa-ruler-combined"></i> 50-240 м²</li>
                                     <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                    <li><i class="fas fa-palette"></i> Композит/стекло</li>
+                                    <li><i class="fas fa-palette"></i> на выбор</li>
                                 </ul>
                                 <div class="project-footer">
                                     <span class="project-price">от 120 000 руб</span>
@@ -258,8 +317,8 @@
 
                 <div class="container">
                     <div class="workflow-header">
-                        <h1 class="section-title">Наш процесс строительства</h1>
-                        <p class="section-subtitle">8 ключевых этапов от идеи до готового дома</p>
+                        <h1 class="section-title">Как работать с нами</h1>
+                        <p class="section-subtitle">8 ключевых этапов от заявки до заселения</p>
 
                         <!-- Интерактивный прогресс-бар -->
                         <div class="progress-container">
@@ -931,11 +990,7 @@
                     </div>
                 </div>
             </section>
-
         </main>
-        <!--Карта-->
-
-        <!-- Подвал сайта -->
         <footer id="footer" class="footer">
             <div class="container">
                 <div class="footer-grid">
@@ -1015,206 +1070,332 @@
             </div>
         </footer>
     </div>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU" type="text/javascript"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const steps = document.querySelectorAll('.progress-step');
-            const cards = document.querySelectorAll('.workflow-card');
-            const progressFill = document.querySelector('.progress-fill');
-            const currentStepIndicator = document.querySelector('.current-step');
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU" type="text/javascript"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Первый блок кода для прогресс-бара (оставляем без изменений)
+        const steps = document.querySelectorAll('.progress-step');
+        const cards = document.querySelectorAll('.workflow-card');
+        const progressFill = document.querySelector('.progress-fill');
+        const currentStepIndicator = document.querySelector('.current-step');
 
-            // Функция для отображения выбранного шага
-            function showStep(stepNumber) {
-                // Обновляем активный шаг в прогресс-баре
-                steps.forEach((step, index) => {
-                    if (index < stepNumber) {
-                        step.classList.add('active');
-                    } else {
-                        step.classList.remove('active');
-                    }
-                });
-
-                // Обновляем прогресс-бар
-                const progressWidth = (stepNumber / steps.length) * 100;
-                progressFill.style.width = `${progressWidth}%`;
-
-                // Обновляем индикатор текущего шага
-                currentStepIndicator.textContent = stepNumber;
-
-                // Показываем соответствующую карточку
-                cards.forEach(card => {
-                    if (card.dataset.step == stepNumber) {
-                        card.classList.add('active');
-                    } else {
-                        card.classList.remove('active');
-                    }
-                });
-            }
-
-            // Добавляем обработчики событий для шагов
-            steps.forEach(step => {
-                step.addEventListener('click', function () {
-                    const stepNumber = parseInt(this.dataset.step);
-                    showStep(stepNumber);
-                });
-            });
-
-            // Инициализация - показываем первый шаг
-            showStep(1);
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            // Ждем загрузки API Яндекс.Карт
-            ymaps.ready(init);
-
-            function init() {
-                // Создаем карту
-                var myMap = new ymaps.Map("map", {
-                    center: [53.902496, 27.561481], // Координаты центра (Минск)
-                    zoom: 12 // Масштаб
-                });
-
-                // Массив с данными объектов
-                var objects = [
-                    {
-                        coords: [53.902496, 27.561481],
-                        title: "ЖК 'Зеленый Бор'",
-                        photos: [
-                            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-                            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-                        ],
-                        description: "Многоэтажный жилой комплекс, сдан в 2022 году",
-                        type: "classic"
-                    },
-                    {
-                        coords: [53.908712, 27.554321],
-                        title: "Коттеджный поселок 'Сосновый'",
-                        photos: [
-                            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-                            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-                        ],
-                        description: "20 коттеджей, сдача 2023 год",
-                        type: "chalet"
-                    },
-                    {
-                        coords: [53.915000, 27.560000],
-                        title: "ЖК 'Солнечный'",
-                        photos: [
-                            'https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-                            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-                        ],
-                        description: "Жилой комплекс бизнес-класса, сдан в 2021 году",
-                        type: "modern"
-                    }
-                ];
-
-                // Цвета для разных типов объектов
-                var typeColors = {
-                    classic: '#8e44ad',
-                    chalet: '#16a085',
-                    modern: '#3498db',
-                    default: '#e74c3c'
-                };
-
-                // Создаем метки для каждого объекта
-                objects.forEach(function (obj) {
-                    var placemark = new ymaps.Placemark(obj.coords, {
-                        balloonContentHeader: obj.title,
-                        balloonContentBody: createBalloonContent(obj),
-                        hintContent: obj.title
-                    }, {
-                        iconLayout: 'default#imageWithContent',
-                        iconImageHref: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="' + (typeColors[obj.type] || typeColors.default) + '"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
-                        iconImageSize: [32, 32],
-                        iconImageOffset: [-16, -32],
-                        balloonCloseButton: true,
-                        hideIconOnBalloonOpen: false
-                    });
-
-                    // Добавляем обработчики событий для метки
-                    placemark.events.add('mouseenter', function () {
-                        placemark.options.set('iconImageHref', 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="' + (typeColors[obj.type] || typeColors.default) + '"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
-                        placemark.options.set('iconImageSize', [40, 40]);
-                        placemark.options.set('iconImageOffset', [-20, -40]);
-                    });
-
-                    placemark.events.add('mouseleave', function () {
-                        placemark.options.set('iconImageHref', 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="' + (typeColors[obj.type] || typeColors.default) + '"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
-                        placemark.options.set('iconImageSize', [32, 32]);
-                        placemark.options.set('iconImageOffset', [-16, -32]);
-                    });
-
-                    myMap.geoObjects.add(placemark);
-                });
-
-                // Функция для создания содержимого балуна
-                function createBalloonContent(obj) {
-                    var photosHTML = obj.photos.map(function (photo, index) {
-                        return `<div class="map-photo">
-                            <img src="${photo}" alt="${obj.title} ${index + 1}" loading="lazy">
-                        </div>`;
-                    }).join('');
-
-                    return `
-                        <div class="map-balloon">
-                            <h3 class="map-balloon-title">${obj.title}</h3>
-                            <div class="map-photos">${photosHTML}</div>
-                            <div class="map-description">${obj.description}</div>
-                        </div>
-                    `;
-                }
-
-                // Добавляем элементы управления
-                myMap.controls
-                    .remove('geolocationControl')
-                    .remove('trafficControl')
-                    .remove('typeSelector')
-                    .remove('fullscreenControl')
-                    .remove('zoomControl')
-                    .remove('rulerControl');
-
-                // Добавляем свой кастомный zoom control
-                myMap.controls.add('zoomControl', {
-                    size: "small",
-                    position: { right: 10, top: 100 }
-                });
-            }
-
-            // Остальные обработчики событий (для меню команды и фиксации хедера)
-            document.querySelectorAll('.team-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Удаляем активный класс у всех вкладок
-                    document.querySelectorAll('.team-tab').forEach(t => {
-                        t.classList.remove('active');
-                    });
-
-                    // Добавляем активный класс текущей вкладке
-                    tab.classList.add('active');
-
-                    // Скрываем все блоки с карточками
-                    document.querySelectorAll('.team-cards').forEach(cards => {
-                        cards.classList.remove('active');
-                    });
-
-                    // Показываем нужный блок
-                    const teamId = tab.getAttribute('data-team');
-                    document.getElementById(teamId).classList.add('active');
-                });
-            });
-
-            // Фиксация хедера при скролле
-            window.addEventListener('scroll', function () {
-                const header = document.getElementById('mainHeader');
-                const heroSection = document.querySelector('.hero');
-                const heroHeight = heroSection.offsetHeight;
-
-                if (window.pageYOffset > heroHeight) {
-                    header.classList.add('fixed');
+        function showStep(stepNumber) {
+            steps.forEach((step, index) => {
+                if (index < stepNumber) {
+                    step.classList.add('active');
                 } else {
-                    header.classList.remove('fixed');
+                    step.classList.remove('active');
                 }
             });
+
+            const progressWidth = (stepNumber / steps.length) * 100;
+            progressFill.style.width = `${progressWidth}%`;
+            currentStepIndicator.textContent = stepNumber;
+
+            cards.forEach(card => {
+                if (card.dataset.step == stepNumber) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        steps.forEach(step => {
+            step.addEventListener('click', function () {
+                const stepNumber = parseInt(this.dataset.step);
+                showStep(stepNumber);
+            });
         });
-    </script>
+
+        showStep(1);
+
+        // Второй блок кода для Яндекс.Карт (исправленный)
+        ymaps.ready(init);
+
+        function init() {
+            // Создаем карту
+            var myMap = new ymaps.Map("map", {
+                center: [53.902496, 27.561481],
+                zoom: 12,
+                controls: ['zoomControl']
+            });
+
+            // Удаляем ненужные элементы управления
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('searchControl');
+            myMap.controls.remove('trafficControl');
+            myMap.controls.remove('typeSelector');
+            myMap.controls.remove('fullscreenControl');
+            myMap.controls.remove('rulerControl');
+
+            // Массив с данными объектов
+var objects = [
+    {
+        coords: [53.902496, 27.561481], // Минск
+        title: "ЖК 'Зеленый Бор'",
+        description: "Многоэтажный жилой комплекс бизнес-класса, сдан в 2022 году. 5 корпусов, детский сад, паркинг.",
+        type: "classic",
+        photos: [
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [53.908712, 27.554321], // Минск
+        title: "Коттеджный поселок 'Сосновый'",
+        description: "20 коттеджей с участками 10 соток, охраняемая территория, сдача 2023 год.",
+        type: "chalet",
+        photos: [
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [53.915000, 27.560000], // Минск
+        title: "ЖК 'Солнечный'",
+        description: "Жилой комплекс комфорт-класса с развитой инфраструктурой, сдан в 2021 году.",
+        type: "modern",
+        photos: [
+            'https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [52.097621, 23.734050], // Брест
+        title: "ЖК 'Западный'",
+        description: "4 корпуса с видом на реку Мухавец, детские площадки, подземный паркинг.",
+        type: "classic",
+        photos: [
+            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [53.681732, 23.834300], // Гродно
+        title: "Таунхаусы 'Неманские Усадьбы'",
+        description: "Комплекс из 15 таунхаусов с террасами и ландшафтным дизайном.",
+        type: "townhouse",
+        photos: [
+            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [54.513845, 30.419389], // Орша
+        title: "Коттеджный поселок 'Оршанские Просторы'",
+        description: "10 коттеджей в сосновом бору, коммуникации центральные.",
+        type: "chalet",
+        photos: [
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [55.184217, 30.202878], // Витебск
+        title: "ЖК 'Двина Ривер'",
+        description: "Жилой комплекс премиум-класса с панорамными видами на реку Двина.",
+        type: "modern",
+        photos: [
+            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [53.929592, 27.601559], // Минская область, Смолевичи
+        title: "Посёлок 'Лесная Поляна'",
+        description: "50 участков под индивидуальное строительство, инфраструктура развивается.",
+        type: "land",
+        photos: [
+            'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0JTIwbG90fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [52.431269, 31.002041], // Гомель
+        title: "ЖК 'Сожский Берег'",
+        description: "3 корпуса комфорт-класса у реки Сож, сдача в 2024 году.",
+        type: "classic",
+        photos: [
+            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [54.898520, 29.329376], // Борисов
+        title: "Таунхаусы 'Борисовские Усадьбы'",
+        description: "8 секций таунхаусов с закрытой территорией, готовность 2023 год.",
+        type: "townhouse",
+        photos: [
+            'https://images.unsplash.com/photo-1600585152221-90352fe821bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRvd25ob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [54.513889, 26.832222], // Молодечно
+        title: "Коттеджи 'У озера'",
+        description: "5 коттеджей у водоема, участки от 15 соток, готовность 2023 год.",
+        type: "chalet",
+        photos: [
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [53.423321, 25.298382], // Новогрудок
+        title: "Гостевые дома 'Новогрудские Холмы'",
+        description: "Комплекс из 6 гостевых домов в исторической зоне.",
+        type: "guesthouse",
+        photos: [
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    },
+    {
+        coords: [55.485976, 28.804928], // Полоцк
+        title: "ЖК 'Двинские Просторы'",
+        description: "2 корпуса эконом-класса, сдача в 2024 году.",
+        type: "economy",
+        photos: [
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+        ]
+    }
+];
+
+            // Создаем кластер
+            var clusterer = new ymaps.Clusterer({
+                preset: 'islands#invertedVioletClusterIcons',
+                clusterDisableClickZoom: true,
+                clusterHideIconOnBalloonOpen: false,
+                geoObjectHideIconOnBalloonOpen: false
+            });
+
+            // Создаем метки для каждого объекта
+            objects.forEach(function (obj) {
+                var placemark = new ymaps.Placemark(obj.coords, {
+                    balloonContentHeader: obj.title,
+                    balloonContentBody: createBalloonContent(obj),
+                    hintContent: obj.title
+                }, {
+                    preset: 'islands#violetIcon'
+                });
+
+                clusterer.add(placemark);
+            });
+
+            // Добавляем кластер на карту
+            myMap.geoObjects.add(clusterer);
+
+            // Функция для создания содержимого балуна
+            function createBalloonContent(obj) {
+                var photosHTML = obj.photos.map(function (photo, index) {
+                    return `<div class="map-photo">
+                        <img src="${photo}" alt="${obj.title} ${index + 1}" loading="lazy">
+                    </div>`;
+                }).join('');
+
+                return `
+                    <div class="map-balloon">
+                        <h3 class="map-balloon-title">${obj.title}</h3>
+                        <div class="map-photos">${photosHTML}</div>
+                        <div class="map-description">${obj.description}</div>
+                    </div>
+                `;
+            }
+
+            // Масштабируем карту на область видимости меток
+            myMap.setBounds(clusterer.getBounds(), {
+                checkZoomRange: true
+            });
+        }
+
+        // Остальные обработчики событий (оставляем без изменений)
+        document.querySelectorAll('.team-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.team-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                tab.classList.add('active');
+                document.querySelectorAll('.team-cards').forEach(cards => {
+                    cards.classList.remove('active');
+                });
+                const teamId = tab.getAttribute('data-team');
+                document.getElementById(teamId).classList.add('active');
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('mainHeader');
+            const heroSection = document.querySelector('.hero');
+            const heroHeight = heroSection.offsetHeight;
+
+            if (window.pageYOffset > heroHeight) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+            }
+        });
+    });
+
+      // Функции для работы модального окна
+    function openProjectModal(type) {
+        const modal = document.getElementById('projectModal');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Здесь можно загружать разные данные в зависимости от типа проекта
+        if(type === 'classic') {
+            document.querySelector('.modal-header h3').textContent = 'Классический коттедж';
+        }
+    }
+    
+    function closeProjectModal() {
+        const modal = document.getElementById('projectModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Переключение между табами
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Удаляем активный класс у всех табов
+            document.querySelectorAll('.modal-tab').forEach(t => {
+                t.classList.remove('active');
+            });
+            
+            // Добавляем активный класс текущему табу
+            tab.classList.add('active');
+            
+            // Скрываем все слайдеры
+            document.querySelectorAll('.modal-slider').forEach(slider => {
+                slider.classList.remove('active');
+            });
+            
+            // Показываем нужный слайдер
+            const tabName = tab.getAttribute('data-tab');
+            document.querySelector(`.modal-slider[data-tab-content="${tabName}"]`).classList.add('active');
+        });
+    });
+    
+    // Навигация слайдера
+    document.querySelectorAll('.slider-prev').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const container = this.parentElement.querySelector('.slider-container');
+            container.scrollBy({
+                left: -container.offsetWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    document.querySelectorAll('.slider-next').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const container = this.parentElement.querySelector('.slider-container');
+            container.scrollBy({
+                left: container.offsetWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Закрытие по ESC
+    document.addEventListener('keydown', function(e) {
+        if(e.key === 'Escape') {
+            closeProjectModal();
+        }
+    });
+</script>
 </body>
 
 </html>

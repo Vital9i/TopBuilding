@@ -489,7 +489,122 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
 }
-
+ /* Стили для модального окна */
+    .project-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+    }
+    
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+    }
+    
+    .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        margin: 5% auto;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 1001;
+    }
+    
+    .modal-header {
+        padding: 20px;
+        background: #f8f9fa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .modal-tabs {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .modal-tab {
+        padding: 8px 16px;
+        border: none;
+        background: #e9ecef;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    
+    .modal-tab.active {
+        background: #8e44ad;
+        color: white;
+    }
+    
+    .modal-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .modal-body {
+        padding: 20px;
+        height: 70vh;
+        overflow: hidden;
+    }
+    
+    .modal-slider {
+        display: none;
+        height: 100%;
+        position: relative;
+    }
+    
+    .modal-slider.active {
+        display: block;
+    }
+    
+    .slider-container {
+        display: flex;
+        height: calc(100% - 40px);
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+    
+    .slider-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+    
+    .slider-prev, .slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    
+    .slider-prev {
+        left: 20px;
+    }
+    
+    .slider-next {
+        right: 20px;
+    }
 /* Projects Section */
 .our-projects {
   padding: 80px 0;
