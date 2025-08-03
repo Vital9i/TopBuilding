@@ -11,7 +11,6 @@
 
 <body>
     <div class="main-content-wrapper">
-        <!-- Основной контент -->
         <main class="main">
             <section id="home" class="section hero">
                 <!-- Декоративные элементы -->
@@ -49,7 +48,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Шапка сайта -->
             <header class="header" id="mainHeader">
                 <div class="container">
                     <nav class="nav">
@@ -109,206 +107,425 @@
                                 </ul>
                             </li>
                         </ul>
-                         <a href="#">Административные и производственные обьекты</a>
-                          <a href="#">Ремонт квартир</a>
+                        <a href="#">Административные и производственные обьекты</a>
+                        <a href="#">Ремонт квартир</a>
                         <a href="#">Контакты</a>
                         <a href="#">Партнеры</a>
                         <a href="#">О нас</a>
                     </nav>
                 </div>
             </header>
-            <section id="our-projects" class="our-projects">
+            <section id="about" class="section about">
                 <!-- Декоративные элементы -->
                 <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2 class="section-title">Дома, которые мы построили</h2>
-                    <p class="section-subtitle">5 популярных архитектурных стилей с гарантией 10 лет</p>
-                    <div class="projects-grid">
-                        <!-- Классический стиль -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Классический коттедж" loading="lazy">
-                                <div class="project-badge" style="background: #8e44ad;">Классика</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Классический коттедж</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 150-250 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 5-7 мес</li>
-                                    <li><i class="fas fa-palette"></i> Кирпич/штукатурка</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 85 000 руб</span>
-                                    <button class="btn-details" onclick="openProjectModal('classic')">Пример проекта</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Модальное окно проекта -->
-<div id="projectModal" class="project-modal">
-    <div class="modal-overlay" onclick="closeProjectModal()"></div>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3>Классический коттедж</h3>
-            <div class="modal-tabs">
-                <button class="modal-tab active" data-tab="facade">Фасад здания</button>
-                <button class="modal-tab" data-tab="interior">Внутренняя отделка</button>
-                <button class="modal-tab" data-tab="layout">Планировка</button>
-            </div>
-            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
-        </div>
-        
-        <div class="modal-body">
-            <!-- Слайдер для фасадов -->
-            <div class="modal-slider active" data-tab-content="facade">
-                <div class="slider-container">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 1">
-                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 2">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 3">
-                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Фасад 4">
-                </div>
-                <button class="slider-prev">&lt;</button>
-                <button class="slider-next">&gt;</button>
-            </div>
-            
-            <!-- Слайдер для интерьеров -->
-            <div class="modal-slider" data-tab-content="interior">
-                <div class="slider-container">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 1">
-                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 2">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 3">
-                    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 4">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 5">
-                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 6">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80" alt="Интерьер 7">
-                </div>
-                <button class="slider-prev">&lt;</button>
-                <button class="slider-next">&gt;</button>
-            </div>
-            
-            <!-- Слайдер для планировок -->
-            <div class="modal-slider" data-tab-content="layout">
-                <div class="slider-container">
-                    <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 1">
-                    <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 2">
-                </div>
-                <button class="slider-prev">&lt;</button>
-                <button class="slider-next">&gt;</button>
-            </div>
-        </div>
-    </div>
-</div>
+                    <h2>О нас</h2>
+                    <p>Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                        Республике
+                        Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
+                    <p> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
+                        услугой
+                        и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
+                        проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
+                        комплекса строительно-монтажных работ, сдача объекта и ввод в эксплуатацию совместно с
+                        Заказчиком.
+                    </p>
 
-                        <!-- Барнхаус -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Дом в стиле барнхаус" loading="lazy">
-                                <div class="project-badge" style="background: #e67e22;">Барнхаус</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Современный барнхаус</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 120-200 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 4-6 мес</li>
-                                    <li><i class="fas fa-palette"></i> Дерево/металл</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 78 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+                    <!-- Наша команда -->
+                    <div class="team-section">
+                        <div class="team-tabs">
+                            <button class="team-tab active" data-team="management">Руководство</button>
+                            <button class="team-tab" data-team="architects">Архитекторы</button>
+                            <button class="team-tab" data-team="designers">Дизайнеры</button>
+                            <button class="team-tab" data-team="builders">Строители</button>
+                        </div>
+
+                        <!-- Руководство -->
+                        <div class="team-cards active" id="management">
+                            <div class="team-card">
+                                <h3 class="team-name">Гриценко Олег Олегович</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Oleg.jpg" alt="Руководитель организации">
                                 </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-vk"></i></a>
+                                    <a href="#"><i class="fab fa-telegram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                                <p class="team-position">Руководитель организации</p>
+                                <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
+                                    компанией с
+                                    момента основания.</p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/TamaraGeorgievna.jpg" alt="руководитель проектного отдела">
+                                </div>
+                                <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
+                                <p class="team-description">Координирует все строительные процессы и взаимодействие
+                                    между
+                                    отделами.</p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Кожемякина Евгения Андреевна</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/EvgeniaAndreevna.jpg" alt="Главный бухгалтер">
+                                </div>
+                                <p class="team-position">Главный бухгалтер</p>
+                                <p class="team-description"> Обеспечивает соблюдение законодательства в области
+                                    бухгалтерского и налогового учета, а также участвует в финансовом планировании и
+                                    анализеи.</p>
+                            </div>
+
+
+                            <div class="team-card">
+                                <h3 class="team-name">Карпеко Анна Арнольдовна</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/AnnaArnoldovna.jpg" alt="Бухгалтер">
+                                </div>
+                                <p class="team-position">Бухгалтер</p>
+                                <p class="team-description">Занимается ведением финансового учета и отчетности компании.
+                                </p>
+                            </div>
+
+
+
+                            <div class="team-card">
+                                <h3 class="team-name">Красулевич Алена Олеговна</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/AlenaOlegovna.jpg" alt="Бухгалтер">
+                                </div>
+                                <p class="team-position">Инженер ПТО (производственно-технический отдел)</p>
+                                <p class="team-description">Занимается техническим сопровождением и контролем
+                                    строительных процессов.</p>
                             </div>
                         </div>
 
-                        <!-- Шале -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Дом в стиле шале" loading="lazy">
-                                <div class="project-badge" style="background: #16a085;">Шале</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Альпийское шале</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 180-300 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                    <li><i class="fas fa-palette"></i> Дерево/камень</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 110 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+
+                        <!-- Архитекторы -->
+                        <div class="team-cards" id="architects">
+                            <div class="team-card">
+                                <h3 class="team-name">Анна Архитекторова</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/women/63.jpg"
+                                        alt="Анна Архитекторова">
                                 </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-vk"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                </div>
+                                <p class="team-position">Главный архитектор</p>
+                                <p class="team-description">Разрабатывает концепции домов и контролирует их техническую
+                                    реализацию.</p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Дмитрий Чертежов</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Дмитрий Чертежов">
+                                </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-vk"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <p class="team-position">Архитектор</p>
+                                <p class="team-description">Создает рабочие чертежи и 3D-визуализации будущих проектов.
+                                </p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Елена Проектова</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Елена Проектова">
+                                </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-vk"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                                <p class="team-position">Проектировщик</p>
+                                <p class="team-description">Разрабатывает инженерные решения и техническую документацию.
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Минимализм -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Минималистичный дом" loading="lazy">
-                                <div class="project-badge" style="background: #34495e;">Минимализм</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Минималистичный дом</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 100-180 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 3-5 мес</li>
-                                    <li><i class="fas fa-palette"></i> Бетон/стекло</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 95 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+                        <!-- Дизайнеры -->
+                        <div class="team-cards" id="designers">
+                            <div class="team-card">
+                                <h3 class="team-name">Ольга Внешкова</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ольга Внешкова">
                                 </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                </div>
+                                <p class="team-position">Дизайнер внешнего вида</p>
+                                <p class="team-description">Создает гармоничный экстерьер и подбирает материалы фасадов.
+                                </p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Мария Интерьерова</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Мария Интерьерова">
+                                </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                </div>
+                                <p class="team-position">Дизайнер интерьера</p>
+                                <p class="team-description">Разрабатывает планировки и стилевые решения внутренних
+                                    пространств.</p>
+                            </div>
+
+                            <div class="team-card">
+                                <h3 class="team-name">Алексей Садовов</h3>
+                                <div class="team-photo">
+                                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Алексей Садовов">
+                                </div>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <p class="team-position">Ландшафтный дизайнер</p>
+                                <p class="team-description">Создает проекты благоустройства территории и озеленения.</p>
                             </div>
                         </div>
 
-                        <!-- Скандинавский -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                    alt="Скандинавский дом" loading="lazy">
-                                <div class="project-badge" style="background: #3498db;">Сканди</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Скандинавский дом</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 140-220 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 5-6 мес</li>
-                                    <li><i class="fas fa-palette"></i> Дерево/штукатурка</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 89 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+                        <!-- Строители -->
+                        <div class="team-cards" id="builders">
+                            <div class="team-card">
+                                <h3 class="team-name">Чечетко Геннадий</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Genadi.jpg" alt="Бригадир кровельщиков, фасадчиков">
                                 </div>
+                                <p class="team-position">Бригадир кровельщиков, фасадчиков</p>
+                                <p class="team-description">Выполняет руководящую и организационную работу, а также
+                                    участвует в выполнении кровельных и фасадных работ.
+                                </p>
                             </div>
-                        </div>
 
-                        <!-- Современный -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="/main_img/home.jpg"
-                                    alt="Современный дом" loading="lazy">
-                                <div class="project-badge" style="background: #9b59b6;">Ваш индивидуальный проект</div>
-                            </div>
-                            <div class="project-info">
-                                <h3>Ваш индивидуальный проект</h3>
-                                <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 50-240 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                    <li><i class="fas fa-palette"></i> на выбор</li>
-                                </ul>
-                                <div class="project-footer">
-                                    <span class="project-price">от 120 000 руб</span>
-                                    <button class="btn-details">Пример проекта</button>
+                            <div class="team-card">
+                                <h3 class="team-name">Саидохонов Саид</h3>
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Said.jpg" alt="Бригадир в отделке и кладке">
                                 </div>
+                                <p class="team-position">Бригадир в отделке и кладке</p>
+                                <p class="team-description"> Занимается организацией работы строительной бригады,
+                                    распределением задач, контролем качества и соблюдением сроков выполнения работ.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="workflow" class="section workflow" aria-label="Процесс строительства дома">
+            <section id="our-projects" class="our-projects">
+            <!-- Декоративные элементы -->
+            <div class="decor decor-left-top"></div>
+            <div class="decor decor-right-top"></div>
+            <div class="decor decor-right-bottom"></div>
+            <div class="container">
+                <h2 class="section-title">Популярные проекты</h2>
+                <p class="section-subtitle">5 популярных архитектурных стилей с гарантией 10 лет</p>
+                <div class="projects-grid">
+                    <!-- Классический стиль -->
+                    <div class="project-card" onclick="openProjectModal('classic')">
+                        <div class="project-image">
+                            <img src="main_img/Project1/project1.jpeg"
+                                alt="Классический коттедж" loading="lazy">
+                            <div class="project-badge" style="background: #8e44ad;">Классика</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Классический коттедж</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 150-250 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 5-7 мес</li>
+                                <li><i class="fas fa-palette"></i> Кирпич/штукатурка</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 85 000 руб</span>
+                                <button class="btn-details" onclick="openProjectModal('classic')">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Модальное окно проекта -->
+                    <div id="projectModal" class="project-modal">
+                        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Классический коттедж</h3>
+                                <div class="modal-tabs">
+                                    <button class="modal-tab active" data-tab="facade">Фасад здания</button>
+                                    <button class="modal-tab" data-tab="interior">Внутренняя отделка</button>
+                                    <button class="modal-tab" data-tab="layout">Планировка</button>
+                                </div>
+                                <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- Слайдер для фасадов -->
+                                <div class="modal-slider active" data-tab-content="facade">
+                                    <div class="slider-container">
+                                        <img src="/main_img/Project1/project1.jpeg"
+                                            alt="Фасад 1">
+                                        <img src="/main_img/Project1/project2.jpeg"
+                                            alt="Фасад 2">
+                                        <img src="/main_img/Project1/project3.jpeg"
+                                            alt="Фасад 3">
+                                        <img src="/main_img/Project1/project4.jpeg"
+                                            alt="Фасад 4">
+                                    </div>
+                                    <button class="slider-prev">&lt;</button>
+                                    <button class="slider-next">&gt;</button>
+                                </div>
+
+                                <!-- Слайдер для интерьеров -->
+                                <div class="modal-slider" data-tab-content="interior">
+                                    <div class="slider-container">
+                                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 1">
+                                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 2">
+                                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 3">
+                                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 4">
+                                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 5">
+                                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 6">
+                                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
+                                            alt="Интерьер 7">
+                                    </div>
+                                    <button class="slider-prev">&lt;</button>
+                                    <button class="slider-next">&gt;</button>
+                                </div>
+
+                                <!-- Слайдер для планировок -->
+                                <div class="modal-slider" data-tab-content="layout">
+                                    <div class="slider-container">
+                                        <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 1">
+                                        <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 2">
+                                    </div>
+                                    <button class="slider-prev">&lt;</button>
+                                    <button class="slider-next">&gt;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Барнхаус -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                                alt="Дом в стиле барнхаус" loading="lazy">
+                            <div class="project-badge" style="background: #e67e22;">Барнхаус</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Современный барнхаус</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 120-200 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 4-6 мес</li>
+                                <li><i class="fas fa-palette"></i> Дерево/металл</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 78 000 руб</span>
+                                <button class="btn-details">Пример проекта</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шале -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                                alt="Дом в стиле шале" loading="lazy">
+                            <div class="project-badge" style="background: #16a085;">Шале</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Альпийское шале</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 180-300 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
+                                <li><i class="fas fa-palette"></i> Дерево/камень</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 110 000 руб</span>
+                                <button class="btn-details">Пример проекта</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Минимализм -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                                alt="Минималистичный дом" loading="lazy">
+                            <div class="project-badge" style="background: #34495e;">Минимализм</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Минималистичный дом</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 100-180 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 3-5 мес</li>
+                                <li><i class="fas fa-palette"></i> Бетон/стекло</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 95 000 руб</span>
+                                <button class="btn-details">Пример проекта</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Скандинавский -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                                alt="Скандинавский дом" loading="lazy">
+                            <div class="project-badge" style="background: #3498db;">Сканди</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Скандинавский дом</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 140-220 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 5-6 мес</li>
+                                <li><i class="fas fa-palette"></i> Дерево/штукатурка</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 89 000 руб</span>
+                                <button class="btn-details">Пример проекта</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Современный -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="main_img/home.jpg" alt="Современный дом" loading="lazy">
+                            <div class="project-badge" style="background: #9b59b6;">Ваш индивидуальный проект</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Ваш индивидуальный проект</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 50-240 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
+                                <li><i class="fas fa-palette"></i> на выбор</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 120 000 руб</span>
+                                <button class="btn-details">Пример проекта</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            > <section id="workflow" class="section workflow" aria-label="Процесс строительства дома">
                 <!-- Декоративные элементы -->
                 <div class="decor decor-left-top"></div>
                 <div class="decor decor-left-bottom"></div>
@@ -654,256 +871,9 @@
                     </div>
                 </div>
             </section>
-            <section id="about" class="section about">
-                <!-- Декоративные элементы -->
-                <div class="decor decor-left-top"></div>
-                <div class="decor decor-left-bottom"></div>
-                <div class="decor decor-right-top"></div>
-                <div class="decor decor-right-bottom"></div>
-                <div class="container">
-                    <h2>О нас</h2>
-                    <p>Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
-                        Республике
-                        Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
-                    <p> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
-                        услугой
-                        и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
-                        проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
-                        комплекса строительно-монтажных работ, сдача объекта и ввод в эксплуатацию совместно с
-                        Заказчиком.
-                    </p>
-
-                    <!-- Наша команда -->
-                    <div class="team-section">
-                        <div class="team-tabs">
-                            <button class="team-tab active" data-team="management">Руководство</button>
-                            <button class="team-tab" data-team="architects">Архитекторы</button>
-                            <button class="team-tab" data-team="designers">Дизайнеры</button>
-                            <button class="team-tab" data-team="builders">Строители</button>
-                        </div>
-
-                        <!-- Руководство -->
-                        <div class="team-cards active" id="management">
-                            <div class="team-card">
-                                <h3 class="team-name">Иван Иванов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Иван Иванов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-telegram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                                <p class="team-position">Генеральный Директор</p>
-                                <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
-                                    компанией с
-                                    момента основания.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Петр Петров</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Петр Петров">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-telegram"></i></a>
-                                </div>
-                                <p class="team-position">Заместитель директора</p>
-                                <p class="team-description">Координирует все строительные процессы и взаимодействие
-                                    между
-                                    отделами.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Сергей Сергеев</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Сергей Сергеев">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Прораб</p>
-                                <p class="team-description">Контролирует качество строительных работ на всех объектах
-                                    компании.</p>
-                            </div>
-                        </div>
-
-                        <!-- Архитекторы -->
-                        <div class="team-cards" id="architects">
-                            <div class="team-card">
-                                <h3 class="team-name">Анна Архитекторова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/63.jpg"
-                                        alt="Анна Архитекторова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
-                                <p class="team-position">Главный архитектор</p>
-                                <p class="team-description">Разрабатывает концепции домов и контролирует их техническую
-                                    реализацию.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Дмитрий Чертежов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Дмитрий Чертежов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="team-position">Архитектор</p>
-                                <p class="team-description">Создает рабочие чертежи и 3D-визуализации будущих проектов.
-                                </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Елена Проектова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Елена Проектова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                                <p class="team-position">Проектировщик</p>
-                                <p class="team-description">Разрабатывает инженерные решения и техническую документацию.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Дизайнеры -->
-                        <div class="team-cards" id="designers">
-                            <div class="team-card">
-                                <h3 class="team-name">Ольга Внешкова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ольга Внешкова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
-                                <p class="team-position">Дизайнер внешнего вида</p>
-                                <p class="team-description">Создает гармоничный экстерьер и подбирает материалы фасадов.
-                                </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Мария Интерьерова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Мария Интерьерова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
-                                <p class="team-position">Дизайнер интерьера</p>
-                                <p class="team-description">Разрабатывает планировки и стилевые решения внутренних
-                                    пространств.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Алексей Садовов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Алексей Садовов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="team-position">Ландшафтный дизайнер</p>
-                                <p class="team-description">Создает проекты благоустройства территории и озеленения.</p>
-                            </div>
-                        </div>
-
-                        <!-- Строители -->
-                        <div class="team-cards" id="builders">
-                            <div class="team-card">
-                                <h3 class="team-name">Александр Геодезин</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Александр Геодезин">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Геодезист</p>
-                                <p class="team-description">Проводит топографическую съемку и разбивку осей на
-                                    местности.
-                                </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Екатерина Каменева</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/51.jpg"
-                                        alt="Екатерина Каменева">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-telegram"></i></a>
-                                </div>
-                                <p class="team-position">Геолог</p>
-                                <p class="team-description">Исследует грунты и дает рекомендации по фундаментам.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Виктор Бригадин</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Виктор Бригадин">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Бригадир</p>
-                                <p class="team-description">Организует работу строительной бригады и контроль качества.
-                                </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Михаил Кирпичов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="Михаил Кирпичов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Строитель-каменщик</p>
-                                <p class="team-description">Специалист по кладке стен и перегородок.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Денис Монтиров</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/48.jpg" alt="Денис Монтиров">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Строитель-монтажник</p>
-                                <p class="team-description">Специалист по монтажу конструкций и инженерных систем.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Артем Отделочкин</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/53.jpg" alt="Артем Отделочкин">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                </div>
-                                <p class="team-position">Строитель-отделочник</p>
-                                <p class="team-description">Специалист по финишной отделке помещений.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section id="yandex-map" class="yandex-map">
                 <div class="container">
-                    <h2>Наши выполненные объекты</h2>
+                    <h2>География выполненых обьектов</h2>
                     <div id="map"
                         style="width: 100%; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     </div>
@@ -1069,333 +1039,333 @@
                 </div>
             </div>
         </footer>
-    </div>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU" type="text/javascript"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Первый блок кода для прогресс-бара (оставляем без изменений)
-        const steps = document.querySelectorAll('.progress-step');
-        const cards = document.querySelectorAll('.workflow-card');
-        const progressFill = document.querySelector('.progress-fill');
-        const currentStepIndicator = document.querySelector('.current-step');
+     <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU"
+        type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Первый блок кода для прогресс-бара (оставляем без изменений)
+            const steps = document.querySelectorAll('.progress-step');
+            const cards = document.querySelectorAll('.workflow-card');
+            const progressFill = document.querySelector('.progress-fill');
+            const currentStepIndicator = document.querySelector('.current-step');
 
-        function showStep(stepNumber) {
-            steps.forEach((step, index) => {
-                if (index < stepNumber) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-
-            const progressWidth = (stepNumber / steps.length) * 100;
-            progressFill.style.width = `${progressWidth}%`;
-            currentStepIndicator.textContent = stepNumber;
-
-            cards.forEach(card => {
-                if (card.dataset.step == stepNumber) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-        }
-
-        steps.forEach(step => {
-            step.addEventListener('click', function () {
-                const stepNumber = parseInt(this.dataset.step);
-                showStep(stepNumber);
-            });
-        });
-
-        showStep(1);
-
-        // Второй блок кода для Яндекс.Карт (исправленный)
-        ymaps.ready(init);
-
-        function init() {
-            // Создаем карту
-            var myMap = new ymaps.Map("map", {
-                center: [53.902496, 27.561481],
-                zoom: 12,
-                controls: ['zoomControl']
-            });
-
-            // Удаляем ненужные элементы управления
-            myMap.controls.remove('geolocationControl');
-            myMap.controls.remove('searchControl');
-            myMap.controls.remove('trafficControl');
-            myMap.controls.remove('typeSelector');
-            myMap.controls.remove('fullscreenControl');
-            myMap.controls.remove('rulerControl');
-
-            // Массив с данными объектов
-var objects = [
-    {
-        coords: [53.902496, 27.561481], // Минск
-        title: "ЖК 'Зеленый Бор'",
-        description: "Многоэтажный жилой комплекс бизнес-класса, сдан в 2022 году. 5 корпусов, детский сад, паркинг.",
-        type: "classic",
-        photos: [
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [53.908712, 27.554321], // Минск
-        title: "Коттеджный поселок 'Сосновый'",
-        description: "20 коттеджей с участками 10 соток, охраняемая территория, сдача 2023 год.",
-        type: "chalet",
-        photos: [
-            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [53.915000, 27.560000], // Минск
-        title: "ЖК 'Солнечный'",
-        description: "Жилой комплекс комфорт-класса с развитой инфраструктурой, сдан в 2021 году.",
-        type: "modern",
-        photos: [
-            'https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
-            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [52.097621, 23.734050], // Брест
-        title: "ЖК 'Западный'",
-        description: "4 корпуса с видом на реку Мухавец, детские площадки, подземный паркинг.",
-        type: "classic",
-        photos: [
-            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [53.681732, 23.834300], // Гродно
-        title: "Таунхаусы 'Неманские Усадьбы'",
-        description: "Комплекс из 15 таунхаусов с террасами и ландшафтным дизайном.",
-        type: "townhouse",
-        photos: [
-            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [54.513845, 30.419389], // Орша
-        title: "Коттеджный поселок 'Оршанские Просторы'",
-        description: "10 коттеджей в сосновом бору, коммуникации центральные.",
-        type: "chalet",
-        photos: [
-            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [55.184217, 30.202878], // Витебск
-        title: "ЖК 'Двина Ривер'",
-        description: "Жилой комплекс премиум-класса с панорамными видами на реку Двина.",
-        type: "modern",
-        photos: [
-            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [53.929592, 27.601559], // Минская область, Смолевичи
-        title: "Посёлок 'Лесная Поляна'",
-        description: "50 участков под индивидуальное строительство, инфраструктура развивается.",
-        type: "land",
-        photos: [
-            'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0JTIwbG90fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [52.431269, 31.002041], // Гомель
-        title: "ЖК 'Сожский Берег'",
-        description: "3 корпуса комфорт-класса у реки Сож, сдача в 2024 году.",
-        type: "classic",
-        photos: [
-            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [54.898520, 29.329376], // Борисов
-        title: "Таунхаусы 'Борисовские Усадьбы'",
-        description: "8 секций таунхаусов с закрытой территорией, готовность 2023 год.",
-        type: "townhouse",
-        photos: [
-            'https://images.unsplash.com/photo-1600585152221-90352fe821bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRvd25ob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [54.513889, 26.832222], // Молодечно
-        title: "Коттеджи 'У озера'",
-        description: "5 коттеджей у водоема, участки от 15 соток, готовность 2023 год.",
-        type: "chalet",
-        photos: [
-            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [53.423321, 25.298382], // Новогрудок
-        title: "Гостевые дома 'Новогрудские Холмы'",
-        description: "Комплекс из 6 гостевых домов в исторической зоне.",
-        type: "guesthouse",
-        photos: [
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    },
-    {
-        coords: [55.485976, 28.804928], // Полоцк
-        title: "ЖК 'Двинские Просторы'",
-        description: "2 корпуса эконом-класса, сдача в 2024 году.",
-        type: "economy",
-        photos: [
-            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
-        ]
-    }
-];
-
-            // Создаем кластер
-            var clusterer = new ymaps.Clusterer({
-                preset: 'islands#invertedVioletClusterIcons',
-                clusterDisableClickZoom: true,
-                clusterHideIconOnBalloonOpen: false,
-                geoObjectHideIconOnBalloonOpen: false
-            });
-
-            // Создаем метки для каждого объекта
-            objects.forEach(function (obj) {
-                var placemark = new ymaps.Placemark(obj.coords, {
-                    balloonContentHeader: obj.title,
-                    balloonContentBody: createBalloonContent(obj),
-                    hintContent: obj.title
-                }, {
-                    preset: 'islands#violetIcon'
+            function showStep(stepNumber) {
+                steps.forEach((step, index) => {
+                    if (index < stepNumber) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
                 });
 
-                clusterer.add(placemark);
+                const progressWidth = (stepNumber / steps.length) * 100;
+                progressFill.style.width = `${progressWidth}%`;
+                currentStepIndicator.textContent = stepNumber;
+
+                cards.forEach(card => {
+                    if (card.dataset.step == stepNumber) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            }
+
+            steps.forEach(step => {
+                step.addEventListener('click', function () {
+                    const stepNumber = parseInt(this.dataset.step);
+                    showStep(stepNumber);
+                });
             });
 
-            // Добавляем кластер на карту
-            myMap.geoObjects.add(clusterer);
+            showStep(1);
 
-            // Функция для создания содержимого балуна
-            function createBalloonContent(obj) {
-                var photosHTML = obj.photos.map(function (photo, index) {
-                    return `<div class="map-photo">
+            // Второй блок кода для Яндекс.Карт (исправленный)
+            ymaps.ready(init);
+
+            function init() {
+                // Создаем карту
+                var myMap = new ymaps.Map("map", {
+                    center: [53.902496, 27.561481],
+                    zoom: 12,
+                    controls: ['zoomControl']
+                });
+
+                // Удаляем ненужные элементы управления
+                myMap.controls.remove('geolocationControl');
+                myMap.controls.remove('searchControl');
+                myMap.controls.remove('trafficControl');
+                myMap.controls.remove('typeSelector');
+                myMap.controls.remove('fullscreenControl');
+                myMap.controls.remove('rulerControl');
+
+                // Массив с данными объектов
+                var objects = [
+                    {
+                        coords: [53.902496, 27.561481], // Минск
+                        title: "ЖК 'Зеленый Бор'",
+                        description: "Многоэтажный жилой комплекс бизнес-класса, сдан в 2022 году. 5 корпусов, детский сад, паркинг.",
+                        type: "classic",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+                            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [53.908712, 27.554321], // Минск
+                        title: "Коттеджный поселок 'Сосновый'",
+                        description: "20 коттеджей с участками 10 соток, охраняемая территория, сдача 2023 год.",
+                        type: "chalet",
+                        photos: [
+                            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+                            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [53.915000, 27.560000], // Минск
+                        title: "ЖК 'Солнечный'",
+                        description: "Жилой комплекс комфорт-класса с развитой инфраструктурой, сдан в 2021 году.",
+                        type: "modern",
+                        photos: [
+                            'https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
+                            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [52.097621, 23.734050], // Брест
+                        title: "ЖК 'Западный'",
+                        description: "4 корпуса с видом на реку Мухавец, детские площадки, подземный паркинг.",
+                        type: "classic",
+                        photos: [
+                            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [53.681732, 23.834300], // Гродно
+                        title: "Таунхаусы 'Неманские Усадьбы'",
+                        description: "Комплекс из 15 таунхаусов с террасами и ландшафтным дизайном.",
+                        type: "townhouse",
+                        photos: [
+                            'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [54.513845, 30.419389], // Орша
+                        title: "Коттеджный поселок 'Оршанские Просторы'",
+                        description: "10 коттеджей в сосновом бору, коммуникации центральные.",
+                        type: "chalet",
+                        photos: [
+                            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [55.184217, 30.202878], // Витебск
+                        title: "ЖК 'Двина Ривер'",
+                        description: "Жилой комплекс премиум-класса с панорамными видами на реку Двина.",
+                        type: "modern",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [53.929592, 27.601559], // Минская область, Смолевичи
+                        title: "Посёлок 'Лесная Поляна'",
+                        description: "50 участков под индивидуальное строительство, инфраструктура развивается.",
+                        type: "land",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0JTIwbG90fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [52.431269, 31.002041], // Гомель
+                        title: "ЖК 'Сожский Берег'",
+                        description: "3 корпуса комфорт-класса у реки Сож, сдача в 2024 году.",
+                        type: "classic",
+                        photos: [
+                            'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNsYXNzaWMlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [54.898520, 29.329376], // Борисов
+                        title: "Таунхаусы 'Борисовские Усадьбы'",
+                        description: "8 секций таунхаусов с закрытой территорией, готовность 2023 год.",
+                        type: "townhouse",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600585152221-90352fe821bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRvd25ob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [54.513889, 26.832222], // Молодечно
+                        title: "Коттеджи 'У озера'",
+                        description: "5 коттеджей у водоема, участки от 15 соток, готовность 2023 год.",
+                        type: "chalet",
+                        photos: [
+                            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [53.423321, 25.298382], // Новогрудок
+                        title: "Гостевые дома 'Новогрудские Холмы'",
+                        description: "Комплекс из 6 гостевых домов в исторической зоне.",
+                        type: "guesthouse",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    },
+                    {
+                        coords: [55.485976, 28.804928], // Полоцк
+                        title: "ЖК 'Двинские Просторы'",
+                        description: "2 корпуса эконом-класса, сдача в 2024 году.",
+                        type: "economy",
+                        photos: [
+                            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60'
+                        ]
+                    }
+                ];
+
+                // Создаем кластер
+                var clusterer = new ymaps.Clusterer({
+                    preset: 'islands#invertedVioletClusterIcons',
+                    clusterDisableClickZoom: true,
+                    clusterHideIconOnBalloonOpen: false,
+                    geoObjectHideIconOnBalloonOpen: false
+                });
+
+                // Создаем метки для каждого объекта
+                objects.forEach(function (obj) {
+                    var placemark = new ymaps.Placemark(obj.coords, {
+                        balloonContentHeader: obj.title,
+                        balloonContentBody: createBalloonContent(obj),
+                        hintContent: obj.title
+                    }, {
+                        preset: 'islands#violetIcon'
+                    });
+
+                    clusterer.add(placemark);
+                });
+
+                // Добавляем кластер на карту
+                myMap.geoObjects.add(clusterer);
+
+                // Функция для создания содержимого балуна
+                function createBalloonContent(obj) {
+                    var photosHTML = obj.photos.map(function (photo, index) {
+                        return `<div class="map-photo">
                         <img src="${photo}" alt="${obj.title} ${index + 1}" loading="lazy">
                     </div>`;
-                }).join('');
+                    }).join('');
 
-                return `
+                    return `
                     <div class="map-balloon">
                         <h3 class="map-balloon-title">${obj.title}</h3>
                         <div class="map-photos">${photosHTML}</div>
                         <div class="map-description">${obj.description}</div>
                     </div>
                 `;
+                }
+
+                // Масштабируем карту на область видимости меток
+                myMap.setBounds(clusterer.getBounds(), {
+                    checkZoomRange: true
+                });
             }
 
-            // Масштабируем карту на область видимости меток
-            myMap.setBounds(clusterer.getBounds(), {
-                checkZoomRange: true
+            // Остальные обработчики событий (оставляем без изменений)
+            document.querySelectorAll('.team-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.team-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    tab.classList.add('active');
+                    document.querySelectorAll('.team-cards').forEach(cards => {
+                        cards.classList.remove('active');
+                    });
+                    const teamId = tab.getAttribute('data-team');
+                    document.getElementById(teamId).classList.add('active');
+                });
             });
+
+            window.addEventListener('scroll', function () {
+                const header = document.getElementById('mainHeader');
+                const heroSection = document.querySelector('.hero');
+                const heroHeight = heroSection.offsetHeight;
+
+                if (window.pageYOffset > heroHeight) {
+                    header.classList.add('fixed');
+                } else {
+                    header.classList.remove('fixed');
+                }
+            });
+        });
+
+        // Функции для работы модального окна
+        function openProjectModal(type) {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Здесь можно загружать разные данные в зависимости от типа проекта
+            if (type === 'classic') {
+                document.querySelector('.modal-header h3').textContent = 'Классический коттедж';
+            }
         }
 
-        // Остальные обработчики событий (оставляем без изменений)
-        document.querySelectorAll('.team-tab').forEach(tab => {
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Переключение между табами
+        document.querySelectorAll('.modal-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                document.querySelectorAll('.team-tab').forEach(t => {
+                // Удаляем активный класс у всех табов
+                document.querySelectorAll('.modal-tab').forEach(t => {
                     t.classList.remove('active');
                 });
+
+                // Добавляем активный класс текущему табу
                 tab.classList.add('active');
-                document.querySelectorAll('.team-cards').forEach(cards => {
-                    cards.classList.remove('active');
+
+                // Скрываем все слайдеры
+                document.querySelectorAll('.modal-slider').forEach(slider => {
+                    slider.classList.remove('active');
                 });
-                const teamId = tab.getAttribute('data-team');
-                document.getElementById(teamId).classList.add('active');
+
+                // Показываем нужный слайдер
+                const tabName = tab.getAttribute('data-tab');
+                document.querySelector(`.modal-slider[data-tab-content="${tabName}"]`).classList.add('active');
             });
         });
 
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('mainHeader');
-            const heroSection = document.querySelector('.hero');
-            const heroHeight = heroSection.offsetHeight;
+        // Навигация слайдера
+        document.querySelectorAll('.slider-prev').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const container = this.parentElement.querySelector('.slider-container');
+                container.scrollBy({
+                    left: -container.offsetWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-            if (window.pageYOffset > heroHeight) {
-                header.classList.add('fixed');
-            } else {
-                header.classList.remove('fixed');
+        document.querySelectorAll('.slider-next').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const container = this.parentElement.querySelector('.slider-container');
+                container.scrollBy({
+                    left: container.offsetWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeProjectModal();
             }
         });
-    });
-
-      // Функции для работы модального окна
-    function openProjectModal(type) {
-        const modal = document.getElementById('projectModal');
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        
-        // Здесь можно загружать разные данные в зависимости от типа проекта
-        if(type === 'classic') {
-            document.querySelector('.modal-header h3').textContent = 'Классический коттедж';
-        }
-    }
-    
-    function closeProjectModal() {
-        const modal = document.getElementById('projectModal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    // Переключение между табами
-    document.querySelectorAll('.modal-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Удаляем активный класс у всех табов
-            document.querySelectorAll('.modal-tab').forEach(t => {
-                t.classList.remove('active');
-            });
-            
-            // Добавляем активный класс текущему табу
-            tab.classList.add('active');
-            
-            // Скрываем все слайдеры
-            document.querySelectorAll('.modal-slider').forEach(slider => {
-                slider.classList.remove('active');
-            });
-            
-            // Показываем нужный слайдер
-            const tabName = tab.getAttribute('data-tab');
-            document.querySelector(`.modal-slider[data-tab-content="${tabName}"]`).classList.add('active');
-        });
-    });
-    
-    // Навигация слайдера
-    document.querySelectorAll('.slider-prev').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const container = this.parentElement.querySelector('.slider-container');
-            container.scrollBy({
-                left: -container.offsetWidth,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    document.querySelectorAll('.slider-next').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const container = this.parentElement.querySelector('.slider-container');
-            container.scrollBy({
-                left: container.offsetWidth,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Закрытие по ESC
-    document.addEventListener('keydown', function(e) {
-        if(e.key === 'Escape') {
-            closeProjectModal();
-        }
-    });
-</script>
+    </script>
 </body>
 
 </html>
