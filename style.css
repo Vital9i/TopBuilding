@@ -63,67 +63,6 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.fixed-contact-bar {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #4C5772;
-  border-radius: 30px;
-  padding: 8px 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  white-space: nowrap;
-}
-
-.contact-link {
-  color: white;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-}
-
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 5px;
-  padding-left: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  color: white;
-  font-size: 14px;
-}
-
-.social-icon.viber { background-color: #7360F2; }
-.social-icon.telegram { background-color: #28A8E9; }
-.social-icon.whatsapp { background-color: #25D366; }
-
-@media (max-width: 768px) {
-  .fixed-contact-bar {
-    padding: 6px 12px;
-    gap: 10px;
-  }
-  .contact-link span {
-    display: none;
-  }
-  .social-icons {
-    gap: 8px;
-  }
-}
-
 /* Декоративные элементы (картинки по краям) */
 .decor {
   position:absolute;
@@ -398,97 +337,721 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Hero Section */
+/* Hero Section с видео-фоном */
 .hero {
   padding: 120px 0 80px;
   color: white;
   position: relative;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-color) 100%);
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Видео-фон */
+.hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Затемнение видео */
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Контент поверх видео */
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .content-hero {
   flex: 1;
-  max-width: 600px;
+  max-width: 900px;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
 }
 
-.hero-logo {
-  width: 80px;
-  height: auto;
-  margin-bottom: 30px;
-  filter: brightness(0) invert(1);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.3;
-  margin-bottom: 20px;
+/* Бейдж компании */
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 232, 72, 0.2);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 8px 24px;
+  border-radius: 50px;
   font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Заголовок */
+.hero-title {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.hero-title .highlight {
+  color: var(--secondary-color);
+  position: relative;
+  display: inline-block;
+  animation: glow 2s ease-in-out infinite;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* USP Features с счетчиками */
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.hero-feature:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.feature-text strong {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.feature-text span {
+  font-size: 0.85rem;
   opacity: 0.9;
+  color: #fff;
+}
+
+/* Анимированный счетчик */
+.counter {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+/* Уникальное преимущество - Общение с руководителем */
+.hero-social-proof {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 232, 72, 0.3);
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-social-proof::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 232, 72, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* CEO Highlight */
+.ceo-highlight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.ceo-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 4px 15px rgba(255, 232, 72, 0.4);
+  flex-shrink: 0;
+}
+
+.ceo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.online-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.online-badge i {
+  font-size: 0.6rem;
+  color: #4CAF50;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.ceo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ceo-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.ceo-title {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* Advantage Text */
+.advantage-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.advantage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #FFD700 100%);
+  color: var(--dark-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(255, 232, 72, 0.3);
+}
+
+.advantage-badge i {
+  font-size: 0.8rem;
+}
+
+.advantage-description {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.advantage-description strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* CTA кнопки */
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .hero-btn {
-  padding: 14px 32px;
+  padding: 18px 35px;
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-cta {
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  box-shadow: 0 8px 20px rgba(255, 232, 72, 0.4);
+}
+
+.primary-cta:hover {
+  background: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 232, 72, 0.6);
+}
+
+.secondary-cta {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Дополнительная информация */
+.hero-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.hero-info i {
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 232, 72, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 232, 72, 0.8), 0 0 30px rgba(255, 232, 72, 0.6);
+  }
+}
+
+/* ============================================
+   СЕКЦИЯ: ПРЯМОЕ ОБЩЕНИЕ С РУКОВОДИТЕЛЕМ
+   ============================================ */
+.ceo-section {
+  background: linear-gradient(135deg, #1A1D25 0%, #2C3E50 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.ceo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 232, 72, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(76, 87, 114, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ceo-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* CEO Image Section */
+.ceo-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ceo-image-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #FFD700 100%);
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(60px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.ceo-image {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 10px rgba(255, 232, 72, 0.1),
+    0 0 0 20px rgba(255, 232, 72, 0.05);
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.ceo-image:hover {
+  transform: scale(1.02);
+}
+
+.ceo-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 232, 72, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--dark-color);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(255, 232, 72, 0.4);
+  animation: slideInUp 0.8s ease-out;
+}
+
+.ceo-badge i {
+  font-size: 1.2rem;
+}
+
+/* CEO Text Section */
+.ceo-text {
+  color: #fff;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 232, 72, 0.1);
+  border: 1px solid rgba(255, 232, 72, 0.3);
+  color: var(--secondary-color);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title-center {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.ceo-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.ceo-description strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* CEO Benefits Grid */
+.ceo-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.ceo-benefit {
+  display: flex;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ceo-benefit:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  border-color: rgba(255, 232, 72, 0.3);
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #FFD700 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   color: var(--dark-color);
 }
 
-.image-stack {
+.benefit-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.benefit-content p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* CEO CTA */
+.ceo-cta {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.ceo-btn {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ceo-btn.primary {
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  box-shadow: 0 8px 25px rgba(255, 232, 72, 0.4);
+}
+
+.ceo-btn.primary:hover {
+  background: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 232, 72, 0.6);
+}
+
+.ceo-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ceo-contacts p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.ceo-contacts i {
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
+
+/* Общие улучшения для заголовков секций */
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.highlight {
+  color: var(--secondary-color);
   position: relative;
-  width: 50%;
-  max-width: 600px;
-  height: 500px;
 }
 
-.stack-img {
-  position: absolute;
-   box-shadow:none;
-  transition: var(--transition);
-  background: transparent;
-  image-rendering: crisp-edges;
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.project-img {
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  opacity: 0.3;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  z-index: 1;
-  transform-origin: center;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+/* Адаптивность для CEO секции */
+@media (max-width: 992px) {
+  .ceo-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ceo-image-wrapper {
+    order: -1;
+  }
+  
+  .ceo-image {
+    max-width: 350px;
+  }
+  
+  .ceo-benefits {
+    grid-template-columns: 1fr;
+  }
 }
 
-.house-img {
-  width: 100%;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 3;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+@media (max-width: 768px) {
+  .ceo-section {
+    padding: 60px 0;
+  }
+  
+  .section-title-center {
+    font-size: 2rem;
+  }
+  
+  .ceo-description {
+    font-size: 1rem;
+  }
+  
+  .ceo-benefit {
+    padding: 15px;
+  }
+  
+  .ceo-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .ceo-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-.hand-img {
-  width: 70%;
-  bottom: -18%;
-  right: 0;
-  left: auto;
-  z-index: 2;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
-}
  /* Стили для модального окна */
     .project-modal {
         display: none;
@@ -1528,24 +2091,52 @@ address a:hover {
 }
 
 @media (max-width: 992px) {
-  .hero-content-wrapper {
-    flex-direction: column;
+  .hero-title {
+    font-size: 2.5rem;
   }
   
-  .content-hero {
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
   
-  .image-stack {
-    width: 100%;
-    margin-top: 0;
-    height: 400px;
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 20px;
   }
   
-  .hero h1 {
-    font-size: 2rem;
+  .hero-features {
+    gap: 15px;
+  }
+  
+  .hero-feature {
+    padding: 12px 20px;
+    min-width: 120px;
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+  
+  .hero-social-proof {
+    padding: 18px 25px;
+    gap: 20px;
+  }
+  
+  .ceo-avatar {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .ceo-name {
+    font-size: 0.95rem;
+  }
+  
+  .advantage-description {
+    font-size: 0.95rem;
+  }
+  
+  .hero-cta {
+    gap: 15px;
   }
   
   .tour-content {
@@ -1566,15 +2157,93 @@ address a:hover {
     padding: 60px 0;
   }
   
+  .hero {
+    min-height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-features {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-feature {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-social-proof {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .ceo-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .ceo-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .ceo-info {
+    align-items: center;
+  }
+  
+  .advantage-text {
+    align-items: center;
+  }
+  
+  .advantage-badge {
+    align-self: center;
+  }
+  
+  .advantage-description {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .hero-btn {
+    width: 100%;
+    max-width: 350px;
+    padding: 16px 30px;
+    font-size: 1rem;
+  }
+  
+  .hero-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
   .contact-container {
     flex-direction: column;
     gap: 10px;
     text-align: center;
-  }
-  
-  .social-icons {
-    justify-content: center;
-    margin-top: 10px;
   }
   
   .nav {
@@ -1589,15 +2258,6 @@ address a:hover {
   
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .project-img {
-    width: 80%;
-    transform: translate(-50%, -50%) rotate(-80deg);
-  }
-  
-  .hand-img {
-    right: -5%;
   }
   
   .mortgage-consultation {
@@ -1619,21 +2279,58 @@ address a:hover {
 }
 
 @media (max-width: 576px) {
-  .hero h1 {
-    font-size: 1.8rem;
+  .hero {
+    min-height: 70vh;
+    padding: 100px 0 60px;
+  }
+  
+  .hero-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
   
   .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+  
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+  }
+  
+  .hero-features {
+    max-width: 100%;
+  }
+  
+  .hero-feature {
+    padding: 10px 18px;
+  }
+  
+  .feature-icon {
+    font-size: 1.3rem;
+  }
+  
+  .feature-text strong {
     font-size: 1rem;
+  }
+  
+  .feature-text span {
+    font-size: 0.8rem;
+  }
+  
+  .hero-btn {
+    padding: 14px 25px;
+    font-size: 0.95rem;
+  }
+  
+  .hero-info p {
+    font-size: 0.85rem;
   }
   
   .section-title {
     font-size: 1.8rem;
-  }
-  
-  .btn, .hero-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
   }
   
   .team-tab {
@@ -1644,18 +2341,7 @@ address a:hover {
   .construction-options {
     flex-direction: column;
   }
-  
-  .image-stack {
-    height: 300px;
-  }
-  
-  .house-img {
-    width: 90%;
-  }
-  
-  .hand-img {
-    width: 80%;
-  }
+}
 
   /* Стили для карты и балунов */
 /* Стили для карты и балунов */

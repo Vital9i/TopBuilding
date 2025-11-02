@@ -5,54 +5,121 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"ТОПАГРОБЕЛ" - Проектирование и строительство в РБ</title>
+    <title>"ТОПБИЛДИНГ" - Проектирование и строительство в РБ</title>
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main-content-wrapper">
+    <div class="maklknknin-content-wrapper">
         <main class="main">
             <section id="home" class="section hero">
-                <!-- Декоративные элементы -->
-                <div class="decor decor-left-top"></div>
+                <!-- Видео-фон -->
+                <div class="hero-video-background">
+                    <video autoplay muted loop playsinline class="hero-video">
+                        <source src="main_video/Plan_Architecture.mp4" type="video/mp4">
+                    </video>
+                    <div class="hero-video-overlay"></div>
+                </div>
 
                 <div class="container">
-                    <div>
-                        <p>
-                            ghgbdfnn
-                        </p>
-                    </div>
                     <div class="hero-content-wrapper">
-                        <div class="fixed-contact-bar">
-                            <a href="tel:+375296582950" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375296582950
-                            </a>
-                            <a href="tel:+375291286217" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375291286217
-                            </a>
-                            <a href="mailto:topagrobel@mail.ru" class="contact-link">
-                                <i class="fas fa-envelope email-icon"></i> topagrobel@mail.ru
-                            </a>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon viber"><i class="fab fa-viber"></i></a>
-                                <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
-                                <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                            </div>
-                        </div>
                         <div class="content-hero">
-                            <img src="main_img/logo.webp" alt="Логотип компании" class="hero-logo">
-                            <h1>ПРОЕКТИРОВАНИЕ И СТРОИТЕЛЬСТВО ДОМОВ В РЕСПУБЛИКЕ БЕЛАРУСЬ</h1>
-                            <p class="hero-subtitle">От проекта до заселения</p>
-                            <button class="btn hero-btn">заказать звонок</button>
-                        </div>
-                        <div class="image-stack">
-                            <img src="main_img/project.png" alt="Проект" class="stack-img project-img">
-                            <img src="main_img/3d-model-doma-removebg-preview.png" alt="Дом" class="stack-img house-img">
-                            <img src="main_img/hand.png" alt="Рука" class="stack-img hand-img">
+                            <div class="hero-badge">ТОПБИЛДИНГ</div>
+                            <h1 class="hero-title">
+                                Строим дома вашей мечты 
+                                <span class="highlight">под ключ</span>
+                            </h1>
+                            <p class="hero-subtitle">Полный цикл: от идеи до заселения в Республике Беларусь</p>
+                            
+                            <!-- USP блоки с анимированными счетчиками -->
+                            <div class="hero-features">
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong><span class="counter" data-target="10">0</span> лет</strong>
+                                        <span>гарантии</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong><span class="counter" data-target="200">0</span>+</strong>
+                                        <span>проектов</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong><span class="counter" data-target="1000">0</span>+</strong>
+                                        <span>клиентов</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>100%</strong>
+                                        <span>фиксация цены</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Уникальное преимущество -->
+                            <div class="hero-social-proof" data-aos="fade-up" data-aos-delay="500">
+                                <div class="ceo-highlight">
+                                    <div class="ceo-avatar">
+                                        <img src="main_img/Cast/Oleg.jpg" alt="Руководитель">
+                                        <div class="online-badge">
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ceo-info">
+                                        <div class="ceo-name">Гриценко Олег Олегович</div>
+                                        <div class="ceo-title">Руководитель компании</div>
+                                    </div>
+                                </div>
+                                <div class="advantage-text">
+                                    <div class="advantage-badge">
+                                        <i class="fas fa-star"></i>
+                                        <span>Наше преимущество</span>
+                                    </div>
+                                    <div class="advantage-description">
+                                        Вы общаетесь <strong>напрямую с руководителем</strong>, а не с менеджерами
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA кнопки -->
+                            <div class="hero-cta">
+                                <button class="btn hero-btn primary-cta">
+                                    <i class="fas fa-calculator"></i>
+                                    Рассчитать стоимость
+                                </button>
+                                <button class="btn hero-btn secondary-cta">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Заказать звонок
+                                </button>
+                            </div>
+
+                            <!-- Дополнительная информация -->
+                            <div class="hero-info">
+                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд специалиста</p>
+                                <p><i class="fas fa-check-circle"></i> Индивидуальные и готовые проекты</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
             <header class="header" id="mainHeader">
                 <div class="container">
                     <nav class="nav">
@@ -127,15 +194,18 @@
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2>О нас</h2>
-                    <p>Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
-                        Республике
-                        Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
-                    <p> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
+                    <div class="section-label" data-aos="fade-up">
+                        <i class="fas fa-users"></i>
+                        О компании
+                    </div>
+                    <h2 class="section-title-center" data-aos="fade-up" data-aos-delay="100">Почему <span class="highlight">выбирают нас</span></h2>
+                    <p class="section-description" data-aos="fade-up" data-aos-delay="200">Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                        Республике Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
+                    <p class="section-description" data-aos="fade-up" data-aos-delay="300"> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
                         услугой
                         и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
                         проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
-                        комплекса строительно-монтажных работ, сдача объекта и ввод в эксплуатацию совместно с
+                        комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с
                         Заказчиком.
                     </p>
 
@@ -335,11 +405,15 @@
             <div class="decor decor-right-top"></div>
             <div class="decor decor-right-bottom"></div>
             <div class="container">
-                <h2 class="section-title">Популярные проекты</h2>
-                <p class="section-subtitle">5 популярных архитектурных стилей с гарантией 10 лет</p>
+                <div class="section-label" data-aos="fade-up">
+                    <i class="fas fa-home"></i>
+                    Наши проекты
+                </div>
+                <h2 class="section-title-center" data-aos="fade-up" data-aos-delay="100">Популярные <span class="highlight">проекты домов</span></h2>
+                <p class="section-description" data-aos="fade-up" data-aos-delay="200">5 популярных архитектурных стилей с гарантией 10 лет</p>
                 <div class="projects-grid">
                     <!-- Классический стиль -->
-                    <div class="project-card" onclick="openProjectModal('classic')">
+                    <div class="project-card" onclick="openProjectModal('classic')" data-aos="zoom-in" data-aos-delay="100">
                         <div class="project-image">
                             <img src="main_img/Project1/project1.jpeg"
                                 alt="Классический коттедж" loading="lazy">
@@ -425,7 +499,7 @@
                     </div>
 
                     <!-- Барнхаус -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
                                 alt="Дом в стиле барнхаус" loading="lazy">
@@ -446,7 +520,7 @@
                     </div>
 
                     <!-- Шале -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
                                 alt="Дом в стиле шале" loading="lazy">
@@ -467,7 +541,7 @@
                     </div>
 
                     <!-- Минимализм -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
                                 alt="Минималистичный дом" loading="lazy">
@@ -488,7 +562,7 @@
                     </div>
 
                     <!-- Скандинавский -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
                                 alt="Скандинавский дом" loading="lazy">
@@ -509,7 +583,7 @@
                     </div>
 
                     <!-- Современный -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="project-image">
                             <img src="main_img/home.jpg" alt="Современный дом" loading="lazy">
                             <div class="project-badge" style="background: #9b59b6;">Ваш индивидуальный проект</div>
@@ -794,6 +868,91 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- Секция: Прямое общение с руководителем -->
+            <section id="ceo-section" class="section ceo-section">
+                <div class="container">
+                    <div class="ceo-content">
+                        <div class="ceo-image-wrapper" data-aos="fade-right">
+                            <div class="ceo-image-bg"></div>
+                            <img src="main_img/Cast/Oleg.jpg" alt="Гриценко Олег Олегович - Руководитель ТопБилдинг" class="ceo-image">
+                            <div class="ceo-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>15+ лет опыта</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ceo-text" data-aos="fade-left">
+                            <div class="section-label">
+                                <i class="fas fa-star"></i>
+                                Наше преимущество
+                            </div>
+                            <h2 class="section-title">
+                                Общайтесь напрямую <br>
+                                <span class="highlight">с руководителем</span>
+                            </h2>
+                            <p class="ceo-description">
+                                В отличие от других компаний, где вы общаетесь с менеджерами, 
+                                у нас вы работаете <strong>напрямую с руководителем организации</strong> — 
+                                Гриценко Олегом Олеговичем.
+                            </p>
+                            
+                            <div class="ceo-benefits">
+                                <div class="ceo-benefit" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Личная ответственность</h4>
+                                        <p>Руководитель лично отвечает за каждый проект и контролирует качество</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ceo-benefit" data-aos="zoom-in" data-aos-delay="200">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Быстрые решения</h4>
+                                        <p>Все вопросы решаются моментально, без бюрократии и согласований</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ceo-benefit" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-piggy-bank"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Честные цены</h4>
+                                        <p>Прозрачное ценообразование без накруток посредников</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="ceo-benefit" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="benefit-icon">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <div class="benefit-content">
+                                        <h4>Экспертность</h4>
+                                        <p>15+ лет в строительстве, более 200 успешно реализованных проектов</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ceo-cta">
+                                <a href="tel:+375296582950" class="btn ceo-btn primary">
+                                    <i class="fas fa-phone"></i>
+                                    Связаться с руководителем
+                                </a>
+                                <div class="ceo-contacts">
+                                    <p><i class="fas fa-phone-alt"></i> +375 (29) 658-29-50</p>
+                                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer id="footer" class="footer">
             <div class="container">
@@ -801,9 +960,9 @@
                     <!-- Колонка 1: О компании -->
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="/img/logo.webp" alt="ТОПАГРОБЕЛ">
+                            <img src="/img/logo.webp" alt="ТОПБИЛДИНГ">
                         </div>
-                        <p>ООО "ТОПАГРОБЕЛ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
+                        <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                         <div class="footer-payments">
                             <img src="https://belarusbank.by/upload/iblock/9b8/9b8a4d6d3a1d8e5f7a3b6c2d4e1f8g9h.png"
                                 alt="Беларусбанк">
@@ -862,7 +1021,7 @@
 
                 <div class="footer-bottom">
                     <div class="footer-copyright">
-                        &copy; 2024 ООО "ТОПАГРОБЕЛ". Все права защищены.
+                        &copy; 2024 ООО "ТОПБИЛДИНГ". Все права защищены.
                     </div>
 
                     <div class="footer-links">
@@ -875,6 +1034,47 @@
         </footer>
      <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU"
         type="text/javascript"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script>
+        // Анимация счетчиков
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16); // 60 FPS
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = Math.floor(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+        
+        // Запуск анимации счетчиков при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.counter');
+            
+            // Задержка перед началом анимации
+            setTimeout(() => {
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    animateCounter(counter, target);
+                });
+            }, 500);
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Первый блок кода для прогресс-бара (оставляем без изменений)
