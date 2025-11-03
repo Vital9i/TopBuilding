@@ -8,7 +8,7 @@
     <title>"ТОПБИЛДИНГ" - Проектирование и строительство в РБ</title>
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=54">
 </head>
 
 <body>
@@ -25,23 +25,35 @@
 
                 <div class="container">
                     <div class="hero-content-wrapper">
-                        <div class="content-hero">
-                            <div class="hero-badge">ТОПБИЛДИНГ</div>
+                        <!-- Левая часть: основной контент -->
+                        <div class="hero-left">
+                            <div class="hero-badge">
+                                <svg class="hero-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span class="hero-badge-text">ТОП</span>
+                                <span class="hero-badge-highlight">БИЛДИНГ</span>
+                                <svg class="hero-badge-sparkle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/>
+                                </svg>
+                            </div>
+                            
                             <h1 class="hero-title">
-                                Строим дома вашей мечты bgggj
+                                Проектируем и Строим дома вашей мечты
                                 <span class="highlight">под ключ</span>
                             </h1>
-                            <p class="hero-subtitle">Полный цикл: от идеи до заселения в Республике Беларусь</p>
+                            <p class="hero-subtitle">Полный цикл: от идеи до заселения в Минской области</p>
                             
                             <!-- USP блоки с анимированными счетчиками -->
                             <div class="hero-features">
                                 <div class="hero-feature" data-aos="fade-up" data-aos-delay="100">
                                     <div class="feature-icon">
-                                        <i class="fas fa-certificate"></i>
+                                        <i class="fas fa-shield-alt"></i>
                                     </div>
                                     <div class="feature-text">
                                         <strong><span class="counter" data-target="10">0</span> лет</strong>
-                                        <span>гарантии</span>
+                                        <span>гарантийного обслуживания</span>
                                     </div>
                                 </div>
                                 <div class="hero-feature" data-aos="fade-up" data-aos-delay="200">
@@ -49,80 +61,145 @@
                                         <i class="fas fa-home"></i>
                                     </div>
                                     <div class="feature-text">
-                                        <strong><span class="counter" data-target="200">0</span>+</strong>
-                                        <span>проектов</span>
+                                        <strong><span class="counter" data-target="150">0</span>+</strong>
+                                        <span>проектов реализовано</span>
                                     </div>
                                 </div>
                                 <div class="hero-feature" data-aos="fade-up" data-aos-delay="300">
                                     <div class="feature-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="feature-text">
-                                        <strong><span class="counter" data-target="1000">0</span>+</strong>
-                                        <span>клиентов</span>
-                                    </div>
-                                </div>
-                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="feature-icon">
                                         <i class="fas fa-lock"></i>
                                     </div>
                                     <div class="feature-text">
-                                        <strong>100%</strong>
-                                        <span>фиксация цены</span>
+                                        <strong><span class="counter" data-target="96">0</span>%</strong>
+                                        <span>попадания в смету</span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Уникальное преимущество -->
-                            <div class="hero-social-proof" data-aos="fade-up" data-aos-delay="500">
-                                <div class="ceo-highlight">
-                                    <div class="ceo-avatar">
-                                        <img src="main_img/Cast/Oleg.jpg" alt="Руководитель">
-                                        <div class="online-badge">
-                                            <i class="fas fa-circle"></i>
-                                        </div>
+                                
+                                <!-- Новые преимущества -->
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-balance-scale"></i>
                                     </div>
-                                    <div class="ceo-info">
-                                        <div class="ceo-name">Гриценко Олег Олегович</div>
-                                        <div class="ceo-title">Руководитель компании</div>
+                                    <div class="feature-text">
+                                        <strong>Полное</strong>
+                                        <span>юридическое сопровождение</span>
                                     </div>
                                 </div>
-                                <div class="advantage-text">
-                                    <div class="advantage-badge">
-                                        <i class="fas fa-star"></i>
-                                        <span>Наше преимущество</span>
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-wallet"></i>
                                     </div>
-                                    <div class="advantage-description">
-                                        Вы общаетесь <strong>напрямую с руководителем</strong>, а не с менеджерами
+                                    <div class="feature-text">
+                                        <strong>Поэтапная</strong>
+                                        <span>оплата работ</span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- CTA кнопки -->
-                            <div class="hero-cta">
-                                <button class="btn hero-btn primary-cta">
-                                    <i class="fas fa-calculator"></i>
-                                    Рассчитать стоимость
-                                </button>
-                                <button class="btn hero-btn secondary-cta">
-                                    <i class="fas fa-phone-alt"></i>
-                                    Заказать звонок
-                                </button>
+                                <div class="hero-feature" data-aos="fade-up" data-aos-delay="700">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>Собственный</strong>
+                                        <span>парк техники</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Дополнительная информация -->
                             <div class="hero-info">
-                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд специалиста</p>
+                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд специалиста на участок</p>
                                 <p><i class="fas fa-check-circle"></i> Индивидуальные и готовые проекты</p>
+                                <p><i class="fas fa-check-circle"></i> Авторский надзор на всех этапах</p>
+                                <p><i class="fas fa-check-circle"></i> Сертифицированные материалы</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <header class="header" id="mainHeader">
+
+                <!-- Кнопка контактов в правом верхнем углу -->
+                <button class="contact-toggle-btn" id="contactToggleBtn">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Контакты</span>
+                </button>
+
+                <!-- Сайдбар контактов (скрыт по умолчанию) -->
+                <div class="hero-sidebar" id="heroSidebar">
+                    <div class="hero-contact-card">
+                        <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="ceo-highlight">
+                            <div class="ceo-avatar">
+                                <img src="main_img/Cast/Oleg.webp" alt="Руководитель">
+                                <div class="online-badge">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ceo-info">
+                                <div class="ceo-name">Гриценко Олег Олегович</div>
+                                <div class="ceo-title">Руководитель компании</div>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage-description">
+                            Вы общаетесь <strong>напрямую с руководителем</strong>, а не с менеджерами
+                        </div>
+
+                        <!-- Контактные кнопки -->
+                        <div class="hero-contact-buttons">
+                            <a href="tel:+375296582950" class="contact-btn primary-contact">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Заказать звонок</span>
+                            </a>
+                            
+                            <a href="#tour-section" class="contact-btn secondary-contact">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Экскурсия по объектам</span>
+                            </a>
+                            
+                            <div class="messenger-buttons">
+                                <a href="https://t.me/yourusername" class="messenger-btn telegram">
+                                    <i class="fab fa-telegram-plane"></i>
+                                    <span>Telegram</span>
+                                </a>
+                                <a href="viber://chat?number=%2B375296582950" class="messenger-btn viber">
+                                    <i class="fab fa-viber"></i>
+                                    <span>Viber</span>
+                                </a>
+                                <a href="https://wa.me/375296582950" class="messenger-btn whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-footer">
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296582950">+375 (29) 658-29-50</a></p>
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Header -->
+                <header class="header" id="mainHeader">
                 <div class="container">
                     <nav class="nav">
+                        <!-- Логотип компании -->
+                        <a href="#home" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="nav-menu">
                         <ul>
                             <li class="active">
                                 <a href="#home">Главная</a>
@@ -180,14 +257,23 @@
                                 </ul>
                             </li>
                         </ul>
-                        <a href="#">Административные и производственные обьекты</a>
-                        <a href="#">Ремонт квартир</a>
-                        <a href="#">Контакты</a>
+                        <ul>
+                            <li>
+                                <a href="#">Ремонт и модернизация</a>
+                                <ul>
+                                    <li><a href="#">Административные и производственные объекты</a></li>
+                                    <li><a href="#">Ремонт квартир</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <a href="#">Партнеры</a>
                         <a href="#">О нас</a>
+                        </div>
                     </nav>
                 </div>
             </header>
+            </section>
+            
             <section id="about" class="section about">
                 <!-- Декоративные элементы -->
                 <div class="decor decor-left-top"></div>
@@ -195,14 +281,14 @@
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <div class="section-label" data-aos="fade-up">
+                    <div class="section-label">
                         <i class="fas fa-users"></i>
                         О компании
                     </div>
-                    <h2 class="section-title-center" data-aos="fade-up" data-aos-delay="100">Почему <span class="highlight">выбирают нас</span></h2>
-                    <p class="section-description" data-aos="fade-up" data-aos-delay="200">Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                    <h2 class="section-title-center">Почему <span class="highlight">выбирают нас</span></h2>
+                    <p class="section-description">Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
                         Республике Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
-                    <p class="section-description" data-aos="fade-up" data-aos-delay="300"> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
+                    <p class="section-description"> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
                         услугой
                         и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
                         проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
@@ -224,7 +310,7 @@
                             <div class="team-card">
                                 <h3 class="team-name">Гриценко Олег Олегович</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/Oleg.jpg" alt="Руководитель организации">
+                                    <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
                                 </div>
                                 <div class="team-social">
                                     <a href="#"><i class="fab fa-vk"></i></a>
@@ -240,7 +326,7 @@
                             <div class="team-card">
                                 <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/TamaraGeorgievna.jpg" alt="руководитель проектного отдела">
+                                    <img src="main_img/Cast/TamaraGeorgievna.webp" alt="руководитель проектного отдела">
                                 </div>
                                 <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
                                 <p class="team-description">Координирует все строительные процессы и взаимодействие
@@ -251,7 +337,7 @@
                             <div class="team-card">
                                 <h3 class="team-name">Кожемякина Евгения Андреевна</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/EvgeniaAndreevna.jpg" alt="Главный бухгалтер">
+                                    <img src="main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
                                 </div>
                                 <p class="team-position">Главный бухгалтер</p>
                                 <p class="team-description"> Обеспечивает соблюдение законодательства в области
@@ -379,7 +465,7 @@
                             <div class="team-card">
                                 <h3 class="team-name">Чечетко Геннадий</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/Genadi.jpg" alt="Бригадир кровельщиков, фасадчиков">
+                                    <img src="main_img/Cast/Genadi.webp" alt="Бригадир кровельщиков, фасадчиков">
                                 </div>
                                 <p class="team-position">Бригадир кровельщиков, фасадчиков</p>
                                 <p class="team-description">Выполняет руководящую и организационную работу, а также
@@ -390,7 +476,7 @@
                             <div class="team-card">
                                 <h3 class="team-name">Саидохонов Саид</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/Said.jpg" alt="Бригадир в отделке и кладке">
+                                    <img src="main_img/Cast/Said.webp" alt="Бригадир в отделке и кладке">
                                 </div>
                                 <p class="team-position">Бригадир в отделке и кладке</p>
                                 <p class="team-description"> Занимается организацией работы строительной бригады,
@@ -876,7 +962,7 @@
                     <div class="ceo-content">
                         <div class="ceo-image-wrapper" data-aos="fade-right">
                             <div class="ceo-image-bg"></div>
-                            <img src="main_img/Cast/Oleg.jpg" alt="Гриценко Олег Олегович - Руководитель ТопБилдинг" class="ceo-image">
+                            <img src="main_img/Cast/Oleg.webp" alt="Гриценко Олег Олегович - Руководитель ТопБилдинг" class="ceo-image">
                             <div class="ceo-badge">
                                 <i class="fas fa-shield-alt"></i>
                                 <span>15+ лет опыта</span>
@@ -947,6 +1033,7 @@
                                 </a>
                                 <div class="ceo-contacts">
                                     <p><i class="fas fa-phone-alt"></i> +375 (29) 658-29-50</p>
+                                    <p><i class="fas fa-phone-alt"></i> +375 (29) 620-03-14</p>
                                     <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
                                 </div>
                             </div>
@@ -1191,7 +1278,7 @@
                     <!-- Колонка 1: О компании -->
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="/img/logo.webp" alt="ТОПБИЛДИНГ">
+                            <img src="main_img/logo.webp" alt="ТОПБИЛДИНГ">
                         </div>
                         <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                         <div class="footer-payments">
@@ -1234,6 +1321,7 @@
                         <address>
                             <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Строителей, 15</p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375296582950">+375 (29) 658-29-50</a></p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
                             <p><i class="fas fa-envelope"></i> <a
                                     href="mailto:topagrobel@mail.ru">topagrobel@mail.ru</a>
                             </p>
@@ -1293,15 +1381,38 @@
             }, 16);
         }
         
+        // Анимация десятичных счетчиков
+        function animateDecimalCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16); // 60 FPS
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toFixed(1);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = current.toFixed(1);
+                }
+            }, 16);
+        }
+        
         // Запуск анимации счетчиков при загрузке страницы
         document.addEventListener('DOMContentLoaded', function () {
             const counters = document.querySelectorAll('.counter');
+            const decimalCounters = document.querySelectorAll('.counter-decimal');
             
             // Задержка перед началом анимации
             setTimeout(() => {
                 counters.forEach(counter => {
                     const target = parseInt(counter.getAttribute('data-target'));
                     animateCounter(counter, target);
+                });
+                
+                decimalCounters.forEach(counter => {
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    animateDecimalCounter(counter, target);
                 });
             }, 500);
         });
@@ -1550,17 +1661,57 @@
                 });
             });
 
-            window.addEventListener('scroll', function () {
+            // Изменение стиля хедера при скролле
+            let ticking = false;
+            
+            function updateHeader() {
                 const header = document.getElementById('mainHeader');
                 const heroSection = document.querySelector('.hero');
-                const heroHeight = heroSection.offsetHeight;
-
-                if (window.pageYOffset > heroHeight) {
-                    header.classList.add('fixed');
+                
+                if (!header || !heroSection) {
+                    console.error('❌ Header or Hero not found!');
+                    return;
+                }
+                
+                const headerPosition = getComputedStyle(header).position;
+                console.log('Header position style:', headerPosition);
+                
+                const heroRect = heroSection.getBoundingClientRect();
+                const scrollY = window.scrollY || window.pageYOffset;
+                
+                // Когда низ Hero секции уходит за верхний край экрана
+                if (heroRect.bottom <= 0) {
+                    if (!header.classList.contains('scrolled')) {
+                        header.classList.add('scrolled');
+                        console.log('✅ Header scrolled - темнеет, bottom:', heroRect.bottom);
+                    }
                 } else {
-                    header.classList.remove('fixed');
+                    if (header.classList.contains('scrolled')) {
+                        header.classList.remove('scrolled');
+                        console.log('⬅️ Header at hero - светлый, bottom:', heroRect.bottom);
+                    }
+                }
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateHeader);
+                    ticking = true;
                 }
             });
+            
+            // Проверяем при загрузке
+            setTimeout(function() {
+                console.log('✅ Page loaded, checking header...');
+                const header = document.getElementById('mainHeader');
+                if (header) {
+                    console.log('Header found, position:', getComputedStyle(header).position);
+                    console.log('Header top:', getComputedStyle(header).top);
+                }
+                updateHeader();
+            }, 500);
         });
 
         // Функции для работы модального окна
@@ -1630,6 +1781,35 @@
                 closeProjectModal();
             }
         });
+
+        // Управление сайдбаром контактов
+        const contactToggleBtn = document.getElementById('contactToggleBtn');
+        const heroSidebar = document.getElementById('heroSidebar');
+        const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+        if (contactToggleBtn && heroSidebar) {
+            // Открытие сайдбара
+            contactToggleBtn.addEventListener('click', function() {
+                heroSidebar.classList.add('active');
+                contactToggleBtn.classList.add('hidden');
+            });
+
+            // Закрытие сайдбара
+            if (sidebarCloseBtn) {
+                sidebarCloseBtn.addEventListener('click', function() {
+                    heroSidebar.classList.remove('active');
+                    contactToggleBtn.classList.remove('hidden');
+                });
+            }
+
+            // Закрытие по ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
+                    heroSidebar.classList.remove('active');
+                    contactToggleBtn.classList.remove('hidden');
+                }
+            });
+        }
     </script>
 </body>
 
