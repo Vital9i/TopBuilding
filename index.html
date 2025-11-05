@@ -8,11 +8,109 @@
     <title>"ТОПБИЛДИНГ" - Проектирование и строительство в РБ</title>
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="style.css?v=54">
+    <link rel="stylesheet" href="style.css?v=105">
 </head>
 
 <body>
     <div class="maklknknin-content-wrapper">
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-left">
+                        <!-- Логотип компании -->
+                        <a href="#home" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#home">Главная</a>
+                            <ul>
+                                <li><a href="#home">Главная страница</a></li>
+                                <li><a href="#about">Почему выбирают нас</a></li>
+                                <li><a href="#our-projects">Наши проекты</a></li>
+                                <li><a href="#workflow">Как мы работаем</a></li>
+                                <li><a href="#yandex-map">Карта объектов</a></li>
+                                <li><a href="#tour-section">Экскурсия по объектам</a></li>
+                                <li><a href="#ceo-section">Слово руководителя</a></li>
+                                <li><a href="#testimonials">Отзывы клиентов</a></li>
+                                <li><a href="#footer">Контакты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="design/design.html">Проектирование</a>
+                            <ul>
+                                <li><a href="design/design.html#design-types">Индивидуальные решения</a></li>
+                                <li><a href="design/design.html#portfolio">Готовые проекты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="construction/construction.html">Строительство</a>
+                            <ul>
+                                <li><a href="#">Геология и геодезия участка</a></li>
+                                <li><a href="#">Фундамент</a></li>
+                                <li><a href="#">Стены</a></li>
+                                <li><a href="#">Крыша</a></li>
+                                <li><a href="#">Остекление</a></li>
+                                <li><a href="#">Сети</a></li>
+                                <li><a href="#">Внутренняя отделка</a></li>
+                                <li><a href="#">Наружняя отделка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#">Благоустройство территории</a>
+                            <ul>
+                                <li><a href="#">Установка забора</a></li>
+                                <li><a href="#">Укладка тротуарной плитки</a></li>
+                                <li><a href="#">Монтаж ливневок и дренажа</a></li>
+                                <li><a href="#">Устройство газона</a></li>
+                                <li><a href="#">Монтаж автополива</a></li>
+                                <li><a href="#">Искуственные водоемы</a></li>
+                                <li><a href="#">Подпорки для участка</a></li>
+                                <li><a href="#">Освещени участка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#">Ремонт и модернизация</a>
+                            <ul>
+                                <li><a href="#">Административные и производственные объекты</a></li>
+                                <li><a href="#">Ремонт квартир</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#">Партнеры</a>
+                    <a href="about/about.html" target="_blank">О нас</a>
+                    </div>
+                    
+                    <!-- Кнопка контактов -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Контакты</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+        
         <main class="main">
             <section id="home" class="section hero">
                 <!-- Видео-фон -->
@@ -27,18 +125,6 @@
                     <div class="hero-content-wrapper">
                         <!-- Левая часть: основной контент -->
                         <div class="hero-left">
-                            <div class="hero-badge">
-                                <svg class="hero-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
-                                <span class="hero-badge-text">ТОП</span>
-                                <span class="hero-badge-highlight">БИЛДИНГ</span>
-                                <svg class="hero-badge-sparkle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/>
-                                </svg>
-                            </div>
-                            
                             <h1 class="hero-title">
                                 Проектируем и Строим дома вашей мечты
                                 <span class="highlight">под ключ</span>
@@ -116,12 +202,6 @@
                     </div>
                 </div>
 
-                <!-- Кнопка контактов в правом верхнем углу -->
-                <button class="contact-toggle-btn" id="contactToggleBtn">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Контакты</span>
-                </button>
-
                 <!-- Сайдбар контактов (скрыт по умолчанию) -->
                 <div class="hero-sidebar" id="heroSidebar">
                     <div class="hero-contact-card">
@@ -181,97 +261,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Header -->
-                <header class="header" id="mainHeader">
-                <div class="container">
-                    <nav class="nav">
-                        <!-- Логотип компании -->
-                        <a href="#home" class="logo-link">
-                            <div class="header-logo">
-                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
-                                <div class="logo-text">
-                                    <span class="logo-top">ТОП</span>
-                                    <span class="logo-building">БИЛДИНГ</span>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="nav-menu">
-                        <ul>
-                            <li class="active">
-                                <a href="#home">Главная</a>
-                                <ul>
-                                    <li><a href="#home">Главная страница</a></li>
-                                    <li><a href="#our-projects">Наши проекты</a></li>
-                                    <li><a href="#about">Наша компания</a></li>
-                                    <li><a href="#tour-section">Экскурсия по объектам</a></li>
-                                    <li><a href="#services">Услуги</a></li>
-                                    <li><a href="#workflow">Как мы работаем</a></li>
-                                    <li><a href="#yandex-map">Карта готовых объектов</a></li>
-                                    <li><a href="#testimonials">Отзывы клиентов</a></li>
-                                    <li><a href="#footer">Контакты</a></li>
-
-
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="design/design.html">Проектирование</a>
-                                <ul>
-                                    <li><a href="design/design.html#design-types">Индивидуальные решения</a></li>
-                                    <li><a href="design/design.html#portfolio">Готовые проекты</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="construction/construction.html">Строительство</a>
-                                <ul>
-                                    <li><a href="#">Геология и геодезия участка</a></li>
-                                    <li><a href="#">Фундамент</a></li>
-                                    <li><a href="#">Стены</a></li>
-                                    <li><a href="#">Крыша</a></li>
-                                    <li><a href="#">Остекление</a></li>
-                                    <li><a href="#">Сети</a></li>
-                                    <li><a href="#">Внутренняя отделка</a></li>
-                                    <li><a href="#">Наружняя отделка</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">Благоустройство территории</a>
-                                <ul>
-                                    <li><a href="#">Установка забора</a></li>
-                                    <li><a href="#">Укладка тротуарной плитки</a></li>
-                                    <li><a href="#">Монтаж ливневок и дренажа</a></li>
-                                    <li><a href="#">Устройство газона</a></li>
-                                    <li><a href="#">Монтаж автополива</a></li>
-                                    <li><a href="#">Искуственные водоемы</a></li>
-                                    <li><a href="#">Подпорки для участка</a></li>
-                                    <li><a href="#">Освещени участка</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">Ремонт и модернизация</a>
-                                <ul>
-                                    <li><a href="#">Административные и производственные объекты</a></li>
-                                    <li><a href="#">Ремонт квартир</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <a href="#">Партнеры</a>
-                        <a href="#">О нас</a>
-                        </div>
-                    </nav>
-                </div>
-            </header>
             </section>
             
             <section id="about" class="section about">
@@ -280,21 +269,22 @@
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
+                <div class="content-wrapper">
                 <div class="container">
-                    <div class="section-label">
-                        <i class="fas fa-users"></i>
-                        О компании
-                    </div>
                     <h2 class="section-title-center">Почему <span class="highlight">выбирают нас</span></h2>
-                    <p class="section-description">Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
-                        Республике Беларусь. Наш опыт позволяет реализовывать проекты любой сложности с гарантией качества.</p>
-                    <p class="section-description"> Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
-                        услугой
-                        и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
-                        проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
-                        комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с
-                        Заказчиком.
-                    </p>
+                    <div class="about-intro">
+                        <p class="section-description">Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                            Республике Беларусь. Реализуем проекты любой сложности: от загородного домостроения до административных и производственных объектов. Наш опыт позволяет воплощать в жизнь самые смелые архитектурные решения с гарантией качества.</p>
+                        <p class="section-description">Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
+                            услугой
+                            и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
+                            проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
+                            комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с
+                            Заказчиком.
+                        </p>
+                    </div>
+                    
+                    <p class="team-intro-text">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</p>
 
                     <!-- Наша команда -->
                     <div class="team-section">
@@ -308,26 +298,25 @@
                         <!-- Руководство -->
                         <div class="team-cards active" id="management">
                             <div class="team-card">
-                                <h3 class="team-name">Гриценко Олег Олегович</h3>
                                 <div class="team-photo">
                                     <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
                                 </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-telegram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
+                                <h3 class="team-name">Олег Олегович<br>Гриценко</h3>
                                 <p class="team-position">Руководитель организации</p>
+                                <button class="team-contact-btn open-sidebar-btn">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>Контакты</span>
+                                </button>
                                 <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
                                     компанией с
                                     момента основания.</p>
                             </div>
 
                             <div class="team-card">
-                                <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
                                 <div class="team-photo">
                                     <img src="main_img/Cast/TamaraGeorgievna.webp" alt="руководитель проектного отдела">
                                 </div>
+                                <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
                                 <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
                                 <p class="team-description">Координирует все строительные процессы и взаимодействие
                                     между
@@ -335,10 +324,10 @@
                             </div>
 
                             <div class="team-card">
-                                <h3 class="team-name">Кожемякина Евгения Андреевна</h3>
                                 <div class="team-photo">
                                     <img src="main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
                                 </div>
+                                <h3 class="team-name">Евгения Андреевна Кожемякина </h3>
                                 <p class="team-position">Главный бухгалтер</p>
                                 <p class="team-description"> Обеспечивает соблюдение законодательства в области
                                     бухгалтерского и налогового учета, а также участвует в финансовом планировании и
@@ -347,10 +336,10 @@
 
 
                             <div class="team-card">
-                                <h3 class="team-name">Карпеко Анна Арнольдовна</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/AnnaArnoldovna.jpg" alt="Бухгалтер">
+                                    <img src="main_img/Cast/AnnaArnoldovna.webp" alt="Бухгалтер">
                                 </div>
+                                <h3 class="team-name">Анна Арнольдовна Карпеко </h3>
                                 <p class="team-position">Бухгалтер</p>
                                 <p class="team-description">Занимается ведением финансового учета и отчетности компании.
                                 </p>
@@ -359,10 +348,10 @@
 
 
                             <div class="team-card">
-                                <h3 class="team-name">Красулевич Алена Олеговна</h3>
                                 <div class="team-photo">
-                                    <img src="main_img/Cast/AlenaOlegovna.jpg" alt="Бухгалтер">
+                                    <img src="main_img/Cast/AlenaOlegovna.webp" alt="Бухгалтер">
                                 </div>
+                                <h3 class="team-name">Алена Олеговна Красулевич </h3>
                                 <p class="team-position">Инженер ПТО (производственно-технический отдел)</p>
                                 <p class="team-description">Занимается техническим сопровождением и контролем
                                     строительных процессов.</p>
@@ -373,100 +362,45 @@
                         <!-- Архитекторы -->
                         <div class="team-cards" id="architects">
                             <div class="team-card">
-                                <h3 class="team-name">Анна Архитекторова</h3>
                                 <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/63.jpg"
-                                        alt="Анна Архитекторова">
+                                   <a href="https://www.instagram.com/stepan.batykovich/"><img src="main_img/Cast/Stepan.webp" alt="Степан Батькович"></a>
                                 </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
+                                <h3 class="team-name">Степан Батькович</h3>
                                 <p class="team-position">Главный архитектор</p>
+                                <p class="team-description">Жду фото аватара вторую неделю. Разрабатывает концепции домов и контролирует их техническую
+                                    реализацию.</p>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-photo">
+                                   <a href="https://www.instagram.com/stepan.batykovich/"><img src="main_img/Cast/Stepan.webp" alt="Татьяна Батьковна"></a>
+                                </div>
+                                <h3 class="team-name">Татьяна Батьковна</h3>
+                                <p class="team-position">Архитектор</p>
                                 <p class="team-description">Разрабатывает концепции домов и контролирует их техническую
                                     реализацию.</p>
                             </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Дмитрий Чертежов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Дмитрий Чертежов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="team-position">Архитектор</p>
-                                <p class="team-description">Создает рабочие чертежи и 3D-визуализации будущих проектов.
-                                </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Елена Проектова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Елена Проектова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                </div>
-                                <p class="team-position">Проектировщик</p>
-                                <p class="team-description">Разрабатывает инженерные решения и техническую документацию.
-                                </p>
-                            </div>
                         </div>
-
+                          
                         <!-- Дизайнеры -->
                         <div class="team-cards" id="designers">
                             <div class="team-card">
-                                <h3 class="team-name">Ольга Внешкова</h3>
                                 <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ольга Внешкова">
+                                    <img src="main_img/Cast/Angelika_Makarevich.webp" alt="Анжелика Александровна">
                                 </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
-                                <p class="team-position">Дизайнер внешнего вида</p>
-                                <p class="team-description">Создает гармоничный экстерьер и подбирает материалы фасадов.
+                                <h3 class="team-name">Анжелика Александровна</h3>
+                                <p class="team-position">Дизайнер интерьеров</p>
+                                <p class="team-description">Создает гармоничный интерьер помещений и подбирает материалы.
                                 </p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Мария Интерьерова</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Мария Интерьерова">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                </div>
-                                <p class="team-position">Дизайнер интерьера</p>
-                                <p class="team-description">Разрабатывает планировки и стилевые решения внутренних
-                                    пространств.</p>
-                            </div>
-
-                            <div class="team-card">
-                                <h3 class="team-name">Алексей Садовов</h3>
-                                <div class="team-photo">
-                                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Алексей Садовов">
-                                </div>
-                                <div class="team-social">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <p class="team-position">Ландшафтный дизайнер</p>
-                                <p class="team-description">Создает проекты благоустройства территории и озеленения.</p>
                             </div>
                         </div>
 
                         <!-- Строители -->
                         <div class="team-cards" id="builders">
                             <div class="team-card">
-                                <h3 class="team-name">Чечетко Геннадий</h3>
                                 <div class="team-photo">
                                     <img src="main_img/Cast/Genadi.webp" alt="Бригадир кровельщиков, фасадчиков">
                                 </div>
+                                <h3 class="team-name">Чечетко Геннадий</h3>
                                 <p class="team-position">Бригадир кровельщиков, фасадчиков</p>
                                 <p class="team-description">Выполняет руководящую и организационную работу, а также
                                     участвует в выполнении кровельных и фасадных работ.
@@ -474,23 +408,76 @@
                             </div>
 
                             <div class="team-card">
-                                <h3 class="team-name">Саидохонов Саид</h3>
                                 <div class="team-photo">
                                     <img src="main_img/Cast/Said.webp" alt="Бригадир в отделке и кладке">
                                 </div>
+                                <h3 class="team-name">Саидохонов Саид</h3>
                                 <p class="team-position">Бригадир в отделке и кладке</p>
                                 <p class="team-description"> Занимается организацией работы строительной бригады,
                                     распределением задач, контролем качества и соблюдением сроков выполнения работ.</p>
                             </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Andrey_Kyzmich.webp" alt="Геодезист">
+                                </div>
+                                <h3 class="team-name">Андрей Кузьмич</h3>
+                                <p class="team-position">Геодезист</p>
+                                <p class="team-description">Осуществляет геодезический контроль и измерения на объектах строительства.
+                                </p>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Vladimir_Domanovsky.webp" alt="Бригадир">
+                                </div>
+                                <h3 class="team-name">Домановский Владимир</h3>
+                                <p class="team-position">Бригадир</p>
+                                <p class="team-description">Отвечает за своевременное обеспечение бригады необходимыми материалами и оборудованием.
+                                </p>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Andrey_Deredich.webp" alt="Бригадир по благоустройству">
+                                </div>
+                                <h3 class="team-name">Андрей Середич</h3>
+                                <p class="team-position">Бригадир по благоустройству</p>
+                                <p class="team-description">Организует и координирует работы по благоустройству территории.
+                                </p>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="main_img/Cast/Andrey_Kardash.webp" alt="Мастер общестроительных работ">
+                                </div>
+                                <h3 class="team-name">Андрей Кардаш</h3>
+                                <p class="team-position">Мастер общестроительных работ</p>
+                                <p class="team-description">Руководит бригадой или отдельным участком, контролирует соблюдение технологий и безопасности, а также следит за качеством материалов. 
+                                </p>
+                            </div>
+
                         </div>
                     </div>
+                    
+                    <!-- Кнопка "Подробнее о нас" -->
+                    <div class="about-btn-wrapper">
+                        <a href="about/about.html" target="_blank" class="btn about-more-btn">
+                            <i class="fas fa-users"></i>
+                            <span>Подробнее о нас</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
+                </div>
+                <!-- /content-wrapper -->
             </section>
             <section id="our-projects" class="our-projects">
             <!-- Декоративные элементы -->
             <div class="decor decor-left-top"></div>
             <div class="decor decor-right-top"></div>
             <div class="decor decor-right-bottom"></div>
+            <div class="content-wrapper">
             <div class="container">
                 <div class="section-label" data-aos="fade-up">
                     <i class="fas fa-home"></i>
@@ -690,8 +677,11 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <!-- /content-wrapper -->
             </section>
 <section id="workflow" class="section workflow" aria-label="Процесс строительства дома">
+    <div class="content-wrapper">
     <div class="container">
         <div class="workflow-header">
             <h1 class="section-title">Как мы строим дома</h1>
@@ -865,14 +855,19 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- /content-wrapper -->
 </section>
             <section id="yandex-map" class="yandex-map">
+                <div class="content-wrapper">
                 <div class="container">
                     <h2>География выполненых обьектов</h2>
                     <div id="map"
                         style="width: 100%; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     </div>
                 </div>
+                </div>
+                <!-- /content-wrapper -->
             </section>
             <section id="tour-section" class="tour-section"
                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('main_img/exhibition_house.jpg');">
@@ -881,6 +876,7 @@
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
+                <div class="content-wrapper">
                 <div class="container">
                     <div class="tour-intro">
                         <h2 class="section-title">Экскурсия по нашим объектам</h2>
@@ -954,10 +950,13 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <!-- /content-wrapper -->
             </section>
             
             <!-- Секция: Прямое общение с руководителем -->
             <section id="ceo-section" class="section ceo-section">
+                <div class="content-wrapper">
                 <div class="container">
                     <div class="ceo-content">
                         <div class="ceo-image-wrapper" data-aos="fade-right">
@@ -1033,13 +1032,14 @@
                                 </a>
                                 <div class="ceo-contacts">
                                     <p><i class="fas fa-phone-alt"></i> +375 (29) 658-29-50</p>
-                                    <p><i class="fas fa-phone-alt"></i> +375 (29) 620-03-14</p>
                                     <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
+                <!-- /content-wrapper -->
             </section>
 
             <!-- Секция: Отзывы клиентов -->
@@ -1048,6 +1048,7 @@
                 <div class="decor decor-left-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 
+                <div class="content-wrapper">
                 <div class="container">
                     <div class="section-label" data-aos="fade-up">
                         <i class="fas fa-comment-dots"></i>
@@ -1270,6 +1271,8 @@
                         </button>
                     </div>
                 </div>
+                </div>
+                <!-- /content-wrapper -->
             </section>
         </main>
         <footer id="footer" class="footer">
@@ -1278,7 +1281,7 @@
                     <!-- Колонка 1: О компании -->
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="main_img/logo.webp" alt="ТОПБИЛДИНГ">
+                            <img src="/img/logo.webp" alt="ТОПБИЛДИНГ">
                         </div>
                         <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                         <div class="footer-payments">
@@ -1297,7 +1300,7 @@
                             <li><a href="#services">Услуги</a></li>
                             <li><a href="#projects">Проекты</a></li>
                             <li><a href="#mortgage">Ипотека</a></li>
-                            <li><a href="#about">О компании</a></li>
+                            <li><a href="about/about.html" target="_blank">О компании</a></li>
                             <li><a href="#contact">Контакты</a></li>
                         </ul>
                     </div>
@@ -1321,7 +1324,6 @@
                         <address>
                             <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Строителей, 15</p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375296582950">+375 (29) 658-29-50</a></p>
-                            <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
                             <p><i class="fas fa-envelope"></i> <a
                                     href="mailto:topagrobel@mail.ru">topagrobel@mail.ru</a>
                             </p>
@@ -1381,27 +1383,9 @@
             }, 16);
         }
         
-        // Анимация десятичных счетчиков
-        function animateDecimalCounter(element, target, duration = 2000) {
-            const start = 0;
-            const increment = target / (duration / 16); // 60 FPS
-            let current = start;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target.toFixed(1);
-                    clearInterval(timer);
-                } else {
-                    element.textContent = current.toFixed(1);
-                }
-            }, 16);
-        }
-        
         // Запуск анимации счетчиков при загрузке страницы
         document.addEventListener('DOMContentLoaded', function () {
             const counters = document.querySelectorAll('.counter');
-            const decimalCounters = document.querySelectorAll('.counter-decimal');
             
             // Задержка перед началом анимации
             setTimeout(() => {
@@ -1409,16 +1393,40 @@
                     const target = parseInt(counter.getAttribute('data-target'));
                     animateCounter(counter, target);
                 });
-                
-                decimalCounters.forEach(counter => {
-                    const target = parseFloat(counter.getAttribute('data-target'));
-                    animateDecimalCounter(counter, target);
-                });
             }, 500);
         });
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Переключение табов команды
+            const teamTabs = document.querySelectorAll('.team-tab');
+            console.log('Найдено табов:', teamTabs.length);
+            
+            teamTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    console.log('Клик на таб:', tab.getAttribute('data-team'));
+                    
+                    // Убираем active у всех табов
+                    teamTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Добавляем active текущему табу
+                    tab.classList.add('active');
+                    
+                    // Скрываем все карточки
+                    const allCards = document.querySelectorAll('.team-cards');
+                    allCards.forEach(cards => cards.classList.remove('active'));
+                    
+                    // Показываем нужные карточки
+                    const teamId = tab.getAttribute('data-team');
+                    const targetCards = document.getElementById(teamId);
+                    console.log('Показываем карточки:', teamId, targetCards);
+                    
+                    if (targetCards) {
+                        targetCards.classList.add('active');
+                    }
+                });
+            });
+        
             // Первый блок кода для прогресс-бара (оставляем без изменений)
             const steps = document.querySelectorAll('.progress-step');
             const cards = document.querySelectorAll('.workflow-card');
@@ -1646,50 +1654,22 @@
                 });
             }
 
-            // Остальные обработчики событий (оставляем без изменений)
-            document.querySelectorAll('.team-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    document.querySelectorAll('.team-tab').forEach(t => {
-                        t.classList.remove('active');
-                    });
-                    tab.classList.add('active');
-                    document.querySelectorAll('.team-cards').forEach(cards => {
-                        cards.classList.remove('active');
-                    });
-                    const teamId = tab.getAttribute('data-team');
-                    document.getElementById(teamId).classList.add('active');
-                });
-            });
-
             // Изменение стиля хедера при скролле
             let ticking = false;
             
             function updateHeader() {
                 const header = document.getElementById('mainHeader');
-                const heroSection = document.querySelector('.hero');
-                
-                if (!header || !heroSection) {
-                    console.error('❌ Header or Hero not found!');
-                    return;
-                }
-                
-                const headerPosition = getComputedStyle(header).position;
-                console.log('Header position style:', headerPosition);
-                
-                const heroRect = heroSection.getBoundingClientRect();
                 const scrollY = window.scrollY || window.pageYOffset;
                 
-                // Когда низ Hero секции уходит за верхний край экрана
-                if (heroRect.bottom <= 0) {
-                    if (!header.classList.contains('scrolled')) {
-                        header.classList.add('scrolled');
-                        console.log('✅ Header scrolled - темнеет, bottom:', heroRect.bottom);
-                    }
+                if (!header) return;
+                
+                // После прокрутки на 50% экрана добавляем класс scrolled (темнее фон)
+                const scrollThreshold = window.innerHeight * 0.5;
+                
+                if (scrollY > scrollThreshold) {
+                    header.classList.add('scrolled');
                 } else {
-                    if (header.classList.contains('scrolled')) {
-                        header.classList.remove('scrolled');
-                        console.log('⬅️ Header at hero - светлый, bottom:', heroRect.bottom);
-                    }
+                    header.classList.remove('scrolled');
                 }
                 
                 ticking = false;
@@ -1703,15 +1683,7 @@
             });
             
             // Проверяем при загрузке
-            setTimeout(function() {
-                console.log('✅ Page loaded, checking header...');
-                const header = document.getElementById('mainHeader');
-                if (header) {
-                    console.log('Header found, position:', getComputedStyle(header).position);
-                    console.log('Header top:', getComputedStyle(header).top);
-                }
-                updateHeader();
-            }, 500);
+            updateHeader();
         });
 
         // Функции для работы модального окна
@@ -1781,35 +1753,72 @@
                 closeProjectModal();
             }
         });
-
+    </script>
+    
+    <script>
+        // Глобальная функция открытия сайдбара (вне DOMContentLoaded)
+        function openContactSidebar() {
+            console.log('openContactSidebar вызвана');
+            const heroSidebar = document.getElementById('heroSidebar');
+            console.log('heroSidebar:', heroSidebar);
+            if (heroSidebar) {
+                heroSidebar.classList.add('active');
+                console.log('Сайдбар открыт');
+            } else {
+                console.error('heroSidebar не найден!');
+            }
+        }
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
         // Управление сайдбаром контактов
         const contactToggleBtn = document.getElementById('contactToggleBtn');
         const heroSidebar = document.getElementById('heroSidebar');
         const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
 
+        // Открытие сайдбара из кнопок в карточках
+        document.querySelectorAll('.open-sidebar-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (heroSidebar) {
+                    heroSidebar.classList.add('active');
+                }
+            });
+        });
+
         if (contactToggleBtn && heroSidebar) {
             // Открытие сайдбара
-            contactToggleBtn.addEventListener('click', function() {
+            contactToggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 heroSidebar.classList.add('active');
-                contactToggleBtn.classList.add('hidden');
             });
 
             // Закрытие сайдбара
             if (sidebarCloseBtn) {
                 sidebarCloseBtn.addEventListener('click', function() {
                     heroSidebar.classList.remove('active');
-                    contactToggleBtn.classList.remove('hidden');
                 });
             }
+
+            // Закрытие по клику вне сайдбара
+            document.addEventListener('click', function(e) {
+                if (heroSidebar.classList.contains('active') && 
+                    !heroSidebar.contains(e.target) && 
+                    e.target !== contactToggleBtn && 
+                    !contactToggleBtn.contains(e.target)) {
+                    heroSidebar.classList.remove('active');
+                }
+            });
 
             // Закрытие по ESC
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
                     heroSidebar.classList.remove('active');
-                    contactToggleBtn.classList.remove('hidden');
                 }
             });
         }
+        });
     </script>
 </body>
 
