@@ -2190,9 +2190,18 @@ html {
         padding: 20px;
         background-color: #1A1D25;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         border-bottom: 1px solid var(--accent-color);
+        position: relative;
+    }
+    
+    .modal-header h3 {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        text-align: center;
+        flex: 1;
     }
     
     .modal-tabs {
@@ -2259,14 +2268,31 @@ html {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(0,0,0,0.5);
+        background: transparent;
         color: white;
         border: none;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        font-size: 18px;
+        font-size: 20px;
         cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+    
+    .slider-prev:hover, .slider-next:hover {
+        background: var(--gradient-primary);
+        border: 2px solid var(--secondary-color);
+        color: var(--dark-color);
+        transform: translateY(-50%) scale(1.15);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    }
+    
+    .slider-prev:active, .slider-next:active {
+        transform: translateY(-50%) scale(1.05);
     }
     
     .slider-prev {
@@ -2276,9 +2302,186 @@ html {
     .slider-next {
         right: 20px;
     }
+
+/* Большая кнопка "Назад" в модальном окне */
+.modal-header .modal-back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 20px;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.modal-back-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-back-btn:hover {
+    transform: translateX(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    background: var(--gradient-primary);
+    border: 2px solid var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.modal-back-btn:hover::before {
+    opacity: 1;
+}
+
+.modal-back-btn:active {
+    transform: translateX(-1px) scale(1.02);
+}
+
+.modal-back-btn i {
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.modal-back-btn:hover i {
+    transform: translateX(-5px);
+}
+
+.modal-back-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Кнопка закрытия модального окна (крестик) */
+.modal-close-btn {
+    position: absolute;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: var(--gradient-primary);
+    border: 2px solid var(--secondary-color);
+    color: var(--dark-color);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+.modal-close-btn:active {
+    transform: rotate(90deg) scale(1.05);
+}
+
+.modal-close-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Полноэкранный просмотр изображения */
+.image-fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-fullscreen img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+}
+
+.fullscreen-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.fullscreen-close-btn:hover {
+    background: var(--gradient-primary);
+    border: 2px solid var(--secondary-color);
+    color: var(--dark-color);
+    transform: rotate(90deg) scale(1.2);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+.fullscreen-close-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Адаптивность для кнопок в header */
+@media (max-width: 768px) {
+    .modal-header .modal-back-btn {
+        position: static;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+    }
+    
+    .modal-close-btn {
+        position: static;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        margin-left: 10px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
 /* Projects Section */
 .our-projects {
-  padding: 80px 0;
+  padding: 40px 0 80px 0;
   background-color: var(--background-color);
   position: relative;
 }
@@ -2838,26 +3041,20 @@ position: relative;
 /* Стили для секции "Процесс строительства дома" */
 .workflow {
     position: relative;
-    padding: 5rem 0;
-    background-color: #0a192f;
+    padding: 3rem 0;
+    background: rgba(22, 24, 34, 0.95);
     color: #fff;
     overflow: hidden;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .workflow-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .section-title {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -2866,22 +3063,291 @@ position: relative;
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: #64ffda;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
     border-radius: 2px;
 }
 
 .section-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.5rem;
     opacity: 0.9;
     line-height: 1.6;
     color: #ccd6f6;
+}
+
+/* Кнопки переключения этапов */
+.workflow-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.workflow-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.workflow-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 75px;
+    flex-shrink: 0;
+}
+
+.workflow-tab i {
+    font-size: 1.2rem;
+}
+
+.workflow-tab span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.workflow-tab:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.workflow-tab.active {
+    background: var(--gradient-primary);
+    border-color: var(--secondary-color);
+    color: var(--dark-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Слайдер этапов */
+.workflow-slider {
+    position: relative;
+    min-height: 400px;
+}
+
+/* Стрелки навигации */
+.workflow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.workflow-arrow:hover {
+    background: var(--gradient-primary);
+    border: 2px solid var(--secondary-color);
+    color: var(--dark-color);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.workflow-arrow-prev {
+    left: -60px;
+}
+
+.workflow-arrow-next {
+    right: -60px;
+}
+
+.workflow-arrow.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.workflow-slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workflow-slide.active {
+    display: grid;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.workflow-slide-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.workflow-slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.workflow-slide-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.workflow-slide-title {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.workflow-slide-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.workflow-slide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.workflow-slide-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.workflow-slide-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.workflow-slide-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.workflow-slide-time i {
+    font-size: 1.1rem;
+}
+
+/* Адаптивность для workflow */
+@media (max-width: 992px) {
+    .workflow-slide {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .workflow-slide-image {
+        height: 250px;
+    }
+    
+    .workflow-arrow-prev {
+        left: 10px;
+    }
+    
+    .workflow-arrow-next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .workflow-tabs {
+        gap: 6px;
+    }
+    
+    .workflow-tab {
+        min-width: 70px;
+        padding: 10px 12px;
+    }
+    
+    .workflow-tab i {
+        font-size: 1.1rem;
+    }
+    
+    .workflow-tab span {
+        font-size: 0.65rem;
+    }
+    
+    .workflow-slide {
+        padding: 20px;
+    }
+    
+    .workflow-slide-title {
+        font-size: 1.4rem;
+    }
+    
+    .workflow-slide-text {
+        font-size: 0.9rem;
+    }
+    
+    .workflow-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .workflow-arrow-prev {
+        left: 5px;
+    }
+    
+    .workflow-arrow-next {
+        right: 5px;
+    }
 }
 
 .workflow-grid {
@@ -2919,12 +3385,7 @@ position: relative;
     background-position: center;
     z-index: 1;
     filter: brightness(0.6);
-}
-
-.card-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: none;
 }
 
 .card-content {
@@ -3038,8 +3499,8 @@ position: relative;
     background-color: #3e2723;
 }
 
-/* Фоновые изображения для карточек */
-.card-consultation .card-bg {
+/* Фоновые изображения для карточек - ОТКЛЮЧЕНЫ */
+/* .card-consultation .card-bg {
     background-image: url('main_img/workFlow/consyltacion.jpg');
 }
 
@@ -3069,7 +3530,7 @@ position: relative;
 
 .card-finishing .card-bg {
     background-image: url('https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-}
+} */
 
 
 

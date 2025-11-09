@@ -479,26 +479,43 @@
             <div class="decor decor-right-bottom"></div>
             <div class="content-wrapper">
             <div class="container">
-                <div class="section-label" data-aos="fade-up">
-                    <i class="fas fa-home"></i>
-                    Наши проекты
-                </div>
-                <h2 class="section-title-center" data-aos="fade-up" data-aos-delay="100">Популярные <span class="highlight">проекты домов</span></h2>
-                <p class="section-description" data-aos="fade-up" data-aos-delay="200">5 популярных архитектурных стилей с гарантией 10 лет</p>
+                <h2 class="section-title-center" style="margin-top: 0;">Популярные проекты домов <span class="highlight">2025</span></h2>
+                <p class="section-description">Современные архитектурные решения для вашего комфортного будущего</p>
                 <div class="projects-grid">
-                    <!-- Классический стиль -->
-                    <div class="project-card" onclick="openProjectModal('classic')" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- Индивидуальный проект -->
+                    <div class="project-card">
                         <div class="project-image">
-                            <img src="main_img/Project1/project1.jpeg"
+                            <img src="main_img/individyal_project.webp"
+                                alt="Индивидуальный проект" loading="lazy">
+                            <div class="project-badge" style="background: #D4AF37;">Индивидуальный проект</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Индивидуальный проект</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 60-500 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: от 7 мес</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 82 000 руб</span>
+                                <a href="design/design.html" class="btn-details" style="text-decoration: none;">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Классический стиль -->
+                    <div class="project-card" onclick="openProjectModal('classic')">
+                        <div class="project-image">
+                            <img src="main_img/projects/Classic/classic.webp"
                                 alt="Классический коттедж" loading="lazy">
                             <div class="project-badge" style="background: #8e44ad;">Классика</div>
                         </div>
                         <div class="project-info">
                             <h3>Классический коттедж</h3>
                             <ul class="project-features">
-                                <li><i class="fas fa-ruler-combined"></i> 150-250 м²</li>
-                                <li><i class="fas fa-calendar-alt"></i> Срок: 5-7 мес</li>
-                                <li><i class="fas fa-palette"></i> Кирпич/штукатурка</li>
+                                <li><i class="fas fa-ruler-combined"></i> 60-350 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 9-12 мес</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 85 000 руб</span>
@@ -511,59 +528,28 @@
                         <div class="modal-overlay" onclick="closeProjectModal()"></div>
                         <div class="modal-content">
                             <div class="modal-header">
+                                <button class="modal-back-btn" onclick="closeProjectModal()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Назад
+                                </button>
                                 <h3>Классический коттедж</h3>
-                                <div class="modal-tabs">
-                                    <button class="modal-tab active" data-tab="facade">Фасад здания</button>
-                                    <button class="modal-tab" data-tab="interior">Внутренняя отделка</button>
-                                    <button class="modal-tab" data-tab="layout">Планировка</button>
-                                </div>
-                                <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+                                <button class="modal-close-btn" onclick="closeProjectModal()">
+                                    <i class="fas fa-times"></i>
+                                </button>
                             </div>
 
                             <div class="modal-body">
                                 <!-- Слайдер для фасадов -->
                                 <div class="modal-slider active" data-tab-content="facade">
                                     <div class="slider-container">
-                                        <img src="main_img/Project1/project1.jpeg"
-                                            alt="Фасад 1">
-                                        <img src="main_img/Project1/project2.jpeg"
-                                            alt="Фасад 2">
-                                        <img src="main_img/Project1/project3.jpeg"
-                                            alt="Фасад 3">
-                                        <img src="main_img/Project1/project4.jpeg"
-                                            alt="Фасад 4">
-                                    </div>
-                                    <button class="slider-prev">&lt;</button>
-                                    <button class="slider-next">&gt;</button>
-                                </div>
-
-                                <!-- Слайдер для интерьеров -->
-                                <div class="modal-slider" data-tab-content="interior">
-                                    <div class="slider-container">
-                                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 1">
-                                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 2">
-                                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 3">
-                                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 4">
-                                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 5">
-                                        <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 6">
-                                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80"
-                                            alt="Интерьер 7">
-                                    </div>
-                                    <button class="slider-prev">&lt;</button>
-                                    <button class="slider-next">&gt;</button>
-                                </div>
-
-                                <!-- Слайдер для планировок -->
-                                <div class="modal-slider" data-tab-content="layout">
-                                    <div class="slider-container">
-                                        <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 1">
-                                        <img src="/main_img/Plan-doma-10x10.jpg" alt="Планировка 2">
+                                        <img src="main_img/projects/Classic/classic1.webp"
+                                            alt="Фасад 1" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                        <img src="main_img/projects/Classic/classic2.webp"
+                                            alt="Фасад 2" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                        <img src="main_img/projects/Classic/classic3.webp"
+                                            alt="Фасад 3" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                        <img src="main_img/projects/Classic/classic_plan.webp"
+                                            alt="Фасад 4" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
                                     </div>
                                     <button class="slider-prev">&lt;</button>
                                     <button class="slider-next">&gt;</button>
@@ -572,31 +558,18 @@
                         </div>
                     </div>
 
-                    <!-- Барнхаус -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                alt="Дом в стиле барнхаус" loading="lazy">
-                            <div class="project-badge" style="background: #e67e22;">Барнхаус</div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Современный барнхаус</h3>
-                            <ul class="project-features">
-                                <li><i class="fas fa-ruler-combined"></i> 120-200 м²</li>
-                                <li><i class="fas fa-calendar-alt"></i> Срок: 4-6 мес</li>
-                                <li><i class="fas fa-palette"></i> Дерево/металл</li>
-                            </ul>
-                            <div class="project-footer">
-                                <span class="project-price">от 78 000 руб</span>
-                                <button class="btn-details">Пример проекта</button>
-                            </div>
-                        </div>
+                    <!-- Полноэкранный просмотр изображения -->
+                    <div id="imageFullscreen" class="image-fullscreen" onclick="closeImageFullscreen()">
+                        <button class="fullscreen-close-btn" onclick="closeImageFullscreen()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img id="fullscreenImage" src="" alt="" style="cursor: zoom-out;">
                     </div>
 
                     <!-- Шале -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-card" onclick="openProjectModal('chalet')">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                            <img src="main_img/projects/shale_black/shale_black.webp"
                                 alt="Дом в стиле шале" loading="lazy">
                             <div class="project-badge" style="background: #16a085;">Шале</div>
                         </div>
@@ -605,40 +578,61 @@
                             <ul class="project-features">
                                 <li><i class="fas fa-ruler-combined"></i> 180-300 м²</li>
                                 <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                <li><i class="fas fa-palette"></i> Дерево/камень</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 110 000 руб</span>
-                                <button class="btn-details">Пример проекта</button>
+                                <button class="btn-details" onclick="openProjectModal('chalet')">Подробнее</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Минимализм -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- Барнхаус -->
+                    <div class="project-card" onclick="openProjectModal('barnhouse')">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
-                                alt="Минималистичный дом" loading="lazy">
-                            <div class="project-badge" style="background: #34495e;">Минимализм</div>
+                            <img src="https://via.placeholder.com/600x400?text=Барнхаус"
+                                alt="Дом в стиле барнхаус" loading="lazy">
+                            <div class="project-badge" style="background: #e67e22;">Барнхаус</div>
                         </div>
                         <div class="project-info">
-                            <h3>Минималистичный дом</h3>
+                            <h3>Современный барнхаус</h3>
+                            <ul class="project-features">
+                                <li><i class="fas fa-ruler-combined"></i> 120-200 м²</li>
+                                <li><i class="fas fa-calendar-alt"></i> Срок: 4-6 мес</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                            </ul>
+                            <div class="project-footer">
+                                <span class="project-price">от 78 000 руб</span>
+                                <button class="btn-details" onclick="openProjectModal('barnhouse')">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Классический со вторым светом -->
+                    <div class="project-card" onclick="openProjectModal('minimalism')">
+                        <div class="project-image">
+                            <img src="main_img/projects/Classic_2/project1.webp"
+                                alt="Классический со вторым светом" loading="lazy">
+                            <div class="project-badge" style="background: #8e44ad;">Классика</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Классический со вторым светом</h3>
                             <ul class="project-features">
                                 <li><i class="fas fa-ruler-combined"></i> 100-180 м²</li>
                                 <li><i class="fas fa-calendar-alt"></i> Срок: 3-5 мес</li>
-                                <li><i class="fas fa-palette"></i> Бетон/стекло</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 95 000 руб</span>
-                                <button class="btn-details">Пример проекта</button>
+                                <button class="btn-details" onclick="openProjectModal('minimalism')">Подробнее</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Скандинавский -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-card" onclick="openProjectModal('scandinavian')">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60"
+                            <img src="https://via.placeholder.com/600x400?text=Скандинавский"
                                 alt="Скандинавский дом" loading="lazy">
                             <div class="project-badge" style="background: #3498db;">Сканди</div>
                         </div>
@@ -647,34 +641,15 @@
                             <ul class="project-features">
                                 <li><i class="fas fa-ruler-combined"></i> 140-220 м²</li>
                                 <li><i class="fas fa-calendar-alt"></i> Срок: 5-6 мес</li>
-                                <li><i class="fas fa-palette"></i> Дерево/штукатурка</li>
+                                <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 89 000 руб</span>
-                                <button class="btn-details">Пример проекта</button>
+                                <button class="btn-details" onclick="openProjectModal('scandinavian')">Подробнее</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Современный -->
-                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="project-image">
-                            <img src="main_img/home.jpg" alt="Современный дом" loading="lazy">
-                            <div class="project-badge" style="background: #9b59b6;">Ваш индивидуальный проект</div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Ваш индивидуальный проект</h3>
-                            <ul class="project-features">
-                                <li><i class="fas fa-ruler-combined"></i> 50-240 м²</li>
-                                <li><i class="fas fa-calendar-alt"></i> Срок: 6-8 мес</li>
-                                <li><i class="fas fa-palette"></i> на выбор</li>
-                            </ul>
-                            <div class="project-footer">
-                                <span class="project-price">от 120 000 руб</span>
-                                <button class="btn-details">Пример проекта</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             </div>
@@ -688,170 +663,208 @@
             <p class="section-subtitle">9 ключевых этапов от идеи до заселения</p>
         </div>
 
-        <div class="workflow-grid">
-            <!-- Этап 1 -->
-            <div class="workflow-card card-consultation" data-step="1">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">01</div>
-                    <h3 class="card-title">Консультация</h3>
-                    <div class="card-description">
-                        <p>Обсуждение ваших пожеланий, бюджета и сроков. Выезд специалиста на участок.</p>
-                        <ul>
-                            <li>Бесплатный выезд</li>
-                            <li>3 варианта планировки</li>
-                            <li>Предварительный расчет</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">1-3 дня</div>
+        <!-- Кнопки переключения этапов -->
+        <div class="workflow-tabs">
+            <button class="workflow-tab active" data-step="1">
+                <i class="fas fa-comments"></i>
+                <span>Консультация</span>
+            </button>
+            <button class="workflow-tab" data-step="2">
+                <i class="fas fa-drafting-compass"></i>
+                <span>Проектирование</span>
+            </button>
+            <button class="workflow-tab" data-step="3">
+                <i class="fas fa-file-contract"></i>
+                <span>Договор</span>
+            </button>
+            <button class="workflow-tab" data-step="4">
+                <i class="fas fa-tractor"></i>
+                <span>Подготовка</span>
+            </button>
+            <button class="workflow-tab" data-step="5">
+                <i class="fas fa-layer-group"></i>
+                <span>Фундамент</span>
+            </button>
+            <button class="workflow-tab" data-step="6">
+                <i class="fas fa-building"></i>
+                <span>Стены и крыша</span>
+            </button>
+            <button class="workflow-tab" data-step="7">
+                <i class="fas fa-plug"></i>
+                <span>Коммуникации</span>
+            </button>
+            <button class="workflow-tab" data-step="8">
+                <i class="fas fa-paint-roller"></i>
+                <span>Отделка</span>
+            </button>
+            <button class="workflow-tab" data-step="9">
+                <i class="fas fa-home"></i>
+                <span>Заселение</span>
+            </button>
+        </div>
+
+        <!-- Слайдер с этапами -->
+        <div class="workflow-slider">
+            <!-- Стрелка назад -->
+            <button class="workflow-arrow workflow-arrow-prev" onclick="changeWorkflowStep(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Стрелка вперед -->
+            <button class="workflow-arrow workflow-arrow-next" onclick="changeWorkflowStep(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Этап 1: Консультация -->
+            <div class="workflow-slide active" data-step="1">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Консультация" alt="Консультация">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Консультация</h3>
+                    <p class="workflow-slide-text">Обсуждение ваших пожеланий, бюджета и сроков. Выезд специалиста на участок.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Бесплатный выезд</li>
+                        <li>3 варианта планировки</li>
+                        <li>Предварительный расчет</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 1-3 дня</div>
                 </div>
             </div>
 
-            <!-- Этап 2 -->
-            <div class="workflow-card card-design" data-step="2">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">02</div>
-                    <h3 class="card-title">Проектирование</h3>
-                    <div class="card-description">
-                        <p>Разработка индивидуального проекта с 3D-визуализацией и технической документацией.</p>
-                        <ul>
-                            <li>3D-визуализация</li>
-                            <li>Инженерные расчеты</li>
-                            <li>Помощь в согласовании</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">2-4 недели</div>
+            <!-- Этап 2: Проектирование -->
+            <div class="workflow-slide" data-step="2">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Проектирование" alt="Проектирование">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Проектирование</h3>
+                    <p class="workflow-slide-text">Разработка индивидуального проекта с 3D-визуализацией и технической документацией.</p>
+                    <ul class="workflow-slide-list">
+                        <li>3D-визуализация</li>
+                        <li>Инженерные расчеты</li>
+                        <li>Помощь в согласовании</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 2-4 недели</div>
                 </div>
             </div>
 
-            <!-- Этап 3 -->
-            <div class="workflow-card card-contract" data-step="3">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">03</div>
-                    <h3 class="card-title">Договор</h3>
-                    <div class="card-description">
-                        <p>Подписание договора с фиксацией сроков, стоимости и всех условий строительства.</p>
-                        <ul>
-                            <li>Прозрачная смета</li>
-                            <li>Фиксированная цена</li>
-                            <li>Поэтапная оплата</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">1-2 дня</div>
+            <!-- Этап 3: Договор -->
+            <div class="workflow-slide" data-step="3">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Договор" alt="Договор">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Договор</h3>
+                    <p class="workflow-slide-text">Подписание договора с фиксацией сроков, стоимости и всех условий строительства.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Прозрачная смета</li>
+                        <li>Фиксированная цена</li>
+                        <li>Поэтапная оплата</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 1-2 дня</div>
                 </div>
             </div>
 
-            <!-- Этап 4 -->
-            <div class="workflow-card card-preparation" data-step="4">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">04</div>
-                    <h3 class="card-title">Подготовка участка</h3>
-                    <div class="card-description">
-                        <p>Расчистка территории, разметка, подведение временных коммуникаций.</p>
-                        <ul>
-                            <li>Вывоз мусора</li>
-                            <li>Геодезическая разметка</li>
-                            <li>Организация подъезда</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">3-7 дней</div>
+            <!-- Этап 4: Подготовка участка -->
+            <div class="workflow-slide" data-step="4">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Подготовка+участка" alt="Подготовка участка">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Подготовка участка</h3>
+                    <p class="workflow-slide-text">Расчистка территории, разметка, подведение временных коммуникаций.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Вывоз мусора</li>
+                        <li>Геодезическая разметка</li>
+                        <li>Организация подъезда</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 3-7 дней</div>
                 </div>
             </div>
 
-            <!-- Этап 5 -->
-            <div class="workflow-card card-foundation" data-step="5">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">05</div>
-                    <h3 class="card-title">Фундамент</h3>
-                    <div class="card-description">
-                        <p>Земляные работы и устройство фундамента согласно проекту и нормам безопасности.</p>
-                        <ul>
-                            <li>Геодезическая разметка</li>
-                            <li>Гидроизоляция</li>
-                            <li>Контроль качества</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">2-4 недели</div>
+            <!-- Этап 5: Фундамент -->
+            <div class="workflow-slide" data-step="5">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Фундамент" alt="Фундамент">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Фундамент</h3>
+                    <p class="workflow-slide-text">Земляные работы и устройство фундамента согласно проекту и нормам безопасности.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Геодезическая разметка</li>
+                        <li>Гидроизоляция</li>
+                        <li>Контроль качества</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 2-4 недели</div>
                 </div>
             </div>
 
-            <!-- Этап 6 -->
-            <div class="workflow-card card-walls" data-step="6">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">06</div>
-                    <h3 class="card-title">Стены и крыша</h3>
-                    <div class="card-description">
-                        <p>Возведение несущих конструкций, перекрытий и кровельной системы.</p>
-                        <ul>
-                            <li>Контроль геометрии</li>
-                            <li>Качественные материалы</li>
-                            <li>Теплоизоляция</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">4-8 недель</div>
+            <!-- Этап 6: Стены и крыша -->
+            <div class="workflow-slide" data-step="6">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Стены+и+крыша" alt="Стены и крыша">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Стены и крыша</h3>
+                    <p class="workflow-slide-text">Возведение несущих конструкций, перекрытий и кровельной системы.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Контроль геометрии</li>
+                        <li>Качественные материалы</li>
+                        <li>Теплоизоляция</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 4-8 недель</div>
                 </div>
             </div>
 
-            <!-- Этап 7 -->
-            <div class="workflow-card card-engineering" data-step="7">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">07</div>
-                    <h3 class="card-title">Коммуникации</h3>
-                    <div class="card-description">
-                        <p>Монтаж всех инженерных систем: электрики, водоснабжения, отопления.</p>
-                        <ul>
-                            <li>Скрытая разводка</li>
-                            <li>Сертифицированные материалы</li>
-                            <li>Тестирование систем</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">2-3 недели</div>
+            <!-- Этап 7: Коммуникации -->
+            <div class="workflow-slide" data-step="7">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Коммуникации" alt="Коммуникации">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Коммуникации</h3>
+                    <p class="workflow-slide-text">Монтаж всех инженерных систем: электрики, водоснабжения, отопления.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Скрытая разводка</li>
+                        <li>Сертифицированные материалы</li>
+                        <li>Тестирование систем</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 2-3 недели</div>
                 </div>
             </div>
 
-            <!-- Этап 8 -->
-            <div class="workflow-card card-finishing" data-step="8">
-                <div class="card-bg"></div>
-                <div class="card-content">
-                    <div class="card-number">08</div>
-                    <h3 class="card-title">Отделка</h3>
-                    <div class="card-description">
-                        <p>Внутренняя и внешняя отделка, благоустройство территории.</p>
-                        <ul>
-                            <li>Качественные материалы</li>
-                            <li>Авторский надзор</li>
-                            <li>Гарантия на работы</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">4-6 недель</div>
+            <!-- Этап 8: Отделка -->
+            <div class="workflow-slide" data-step="8">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Отделка" alt="Отделка">
+                </div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Отделка</h3>
+                    <p class="workflow-slide-text">Внутренняя и внешняя отделка, благоустройство территории.</p>
+                    <ul class="workflow-slide-list">
+                        <li>Качественные материалы</li>
+                        <li>Авторский надзор</li>
+                        <li>Гарантия на работы</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 4-6 недель</div>
                 </div>
             </div>
 
-            <!-- Этап 9 -->
-            <div class="workflow-card card-movein" data-step="9">
-                <div class="card-bg">
-                    <video autoplay muted loop playsinline>
-                        <source src="/main_video/5998977_House_Home_1280x720.mp4">
-                    </video>
+            <!-- Этап 9: Заселение -->
+            <div class="workflow-slide" data-step="9">
+                <div class="workflow-slide-image">
+                    <img src="https://via.placeholder.com/600x400?text=Заселение" alt="Заселение">
                 </div>
-                <div class="card-content">
-                    <div class="card-number">09</div>
-                    <h3 class="card-title">Заселение</h3>
-                    <div class="card-description">
-                        <p>Торжественная сдача объекта, передача документов и гарантий. Ваш новый дом готов!</p>
-                        <ul>
-                            <li>Финальный осмотр</li>
-                            <li>Инструктаж по эксплуатации</li>
-                            <li>Гарантийное обслуживание</li>
-                        </ul>
-                    </div>
-                    <div class="card-time">1 день</div>
+                <div class="workflow-slide-content">
+                    <h3 class="workflow-slide-title">Заселение</h3>
+                    <p class="workflow-slide-text">Торжественная сдача объекта, передача документов и гарантий. Ваш новый дом готов!</p>
+                    <ul class="workflow-slide-list">
+                        <li>Финальный осмотр</li>
+                        <li>Инструктаж по эксплуатации</li>
+                        <li>Гарантийное обслуживание</li>
+                    </ul>
+                    <div class="workflow-slide-time"><i class="fas fa-clock"></i> 1 день</div>
                 </div>
             </div>
         </div>
@@ -1427,42 +1440,57 @@
                 });
             });
         
-            // Первый блок кода для прогресс-бара (оставляем без изменений)
-            const steps = document.querySelectorAll('.progress-step');
-            const cards = document.querySelectorAll('.workflow-card');
-            const progressFill = document.querySelector('.progress-fill');
-            const currentStepIndicator = document.querySelector('.current-step');
+            // Переключение этапов workflow
+            const workflowTabs = document.querySelectorAll('.workflow-tab');
+            const workflowSlides = document.querySelectorAll('.workflow-slide');
+            let currentStep = 1;
+            const totalSteps = 9;
 
-            function showStep(stepNumber) {
-                steps.forEach((step, index) => {
-                    if (index < stepNumber) {
-                        step.classList.add('active');
-                    } else {
-                        step.classList.remove('active');
-                    }
-                });
-
-                const progressWidth = (stepNumber / steps.length) * 100;
-                progressFill.style.width = `${progressWidth}%`;
-                currentStepIndicator.textContent = stepNumber;
-
-                cards.forEach(card => {
-                    if (card.dataset.step == stepNumber) {
-                        card.classList.add('active');
-                    } else {
-                        card.classList.remove('active');
-                    }
-                });
+            function updateWorkflowStep(step) {
+                currentStep = step;
+                
+                // Убираем active у всех кнопок и слайдов
+                workflowTabs.forEach(t => t.classList.remove('active'));
+                workflowSlides.forEach(s => s.classList.remove('active'));
+                
+                // Добавляем active к нужным элементам
+                document.querySelector(`.workflow-tab[data-step="${step}"]`).classList.add('active');
+                document.querySelector(`.workflow-slide[data-step="${step}"]`).classList.add('active');
+                
+                // Управляем видимостью стрелок
+                const prevArrow = document.querySelector('.workflow-arrow-prev');
+                const nextArrow = document.querySelector('.workflow-arrow-next');
+                
+                if (currentStep === 1) {
+                    prevArrow.classList.add('hidden');
+                } else {
+                    prevArrow.classList.remove('hidden');
+                }
+                
+                if (currentStep === totalSteps) {
+                    nextArrow.classList.add('hidden');
+                } else {
+                    nextArrow.classList.remove('hidden');
+                }
             }
 
-            steps.forEach(step => {
-                step.addEventListener('click', function () {
-                    const stepNumber = parseInt(this.dataset.step);
-                    showStep(stepNumber);
+            workflowTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const step = parseInt(this.getAttribute('data-step'));
+                    updateWorkflowStep(step);
                 });
             });
 
-            showStep(1);
+            // Функция для переключения стрелками
+            window.changeWorkflowStep = function(direction) {
+                let newStep = currentStep + direction;
+                if (newStep >= 1 && newStep <= totalSteps) {
+                    updateWorkflowStep(newStep);
+                }
+            };
+            
+            // Инициализация
+            updateWorkflowStep(1);
 
             // Второй блок кода для Яндекс.Карт (исправленный)
             ymaps.ready(init);
@@ -1692,9 +1720,72 @@
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
 
-            // Здесь можно загружать разные данные в зависимости от типа проекта
-            if (type === 'classic') {
-                document.querySelector('.modal-header h3').textContent = 'Классический коттедж';
+            // Данные для каждого типа проекта
+            const projectData = {
+                'classic': {
+                    title: 'Классический коттедж',
+                    images: [
+                        'main_img/projects/Classic/classic1.webp',
+                        'main_img/projects/Classic/classic2.webp',
+                        'main_img/projects/Classic/classic3.webp',
+                        'main_img/projects/Classic/classic_plan.webp'
+                    ]
+                },
+                'chalet': {
+                    title: 'Альпийское шале',
+                    images: [
+                        'main_img/projects/shale_black/shale_black.webp',
+                        'main_img/projects/shale_black/shale_black_1.webp',
+                        'main_img/projects/shale_black/shale_black_plan1.webp',
+                        'main_img/projects/shale_black/shale_black_plan2.webp'
+                    ]
+                },
+                'barnhouse': {
+                    title: 'Современный барнхаус',
+                    images: [
+                        'https://via.placeholder.com/800x600?text=Барнхаус+фото+1',
+                        'https://via.placeholder.com/800x600?text=Барнхаус+фото+2',
+                        'https://via.placeholder.com/800x600?text=Барнхаус+фото+3',
+                        'https://via.placeholder.com/800x600?text=Барнхаус+фото+4'
+                    ]
+                },
+                'minimalism': {
+                    title: 'Классический со вторым светом',
+                    images: [
+                        'main_img/projects/Classic_2/project1.webp',
+                        'main_img/projects/Classic_2/project2.webp',
+                        'main_img/projects/Classic_2/project3.webp',
+                        'main_img/projects/Classic_2/project4.webp',
+                        'main_img/projects/Classic_2/project5.webp'
+                    ]
+                },
+                'scandinavian': {
+                    title: 'Скандинавский дом',
+                    images: [
+                        'https://via.placeholder.com/800x600?text=Скандинавский+фото+1',
+                        'https://via.placeholder.com/800x600?text=Скандинавский+фото+2',
+                        'https://via.placeholder.com/800x600?text=Скандинавский+фото+3',
+                        'https://via.placeholder.com/800x600?text=Скандинавский+фото+4'
+                    ]
+                }
+            };
+            
+            if (projectData[type]) {
+                // Обновляем заголовок
+                document.querySelector('.modal-header h3').textContent = projectData[type].title;
+                
+                // Обновляем изображения в слайдере
+                const sliderContainer = document.querySelector('.slider-container');
+                sliderContainer.innerHTML = '';
+                
+                projectData[type].images.forEach((imageSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = `Фото ${index + 1}`;
+                    img.onclick = function() { openImageFullscreen(this); };
+                    img.style.cursor = 'zoom-in';
+                    sliderContainer.appendChild(img);
+                });
             }
         }
 
@@ -1818,6 +1909,31 @@
                 }
             });
         }
+        });
+    </script>
+    
+    <script>
+        // Функции для полноэкранного просмотра изображений
+        function openImageFullscreen(img) {
+            const fullscreen = document.getElementById('imageFullscreen');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.src = img.src;
+            fullscreenImage.alt = img.alt;
+            fullscreen.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageFullscreen() {
+            const fullscreen = document.getElementById('imageFullscreen');
+            fullscreen.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageFullscreen();
+            }
         });
     </script>
 </body>
