@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница в разработке - ТОПБИЛДИНГ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1d29;
+            --secondary-color: #D4AF37;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1d29 0%, #252936 100%);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Декоративные элементы */
+        .decor {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 0;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .decor-left {
+            top: -100px;
+            left: -150px;
+            background-image: url('main_img/project.webp');
+            transform: rotate(45deg);
+        }
+
+        .decor-right {
+            bottom: -100px;
+            right: -150px;
+            background-image: url('main_img/project.webp');
+            transform: rotate(180deg);
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            margin: auto 0;
+        }
+
+        .icon-wrapper {
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .icon-wrapper i {
+            font-size: 80px;
+            color: var(--secondary-color);
+            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
+            color: #1a1d29;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .progress-info {
+            margin-top: 30px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .progress-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .progress-info ul {
+            list-style: none;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .progress-info li {
+            padding: 6px 0;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .progress-info li i {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .icon-wrapper {
+                margin-bottom: 15px;
+            }
+
+            .icon-wrapper i {
+                font-size: 60px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .progress-info {
+                padding: 15px;
+                margin-top: 20px;
+            }
+
+            .progress-info ul {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .progress-info li {
+                font-size: 0.8rem;
+                padding: 4px 0;
+            }
+
+            .progress-info h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decor decor-left"></div>
+    <div class="decor decor-right"></div>
+
+    <div class="container">
+        <div class="icon-wrapper">
+            <i class="fas fa-hard-hat"></i>
+        </div>
+
+        <h1>Страница в разработке</h1>
+        <p>Мы работаем над этим разделом, чтобы предоставить вам максимально удобный и информативный сервис.</p>
+
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                <span>На главную</span>
+            </a>
+            <a href="tel:+375291286217" class="btn btn-secondary">
+                <i class="fas fa-phone-alt"></i>
+                <span>Позвонить нам</span>
+            </a>
+        </div>
+
+        <div class="progress-info">
+            <h3>Уже доступно на сайте:</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Проектирование домов</li>
+                <li><i class="fas fa-check-circle"></i> Наши проекты и портфолио</li>
+                <li><i class="fas fa-check-circle"></i> Информация о команде</li>
+                <li><i class="fas fa-check-circle"></i> Отзывы клиентов</li>
+                <li><i class="fas fa-check-circle"></i> Контактная информация</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
