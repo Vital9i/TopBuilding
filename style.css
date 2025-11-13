@@ -91,7 +91,6 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 ::-webkit-scrollbar-track {
   background: var(--primary-color);
-  border-left: 1px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -277,18 +276,6 @@ html {
 }
 
 /* Премиум фоновые эффекты - удалены */
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  33% {
-    transform: translate(30px, -30px) rotate(120deg);
-  }
-  66% {
-    transform: translate(-20px, 20px) rotate(240deg);
-  }
-}
 
 .btn {
   display: inline-flex;
@@ -817,17 +804,6 @@ html {
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .nav ul li:hover > ul {
   display: block;
 }
@@ -1053,7 +1029,7 @@ html {
 .hero-sidebar {
   position: fixed;
   top: 0;
-  right: -450px;
+  right: -500px;
   bottom: 0;
   width: 420px;
   z-index: 1250;
@@ -1061,21 +1037,11 @@ html {
   display: flex;
   align-items: flex-start;
   padding: 20px;
+  overflow: hidden;
 }
 
 .hero-sidebar.active {
   right: 0;
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 /* Контактная карточка справа */
@@ -1374,17 +1340,6 @@ html {
   color: var(--secondary-color);
   font-size: 0.9rem;
   flex-shrink: 0;
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 /* Бейдж компании - Премиум логотип */
@@ -5252,10 +5207,10 @@ address a:hover {
   font-size: 3rem;
   color: var(--secondary-color);
   margin-bottom: 15px;
-  animation: pulse 2s infinite;
+  animation: pulseScale 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulseScale {
   0%, 100% {
     transform: scale(1);
   }

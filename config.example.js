@@ -12,3 +12,4 @@ const TELEGRAM_CONFIG = {
 // 3. Замените YOUR_CHAT_ID_HERE на ваш chat_id
 // 4. Файл config.js уже в .gitignore и не попадет в Git
 
+

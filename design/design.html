@@ -5,85 +5,199 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"ТОПАГРОБЕЛ" - Проектирование домов в РБ</title>
+    <title>"ТОПБИЛДИНГ" - Проектирование домов в РБ</title>
+    <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="design.css">
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
     <div class="main-content-wrapper">
         <!-- Основной контент -->
         <main class="main">
-           <section id="home" class="section hero">
-                <div class="decor decor-left-top"></div>
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-left">
+                        <!-- Логотип компании -->
+                        <a href="../index.html#home" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu">
+                    <ul>
+                        <li>
+                            <a href="../index.html#home">Главная</a>
+                            <ul>
+                                <li><a href="../index.html#home">Главная страница</a></li>
+                                <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                                <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                                <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                                <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                                <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                                <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
+                                <li><a href="../index.html#footer">Контакты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="active">
+                            <a href="design.html">Проектирование</a>
+                            <ul>
+                                <li><a href="#design-types">Индивидуальные решения</a></li>
+                                <li><a href="#portfolio">Готовые проекты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../under_construction.html" target="_blank">Строительство</a>
+                            <ul>
+                                <li><a href="../under_construction.html" target="_blank">Геология и геодезия участка</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Фундамент</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Стены</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Крыша</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Остекление</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Сети</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Внутренняя отделка</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Наружная отделка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../under_construction.html" target="_blank">Благоустройство территории</a>
+                            <ul>
+                                <li><a href="../under_construction.html" target="_blank">Установка забора</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Укладка тротуарной плитки</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Монтаж ливневок и дренажа</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Устройство газона</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Монтаж автополива</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Искусственные водоемы</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Подпорки для участка</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Освещение участка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../under_construction.html" target="_blank">Ремонт и модернизация</a>
+                            <ul>
+                                <li><a href="../under_construction.html" target="_blank">Административные и производственные объекты</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Ремонт квартир</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="../under_construction.html" target="_blank">Партнеры</a>
+                    <a href="../about/about.html" target="_blank">О нас</a>
+                    </div>
+                    
+                    <!-- Кнопка контактов -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Контакты</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+        
+           <section id="home" class="section design-hero">
+                <!-- Фоновое видео -->
+                <video class="design-hero-video" autoplay muted loop playsinline>
+                    <source src="desing_video/Engineer.mp4" type="video/mp4">
+                </video>
+                <div class="design-hero-overlay"></div>
+                
                 <div class="container">
-                    <div class="hero-content-wrapper">
-                        <div class="fixed-contact-bar">
-                            <a href="tel:+375291286217" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375 (29) 128-62-17
-                            </a>
-                            <a href="tel:+375296200314" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375 (29) 620-03-14
-                            </a>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon viber"><i class="fab fa-viber"></i></a>
-                                <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
+                    <div class="design-hero-content">
+                        <h1>ПРОФЕССИОНАЛЬНОЕ ПРОЕКТИРОВАНИЕ ДОМОВ В РБ</h1>
+                        <p class="design-hero-subtitle">ООО "ТОПБИЛДИНГ" - создаем проекты домов любой сложности с 2013 года</p>
+                        <div class="design-hero-features">
+                            <div class="design-feature-card">
+                                <i class="fas fa-drafting-compass"></i>
+                                <span>150+ реализованных проектов</span>
+                            </div>
+                            <div class="design-feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Гарантия соответствия СНиП</span>
                             </div>
                         </div>
-                        <div class="content-hero">
-                            <img src="img/logo.webp" alt="Логотип компании" class="hero-logo">
-                            <h1>ПРОФЕССИОНАЛЬНОЕ ПРОЕКТИРОВАНИЕ ДОМОВ В РБ</h1>
-                            <p class="hero-subtitle">ООО "ТОПАГРОБЕЛ" - создаем проекты домов любой сложности с 2013 года</p>
-                            <div class="hero-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i> 150+ реализованных проектов
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i> Гарантия соответствия СНиП
+                        <button class="btn design-hero-btn">заказать консультацию</button>
+                    </div>
+                </div>
+                
+                <!-- Сайдбар контактов (скрыт по умолчанию) -->
+                <div class="hero-sidebar" id="heroSidebar">
+                    <div class="hero-contact-card">
+                        <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="ceo-highlight">
+                            <div class="ceo-avatar">
+                                <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
+                                <div class="online-badge">
+                                    <i class="fas fa-circle"></i>
                                 </div>
                             </div>
-                            <button class="btn hero-btn">заказать консультацию</button>
+                            <div class="ceo-info">
+                                <div class="ceo-name">Гриценко Олег Олегович</div>
+                                <div class="ceo-title">Руководитель компании</div>
+                            </div>
                         </div>
-                        <div class="image-stack">
-                            <img src="design/desing_img/Main_image.png" alt="Проект дома" class="stack-img project-img">
+                        
+                        <div class="advantage-description">
+                            Вы общаетесь <strong>напрямую с руководителем</strong>
+                        </div>
+                        
+                        <div class="contact-info-footer">
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                        </div>
+
+                        <!-- Контактные кнопки -->
+                        <div class="hero-contact-buttons">
+                            <a href="tel:+375291286217" class="contact-btn primary-contact">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Заказать звонок</span>
+                            </a>
+                            
+                            <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Экскурсия по объектам</span>
+                            </a>
+                            
+                            <div class="messenger-buttons">
+                                <a href="https://t.me/+375291286217" class="messenger-btn telegram">
+                                    <i class="fab fa-telegram-plane"></i>
+                                    <span>Telegram</span>
+                                </a>
+                                <a href="viber://chat?number=%2B375291286217" class="messenger-btn viber">
+                                    <i class="fab fa-viber"></i>
+                                    <span>Viber</span>
+                                </a>
+                                <a href="https://wa.me/375291286217" class="messenger-btn whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Шапка сайта -->
-            <header class="header" id="mainHeader">
-                <div class="container">
-                    <nav class="nav">
-                        <ul>
-                            <li>
-                                <a href="../index.html">Главная</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li class="active">
-                                <a href="#">Проектирование</a>
-                                <ul>
-                                    <li><a href="#design-types">Индивидуальные решения</a></li>
-                                    <li><a href="#design-process">Готовые проекты</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="../construction/construction.html">Строительство</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="landscaping.html">Благоустройство</a>
-                            </li>
-                        </ul>
-                        <a href="contacts.html">Контакты</a>
-                        <a href="about.html">О нас</a>
-                    </nav>
-                </div>
-            </header>
 
 <!-- Секция "Типы проектов" -->
 <section id="design-types" class="section design-types">
@@ -795,43 +909,46 @@
 
         <!-- Подвал сайта -->
         <footer id="footer" class="footer">
-            <div class="container">
+            <div class="footer-container">
                 <div class="footer-grid">
                     <!-- Колонка 1: О компании -->
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="/img/logo.webp" alt="ТОПАГРОБЕЛ">
+                            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <div class="logo-text">
+                                <span class="logo-top">ТОП</span>
+                                <span class="logo-building">БИЛДИНГ</span>
+                            </div>
                         </div>
-                        <p>ООО "ТОПАГРОБЕЛ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
-                        <div class="footer-payments">
-                            <img src="https://belarusbank.by/upload/iblock/9b8/9b8a4d6d3a1d8e5f7a3b6c2d4e1f8g9h.png" alt="Беларусбанк">
-                            <img src="https://www.bps-sberbank.by/upload/images/logo.png" alt="Сбербанк">
-                            <img src="https://www.mtbank.by/-/media/Images/Mtbank/Common/logo.png" alt="МТБанк">
-                        </div>
+                        <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                     </div>
 
                     <!-- Колонка 2: Меню -->
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="design.html">Проектирование</a></li>
-                            <li><a href="construction.html">Строительство</a></li>
-                            <li><a href="landscaping.html">Благоустройство</a></li>
-                            <li><a href="about.html">О компании</a></li>
-                            <li><a href="contacts.html">Контакты</a></li>
+                            <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                            <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                            <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                            <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                            <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                            <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
                         </ul>
                     </div>
 
                     <!-- Колонка 3: Услуги -->
                     <div class="footer-col">
-                        <h4>Проектирование</h4>
+                        <h4>Услуги</h4>
                         <ul class="footer-services">
-                            <li><a href="#design-types">Типы проектов</a></li>
-                            <li><a href="#design-process">Процесс работы</a></li>
-                            <li><a href="#portfolio">Портфолио</a></li>
-                            <li><a href="#prices">Цены</a></li>
-                            <li><a href="#faq">Вопросы и ответы</a></li>
+                            <li><a href="design.html">Проектирование</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Строительство</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Благоустройство территории</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Ремонт и модернизация</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Партнеры</a></li>
+                            <li><a href="../about/about.html" target="_blank">О нас</a></li>
                         </ul>
                     </div>
 
@@ -839,39 +956,41 @@
                     <div class="footer-col">
                         <h4>Контакты</h4>
                         <address>
-                            <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Строителей, 15</p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
                             <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
                         </address>
 
                         <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://t.me/+375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="viber://chat?number=%2B375291286217" class="social-icon">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="https://wa.me/375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
 
-                        <button class="btn footer-btn">Заказать звонок</button>
+                        <button class="btn footer-btn open-sidebar-btn" onclick="openContactSidebar()">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Заказать звонок</span>
+                        </button>
                     </div>
                 </div>
 
                 <div class="footer-bottom">
                     <div class="footer-copyright">
-                        &copy; 2024 ООО "ТОПАГРОБЕЛ". Все права защищены.
-                    </div>
-
-                    <div class="footer-links">
-                        <a href="#">Политика конфиденциальности</a>
-                        <a href="#">Пользовательское соглашение</a>
-                        <a href="#">Карта сайта</a>
+                        &copy; 2025 ООО "ТОПБИЛДИНГ". Все права защищены.
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU" type="text/javascript"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Фиксация хедера при скролле
@@ -1043,6 +1162,261 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инициализация - показываем все карточки
     filterCards('all');
 });
+    </script>
+    
+    <!-- Модальное окно для заказа звонка -->
+    <div id="callbackModal" class="callback-modal">
+        <div class="callback-modal-overlay"></div>
+        <div class="callback-modal-content">
+            <button class="callback-modal-close" onclick="closeCallbackModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="callback-modal-header">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Заказать звонок</h3>
+                <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+            </div>
+            <form id="callbackForm" class="callback-form">
+                <div class="form-group">
+                    <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                </div>
+                <button type="submit" class="callback-submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Отправить заявку</span>
+                </button>
+            </form>
+            <div id="callback-message" class="callback-message"></div>
+        </div>
+    </div>
+    
+    <!-- Конфигурация Telegram -->
+    <script src="../config.js"></script>
+    
+    <script>
+        // ============================================
+        // САЙДБАР И МОДАЛЬНОЕ ОКНО
+        // ============================================
+        
+        // Глобальная функция открытия сайдбара
+        function openContactSidebar() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.add('active');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            // Управление сайдбаром контактов
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const heroSidebar = document.getElementById('heroSidebar');
+            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+            // Открытие сайдбара из кнопок в карточках
+            document.querySelectorAll('.open-sidebar-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (heroSidebar) {
+                        heroSidebar.classList.add('active');
+                    }
+                });
+            });
+
+            if (contactToggleBtn && heroSidebar) {
+                // Открытие сайдбара
+                contactToggleBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    heroSidebar.classList.add('active');
+                });
+
+                // Закрытие сайдбара
+                if (sidebarCloseBtn) {
+                    sidebarCloseBtn.addEventListener('click', function() {
+                        heroSidebar.classList.remove('active');
+                    });
+                }
+
+                // Закрытие по клику вне сайдбара
+                document.addEventListener('click', function(e) {
+                    if (heroSidebar.classList.contains('active') && 
+                        !heroSidebar.contains(e.target) && 
+                        e.target !== contactToggleBtn && 
+                        !contactToggleBtn.contains(e.target)) {
+                        heroSidebar.classList.remove('active');
+                    }
+                });
+
+                // Закрытие по ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
+                        heroSidebar.classList.remove('active');
+                    }
+                });
+            }
+        });
+        
+        // ============================================
+        // TELEGRAM УВЕДОМЛЕНИЯ
+        // ============================================
+        
+        const TELEGRAM_BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
+        const TELEGRAM_CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
+        
+        let currentCallbackSource = 'Страница проектирования';
+        
+        // Открытие модального окна
+        function openCallbackModal(source = 'Страница проектирования') {
+            currentCallbackSource = source;
+            const modal = document.getElementById('callbackModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Очистка формы
+            document.getElementById('callbackForm').reset();
+            document.getElementById('callback-message').innerHTML = '';
+            document.getElementById('callback-message').className = 'callback-message';
+        }
+        
+        // Закрытие модального окна
+        function closeCallbackModal() {
+            const modal = document.getElementById('callbackModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Отправка сообщения в Telegram
+        async function sendToTelegram(name, phone, source) {
+            const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+                          `👤 <b>Имя:</b> ${name}\n` +
+                          `📱 <b>Телефон:</b> ${phone}\n` +
+                          `📍 <b>Источник:</b> ${source}\n` +
+                          `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
+            
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            });
+            
+            return response.json();
+        }
+        
+        // Обработка кнопок
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.querySelector('.callback-modal-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', closeCallbackModal);
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeCallbackModal();
+                }
+            });
+            
+            // Обработка всех кнопок "Заказать звонок"
+            document.querySelectorAll('.contact-btn, .footer-btn, .open-sidebar-btn, [onclick*="openContactSidebar"], .hero-btn, .design-hero-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openCallbackModal('Страница проектирования');
+                });
+            });
+            
+            // Отдельная обработка кнопки экскурсии
+            document.querySelectorAll('.excursion-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const source = this.getAttribute('data-source') || 'Экскурсия по объектам';
+                    openCallbackModal(source);
+                });
+            });
+        });
+        
+        // Отправка формы
+        document.getElementById('callbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('callback-name').value.trim();
+            const phone = document.getElementById('callback-phone').value.trim();
+            const messageDiv = document.getElementById('callback-message');
+            const submitBtn = this.querySelector('.callback-submit-btn');
+            
+            if (!name || !phone) {
+                messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                messageDiv.className = 'callback-message error';
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
+            
+            try {
+                const result = await sendToTelegram(name, phone, currentCallbackSource);
+                
+                if (result.ok) {
+                    messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                    messageDiv.className = 'callback-message success';
+                    
+                    document.getElementById('callbackForm').reset();
+                    
+                    setTimeout(() => {
+                        closeCallbackModal();
+                    }, 3000);
+                } else {
+                    throw new Error(result.description || 'Ошибка отправки');
+                }
+            } catch (error) {
+                console.error('Ошибка отправки в Telegram:', error);
+                messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
+                messageDiv.className = 'callback-message error';
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
+        });
+        
+        // Маска для телефона
+        document.getElementById('callback-phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                if (!value.startsWith('375')) {
+                    value = '375' + value;
+                }
+                
+                let formatted = '+375';
+                if (value.length > 3) {
+                    formatted += ' (' + value.substring(3, 5);
+                }
+                if (value.length > 5) {
+                    formatted += ') ' + value.substring(5, 8);
+                }
+                if (value.length > 8) {
+                    formatted += '-' + value.substring(8, 10);
+                }
+                if (value.length > 10) {
+                    formatted += '-' + value.substring(10, 12);
+                }
+                
+                e.target.value = formatted.substring(0, 19);
+            }
+        });
     </script>
 </body>
 </html>
