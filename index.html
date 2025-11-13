@@ -1367,6 +1367,8 @@
                 </div>
             </div>
         </footer>
+     <!-- Конфигурация Telegram (не попадает в Git) -->
+     <script src="config.js"></script>
      <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU"
         type="text/javascript"></script>
     <!-- AOS Animation Library -->
@@ -2218,9 +2220,9 @@
         // СИСТЕМА УВЕДОМЛЕНИЙ В TELEGRAM (JavaScript)
         // ============================================
         
-        // Настройки Telegram бота
-        const TELEGRAM_BOT_TOKEN = '7675694739:AAGhn7-y2LTs1xVC06NfH13Xdab7FMUOpAw';
-        const TELEGRAM_CHAT_ID = '-1003248332317'; // ID группы
+        // Настройки Telegram бота (загружаются из config.js)
+        const TELEGRAM_BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
+        const TELEGRAM_CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
         
         let currentCallbackSource = '';
         

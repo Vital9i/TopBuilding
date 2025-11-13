@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест Telegram - TopBuilding</title>
+    <script src="config.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,9 +89,8 @@
     
     <div class="info">
         <h3>📱 Ваши данные бота:</h3>
-        <div class="details">
-            Token: 7675694739:AAGhn7-y2LTs1xVC06NfH13Xdab7FMUOpAw<br>
-            Chat ID: -1003248332317 (группа)
+        <div class="details" id="botInfo">
+            Загрузка конфигурации...
         </div>
         <p><strong>⚠️ Важно:</strong> Убедитесь, что вы написали боту <code>/start</code> в Telegram!</p>
     </div>
@@ -107,8 +107,16 @@
     </div>
     
     <script>
-        const BOT_TOKEN = '7675694739:AAGhn7-y2LTs1xVC06NfH13Xdab7FMUOpAw';
-        const CHAT_ID = '-1003248332317'; // ID группы
+        // Используем данные из config.js
+        const BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
+        const CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
+        
+        // Показываем данные из конфига
+        document.addEventListener('DOMContentLoaded', function() {
+            const botInfo = document.getElementById('botInfo');
+            const tokenPreview = BOT_TOKEN.substring(0, 15) + '...';
+            botInfo.innerHTML = `Token: ${tokenPreview}<br>Chat ID: ${CHAT_ID}`;
+        });
         
         async function testBot() {
             const statusDiv = document.getElementById('status');

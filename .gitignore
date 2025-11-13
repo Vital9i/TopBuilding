@@ -1,0 +1,33 @@
+# Конфигурация (секретные данные)
+config.js
+
+# Резервные копии
+*.backup
+backup/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Node modules (если используются)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Тестовые файлы
+test_*.html
+test_*.php
+
