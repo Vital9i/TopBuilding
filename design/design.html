@@ -18,11 +18,11 @@
         <main class="main">
         <!-- Header -->
         <header class="header" id="mainHeader">
-            <div class="container">
+                <div class="container">
                 <nav class="nav">
                     <div class="nav-left">
                         <!-- Логотип компании -->
-                        <a href="../index.html#home" class="logo-link">
+                        <a href="../index.html#home" class="logo-link" target="_blank">
                             <div class="header-logo">
                                 <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -31,17 +31,17 @@
                                 <div class="logo-text">
                                     <span class="logo-top">ТОП</span>
                                     <span class="logo-building">БИЛДИНГ</span>
-                                </div>
                             </div>
+                        </div>
                         </a>
-                    </div>
+                                </div>
                     
                     <div class="nav-menu">
-                    <ul>
-                        <li>
-                            <a href="../index.html#home">Главная</a>
+                        <ul>
+                            <li>
+                            <a href="../index.html#home" target="_blank">Главная</a>
                             <ul>
-                                <li><a href="../index.html#home">Главная страница</a></li>
+                                <li><a href="../index.html#home" target="_blank">Главная страница</a></li>
                                 <li><a href="../index.html#about">Почему выбирают нас</a></li>
                                 <li><a href="../index.html#our-projects">Наши проекты</a></li>
                                 <li><a href="../index.html#workflow">Как мы работаем</a></li>
@@ -50,19 +50,19 @@
                                 <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
                                 <li><a href="../index.html#footer">Контакты</a></li>
                             </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="active">
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="active">
                             <a href="design.html">Проектирование</a>
-                            <ul>
-                                <li><a href="#design-types">Индивидуальные решения</a></li>
+                                <ul>
+                                    <li><a href="#design-types">Индивидуальные решения</a></li>
                                 <li><a href="#portfolio">Готовые проекты</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
                             <a href="../under_construction.html" target="_blank">Строительство</a>
                             <ul>
                                 <li><a href="../under_construction.html" target="_blank">Геология и геодезия участка</a></li>
@@ -74,10 +74,10 @@
                                 <li><a href="../under_construction.html" target="_blank">Внутренняя отделка</a></li>
                                 <li><a href="../under_construction.html" target="_blank">Наружная отделка</a></li>
                             </ul>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
                             <a href="../under_construction.html" target="_blank">Благоустройство территории</a>
                             <ul>
                                 <li><a href="../under_construction.html" target="_blank">Установка забора</a></li>
@@ -89,8 +89,8 @@
                                 <li><a href="../under_construction.html" target="_blank">Подпорки для участка</a></li>
                                 <li><a href="../under_construction.html" target="_blank">Освещение участка</a></li>
                             </ul>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
                     <ul>
                         <li>
                             <a href="../under_construction.html" target="_blank">Ремонт и модернизация</a>
@@ -109,32 +109,88 @@
                         <i class="fas fa-phone-alt"></i>
                         <span>Контакты</span>
                     </button>
-                </nav>
-            </div>
-        </header>
+                    </nav>
+                </div>
+            </header>
         
            <section id="home" class="section design-hero">
-                <!-- Фоновое видео -->
-                <video class="design-hero-video" autoplay muted loop playsinline>
-                    <source src="desing_video/Engineer.mp4" type="video/mp4">
-                </video>
-                <div class="design-hero-overlay"></div>
-                
+                <!-- Видео-фон -->
+                <div class="hero-video-background">
+                    <video autoplay muted loop playsinline class="hero-video">
+                        <source src="desing_video/Engineer.mp4" type="video/mp4">
+                    </video>
+                    <div class="hero-video-overlay"></div>
+                </div>
+
                 <div class="container">
-                    <div class="design-hero-content">
-                        <h1>ПРОФЕССИОНАЛЬНОЕ ПРОЕКТИРОВАНИЕ ДОМОВ В РБ</h1>
-                        <p class="design-hero-subtitle">ООО "ТОПБИЛДИНГ" - создаем проекты домов любой сложности с 2013 года</p>
-                        <div class="design-hero-features">
-                            <div class="design-feature-card">
-                                <i class="fas fa-drafting-compass"></i>
-                                <span>150+ реализованных проектов</span>
+                    <div class="hero-content-wrapper">
+                        <!-- Левая часть: основной контент -->
+                        <div class="hero-left">
+                            <h1 class="hero-title">
+                                Дом вашей мечты <span class="highlight">начинается здесь</span>
+                            </h1>
+                            <p class="hero-subtitle">Индивидуальное проектирование домов с гарантией качества и точным попаданием в смету.</p>
+                            
+                            <!-- Главное преимущество -->
+                            <div class="design-hero-main-feature">
+                                <div class="main-feature-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="main-feature-content">
+                                    <strong>Собственное строительство — гарантия качества проектов</strong>
+                                    <span>Мы не только проектируем, но и строим. Это значит, что каждый проект проработан до мелочей и проверен нашей же практикой.</span>
+                                </div>
                             </div>
-                            <div class="design-feature-card">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Гарантия соответствия СНиП</span>
+                            
+                            <!-- USP блоки -->
+                            <div class="hero-features">
+                                <div class="hero-feature">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>150+</strong>
+                                        <span>проектов реализовано</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>100%</strong>
+                                        <span>соответствие нормам РБ</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>от 2 недель</strong>
+                                        <span>срок разработки</span>
+                                    </div>
+                                </div>
+                                <div class="hero-feature">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <strong>Поэтапная</strong>
+                                        <span>оплата</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Преимущества проектирования -->
+                            <div class="hero-info">
+                                <p><i class="fas fa-key"></i> Клиент уходит не просто с проектом, а с ключами от дома своей мечты</p>
+                                <p><i class="fas fa-users"></i> Все специалисты в одной команде</p>
+                                <p><i class="fas fa-comments"></i> Консультации вместо агитации</p>
+                                <p><i class="fas fa-lightbulb"></i> Мы умеем читать Ваши мысли</p>
+                                <p><i class="fas fa-eye"></i> Наглядная демонстрация на реальных объектах</p>
                             </div>
                         </div>
-                        <button class="btn design-hero-btn">заказать консультацию</button>
                     </div>
                 </div>
                 
@@ -205,281 +261,150 @@
     <div class="decor decor-right-bottom"></div>
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Комплексные проектные решения</h2>
+            <h2 class="section-title">Виды проектов</h2>
             <p class="section-subtitle">Полный цикл проектирования от концепции до реализации</p>
-            <div class="section-tabs">
-                <button class="tab-btn active" data-tab="all">Все услуги</button>
-                <button class="tab-btn" data-tab="basic">Основные</button>
-                <button class="tab-btn" data-tab="additional">Дополнительные</button>
             </div>
         </div>
         
-        <div class="design-grid">
+    <div class="design-slider-container">
             <!-- Эскизный проект -->
-            <div class="design-card" data-category="basic">
-                <div class="card-header">
+            <div class="box box-1" style="--img: url(desing_img/Projects/Eskiz.jpg);" data-text="Эскизный проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
                     <h3>Эскизный проект</h3>
-                    <span class="price-badge">от 500 руб/м²</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Эскизный проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Формирование концепции будущего дома с учетом ваших пожеланий, особенностей участка и нормативных требований.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 2-3 недели</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 1 год</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Что входит:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности. С помощью эскизного проекта вы можете увидеть дом с разных сторон, оценить расположение комнат, их размеры и удобство планировки до начала детального проектирования. Это позволяет избежать дорогостоящих изменений на более поздних этапах и точно понять, что вы хотите получить в итоге.</p>
+                    <div class="box-features">
+                        <h4>Что входит:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> 3 варианта планировки</li>
                             <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
                             <li><i class="fas fa-check"></i> Подбор материалов</li>
                             <li><i class="fas fa-check"></i> Предварительная смета</li>
-                            <li><i class="fas fa-check"></i> Технико-экономическое обоснование</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
             
             <!-- Архитектурный проект -->
-            <div class="design-card" data-category="basic">
-                <div class="card-header">
+            <div class="box box-2" style="--img: url(desing_img/Projects/Arhitecture.jpg);" data-text="Архитектурный проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-drafting-compass"></i>
                     </div>
                     <h3>Архитектурный проект</h3>
-                    <span class="price-badge">от 800 руб/м²</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Архитектурный проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Полный комплект чертежей для строительства, включая фасады, планировки и детализацию всех элементов.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 4-6 недель</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 2 года</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Комплектация:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Архитектурный проект — это основной документ, необходимый для получения разрешения на строительство и ведения строительных работ. Он содержит всю необходимую информацию о внешнем виде здания, планировке помещений, материалах отделки и размерах всех элементов. Без архитектурного проекта невозможно начать строительство, так как именно на его основе выдаются разрешения в соответствующих органах. Проект служит руководством для строителей, позволяя точно воспроизвести ваш дом в соответствии с задумкой и без ошибок.</p>
+                    <div class="box-features">
+                        <h4>Комплектация:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> Поэтажные планы</li>
                             <li><i class="fas fa-check"></i> Фасады и разрезы</li>
                             <li><i class="fas fa-check"></i> Ведомость отделки</li>
                             <li><i class="fas fa-check"></i> Спецификация материалов</li>
-                            <li><i class="fas fa-check"></i> Конструктивные узлы</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
             
             <!-- Конструктивный проект -->
-            <div class="design-card" data-category="basic">
-                <div class="card-header">
+            <div class="box box-3" style="--img: url(desing_img/Projects/Constructive.jpg);" data-text="Конструктивный проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-cube"></i>
                     </div>
                     <h3>Конструктивный проект</h3>
-                    <span class="price-badge">от 600 руб/м²</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2UlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Конструктивный проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Инженерные расчеты и детальные чертежи несущих конструкций здания с учетом всех нагрузок и особенностей грунта.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 3-5 недель</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 10 лет</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Состав проекта:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Конструктивный проект обеспечивает прочность, надежность и безопасность вашего дома. Он нужен для правильного расчета фундамента, стен, перекрытий и кровли с учетом всех нагрузок, особенностей грунта и климатических условий региона. Без конструктивного проекта невозможно гарантировать, что дом выдержит свой вес, снеговые и ветровые нагрузки, а также будет устойчив к различным воздействиям. Этот проект позволяет избежать перерасхода материалов, трещин в стенах, проседания фундамента и других серьезных проблем, которые могут возникнуть при неправильном строительстве.</p>
+                    <div class="box-features">
+                        <h4>Состав проекта:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> Расчет фундамента</li>
                             <li><i class="fas fa-check"></i> Чертежи перекрытий</li>
                             <li><i class="fas fa-check"></i> Кровельная система</li>
                             <li><i class="fas fa-check"></i> Узлы и детали</li>
-                            <li><i class="fas fa-check"></i> Спецификация материалов</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
             
             <!-- Инженерный проект -->
-            <div class="design-card" data-category="additional">
-                <div class="card-header">
+            <div class="box box-4" style="--img: url(desing_img/Projects/Ingeener.jpg);" data-text="Инженерный проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3>Инженерный проект</h3>
-                    <span class="price-badge">от 400 руб/м²</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2UlMjB0ZWNobm9sb2d5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Инженерный проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Комплексное проектирование всех инженерных систем дома с расчетами и спецификацией оборудования.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 2-4 недели</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 3 года</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Системы:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Инженерный проект необходим для правильного функционирования всех коммуникаций и систем жизнеобеспечения дома. Он включает проектирование электрики, водоснабжения, канализации, отопления и вентиляции. Без инженерного проекта невозможно подключиться к центральным сетям, правильно установить оборудование и обеспечить комфортное проживание в доме. Проект позволяет точно рассчитать мощность систем, выбрать правильное оборудование, определить места прокладки коммуникаций и избежать дорогостоящих переделок в будущем. Также он необходим для получения технических условий и подключения к инженерным сетям.</p>
+                    <div class="box-features">
+                        <h4>Системы:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> Электрика и освещение</li>
                             <li><i class="fas fa-check"></i> Водоснабжение и канализация</li>
                             <li><i class="fas fa-check"></i> Отопление и вентиляция</li>
                             <li><i class="fas fa-check"></i> Умный дом (опционально)</li>
-                            <li><i class="fas fa-check"></i> Системы безопасности</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
             
             <!-- Дизайн-проект -->
-            <div class="design-card" data-category="additional">
-                <div class="card-header">
+            <div class="box box-5" style="--img: url(desing_img/Projects/Design.jpg);" data-text="Дизайн проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-paint-roller"></i>
                     </div>
                     <h3>Дизайн-проект</h3>
-                    <span class="price-badge">от 700 руб/м²</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Дизайн-проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Разработка стилевого решения интерьеров с 3D визуализацией и подбором всех материалов и мебели.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 3-5 недель</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 1 год</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Состав проекта:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Дизайн-проект интерьера нужен для создания комфортного, функционального и эстетически приятного пространства внутри вашего дома. Он помогает спланировать расположение мебели, выбрать цветовую схему, определить стиль оформления и подобрать все необходимые материалы и предметы интерьера. С помощью 3D визуализации вы можете заранее увидеть, как будет выглядеть каждая комната, оценить освещение, цветовые сочетания и общую атмосферу. Дизайн-проект позволяет избежать ошибок в выборе отделки, сэкономить время и деньги, а также создать дом, в котором приятно жить и который отражает ваш вкус и предпочтения.</p>
+                    <div class="box-features">
+                        <h4>Состав проекта:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> Планировочные решения</li>
                             <li><i class="fas fa-check"></i> 3D визуализация интерьеров</li>
                             <li><i class="fas fa-check"></i> Подбор мебели и материалов</li>
                             <li><i class="fas fa-check"></i> Технические чертежи</li>
-                            <li><i class="fas fa-check"></i> Смета на отделочные работы</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
             
             <!-- Ландшафтный проект -->
-            <div class="design-card" data-category="additional">
-                <div class="card-header">
+            <div class="box box-6" style="--img: url(desing_img/Projects/Landscape.jpg);" data-text="Ландшафтный проект">
+                <div class="box-overlay"></div>
+                <div class="box-content">
+                    <div class="box-header">
                     <div class="design-icon">
                         <i class="fas fa-tree"></i>
                     </div>
                     <h3>Ландшафтный проект</h3>
-                    <span class="price-badge">от 300 руб/сотка</span>
                 </div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Ландшафтный проект" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Проектирование благоустройства территории с зонированием, подбором растений и систем полива.</p>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Срок: 2-3 недели</span>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-dot"></span>
-                            <span class="timeline-info">Гарантия: 2 года</span>
-                        </div>
-                    </div>
-                    
-                    <div class="features-block">
-                        <h4 class="features-title">Элементы проекта:</h4>
-                        <ul class="features-list">
+                    <p class="box-description">Ландшафтный проект нужен для превращения участка вокруг дома в красивое, уютное и функциональное пространство. Он позволяет правильно организовать территорию, создать зоны для отдыха, детские площадки, сад, огород, проложить дорожки и площадки, а также подобрать растения, которые будут хорошо расти в вашем климате и почве. Проект учитывает рельеф участка, освещенность, дренаж и другие особенности, что помогает избежать ошибок при посадке растений и создании элементов благоустройства. С правильно спроектированным ландшафтом ваш участок будет выглядеть гармонично и ухоженно, а все элементы будут работать вместе, создавая комфортную среду для жизни.</p>
+                    <div class="box-features">
+                        <h4>Элементы проекта:</h4>
+                        <ul>
                             <li><i class="fas fa-check"></i> Зонирование участка</li>
                             <li><i class="fas fa-check"></i> Дорожки и площадки</li>
                             <li><i class="fas fa-check"></i> Озеленение и малые формы</li>
                             <li><i class="fas fa-check"></i> Системы полива</li>
-                            <li><i class="fas fa-check"></i> Ландшафтное освещение</li>
                         </ul>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <button class="btn-details">Подробнее о проекте</button>
-                        <button class="btn-order">Заказать</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
                         <!-- Секция "Процесс проектирования" -->
  <section id="design-process" class="section design-process">
@@ -921,7 +846,7 @@
                             <div class="logo-text">
                                 <span class="logo-top">ТОП</span>
                                 <span class="logo-building">БИЛДИНГ</span>
-                            </div>
+                        </div>
                         </div>
                         <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                     </div>
@@ -1130,38 +1055,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const designCards = document.querySelectorAll('.design-card');
-    
-    // Функция для фильтрации карточек
-    function filterCards(category) {
-        designCards.forEach(card => {
-            if (category === 'all' || card.dataset.category === category) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-    
-    // Обработчики для кнопок табов
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Удаляем активный класс у всех кнопок
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Добавляем активный класс текущей кнопке
-            this.classList.add('active');
-            
-            // Фильтруем карточки
-            filterCards(this.dataset.tab);
-        });
-    });
-    
-    // Инициализация - показываем все карточки
-    filterCards('all');
-});
+// Табы удалены, JavaScript для фильтрации не нужен
     </script>
     
     <!-- Модальное окно для заказа звонка -->
@@ -1416,7 +1310,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 e.target.value = formatted.substring(0, 19);
             }
-        });
+});
     </script>
 </body>
 </html>

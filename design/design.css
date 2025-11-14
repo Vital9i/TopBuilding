@@ -36,6 +36,11 @@
   );
 }
 
+.design-types > .container {
+  max-width: 100%;
+  padding: 0;
+}
+
 .design-process {
   background: var(--background-color);
 }
@@ -62,143 +67,153 @@
   );
 }
 
-/* Design Hero Section - уникальная hero для страницы проектирования */
+/* Design Hero Section - использует стили из style.css, добавляем только специфичные */
 .design-hero {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 0;
+  /* Стили берутся из .hero в style.css */
+  margin-top: -70px; /* Компенсация padding-top у .main */
+  padding: 20px 0 30px 0 !important; /* Уменьшенный отступ сверху */
 }
 
-/* Фоновое видео */
-.design-hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  object-fit: cover;
-  opacity: 0.3; /* Приглушенное видео */
+.design-hero > .container {
+  padding-top: 70px; /* Отступ от fixed header */
 }
 
-/* Затемняющий оверлей */
-.design-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(26, 29, 41, 0.85) 0%, 
-    rgba(37, 41, 54, 0.75) 100%
-  );
-  z-index: 1;
+.design-hero .hero-left {
+  min-height: auto !important;
+  padding-top: 0 !important;
+  justify-content: flex-start !important;
 }
 
-/* Контент hero */
-.design-hero .container {
-  position: relative;
-  z-index: 2;
+.design-hero .hero-title {
+  white-space: nowrap;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
 }
 
-.design-hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
+/* Компактные USP блоки */
+.design-hero .hero-features {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  justify-content: start;
+  max-width: 450px;
 }
 
-.design-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 25px;
-  font-weight: 700;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+.design-hero .hero-feature {
+  padding: 10px 14px;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
 }
 
-.design-hero-subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  margin-bottom: 50px;
-  opacity: 0.95;
-  line-height: 1.6;
+.design-hero .feature-icon {
+  width: 28px;
+  font-size: 1.3rem;
 }
 
-/* Карточки с фичами */
-.design-hero-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.design-hero .feature-text {
+  white-space: nowrap;
 }
 
-.design-feature-card {
+.design-hero .feature-text strong {
+  font-size: 0.95rem;
+}
+
+.design-hero .feature-text span {
+  font-size: 0.85rem;
+}
+
+/* Главное преимущество - уникальный элемент для страницы проектирования */
+.design-hero-main-feature {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
   transition: all 0.3s ease;
   text-align: left;
 }
 
-.design-feature-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(212, 175, 55, 0.4);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+.design-hero-main-feature:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.12) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
 }
 
-.design-feature-card i {
-  font-size: 2.5rem;
-  color: var(--secondary-color);
+.main-feature-icon {
   flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.15);
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.design-feature-card span {
+.main-feature-icon i {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+}
+
+.main-feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.main-feature-content strong {
   font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  display: block;
 }
 
-.design-hero-btn {
-  padding: 18px 45px;
-  font-size: 1.1rem;
+.main-feature-content span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
 }
 
-/* Адаптив */
+/* Адаптив для главного преимущества */
 @media (max-width: 768px) {
-  .design-hero {
-    min-height: 500px;
+  .design-hero .hero-title {
+    white-space: normal; /* Разрешаем перенос на мобильных */
+    font-size: clamp(1.5rem, 6vw, 2rem);
   }
   
-  .design-hero-features {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .design-hero-main-feature {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
   }
   
-  .design-feature-card {
-    padding: 25px;
+  .main-feature-icon {
+    width: 45px;
+    height: 45px;
   }
   
-  .design-feature-card i {
-    font-size: 2rem;
+  .main-feature-icon i {
+    font-size: 1.5rem;
   }
   
-  .design-feature-card span {
+  .main-feature-content strong {
     font-size: 1rem;
+  }
+  
+  .main-feature-content span {
+    font-size: 0.85rem;
   }
 }
 
@@ -239,12 +254,275 @@
     color: var(--dark-color);
 }
 
-.design-grid {
+/* Слайдер проектов с hover эффектом */
+.design-slider-container {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 450px;
+    transition: all 400ms;
+    padding: 0 40px;
 }
+
+.design-slider-container:hover .box {
+    filter: grayscale(100%) opacity(24%);
+}
+
+.box {
+    position: relative;
+    background: url('desing_img/project_back_side.webp') center center;
+    background-size: cover;
+    transition: all 400ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--img) center center;
+    background-size: cover;
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: all 400ms;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.box:hover::before {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.box-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 400ms;
+    z-index: 3;
+}
+
+.box:hover .box-overlay {
+    opacity: 1;
+}
+
+.design-slider-container .box:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.design-slider-container:has(.box-1:hover) {
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.design-slider-container:has(.box-2:hover) {
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+}
+
+.design-slider-container:has(.box-3:hover) {
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr 1fr;
+}
+
+.design-slider-container:has(.box-4:hover) {
+    grid-template-columns: 1fr 1fr 1fr 3fr 1fr 1fr;
+}
+
+.design-slider-container:has(.box-5:hover) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 1fr;
+}
+
+.design-slider-container:has(.box-6:hover) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr;
+}
+
+
+.box:nth-child(odd) {
+    transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+    transform: translateY(16px);
+}
+
+/* Название проекта сверху карточки */
+.box::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 5;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    max-width: 90%;
+    line-height: 1.4;
+    transition: opacity 400ms;
+}
+
+.box:hover::after {
+    opacity: 0;
+}
+
+
+/* Контент карточки */
+.box-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 400ms;
+    z-index: 4;
+    overflow-y: auto;
+    color: #fff;
+}
+
+.box:hover .box-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 200ms;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.box-header .design-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.box-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+    flex-grow: 1;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.box-header .price-badge {
+    background: var(--secondary-color);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.box-description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+}
+
+.box-timeline {
+    margin: 15px 0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.box-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(212, 175, 55, 0.3);
+}
+
+.box-timeline .timeline-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+}
+
+.box-timeline .timeline-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.box-features {
+    margin: 10px 0 0 0;
+}
+
+.box-features h4 {
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.box-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box-features ul li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.box-features ul li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--secondary-color);
+    font-size: 0.65rem;
+}
+
 
 .design-card {
     background: var(--card-color);
@@ -450,33 +728,63 @@
 }
 
 /* Адаптация для планшетов */
-@media (max-width: 992px) {
-    .design-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+@media (max-width: 1200px) {
+    .design-slider-container {
+        grid-template-columns: repeat(3, 1fr);
+        height: 360px;
+        max-width: 100%;
+    }
+    
+    .design-slider-container:has(.box-1:hover) {
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+    
+    .design-slider-container:has(.box-2:hover) {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    .design-slider-container:has(.box-3:hover) {
+        grid-template-columns: 1fr 1fr 3fr;
+    }
+    
+    .design-slider-container:has(.box-4:hover) {
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+    
+    .design-slider-container:has(.box-5:hover) {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    .design-slider-container:has(.box-6:hover) {
+        grid-template-columns: 1fr 1fr 3fr;
     }
 }
 
 /* Адаптация для мобильных */
-@media (max-width: 576px) {
-    .section-tabs {
-        gap: 10px;
+@media (max-width: 768px) {
+    .design-slider-container {
+        grid-template-columns: 1fr;
+        height: 270px;
+        gap: 0.5em;
     }
     
-    .tab-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .design-grid {
+    .design-slider-container:has(.box-1:hover),
+    .design-slider-container:has(.box-2:hover),
+    .design-slider-container:has(.box-3:hover),
+    .design-slider-container:has(.box-4:hover),
+    .design-slider-container:has(.box-5:hover),
+    .design-slider-container:has(.box-6:hover) {
         grid-template-columns: 1fr;
     }
     
-    .card-footer {
-        flex-direction: column;
+    .box:nth-child(odd),
+    .box:nth-child(even) {
+        transform: translateY(0);
     }
     
-    .btn-details, .btn-order {
-        width: 100%;
+    .box::after {
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
 }
 
