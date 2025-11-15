@@ -1,22 +1,27 @@
 /* Стили для страницы строительства */
 .section.stages {
-    padding: 40px 0 !important;
+    padding: 80px 0 !important;
 }
 
 .stages .section-title {
-    font-size: 2rem !important;
-    margin-bottom: 10px !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 15px !important;
+    text-align: center;
 }
 
 .stages .section-subtitle {
-    font-size: 1rem !important;
-    margin-bottom: 30px !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 50px !important;
+    text-align: center;
 }
 
 /* Слайдер этапов */
 .stages-slider-wrapper {
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .stages-slider-container {
@@ -43,12 +48,13 @@
 
 .stage {
     display: flex;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
-    background: rgba(33, 36, 44, 0.6);
-    padding: 30px;
+    background: rgba(33, 36, 44, 0.8);
+    padding: 50px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .stage-number {
@@ -104,12 +110,12 @@
 }
 
 .stage-image {
-    flex: 0 0 400px;
-    width: 400px;
-    height: 300px;
+    flex: 0 0 450px;
+    width: 450px;
+    height: 320px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .stage-image img {
@@ -190,11 +196,16 @@
 }
 
 /* Технологии строительства */
+.section.technologies {
+    padding: 80px 0 !important;
+}
+
 .tech-tabs {
     display: flex;
-    gap: 10px;
-    margin: 40px 0 30px;
+    gap: 15px;
+    margin: 50px 0 40px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tech-tab {
@@ -215,8 +226,10 @@
 
 .tech-content {
     display: none;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
+    margin-top: 30px;
+    min-height: 400px;
 }
 
 .tech-content.active {
@@ -225,6 +238,7 @@
 
 .tech-info {
     flex: 1;
+    max-width: 600px;
 }
 
 .tech-info h3 {
@@ -269,9 +283,10 @@
 
 .tech-image {
     flex: 1;
-    border-radius: 10px;
+    max-width: 600px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .tech-image img {
@@ -286,10 +301,22 @@
 }
 
 /* Геология и геодезия */
+.section.geology,
+.section.foundation,
+.section.walls,
+.section.roof,
+.section.glazing,
+.section.engineering,
+.section.interior,
+.section.exterior {
+    padding: 80px 0 !important;
+}
+
 .geology-content {
     display: flex;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 50px;
+    margin-top: 50px;
+    align-items: flex-start;
 }
 
 .geology-info {
@@ -419,14 +446,23 @@
 
 /* Фундамент */
 .foundation-types {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .foundation-card {
     display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
+    gap: 50px;
+    margin-bottom: 60px;
     align-items: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.foundation-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
 }
 
 .foundation-card.reverse {
@@ -492,8 +528,8 @@
 .walls-materials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .material-card {
@@ -568,8 +604,8 @@
 .roof-types {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .roof-card {
@@ -692,8 +728,9 @@
 /* Остекление */
 .glazing-content {
     display: flex;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 50px;
+    margin-top: 50px;
+    align-items: flex-start;
 }
 
 .glazing-info {
@@ -772,8 +809,8 @@
 .engineering-systems {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
 .system-card {
@@ -837,8 +874,9 @@
 /* Внутренняя отделка */
 .interior-content {
     display: flex;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 50px;
+    margin-top: 50px;
+    align-items: flex-start;
 }
 
 .interior-info {
@@ -933,22 +971,30 @@
 .exterior-materials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 35px;
+    margin-top: 50px;
 }
 
 /* Форма заказа */
 .order-construction {
     background-size: cover;
     background-position: center;
-    padding: 80px 0;
+    padding: 100px 0;
     position: relative;
 }
 
 .order-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
+}
+
+.order-content .section-title {
+    margin-bottom: 20px;
+}
+
+.order-content .section-subtitle {
+    margin-bottom: 50px;
 }
 
 .order-form {
@@ -1018,17 +1064,18 @@
 /* Стили для статей о строительстве */
 .construction-article {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: 1fr 450px;
+    gap: 50px;
+    margin-top: 50px;
     align-items: start;
 }
 
 .article-content {
-    background: rgba(33, 36, 44, 0.6);
-    padding: 40px;
+    background: rgba(33, 36, 44, 0.8);
+    padding: 50px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .article-content h3 {
@@ -1179,13 +1226,15 @@
 
 .article-image {
     position: sticky;
-    top: 100px;
+    top: 120px;
+    height: fit-content;
 }
 
 .article-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
 }
 
 /* Декоративные элементы для секций строительства */
@@ -1290,19 +1339,45 @@
     pointer-events: none;
 }
 
+/* Улучшенное выравнивание заголовков секций */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px !important;
+}
+
+/* Контейнеры с правильными отступами */
+.section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Адаптация */
 @media (max-width: 1200px) {
     .construction-article {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .article-image {
         position: static;
-        margin-top: 30px;
+        margin-top: 40px;
     }
     
     .article-steps {
         grid-template-columns: 1fr;
+    }
+    
+    .stage-image {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .geology .decor-left-top,
@@ -1339,17 +1414,17 @@
     .exterior .decor-right-bottom {
         display: none;
     }
-}
+    
     .stage {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        gap: 30px;
+        padding: 40px 30px;
     }
     
     .stage-image {
         flex: 0 0 100%;
         width: 100%;
-        height: 200px;
+        height: 250px;
         order: -1;
     }
     
@@ -1383,24 +1458,51 @@
     
     .tech-content.active {
         flex-direction: column;
+        gap: 40px;
+    }
+    
+    .tech-image {
+        max-width: 100%;
     }
     
     .geology-content {
         flex-direction: column;
+        gap: 40px;
     }
     
     .glazing-content {
         flex-direction: column;
+        gap: 40px;
     }
     
     .interior-content {
         flex-direction: column;
+        gap: 40px;
+    }
+    
+    .foundation-card {
+        padding: 30px;
+        gap: 30px;
     }
 }
 
 @media (max-width: 992px) {
+    .section.stages,
+    .section.technologies,
+    .section.geology,
+    .section.foundation,
+    .section.walls,
+    .section.roof,
+    .section.glazing,
+    .section.engineering,
+    .section.interior,
+    .section.exterior {
+        padding: 60px 0 !important;
+    }
+    
     .foundation-card, .foundation-card.reverse {
         flex-direction: column;
+        padding: 30px 20px;
     }
     
     .walls-materials {
@@ -1410,12 +1512,39 @@
     .exterior-materials {
         grid-template-columns: 1fr;
     }
+    
+    .article-content {
+        padding: 35px 25px;
+    }
 }
 
 @media (max-width: 768px) {
+    .section.stages,
+    .section.technologies,
+    .section.geology,
+    .section.foundation,
+    .section.walls,
+    .section.roof,
+    .section.glazing,
+    .section.engineering,
+    .section.interior,
+    .section.exterior {
+        padding: 50px 0 !important;
+    }
+    
+    .stage {
+        padding: 30px 20px;
+    }
+    
     .tech-tabs {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .tech-tab {
+        width: 100%;
+        text-align: center;
     }
     
     .packages-grid {
@@ -1430,11 +1559,47 @@
         flex-direction: column;
         gap: 0;
     }
+    
+    .order-construction {
+        padding: 60px 0;
+    }
+    
+    .article-content {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 576px) {
+    .section.stages,
+    .section.technologies,
+    .section.geology,
+    .section.foundation,
+    .section.walls,
+    .section.roof,
+    .section.glazing,
+    .section.engineering,
+    .section.interior,
+    .section.exterior {
+        padding: 40px 0 !important;
+    }
+    
+    .section-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .stage {
+        padding: 25px 15px;
+        gap: 20px;
+    }
+    
     .stage-number {
         margin-bottom: 20px;
+        font-size: 2rem;
+        min-width: 50px;
     }
     
     .roof-types {
@@ -1446,6 +1611,18 @@
     }
     
     .order-form {
-        padding: 20px;
+        padding: 25px 15px;
+    }
+    
+    .article-content {
+        padding: 25px 15px;
+    }
+    
+    .article-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .foundation-card {
+        padding: 25px 15px;
     }
 }
