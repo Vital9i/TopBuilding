@@ -2266,12 +2266,12 @@ html {
   background: transparent;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
-  padding: 8px 18px;
+  padding: 6px 10px;
   border-radius: 50px;
   cursor: pointer;
   transition: var(--transition);
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 .btn-details:hover {

@@ -5,93 +5,116 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"ТОПАГРОБЕЛ" - Строительство домов в РБ</title>
+    <title>"ТОПБИЛДИНГ" - Строительство домов в РБ</title>
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="construction.css">
 </head>
 
 <body>
-    <div class="main-content-wrapper">
-        <!-- Основной контент -->
-        <main class="main">
-            <section id="home" class="section hero">
-                <!-- Декоративные элементы -->
-                <div class="decor decor-left-top"></div>
-
-                <div class="container">
-                    <div class="hero-content-wrapper">
-                        <div class="fixed-contact-bar">
-                            <a href="tel:+375291286217" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375 (29) 128-62-17
-                            </a>
-                            <a href="tel:+375296200314" class="contact-link">
-                                <i class="fas fa-phone phone-icon"></i> +375 (29) 620-03-14
-                            </a>
-                            <a href="mailto:buildingtop@yandex.by" class="contact-link">
-                                <i class="fas fa-envelope email-icon"></i> buildingtop@yandex.by
-                            </a>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon viber"><i class="fab fa-viber"></i></a>
-                                <a href="#" class="social-icon telegram"><i class="fab fa-telegram"></i></a>
-                                <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <div class="maklknknin-content-wrapper">
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-left">
+                        <!-- Логотип компании -->
+                        <a href="../index.html" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="content-hero">
-                            <img src="img/logo.webp" alt="Логотип компании" class="hero-logo">
-                            <h1>СТРОИТЕЛЬСТВО ДОМОВ ПОД КЛЮЧ В РЕСПУБЛИКЕ БЕЛАРУСЬ</h1>
-                            <p class="hero-subtitle">ООО "ТОПАГРОБЕЛ" - реализуем проекты любой сложности с гарантией 10 лет</p>
-                            <button class="btn hero-btn">заказать консультацию</button>
-                        </div>
-                        <div class="image-stack">
-                            <img src="img/project.png" alt="Проект" class="stack-img project-img">
-                            <img src="img/construction.png" alt="Строительство" class="stack-img house-img">
-                            <img src="img/builder.png" alt="Строитель" class="stack-img hand-img">
-                        </div>
+                        </a>
                     </div>
-                </div>
-            </section>
-
-            <!-- Шапка сайта -->
-            <header class="header" id="mainHeader">
-                <div class="container">
-                    <nav class="nav">
-                        <ul>
-                            <li>
-                                <a href="../index.html">Главная</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="../design/design.html">Проектирование</a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li class="active">
-                                <a href="construction.html">Строительство</a>
-                                <ul>
-                                    <li><a href="#stages">Этапы строительства</a></li>
-                                    <li><a href="#technologies">Технологии</a></li>
-                                    <li><a href="#geology">Геология и геодезия</a></li>
-                                    <li><a href="#foundation">Фундамент</a></li>
-                                    <li><a href="#walls">Стены</a></li>
-                                    <li><a href="#roof">Крыша</a></li>
-                                    <li><a href="#glazing">Остекление</a></li>
-                                    <li><a href="#engineering">Инженерные сети</a></li>
-                                    <li><a href="#interior">Внутренняя отделка</a></li>
-                                    <li><a href="#exterior">Наружная отделка</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="landscaping.html">Благоустройство</a>
-                            </li>
-                        </ul>
-                        <a href="contacts.html">Контакты</a>
-                        <a href="about.html">О нас</a>
-                    </nav>
-                </div>
-            </header>
+                    
+                    <div class="nav-menu">
+                    <ul>
+                        <li>
+                            <a href="../index.html">Главная</a>
+                            <ul>
+                                <li><a href="../index.html#home">Главная страница</a></li>
+                                <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                                <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                                <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                                <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                                <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                                <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
+                                <li><a href="../index.html#footer">Контакты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../design/design.html">Проектирование</a>
+                            <ul>
+                                <li><a href="../design/design.html#design-types">Виды проектов</a></li>
+                                <li><a href="../design/design.html#design-process">Процесс проектирования</a></li>
+                                <li><a href="../design/design.html#prices">Стоимость</a></li>
+                                <li><a href="../design/design.html#popular-projects">Популярные проекты</a></li>
+                                <li><a href="../design/design.html#faq">Вопросы и ответы</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="active">
+                            <a href="construction.html">Строительство</a>
+                            <ul>
+                                <li><a href="#geology">Геология и геодезия участка</a></li>
+                                <li><a href="#foundation">Фундамент</a></li>
+                                <li><a href="#walls">Стены</a></li>
+                                <li><a href="#roof">Крыша</a></li>
+                                <li><a href="#glazing">Остекление</a></li>
+                                <li><a href="#engineering">Сети</a></li>
+                                <li><a href="#interior">Внутренняя отделка</a></li>
+                                <li><a href="#exterior">Наружная отделка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../under_construction.html" target="_blank">Благоустройство территории</a>
+                            <ul>
+                                <li><a href="../under_construction.html" target="_blank">Установка забора</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Укладка тротуарной плитки</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Монтаж ливневок и дренажа</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Устройство газона</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Монтаж автополива</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Искусственные водоемы</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Подпорки для участка</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Освещение участка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../under_construction.html" target="_blank">Ремонт и модернизация</a>
+                            <ul>
+                                <li><a href="../under_construction.html" target="_blank">Административные и производственные объекты</a></li>
+                                <li><a href="../under_construction.html" target="_blank">Ремонт квартир</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="../under_construction.html" target="_blank">Партнеры</a>
+                    <a href="../about/about.html" target="_blank">О нас</a>
+                    </div>
+                    
+                    <!-- Кнопка контактов -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Контакты</span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
 
             <!-- Секция "Этапы строительства" -->
             <section id="stages" class="section stages">
@@ -101,148 +124,179 @@
                     <h2 class="section-title">Этапы строительства дома</h2>
                     <p class="section-subtitle">Полный цикл работ от нуля до сдачи под ключ</p>
                     
-                    <div class="stages-timeline">
-                        <!-- Этап 1 -->
-                        <div class="stage">
-                            <div class="stage-number">01</div>
-                            <div class="stage-content">
-                                <h3>Подготовка участка</h3>
-                                <p>Расчистка территории, разметка осей будущего дома, подведение временных коммуникаций</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Геодезическая съемка</li>
-                                    <li><i class="fas fa-check"></i> Вынос осей в натуру</li>
-                                    <li><i class="fas fa-check"></i> Организация стройплощадки</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJlcGFyaW5nJTIwY29uc3RydWN0aW9uJTIwc2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Подготовка участка" loading="lazy">
+                    <div class="stages-slider-wrapper">
+                        <div class="stages-slider-container">
+                            <div class="stages-slider-track" id="stagesSliderTrack">
+                                <!-- Этап 1 -->
+                                <div class="stage-slide active">
+                                    <div class="stage">
+                                        <div class="stage-number">01</div>
+                                        <div class="stage-content">
+                                            <h3>Подготовка участка</h3>
+                                            <p>Расчистка территории, разметка осей будущего дома, подведение временных коммуникаций</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Геодезическая съемка</li>
+                                                <li><i class="fas fa-check"></i> Вынос осей в натуру</li>
+                                                <li><i class="fas fa-check"></i> Организация стройплощадки</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJlcGFyaW5nJTIwY29uc3RydWN0aW9uJTIwc2l0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Подготовка участка" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 2 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">02</div>
+                                        <div class="stage-content">
+                                            <h3>Земляные работы и фундамент</h3>
+                                            <p>Устройство фундамента в соответствии с проектом и геологическими условиями</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Разработка котлована</li>
+                                                <li><i class="fas fa-check"></i> Устройство песчаной подушки</li>
+                                                <li><i class="fas fa-check"></i> Монтаж опалубки и армирование</li>
+                                                <li><i class="fas fa-check"></i> Бетонирование фундамента</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Фундамент" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 3 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">03</div>
+                                        <div class="stage-content">
+                                            <h3>Возведение стен и перекрытий</h3>
+                                            <p>Строительство несущих конструкций согласно выбранной технологии</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Кладка стен из выбранного материала</li>
+                                                <li><i class="fas fa-check"></i> Монтаж перекрытий</li>
+                                                <li><i class="fas fa-check"></i> Устройство лестниц</li>
+                                                <li><i class="fas fa-check"></i> Контроль геометрии конструкций</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Стены" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 4 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">04</div>
+                                        <div class="stage-content">
+                                            <h3>Устройство кровли</h3>
+                                            <p>Монтаж стропильной системы и кровельного покрытия с утеплением и гидроизоляцией</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Монтаж стропильной системы</li>
+                                                <li><i class="fas fa-check"></i> Утепление и гидроизоляция</li>
+                                                <li><i class="fas fa-check"></i> Установка кровельного покрытия</li>
+                                                <li><i class="fas fa-check"></i> Монтаж водосточной системы</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Крыша" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 5 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">05</div>
+                                        <div class="stage-content">
+                                            <h3>Остекление и наружная отделка</h3>
+                                            <p>Установка окон и дверей, выполнение фасадных работ</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Монтаж окон и дверей</li>
+                                                <li><i class="fas fa-check"></i> Утепление фасада</li>
+                                                <li><i class="fas fa-check"></i> Наружная отделка</li>
+                                                <li><i class="fas fa-check"></i> Устройство входных групп</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Остекление" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 6 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">06</div>
+                                        <div class="stage-content">
+                                            <h3>Инженерные коммуникации</h3>
+                                            <p>Монтаж всех инженерных систем дома</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Электрика и освещение</li>
+                                                <li><i class="fas fa-check"></i> Водоснабжение и канализация</li>
+                                                <li><i class="fas fa-check"></i> Отопление и вентиляция</li>
+                                                <li><i class="fas fa-check"></i> Система "Умный дом"</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1600566752225-3f8511f60c50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Коммуникации" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 7 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">07</div>
+                                        <div class="stage-content">
+                                            <h3>Внутренняя отделка</h3>
+                                            <p>Выполнение всех внутренних отделочных работ</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Штукатурка и шпаклевка</li>
+                                                <li><i class="fas fa-check"></i> Укладка напольных покрытий</li>
+                                                <li><i class="fas fa-check"></i> Покраска и поклейка обоев</li>
+                                                <li><i class="fas fa-check"></i> Установка сантехники</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Отделка" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Этап 8 -->
+                                <div class="stage-slide">
+                                    <div class="stage">
+                                        <div class="stage-number">08</div>
+                                        <div class="stage-content">
+                                            <h3>Сдача объекта</h3>
+                                            <p>Финальные работы и передача дома клиенту</p>
+                                            <ul class="stage-features">
+                                                <li><i class="fas fa-check"></i> Уборка объекта</li>
+                                                <li><i class="fas fa-check"></i> Проверка всех систем</li>
+                                                <li><i class="fas fa-check"></i> Подписание акта сдачи-приемки</li>
+                                                <li><i class="fas fa-check"></i> Передача документации</li>
+                                            </ul>
+                                        </div>
+                                        <div class="stage-image">
+                                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Сдача" loading="lazy">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Этап 2 -->
-                        <div class="stage reverse">
-                            <div class="stage-number">02</div>
-                            <div class="stage-content">
-                                <h3>Земляные работы и фундамент</h3>
-                                <p>Устройство фундамента в соответствии с проектом и геологическими условиями</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Разработка котлована</li>
-                                    <li><i class="fas fa-check"></i> Устройство песчаной подушки</li>
-                                    <li><i class="fas fa-check"></i> Монтаж опалубки и армирование</li>
-                                    <li><i class="fas fa-check"></i> Бетонирование фундамента</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Фундамент" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 3 -->
-                        <div class="stage">
-                            <div class="stage-number">03</div>
-                            <div class="stage-content">
-                                <h3>Возведение стен и перекрытий</h3>
-                                <p>Строительство несущих конструкций согласно выбранной технологии</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Кладка стен из выбранного материала</li>
-                                    <li><i class="fas fa-check"></i> Монтаж перекрытий</li>
-                                    <li><i class="fas fa-check"></i> Устройство лестниц</li>
-                                    <li><i class="fas fa-check"></i> Контроль геометрии конструкций</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Стены" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 4 -->
-                        <div class="stage reverse">
-                            <div class="stage-number">04</div>
-                            <div class="stage-content">
-                                <h3>Устройство кровли</h3>
-                                <p>Монтаж стропильной системы и кровельного покрытия с утеплением и гидроизоляцией</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Монтаж стропильной системы</li>
-                                    <li><i class="fas fa-check"></i> Утепление и гидроизоляция</li>
-                                    <li><i class="fas fa-check"></i> Установка кровельного покрытия</li>
-                                    <li><i class="fas fa-check"></i> Монтаж водосточной системы</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Крыша" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 5 -->
-                        <div class="stage">
-                            <div class="stage-number">05</div>
-                            <div class="stage-content">
-                                <h3>Остекление и наружная отделка</h3>
-                                <p>Установка окон и дверей, выполнение фасадных работ</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Монтаж окон и дверей</li>
-                                    <li><i class="fas fa-check"></i> Утепление фасада</li>
-                                    <li><i class="fas fa-check"></i> Наружная отделка</li>
-                                    <li><i class="fas fa-check"></i> Устройство входных групп</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Остекление" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 6 -->
-                        <div class="stage reverse">
-                            <div class="stage-number">06</div>
-                            <div class="stage-content">
-                                <h3>Инженерные коммуникации</h3>
-                                <p>Монтаж всех инженерных систем дома</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Электрика и освещение</li>
-                                    <li><i class="fas fa-check"></i> Водоснабжение и канализация</li>
-                                    <li><i class="fas fa-check"></i> Отопление и вентиляция</li>
-                                    <li><i class="fas fa-check"></i> Система "Умный дом"</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1600566752225-3f8511f60c50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Коммуникации" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 7 -->
-                        <div class="stage">
-                            <div class="stage-number">07</div>
-                            <div class="stage-content">
-                                <h3>Внутренняя отделка</h3>
-                                <p>Выполнение всех внутренних отделочных работ</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Штукатурка и шпаклевка</li>
-                                    <li><i class="fas fa-check"></i> Укладка напольных покрытий</li>
-                                    <li><i class="fas fa-check"></i> Покраска и поклейка обоев</li>
-                                    <li><i class="fas fa-check"></i> Установка сантехники</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Отделка" loading="lazy">
-                            </div>
-                        </div>
-                        
-                        <!-- Этап 8 -->
-                        <div class="stage reverse">
-                            <div class="stage-number">08</div>
-                            <div class="stage-content">
-                                <h3>Сдача объекта</h3>
-                                <p>Финальные работы и передача дома клиенту</p>
-                                <ul class="stage-features">
-                                    <li><i class="fas fa-check"></i> Уборка объекта</li>
-                                    <li><i class="fas fa-check"></i> Проверка всех систем</li>
-                                    <li><i class="fas fa-check"></i> Подписание акта сдачи-приемки</li>
-                                    <li><i class="fas fa-check"></i> Передача документации</li>
-                                </ul>
-                            </div>
-                            <div class="stage-image">
-                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Сдача" loading="lazy">
-                            </div>
+                        <!-- Навигация слайдера -->
+                        <div class="stages-slider-nav">
+                            <button class="stages-slider-btn stages-slider-prev" id="stagesSliderPrev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="stages-slider-dots" id="stagesSliderDots"></div>
+                            <button class="stages-slider-btn stages-slider-next" id="stagesSliderNext">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -336,262 +390,576 @@
             <!-- Секция "Геология и геодезия" -->
             <section id="geology" class="section geology">
                 <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2 class="section-title">Геология и геодезия участка</h2>
                     <p class="section-subtitle">Профессиональные изыскания для надежного фундамента</p>
                     
-                    <div class="geology-content">
-                        <div class="geology-info">
-                            <h3>Почему это важно?</h3>
-                            <p>Геологические и геодезические изыскания - первый и важнейший этап строительства, который позволяет:</p>
-                            <ul class="geology-list">
-                                <li><i class="fas fa-check"></i> Определить тип грунта и его несущую способность</li>
-                                <li><i class="fas fa-check"></i> Выявить уровень грунтовых вод</li>
-                                <li><i class="fas fa-check"></i> Предотвратить просадку и деформацию фундамента</li>
-                                <li><i class="fas fa-check"></i> Сэкономить до 30% на фундаменте за счет оптимизации</li>
-                                <li><i class="fas fa-check"></i> Избежать проблем с трещинами в стенах и перекосами</li>
+                    <article class="construction-article">
+                        <div class="article-content">
+                            <h3>Как выбрать геологические и геодезические изыскания и какие виды бывают</h3>
+                            
+                            <p class="article-intro">Геологические и геодезические изыскания — обязательный первый этап строительства любого дома. Они позволяют получить полную информацию о грунтах, рельефе участка и подземных водах, что критически важно для правильного выбора типа фундамента и предотвращения проблем в будущем.</p>
+                            
+                            <h4>Почему это важно?</h4>
+                            <p>Без профессиональных изысканий невозможно:</p>
+                            <ul class="article-list">
+                                <li><i class="fas fa-check-circle"></i> Правильно выбрать тип и глубину заложения фундамента</li>
+                                <li><i class="fas fa-check-circle"></i> Определить несущую способность грунта</li>
+                                <li><i class="fas fa-check-circle"></i> Выявить уровень грунтовых вод и их агрессивность</li>
+                                <li><i class="fas fa-check-circle"></i> Предотвратить просадку, деформацию и разрушение фундамента</li>
+                                <li><i class="fas fa-check-circle"></i> Сэкономить до 30% на стоимости фундамента за счет оптимизации</li>
+                                <li><i class="fas fa-check-circle"></i> Избежать трещин в стенах, перекосов и других дефектов</li>
                             </ul>
                             
+                            <h4>Виды геологических изысканий</h4>
+                            
+                            <div class="article-section">
+                                <h5>1. Инженерно-геологические изыскания</h5>
+                                <p>Включают бурение скважин, отбор проб грунта, лабораторные исследования. Позволяют определить:</p>
+                                <ul>
+                                    <li>Состав и свойства грунтов</li>
+                                    <li>Несущую способность основания</li>
+                                    <li>Глубину промерзания</li>
+                                    <li>Коррозионную активность грунтов</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>2. Инженерно-геодезические изыскания</h5>
+                                <p>Включают топографическую съемку, вынос осей в натуру, нивелирование. Необходимы для:</p>
+                                <ul>
+                                    <li>Создания топографического плана участка</li>
+                                    <li>Привязки дома к местности</li>
+                                    <li>Планирования рельефа и дренажа</li>
+                                    <li>Разбивки осей здания</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>3. Гидрогеологические изыскания</h5>
+                                <p>Изучают подземные воды: их уровень, химический состав, агрессивность. Важны для:</p>
+                                <ul>
+                                    <li>Выбора глубины заложения фундамента</li>
+                                    <li>Проектирования дренажной системы</li>
+                                    <li>Защиты фундамента от подтопления</li>
+                                    <li>Оценки коррозионной опасности</li>
+                                </ul>
+                            </div>
+                            
+                            <h4>Как выбрать объем изысканий?</h4>
+                            <p>Объем работ зависит от:</p>
+                            <ul>
+                                <li><strong>Площади и этажности дома</strong> — чем больше дом, тем больше скважин нужно</li>
+                                <li><strong>Сложности рельефа</strong> — на склонах требуется более детальная съемка</li>
+                                <li><strong>Геологических условий</strong> — на проблемных участках нужны дополнительные исследования</li>
+                                <li><strong>Типа фундамента</strong> — для свайного фундамента нужны более глубокие скважины</li>
+                            </ul>
+                            
+                            <h4>Наши пакеты услуг</h4>
                             <div class="geology-packages">
-                                <h4>Наши пакеты услуг:</h4>
                                 <div class="packages-grid">
                                     <div class="package">
                                         <h5>Базовый</h5>
                                         <ul>
-                                            <li>Выезд геолога</li>
-                                            <li>Бурение 3 скважин до 6м</li>
-                                            <li>Лабораторные исследования</li>
-                                            <li>Рекомендации по фундаменту</li>
+                                            <li>Выезд геолога на участок</li>
+                                            <li>Бурение 3 скважин до 6 метров</li>
+                                            <li>Лабораторные исследования грунта</li>
+                                            <li>Рекомендации по типу фундамента</li>
+                                            <li>Письменный отчет</li>
                                         </ul>
                                         <div class="package-price">от 800 руб</div>
+                                        <p class="package-note">Подходит для простых участков и легких домов</p>
                                     </div>
                                     <div class="package popular">
                                         <div class="popular-badge">Рекомендуем</div>
                                         <h5>Стандарт</h5>
                                         <ul>
                                             <li>Выезд геолога и геодезиста</li>
-                                            <li>Бурение 5 скважин до 8м</li>
-                                            <li>Топографическая съемка</li>
+                                            <li>Бурение 5 скважин до 8 метров</li>
+                                            <li>Топографическая съемка 1:500</li>
+                                            <li>Исследование грунтовых вод</li>
                                             <li>Подробный отчет с расчетами</li>
+                                            <li>Рекомендации по дренажу</li>
                                         </ul>
                                         <div class="package-price">от 1200 руб</div>
+                                        <p class="package-note">Оптимальный вариант для большинства случаев</p>
                                     </div>
                                     <div class="package">
                                         <h5>Премиум</h5>
                                         <ul>
                                             <li>Комплексные изыскания</li>
-                                            <li>Бурение 8 скважин до 10м</li>
+                                            <li>Бурение 8 скважин до 10 метров</li>
+                                            <li>Топографическая съемка 1:200</li>
                                             <li>3D модель участка</li>
-                                            <li>Авторский надзор</li>
+                                            <li>Детальный анализ всех факторов</li>
+                                            <li>Авторский надзор при устройстве фундамента</li>
+                                            <li>Гарантия на рекомендации</li>
                                         </ul>
                                         <div class="package-price">от 2000 руб</div>
+                                        <p class="package-note">Для сложных участков и крупных объектов</p>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="article-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p><strong>Важно:</strong> Экономия на изысканиях может обернуться серьезными проблемами в будущем. Неправильно выбранный фундамент приведет к трещинам в стенах, перекосам и необходимости дорогостоящего ремонта.</p>
+                            </div>
                         </div>
-                        <div class="geology-image">
+                        <div class="article-image">
                             <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Геологические исследования" loading="lazy">
                         </div>
-                    </div>
+                    </article>
                 </div>
             </section>
 
             <!-- Секция "Фундамент" -->
             <section id="foundation" class="section foundation">
+                <div class="decor decor-left-top"></div>
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2 class="section-title">Фундамент</h2>
                     <p class="section-subtitle">Надежная основа вашего дома</p>
                     
-                    <div class="foundation-types">
-                        <!-- Ленточный фундамент -->
-                        <div class="foundation-card">
-                            <div class="foundation-image">
-                                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ленточный фундамент" loading="lazy">
-                            </div>
-                            <div class="foundation-info">
-                                <h3>Ленточный фундамент</h3>
-                                <p>Наиболее распространенный тип фундамента для частных домов. Представляет собой железобетонную ленту под всеми несущими стенами.</p>
-                                <ul class="foundation-features">
-                                    <li><strong>Применение:</strong> Кирпичные, газобетонные, деревянные дома</li>
-                                    <li><strong>Глубина:</strong> 1,2-1,8м (зависит от промерзания)</li>
-                                    <li><strong>Срок службы:</strong> 100+ лет</li>
-                                    <li><strong>Стоимость:</strong> от 900 руб/м²</li>
+                    <article class="construction-article">
+                        <div class="article-content">
+                            <h3>Как выбрать фундамент и какие виды бывают</h3>
+                            
+                            <p class="article-intro">Фундамент — это основа любого дома, от правильности выбора которого зависит долговечность и безопасность всего строения. Выбор типа фундамента зависит от множества факторов: типа грунта, уровня грунтовых вод, веса здания, климатических условий и бюджета.</p>
+                            
+                            <h4>Факторы выбора фундамента</h4>
+                            <ul class="article-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Тип грунта</strong> — несущая способность, пучинистость, уровень промерзания</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Уровень грунтовых вод</strong> — влияет на глубину заложения и необходимость дренажа</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Вес здания</strong> — материал стен, этажность, наличие подвала</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Рельеф участка</strong> — уклон, перепады высот</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Бюджет</strong> — разные типы фундаментов имеют разную стоимость</li>
+                            </ul>
+                            
+                            <h4>Виды фундаментов</h4>
+                            
+                            <div class="article-section">
+                                <h5>1. Ленточный фундамент</h5>
+                                <p>Наиболее распространенный тип фундамента для частных домов. Представляет собой железобетонную ленту под всеми несущими стенами здания.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для кирпичных, газобетонных, блочных домов</li>
+                                    <li>На стабильных грунтах с хорошей несущей способностью</li>
+                                    <li>При необходимости устройства подвала или цокольного этажа</li>
+                                    <li>Для домов с тяжелыми стенами</li>
                                 </ul>
-                                <button class="btn foundation-btn">Подробнее</button>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Высокая несущая способность</li>
+                                    <li>Возможность устройства подвала</li>
+                                    <li>Долговечность (100+ лет)</li>
+                                    <li>Универсальность применения</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Высокая стоимость на слабых грунтах</li>
+                                    <li>Большой объем земляных работ</li>
+                                    <li>Требует качественной гидроизоляции</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Глубина заложения: 1,2-1,8 м (ниже уровня промерзания)</li>
+                                    <li>Ширина ленты: 300-600 мм (зависит от нагрузки)</li>
+                                    <li>Стоимость: от 900 руб/м²</li>
+                                    <li>Срок службы: 100+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>2. Плитный фундамент (монолитная плита)</h5>
+                                <p>Монолитная железобетонная плита под всем зданием. Распределяет нагрузку по всей площади, что делает его идеальным для слабых и пучинистых грунтов.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>На слабых, пучинистых, водонасыщенных грунтах</li>
+                                    <li>При высоком уровне грунтовых вод</li>
+                                    <li>Для домов без подвала</li>
+                                    <li>На участках с перепадами высот</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Высокая устойчивость на слабых грунтах</li>
+                                    <li>Равномерное распределение нагрузки</li>
+                                    <li>Может служить полом первого этажа</li>
+                                    <li>Устойчивость к морозному пучению</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Высокая стоимость (самый дорогой тип)</li>
+                                    <li>Невозможность устройства подвала</li>
+                                    <li>Большой расход бетона и арматуры</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Толщина плиты: 300-500 мм</li>
+                                    <li>Армирование: двухслойное, сетка с ячейкой 200×200 мм</li>
+                                    <li>Стоимость: от 1200 руб/м²</li>
+                                    <li>Срок службы: 120+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>3. Свайный фундамент</h5>
+                                <p>Система свай, объединенных ростверком (лентой или плитой). Сваи передают нагрузку на глубокие плотные слои грунта, минуя слабые поверхностные.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>На болотистых, торфяных, слабонесущих грунтах</li>
+                                    <li>При высоком уровне грунтовых вод</li>
+                                    <li>Для легких домов (каркасных, деревянных)</li>
+                                    <li>На участках с большим уклоном</li>
+                                    <li>При необходимости быстрого возведения</li>
+                                </ul>
+                                
+                                <p><strong>Виды свай:</strong></p>
+                                <ul>
+                                    <li><strong>Буронабивные</strong> — заливаются на месте в пробуренные скважины</li>
+                                    <li><strong>Винтовые</strong> — металлические сваи с лопастями, вкручиваются в грунт</li>
+                                    <li><strong>Забивные</strong> — готовые железобетонные сваи, забиваются спецтехникой</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Возможность строительства на слабых грунтах</li>
+                                    <li>Меньший объем земляных работ</li>
+                                    <li>Быстрое возведение</li>
+                                    <li>Относительно низкая стоимость</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Ограниченная несущая способность</li>
+                                    <li>Сложность устройства подвала</li>
+                                    <li>Необходимость специальной техники</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Глубина заложения: 3-10 м (до плотных слоев)</li>
+                                    <li>Диаметр свай: 200-400 мм</li>
+                                    <li>Шаг свай: 1,5-3 м</li>
+                                    <li>Стоимость: от 700 руб/м²</li>
+                                    <li>Срок службы: 70+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>4. Столбчатый фундамент</h5>
+                                <p>Отдельные столбы из бетона, кирпича или блоков, расположенные в углах и местах пересечения стен. Подходит только для легких строений.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для легких деревянных и каркасных домов</li>
+                                    <li>На стабильных непучинистых грунтах</li>
+                                    <li>Для небольших одноэтажных строений</li>
+                                    <li>При ограниченном бюджете</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Глубина: 0,5-1,5 м</li>
+                                    <li>Стоимость: от 500 руб/м²</li>
+                                    <li>Срок службы: 50+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <h4>Как правильно выбрать фундамент?</h4>
+                            <div class="article-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Проведите геологические изыскания</h5>
+                                        <p>Это обязательный первый шаг. Без данных о грунте невозможно правильно выбрать тип фундамента.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Определите вес здания</h5>
+                                        <p>Рассчитайте нагрузку от стен, перекрытий, кровли, мебели и снега. Это влияет на размеры фундамента.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Учтите особенности участка</h5>
+                                        <p>Рельеф, уровень грунтовых вод, наличие подвала — все это влияет на выбор.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Сравните варианты</h5>
+                                        <p>Рассчитайте стоимость разных типов фундаментов с учетом всех факторов.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="article-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p><strong>Важно:</strong> Неправильно выбранный фундамент — это не только лишние расходы, но и риск трещин в стенах, перекосов и даже разрушения дома. Доверьте выбор профессионалам!</p>
                             </div>
                         </div>
-                        
-                        <!-- Плитный фундамент -->
-                        <div class="foundation-card reverse">
-                            <div class="foundation-image">
-                                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Плитный фундамент" loading="lazy">
-                            </div>
-                            <div class="foundation-info">
-                                <h3>Плитный фундамент</h3>
-                                <p>Монолитная железобетонная плита под всем зданием. Идеален для слабых и пучинистых грунтов.</p>
-                                <ul class="foundation-features">
-                                    <li><strong>Применение:</strong> Все типы домов на сложных грунтах</li>
-                                    <li><strong>Толщина:</strong> 0,3-0,5м</li>
-                                    <li><strong>Срок службы:</strong> 120+ лет</li>
-                                    <li><strong>Стоимость:</strong> от 1200 руб/м²</li>
-                                </ul>
-                                <button class="btn foundation-btn">Подробнее</button>
-                            </div>
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Фундамент" loading="lazy">
                         </div>
-                        
-                        <!-- Свайный фундамент -->
-                        <div class="foundation-card">
-                            <div class="foundation-image">
-                                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Свайный фундамент" loading="lazy">
-                            </div>
-                            <div class="foundation-info">
-                                <h3>Свайный фундамент</h3>
-                                <p>Система свай, объединенных ростверком. Оптимален для болотистых и слабонесущих грунтов.</p>
-                                <ul class="foundation-features">
-                                    <li><strong>Применение:</strong> Легкие дома, каркасные строения</li>
-                                    <li><strong>Глубина:</strong> 3-10м (до плотных слоев)</li>
-                                    <li><strong>Срок службы:</strong> 70+ лет</li>
-                                    <li><strong>Стоимость:</strong> от 700 руб/м²</li>
-                                </ul>
-                                <button class="btn foundation-btn">Подробнее</button>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </section>
 
             <!-- Секция "Стены" -->
             <section id="walls" class="section walls">
                 <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2 class="section-title">Стены</h2>
                     <p class="section-subtitle">Материалы и технологии для надежных стен</p>
                     
-                    <div class="walls-materials">
-                        <!-- Кирпич -->
-                        <div class="material-card">
-                            <div class="material-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJpY2slMjB3YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Кирпич" loading="lazy">
+                    <article class="construction-article">
+                        <div class="article-content">
+                            <h3>Как выбрать материал для стен и какие виды бывают</h3>
+                            
+                            <p class="article-intro">Стены — это несущие конструкции дома, которые определяют его прочность, долговечность, теплоизоляцию и внешний вид. Выбор материала для стен — один из самых важных решений при строительстве, влияющий на стоимость, сроки и эксплуатационные характеристики дома.</p>
+                            
+                            <h4>Факторы выбора материала стен</h4>
+                            <ul class="article-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Климат</strong> — требования к теплоизоляции, влагостойкости</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Нагрузка</strong> — этажность, тип перекрытий, наличие подвала</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Бюджет</strong> — стоимость материала и работ</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Скорость строительства</strong> — сроки возведения</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Экологичность</strong> — влияние на здоровье и окружающую среду</li>
+                            </ul>
+                            
+                            <h4>Виды материалов для стен</h4>
+                            
+                            <div class="article-section">
+                                <h5>1. Кирпич (керамический и силикатный)</h5>
+                                <p>Классический материал с отличными прочностными характеристиками и долговечностью. Керамический кирпич изготавливается из глины, силикатный — из песка и извести.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для капитальных домов с длительным сроком эксплуатации</li>
+                                    <li>При необходимости высокой прочности и огнестойкости</li>
+                                    <li>Для домов с подвалом и цокольным этажом</li>
+                                    <li>Когда важна престижность и солидность внешнего вида</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Высокая прочность и долговечность (100+ лет)</li>
+                                    <li>Отличная огнестойкость</li>
+                                    <li>Хорошая звукоизоляция</li>
+                                    <li>Устойчивость к влаге и морозу</li>
+                                    <li>Экологичность</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Высокая теплопроводность — требуется утепление</li>
+                                    <li>Большой вес — нужен мощный фундамент</li>
+                                    <li>Длительный срок строительства</li>
+                                    <li>Высокая стоимость</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Толщина стены: 380-510 мм (1,5-2 кирпича)</li>
+                                    <li>Теплопроводность: 0,4-0,7 Вт/(м·°C)</li>
+                                    <li>Стоимость: от 1200 руб/м²</li>
+                                    <li>Срок службы: 100+ лет</li>
+                                </ul>
                             </div>
-                            <div class="material-info">
-                                <h3>Кирпич</h3>
-                                <div class="material-specs">
-                                    <div class="spec">
-                                        <i class="fas fa-ruler-combined"></i>
-                                        <span>Толщина: 380-510мм</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-thermometer-half"></i>
-                                        <span>Теплопроводность: 0,4-0,7</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-home"></i>
-                                        <span>Срок службы: 100+ лет</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        <span>Цена: от 1200 руб/м²</span>
+                            
+                            <div class="article-section">
+                                <h5>2. Газобетон (газоблоки)</h5>
+                                <p>Современный ячеистый бетон с отличной теплоизоляцией. Легкий, быстро монтируется, легко обрабатывается. Идеален для строительства в один слой без дополнительного утепления.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для быстрого строительства</li>
+                                    <li>При ограниченном бюджете</li>
+                                    <li>Для домов без подвала</li>
+                                    <li>Когда важна энергоэффективность</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Отличная теплоизоляция (в 3-4 раза лучше кирпича)</li>
+                                    <li>Легкий вес — экономия на фундаменте</li>
+                                    <li>Быстрый монтаж — крупные блоки</li>
+                                    <li>Легко обрабатывается — режется обычной пилой</li>
+                                    <li>Хорошая геометрия блоков</li>
+                                    <li>Относительно низкая стоимость</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Гигроскопичность — впитывает влагу</li>
+                                    <li>Требует специального крепежа</li>
+                                    <li>Хрупкость — нужна аккуратность при транспортировке</li>
+                                    <li>Требует защиты от влаги</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Толщина стены: 300-400 мм (однослойная)</li>
+                                    <li>Теплопроводность: 0,1-0,2 Вт/(м·°C)</li>
+                                    <li>Стоимость: от 900 руб/м²</li>
+                                    <li>Срок службы: 70+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>3. Каркасная технология</h5>
+                                <p>Быстровозводимая технология с деревянным или металлическим каркасом, заполненным утеплителем. Обеспечивает отличную теплоизоляцию при минимальной толщине стены.</p>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для быстрого строительства (3-4 месяца)</li>
+                                    <li>При ограниченном бюджете</li>
+                                    <li>Для дачных и сезонных домов</li>
+                                    <li>Когда важна энергоэффективность</li>
+                                </ul>
+                                
+                                <p><strong>Виды каркасных стен:</strong></p>
+                                <ul>
+                                    <li><strong>Деревянный каркас</strong> — экологичный, требует защиты от влаги</li>
+                                    <li><strong>Металлический каркас (ЛСТК)</strong> — не горит, не гниет, легкий</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Отличная теплоизоляция</li>
+                                    <li>Быстрое возведение</li>
+                                    <li>Легкий вес — экономия на фундаменте</li>
+                                    <li>Низкая стоимость</li>
+                                    <li>Возможность строительства в любое время года</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Требует качественного утепления и пароизоляции</li>
+                                    <li>Низкая звукоизоляция</li>
+                                    <li>Ограниченная долговечность</li>
+                                    <li>Требует защиты от грызунов</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Толщина стены: 200-250 мм (с утеплителем)</li>
+                                    <li>Теплопроводность: 0,05-0,1 Вт/(м·°C)</li>
+                                    <li>Стоимость: от 700 руб/м²</li>
+                                    <li>Срок службы: 50+ лет</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="article-section">
+                                <h5>4. Дерево (брус, бревно)</h5>
+                                <p>Экологичный материал с уникальным микроклиматом. Деревянные стены "дышат", создавая комфортную атмосферу в доме.</p>
+                                
+                                <p><strong>Виды деревянных стен:</strong></p>
+                                <ul>
+                                    <li><strong>Профилированный брус</strong> — обработанные брусья с пазами</li>
+                                    <li><strong>Клееный брус</strong> — самый прочный и стабильный</li>
+                                    <li><strong>Оцилиндрованное бревно</strong> — классический вид</li>
+                                    <li><strong>Рубленое бревно</strong> — ручная обработка</li>
+                                </ul>
+                                
+                                <p><strong>Когда выбирать:</strong></p>
+                                <ul>
+                                    <li>Для экологичного жилья</li>
+                                    <li>Когда важен уникальный микроклимат</li>
+                                    <li>Для домов в традиционном стиле</li>
+                                    <li>Для загородного отдыха</li>
+                                </ul>
+                                
+                                <p><strong>Преимущества:</strong></p>
+                                <ul>
+                                    <li>Экологичность и натуральность</li>
+                                    <li>Уникальный микроклимат</li>
+                                    <li>Хорошая теплоизоляция</li>
+                                    <li>Красивый внешний вид</li>
+                                    <li>Относительно легкий вес</li>
+                                </ul>
+                                
+                                <p><strong>Недостатки:</strong></p>
+                                <ul>
+                                    <li>Требует защиты от влаги, огня, вредителей</li>
+                                    <li>Усадка в первые годы</li>
+                                    <li>Требует регулярного ухода</li>
+                                    <li>Ограниченная долговечность</li>
+                                    <li>Высокая стоимость качественного материала</li>
+                                </ul>
+                                
+                                <p><strong>Характеристики:</strong></p>
+                                <ul>
+                                    <li>Толщина стены: 150-200 мм</li>
+                                    <li>Теплопроводность: 0,15-0,3 Вт/(м·°C)</li>
+                                    <li>Стоимость: от 1000 руб/м²</li>
+                                    <li>Срок службы: 50-80 лет (при правильном уходе)</li>
+                                </ul>
+                            </div>
+                            
+                            <h4>Как правильно выбрать материал?</h4>
+                            <div class="article-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Определите бюджет</h5>
+                                        <p>Каркас — самый дешевый, кирпич — самый дорогой. Учтите не только стоимость материала, но и фундамент, утепление, отделку.</p>
                                     </div>
                                 </div>
-                                <p>Классический материал с отличными прочностными характеристиками. Требует утепления в нашем климате.</p>
-                                <button class="btn material-btn">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Газобетон -->
-                        <div class="material-card">
-                            <div class="material-image">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FzJTIwYmxvY2slMjB3YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Газобетон" loading="lazy">
-                            </div>
-                            <div class="material-info">
-                                <h3>Газобетон</h3>
-                                <div class="material-specs">
-                                    <div class="spec">
-                                        <i class="fas fa-ruler-combined"></i>
-                                        <span>Толщина: 300-400мм</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-thermometer-half"></i>
-                                        <span>Теплопроводность: 0,1-0,2</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-home"></i>
-                                        <span>Срок службы: 70+ лет</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        <span>Цена: от 900 руб/м²</span>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Учтите климат</h5>
+                                        <p>Для нашего климата важна теплоизоляция. Газобетон и каркас требуют меньше утепления, чем кирпич.</p>
                                     </div>
                                 </div>
-                                <p>Современный материал с отличной теплоизоляцией. Быстро монтируется, легко обрабатывается.</p>
-                                <button class="btn material-btn">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Каркас -->
-                        <div class="material-card">
-                            <div class="material-image">
-                                <img src="https://images.unsplash.com/photo-1600585152221-90352e4479f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJhbWUlMjB3YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Каркас" loading="lazy">
-                            </div>
-                            <div class="material-info">
-                                <h3>Каркас</h3>
-                                <div class="material-specs">
-                                    <div class="spec">
-                                        <i class="fas fa-ruler-combined"></i>
-                                        <span>Толщина: 200-250мм</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-thermometer-half"></i>
-                                        <span>Теплопроводность: 0,05-0,1</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-home"></i>
-                                        <span>Срок службы: 50+ лет</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        <span>Цена: от 700 руб/м²</span>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Оцените сроки</h5>
+                                        <p>Каркас строится быстрее всего (3-4 месяца), кирпич — дольше всего (6-12 месяцев).</p>
                                     </div>
                                 </div>
-                                <p>Быстровозводимая технология с отличной теплоизоляцией. Требует качественного утепления.</p>
-                                <button class="btn material-btn">Подробнее</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Дерево -->
-                        <div class="material-card">
-                            <div class="material-image">
-                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29vZGVuJTIwd2FsbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Дерево" loading="lazy">
-                            </div>
-                            <div class="material-info">
-                                <h3>Дерево</h3>
-                                <div class="material-specs">
-                                    <div class="spec">
-                                        <i class="fas fa-ruler-combined"></i>
-                                        <span>Толщина: 150-200мм</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-thermometer-half"></i>
-                                        <span>Теплопроводность: 0,15-0,3</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-home"></i>
-                                        <span>Срок службы: 50-80 лет</span>
-                                    </div>
-                                    <div class="spec">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        <span>Цена: от 1000 руб/м²</span>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Подумайте о долговечности</h5>
+                                        <p>Кирпич служит 100+ лет, газобетон — 70+ лет, каркас и дерево — 50+ лет.</p>
                                     </div>
                                 </div>
-                                <p>Экологичный материал с уникальным микроклиматом. Требует специальной обработки от влаги и вредителей.</p>
-                                <button class="btn material-btn">Подробнее</button>
+                            </div>
+                            
+                            <div class="article-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p><strong>Важно:</strong> Независимо от выбранного материала, критически важно соблюдать технологию строительства. Неправильная кладка, отсутствие утепления или гидроизоляции приведут к проблемам в эксплуатации.</p>
                             </div>
                         </div>
-                    </div>
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJpY2slMjB3YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Стены" loading="lazy">
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -1145,51 +1513,136 @@
                 </div>
             </section>
         </main>
+        
+        <!-- Сайдбар контактов (скрыт по умолчанию) -->
+        <div class="hero-sidebar" id="heroSidebar">
+            <div class="hero-contact-card">
+                <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="ceo-highlight">
+                    <div class="ceo-avatar">
+                        <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
+                        <div class="online-badge">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ceo-info">
+                        <div class="ceo-name">Гриценко Олег Олегович</div>
+                        <div class="ceo-title">Руководитель компании</div>
+                    </div>
+                </div>
+                
+                <div class="advantage-description">
+                    Вы общаетесь <strong>напрямую с руководителем</strong>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                </div>
 
-        <!-- Подвал сайта -->
+                <!-- Контактные кнопки -->
+                <div class="hero-contact-buttons">
+                    <a href="tel:+375291286217" class="contact-btn primary-contact" onclick="event.preventDefault(); openCallbackModal('Страница строительства');">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Заказать звонок</span>
+                    </a>
+                    
+                    <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Экскурсия по объектам</span>
+                    </a>
+                    
+                    <div class="messenger-buttons">
+                        <a href="https://t.me/+375291286217" class="messenger-btn telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="viber://chat?number=%2B375291286217" class="messenger-btn viber">
+                            <i class="fab fa-viber"></i>
+                            <span>Viber</span>
+                        </a>
+                        <a href="https://wa.me/375291286217" class="messenger-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Модальное окно обратного звонка -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-modal-overlay" onclick="closeCallbackModal()"></div>
+            <div class="callback-modal-content">
+                <button class="callback-modal-close" onclick="closeCallbackModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="callback-modal-header">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Заказать звонок</h3>
+                    <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+                </div>
+                <form id="callbackForm" class="callback-form">
+                    <div class="form-group">
+                        <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                    </div>
+                    <button type="submit" class="callback-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Отправить заявку</span>
+                    </button>
+                </form>
+                <div id="callback-message" class="callback-message"></div>
+            </div>
+        </div>
+        
         <footer id="footer" class="footer">
-            <div class="container">
+            <div class="footer-container">
                 <div class="footer-grid">
                     <!-- Колонка 1: О компании -->
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="/img/logo.webp" alt="ТОПАГРОБЕЛ">
+                            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <div class="logo-text">
+                                <span class="logo-top">ТОП</span>
+                                <span class="logo-building">БИЛДИНГ</span>
+                            </div>
                         </div>
-                        <p>ООО "ТОПАГРОБЕЛ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
-                        <div class="footer-payments">
-                            <img src="https://belarusbank.by/upload/iblock/9b8/9b8a4d6d3a1d8e5f7a3b6c2d4e1f8g9h.png" alt="Беларусбанк">
-                            <img src="https://www.bps-sberbank.by/upload/images/logo.png" alt="Сбербанк">
-                            <img src="https://www.mtbank.by/-/media/Images/Mtbank/Common/logo.png" alt="МТБанк">
-                        </div>
+                        <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
                     </div>
 
                     <!-- Колонка 2: Меню -->
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="index.html">Главная</a></li>
-                            <li><a href="design.html">Проектирование</a></li>
-                            <li><a href="construction.html">Строительство</a></li>
-                            <li><a href="landscaping.html">Благоустройство</a></li>
-                            <li><a href="about.html">О компании</a></li>
-                            <li><a href="contacts.html">Контакты</a></li>
+                            <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                            <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                            <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                            <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                            <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                            <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
                         </ul>
                     </div>
 
                     <!-- Колонка 3: Услуги -->
                     <div class="footer-col">
-                        <h4>Строительство</h4>
+                        <h4>Услуги</h4>
                         <ul class="footer-services">
-                            <li><a href="#stages">Этапы строительства</a></li>
-                            <li><a href="#technologies">Технологии</a></li>
-                            <li><a href="#geology">Геология и геодезия</a></li>
-                            <li><a href="#foundation">Фундамент</a></li>
-                            <li><a href="#walls">Стены</a></li>
-                            <li><a href="#roof">Крыша</a></li>
-                            <li><a href="#glazing">Остекление</a></li>
-                            <li><a href="#engineering">Инженерные сети</a></li>
-                            <li><a href="#interior">Внутренняя отделка</a></li>
-                            <li><a href="#exterior">Наружная отделка</a></li>
+                            <li><a href="../design/design.html" target="_blank">Проектирование</a></li>
+                            <li><a href="construction.html">Строительство</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Благоустройство территории</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Ремонт и модернизация</a></li>
+                            <li><a href="../under_construction.html" target="_blank">Партнеры</a></li>
+                            <li><a href="../about/about.html" target="_blank">О нас</a></li>
                         </ul>
                     </div>
 
@@ -1197,51 +1650,184 @@
                     <div class="footer-col">
                         <h4>Контакты</h4>
                         <address>
-                            <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Строителей, 15</p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
                             <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
                             <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
                         </address>
 
                         <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://t.me/+375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="viber://chat?number=%2B375291286217" class="social-icon">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="https://wa.me/375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
 
-                        <button class="btn footer-btn">Заказать звонок</button>
+                        <button class="btn footer-btn open-sidebar-btn" onclick="openCallbackModal('Страница строительства')">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Заказать звонок</span>
+                        </button>
                     </div>
                 </div>
 
                 <div class="footer-bottom">
                     <div class="footer-copyright">
-                        &copy; 2024 ООО "ТОПАГРОБЕЛ". Все права защищены.
-                    </div>
-
-                    <div class="footer-links">
-                        <a href="#">Политика конфиденциальности</a>
-                        <a href="#">Пользовательское соглашение</a>
-                        <a href="#">Карта сайта</a>
+                        &copy; 2025 ООО "ТОПБИЛДИНГ". Все права защищены.
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU" type="text/javascript"></script>
+    <!-- Конфигурация Telegram (не попадает в Git) -->
+    <script src="../config.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU" type="text/javascript"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script>
+        // Глобальная функция открытия сайдбара (вне DOMContentLoaded)
+        function openContactSidebar() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.add('active');
+            }
+        }
+        
+        // ============================================
+        // TELEGRAM УВЕДОМЛЕНИЯ
+        // ============================================
+        
+        const TELEGRAM_BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
+        const TELEGRAM_CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
+        
+        let currentCallbackSource = 'Страница строительства';
+        
+        // Открытие модального окна
+        function openCallbackModal(source = 'Страница строительства') {
+            currentCallbackSource = source;
+            const modal = document.getElementById('callbackModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Очистка формы
+                const form = document.getElementById('callbackForm');
+                if (form) {
+                    form.reset();
+                    const messageDiv = document.getElementById('callback-message');
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '';
+                        messageDiv.className = 'callback-message';
+                    }
+                }
+            }
+        }
+        
+        // Закрытие модального окна
+        function closeCallbackModal() {
+            const modal = document.getElementById('callbackModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Отправка сообщения в Telegram
+        async function sendToTelegram(name, phone, source) {
+            const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+                          `👤 <b>Имя:</b> ${name}\n` +
+                          `📱 <b>Телефон:</b> ${phone}\n` +
+                          `📍 <b>Источник:</b> ${source}\n` +
+                          `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
+            
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            });
+            
+            return await response.json();
+        }
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Управление сайдбаром контактов
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const heroSidebar = document.getElementById('heroSidebar');
+            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+            // Открытие сайдбара из кнопок в карточках
+            document.querySelectorAll('.open-sidebar-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (heroSidebar) {
+                        heroSidebar.classList.add('active');
+                    }
+                });
+            });
+
+            if (contactToggleBtn && heroSidebar) {
+                // Открытие сайдбара
+                contactToggleBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    heroSidebar.classList.add('active');
+                });
+
+                // Закрытие сайдбара
+                if (sidebarCloseBtn) {
+                    sidebarCloseBtn.addEventListener('click', function() {
+                        heroSidebar.classList.remove('active');
+                    });
+                }
+
+                // Закрытие по клику вне сайдбара
+                document.addEventListener('click', function(e) {
+                    if (heroSidebar.classList.contains('active') && 
+                        !heroSidebar.contains(e.target) && 
+                        e.target !== contactToggleBtn && 
+                        !contactToggleBtn.contains(e.target)) {
+                        heroSidebar.classList.remove('active');
+                    }
+                });
+
+                // Закрытие по ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
+                        heroSidebar.classList.remove('active');
+                    }
+                });
+            }
+            
             // Фиксация хедера при скролле
             window.addEventListener('scroll', function () {
                 const header = document.getElementById('mainHeader');
-                const heroSection = document.querySelector('.hero');
-                const heroHeight = heroSection.offsetHeight;
-
-                if (window.pageYOffset > heroHeight) {
-                    header.classList.add('fixed');
-                } else {
-                    header.classList.remove('fixed');
+                if (header) {
+                    if (window.pageYOffset > 100) {
+                        header.classList.add('fixed');
+                    } else {
+                        header.classList.remove('fixed');
+                    }
                 }
             });
 
@@ -1265,25 +1851,209 @@
                 });
             });
 
-            // Анимация этапов строительства при прокрутке
-            const stages = document.querySelectorAll('.stage');
+            // Слайдер этапов строительства
+            const stagesSliderTrack = document.getElementById('stagesSliderTrack');
+            const stagesSliderPrev = document.getElementById('stagesSliderPrev');
+            const stagesSliderNext = document.getElementById('stagesSliderNext');
+            const stagesSliderDots = document.getElementById('stagesSliderDots');
+            const stageSlides = document.querySelectorAll('.stage-slide');
             
-            function checkVisibility() {
-                stages.forEach(stage => {
-                    const stageTop = stage.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
+            let currentStage = 0;
+            const totalStages = stageSlides.length;
+            
+            // Создаем точки навигации
+            if (stagesSliderDots && stageSlides.length > 0) {
+                for (let i = 0; i < totalStages; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'stages-slider-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToStage(i));
+                    stagesSliderDots.appendChild(dot);
+                }
+            }
+            
+            function updateSlider() {
+                if (stagesSliderTrack) {
+                    stagesSliderTrack.style.transform = `translateX(-${currentStage * 100}%)`;
+                }
+                
+                // Обновляем активный слайд
+                stageSlides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentStage);
+                });
+                
+                // Обновляем точки навигации
+                const dots = document.querySelectorAll('.stages-slider-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentStage);
+                });
+                
+                // Обновляем состояние кнопок
+                if (stagesSliderPrev) {
+                    stagesSliderPrev.disabled = currentStage === 0;
+                }
+                if (stagesSliderNext) {
+                    stagesSliderNext.disabled = currentStage === totalStages - 1;
+                }
+            }
+            
+            function goToStage(index) {
+                if (index >= 0 && index < totalStages) {
+                    currentStage = index;
+                    updateSlider();
+                }
+            }
+            
+            function nextStage() {
+                if (currentStage < totalStages - 1) {
+                    currentStage++;
+                    updateSlider();
+                }
+            }
+            
+            function prevStage() {
+                if (currentStage > 0) {
+                    currentStage--;
+                    updateSlider();
+                }
+            }
+            
+            // Обработчики событий
+            if (stagesSliderPrev) {
+                stagesSliderPrev.addEventListener('click', prevStage);
+            }
+            if (stagesSliderNext) {
+                stagesSliderNext.addEventListener('click', nextStage);
+            }
+            
+            // Автопрокрутка (опционально)
+            // let autoSlideInterval = setInterval(() => {
+            //     if (currentStage < totalStages - 1) {
+            //         nextStage();
+            //     } else {
+            //         goToStage(0);
+            //     }
+            // }, 5000);
+            
+            // Останавливаем автопрокрутку при наведении
+            // const sliderWrapper = document.querySelector('.stages-slider-wrapper');
+            // if (sliderWrapper) {
+            //     sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            //     sliderWrapper.addEventListener('mouseleave', () => {
+            //         autoSlideInterval = setInterval(() => {
+            //             if (currentStage < totalStages - 1) {
+            //                 nextStage();
+            //             } else {
+            //                 goToStage(0);
+            //             }
+            //         }, 5000);
+            //     });
+            // }
+            
+            // Инициализация
+            updateSlider();
+            
+            // Поддержка клавиатуры
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevStage();
+                } else if (e.key === 'ArrowRight') {
+                    nextStage();
+                }
+            });
+            
+            // Обработка всех кнопок "Заказать звонок"
+            document.querySelectorAll('.contact-btn, .footer-btn, .open-sidebar-btn, .hero-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
+                        return;
+                    }
                     
-                    if (stageTop < windowHeight * 0.75) {
-                        stage.classList.add('visible');
+                    // Пропускаем кнопки, которые должны открывать сайдбар
+                    if (this.onclick && this.onclick.toString().includes('openContactSidebar')) {
+                        return;
+                    }
+                    
+                    // Пропускаем кнопки, которые уже имеют обработчик на открытие модального окна
+                    if (this.onclick && this.onclick.toString().includes('openCallbackModal')) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openCallbackModal('Страница строительства');
+                });
+            });
+            
+            // Обработка кнопок экскурсии
+            document.querySelectorAll('.excursion-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const source = this.getAttribute('data-source') || 'Экскурсия по объектам';
+                    openCallbackModal(source);
+                });
+            });
+            
+            // Обработка формы обратного звонка
+            const callbackForm = document.getElementById('callbackForm');
+            if (callbackForm) {
+                callbackForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('callback-name').value.trim();
+                    const phone = document.getElementById('callback-phone').value.trim();
+                    const messageDiv = document.getElementById('callback-message');
+                    const submitBtn = this.querySelector('.callback-submit-btn');
+                    
+                    if (!name || !phone) {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                            messageDiv.className = 'callback-message error';
+                        }
+                        return;
+                    }
+                    
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
+                    }
+                    
+                    try {
+                        const result = await sendToTelegram(name, phone, currentCallbackSource);
+                        
+                        if (result.ok) {
+                            if (messageDiv) {
+                                messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                                messageDiv.className = 'callback-message success';
+                            }
+                            callbackForm.reset();
+                            
+                            setTimeout(() => {
+                                closeCallbackModal();
+                            }, 3000);
+                        } else {
+                            throw new Error(result.description || 'Ошибка отправки');
+                        }
+                    } catch (error) {
+                        console.error('Ошибка отправки в Telegram:', error);
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
+                            messageDiv.className = 'callback-message error';
+                        }
+                    }
+                    
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
                     }
                 });
             }
             
-            // Проверяем при загрузке
-            checkVisibility();
-            
-            // И при прокрутке
-            window.addEventListener('scroll', checkVisibility);
+            // Закрытие модального окна по ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeCallbackModal();
+                }
+            });
         });
     </script>
 </body>

@@ -56,14 +56,17 @@
                             <li class="active">
                             <a href="design.html">Проектирование</a>
                                 <ul>
-                                    <li><a href="#design-types">Индивидуальные решения</a></li>
-                                <li><a href="#portfolio">Готовые проекты</a></li>
+                                    <li><a href="#design-types">Виды проектов</a></li>
+                                    <li><a href="#design-process">Процесс проектирования</a></li>
+                                    <li><a href="#prices">Стоимость</a></li>
+                                    <li><a href="#popular-projects">Популярные проекты</a></li>
+                                    <li><a href="#faq">Вопросы и ответы</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                            <a href="../under_construction.html" target="_blank">Строительство</a>
+                            <a href="../construction/construction.html" target="_blank">Строительство</a>
                             <ul>
                                 <li><a href="../under_construction.html" target="_blank">Геология и геодезия участка</a></li>
                                 <li><a href="../under_construction.html" target="_blank">Фундамент</a></li>
@@ -258,6 +261,8 @@
 <!-- Секция "Типы проектов" -->
 <section id="design-types" class="section design-types">
     <div class="decor decor-left-top"></div>
+    <div class="decor decor-left-bottom"></div>
+    <div class="decor decor-right-top"></div>
     <div class="decor decor-right-bottom"></div>
     <div class="container">
         <div class="section-header">
@@ -401,158 +406,173 @@
                             <li><i class="fas fa-check"></i> Озеленение и малые формы</li>
                             <li><i class="fas fa-check"></i> Системы полива</li>
                         </ul>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
                         <!-- Секция "Процесс проектирования" -->
  <section id="design-process" class="section design-process">
+    <div class="decor decor-left-top"></div>
     <div class="decor decor-left-bottom"></div>
     <div class="decor decor-right-top"></div>
+    <div class="decor decor-right-bottom"></div>
     <div class="container">
         <h2 class="section-title">Как мы создаем ваш идеальный дом</h2>
-        <p class="section-subtitle">5 четких шагов от идеи до реализации</p>
+        <p class="section-subtitle">6 шагов от идеи до реализации (6-й шаг опциональный)</p>
         
-        <div class="process-slider">
-            <!-- Слайды -->
-            <div class="slider-container">
+        <div class="process-tabs-container">
+            <!-- Вкладки с иконками шагов -->
+            <div class="process-tabs-nav">
+                <button class="process-tab-btn active" data-tab="1">
+                    <i class="fas fa-comments tab-icon"></i>
+                    <span class="tab-title">Консультация</span>
+                </button>
+                <button class="process-tab-btn" data-tab="2">
+                    <i class="fas fa-pencil-alt tab-icon"></i>
+                    <span class="tab-title">Эскиз</span>
+                </button>
+                <button class="process-tab-btn" data-tab="3">
+                    <i class="fas fa-file-alt tab-icon"></i>
+                    <span class="tab-title">Документация</span>
+                </button>
+                <button class="process-tab-btn" data-tab="4">
+                    <i class="fas fa-handshake tab-icon"></i>
+                    <span class="tab-title">Согласование</span>
+                </button>
+                <button class="process-tab-btn" data-tab="5">
+                    <i class="fas fa-eye tab-icon"></i>
+                    <span class="tab-title">Надзор</span>
+                </button>
+                <button class="process-tab-btn optional" data-tab="6">
+                    <i class="fas fa-hammer tab-icon"></i>
+                    <span class="tab-title">Строительство</span>
+                </button>
+            </div>
+            
+            <!-- Контент вкладок -->
+            <div class="process-tabs-content">
                 <!-- Шаг 1 -->
-                <div class="process-slide active">
-                    <div class="slide-content">
-                        <div class="step-number">01</div>
-                        <div class="step-info">
+                <div class="process-tab-panel active" data-panel="1">
+                    <div class="process-card">
+                        <div class="process-image">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Консультация" loading="lazy">
+                        </div>
+                        <div class="process-content">
                             <h3>Первичная консультация</h3>
-                            <div class="step-description">
-                                <p>Обсуждение ваших пожеланий, бюджета и особенностей участка. Выезд на участок для оценки условий строительства.</p>
-                                <ul class="step-features">
+                            <p class="process-description">Обсуждение ваших пожеланий, бюджета и особенностей участка. Выезд на участок для оценки условий строительства.</p>
+                            <ul class="process-features">
                                     <li><i class="fas fa-check-circle"></i> Бесплатный выезд специалиста</li>
                                     <li><i class="fas fa-check-circle"></i> Анализ участка и грунтов</li>
                                     <li><i class="fas fa-check-circle"></i> Рекомендации по технологии строительства</li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="step-image">
-                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Консультация" loading="lazy">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Шаг 2 -->
-                <div class="process-slide">
-                    <div class="slide-content">
-                        <div class="step-number">02</div>
-                        <div class="step-info">
+                <div class="process-tab-panel" data-panel="2">
+                    <div class="process-card">
+                        <div class="process-image">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Эскиз" loading="lazy">
+                        </div>
+                        <div class="process-content">
                             <h3>Разработка эскиза</h3>
-                            <div class="step-description">
-                                <p>Создание 3D модели дома с учетом ваших пожеланий и нормативных требований. Согласование концепции.</p>
-                                <ul class="step-features">
+                            <p class="process-description">Создание 3D модели дома с учетом ваших пожеланий и нормативных требований. Согласование концепции.</p>
+                            <ul class="process-features">
                                     <li><i class="fas fa-check-circle"></i> 3 варианта планировки</li>
                                     <li><i class="fas fa-check-circle"></i> Фотореалистичная 3D визуализация</li>
                                     <li><i class="fas fa-check-circle"></i> Подбор материалов и цветовых решений</li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="step-image">
-                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Эскиз" loading="lazy">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Шаг 3 -->
-                <div class="process-slide">
-                    <div class="slide-content">
-                        <div class="step-number">03</div>
-                        <div class="step-info">
+                <div class="process-tab-panel" data-panel="3">
+                    <div class="process-card">
+                        <div class="process-image">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Чертежи" loading="lazy">
+                        </div>
+                        <div class="process-content">
                             <h3>Рабочая документация</h3>
-                            <div class="step-description">
-                                <p>Создание полного комплекта чертежей для строительства с детализацией всех узлов и элементов.</p>
-                                <ul class="step-features">
+                            <p class="process-description">Создание полного комплекта чертежей для строительства с детализацией всех узлов и элементов.</p>
+                            <ul class="process-features">
                                     <li><i class="fas fa-check-circle"></i> Архитектурные решения</li>
                                     <li><i class="fas fa-check-circle"></i> Конструктивные решения</li>
                                     <li><i class="fas fa-check-circle"></i> Инженерные системы</li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="step-image">
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Чертежи" loading="lazy">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Шаг 4 -->
-                <div class="process-slide">
-                    <div class="slide-content">
-                        <div class="step-number">04</div>
-                        <div class="step-info">
-                            <h3>Согласование проекта</h3>
-                            <div class="step-description">
-                                <p>Помощь в прохождении экспертизы и получении разрешительной документации для строительства.</p>
-                                <ul class="step-features">
-                                    <li><i class="fas fa-check-circle"></i> Подготовка документов для экспертизы</li>
-                                    <li><i class="fas fa-check-circle"></i> Взаимодействие с органами надзора</li>
-                                    <li><i class="fas fa-check-circle"></i> Внесение корректировок</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="step-image">
+                <div class="process-tab-panel" data-panel="4">
+                    <div class="process-card">
+                        <div class="process-image">
                             <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Согласование" loading="lazy">
+                        </div>
+                        <div class="process-content">
+                            <h3>Согласование проекта</h3>
+                            <p class="process-description">Получение согласований у заинтересованных органов, выдавших разрешительную документацию для проектирования и строительства. Внесение корректировок и изменений.</p>
+                            <ul class="process-features">
+                                <li><i class="fas fa-check-circle"></i> Получение согласований у заинтересованных органов</li>
+                                <li><i class="fas fa-check-circle"></i> Работа с разрешительной документацией</li>
+                                <li><i class="fas fa-check-circle"></i> Внесение корректировок и изменений</li>
+                                </ul>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Шаг 5 -->
-                <div class="process-slide">
-                    <div class="slide-content">
-                        <div class="step-number">05</div>
-                        <div class="step-info">
+                <div class="process-tab-panel" data-panel="5">
+                    <div class="process-card">
+                        <div class="process-image">
+                            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Надзор" loading="lazy">
+                        </div>
+                        <div class="process-content">
                             <h3>Авторский надзор</h3>
-                            <div class="step-description">
-                                <p>Контроль за реализацией проекта на строительной площадке для точного соответствия проектной документации.</p>
-                                <ul class="step-features">
+                            <p class="process-description">Контроль за реализацией проекта на строительной площадке для точного соответствия проектной документации.</p>
+                            <ul class="process-features">
                                     <li><i class="fas fa-check-circle"></i> Регулярные выезды на объект</li>
                                     <li><i class="fas fa-check-circle"></i> Консультации строителей</li>
                                     <li><i class="fas fa-check-circle"></i> Внесение изменений</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="step-image">
-                            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Надзор" loading="lazy">
                         </div>
+                
+                <!-- Шаг 6 - Опциональный -->
+                <div class="process-tab-panel optional" data-panel="6">
+                    <div class="process-card">
+                        <div class="process-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Строительство" loading="lazy">
                     </div>
+                        <div class="process-content">
+                            <h3><span>Строительство под ключ</span><span class="optional-badge">Опционально</span></h3>
+                            <p class="process-description">Полное сопровождение строительства по нашим проектам дает лучший результат. Автор проекта лучше всех понимает заложенные решения и может обеспечить точную реализацию с максимальным качеством и соблюдением всех технических нюансов.</p>
+                            <ul class="process-features">
+                                <li><i class="fas fa-check-circle"></i> Точная реализация проектных решений</li>
+                                <li><i class="fas fa-check-circle"></i> Контроль соответствия проектной документации</li>
+                                <li><i class="fas fa-check-circle"></i> Оптимизация процессов и сокращение сроков</li>
+                                <li><i class="fas fa-check-circle"></i> Максимальное качество и долговечность</li>
+                            </ul>
                 </div>
             </div>
-            
-            <!-- Навигация слайдера -->
-            <div class="slider-nav">
-                <button class="slider-prev" aria-label="Предыдущий шаг">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="slider-dots">
-                    <button class="slider-dot active" data-step="1"></button>
-                    <button class="slider-dot" data-step="2"></button>
-                    <button class="slider-dot" data-step="3"></button>
-                    <button class="slider-dot" data-step="4"></button>
-                    <button class="slider-dot" data-step="5"></button>
                 </div>
-                
-                <button class="slider-next" aria-label="Следующий шаг">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-        
-
     </div>
 </section>
 
             <!-- Секция "Цены" -->
             <section id="prices" class="section prices">
+                <div class="decor decor-left-top"></div>
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2 class="section-title">Стоимость проектирования (Оставлять секцию или нет?)</h2>
+                    <h2 class="section-title">Стоимость проектирования(поменять название,добавить 4 карту?)</h2>
                     <p class="section-subtitle">Гибкие цены в зависимости от сложности проекта и ваших пожеланий</p>
                     
                     <div class="pricing-tables">
@@ -617,121 +637,187 @@
                     
                     <div class="pricing-note">
                         <p>* Точная стоимость рассчитывается индивидуально после консультации и зависит от сложности проекта, площади дома и выбранных материалов.</p>
-                    </div>
-                </div>
-            </section>
-<section>
-<div class="improved-cta">
-    <div class="cta-container">
-        <div class="cta-image-column">
-            <img src="design/desing_img/design3.png" alt="Индивидуальное проектирование дома" loading="lazy" class="cta-image">
-        </div>
-        <div class="cta-content-column">
-            <div class="cta-content">
-                <h3 class="cta-title">Разработаем индивидуальный проект</h3>
-                <p class="cta-text">Создадим авторский проект на основе ваших пожеланий. Цены на такие дома рассчитываются индивидуально. Как итог вы получаете детально персонализированный дом: с учетом особенностей участка и ваших потребностей.</p>
-                <button class="cta-button" aria-label="Оставить заявку на консультацию">
-                    <i class="fas fa-phone-alt"></i> Оставить заявку
-                </button>
-            </div>
-        </div>
     </div>
 </div>
 </section>
 
-            <!-- Секция "Портфолио" -->
-            <section id="portfolio" class="section portfolio">
+            <!-- Секция "Популярные проекты 2025" -->
+            <section id="popular-projects" class="section portfolio">
                 <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2 class="section-title">Наши готовые проекты</h2>
-                    <p class="section-subtitle">Реализованные работы за последние 3 года</p>
-                    
-                    <div class="portfolio-filter">
-                        <button class="filter-btn active" data-filter="all">Все проекты</button>
-                        <button class="filter-btn" data-filter="classic">Классические</button>
-                        <button class="filter-btn" data-filter="modern">Современные</button>
-                        <button class="filter-btn" data-filter="country">Загородные</button>
-                        <button class="filter-btn" data-filter="townhouse">Таунхаусы</button>
+                    <h2 class="section-title">Популярные проекты домов <span class="highlight">2025</span></h2>
+                    <p class="section-subtitle">Современные архитектурные решения для вашего комфортного будущего</p>
+                    <div class="projects-grid">
+                        <!-- Индивидуальный проект -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../main_img/individyal_project.webp" alt="Индивидуальный проект" loading="lazy">
+                                <div class="project-badge" style="background: #D4AF37;">Индивидуальный проект</div>
                     </div>
-                    
-                    <div class="portfolio-grid">
-                        <!-- Проект 1 -->
-                        <div class="portfolio-item" data-category="classic">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xhc3NpYyUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Классический дом" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Классический коттедж 250м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                            <div class="project-info">
+                                <h3>Индивидуальный проект</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 60-500 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 3-4 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 82 000 руб</span>
+                                    <button class="btn-details open-sidebar-btn" onclick="event.stopPropagation(); openContactSidebar();">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Проект 2 -->
-                        <div class="portfolio-item" data-category="modern">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Современный дом" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Современный дом 180м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                        <!-- Классический стиль -->
+                        <div class="project-card" onclick="openProjectModal('classic')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Classic/classic.webp" alt="Классический коттедж" loading="lazy">
+                                <div class="project-badge" style="background: #8e44ad;">Классика</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Классический коттедж</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 60-350 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 2-3 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 85 000 руб</span>
+                                    <button class="btn-details" onclick="openProjectModal('classic')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Проект 3 -->
-                        <div class="portfolio-item" data-category="country">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2hhbGV0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Загородный дом" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Загородный дом 300м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                        <!-- Шале -->
+                        <div class="project-card" onclick="openProjectModal('chalet')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/shale_black/shale_black.webp" alt="Дом в стиле шале" loading="lazy">
+                                <div class="project-badge" style="background: #16a085;">Шале</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Альпийское шале</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 180-300 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 3-4 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 110 000 руб</span>
+                                    <button class="btn-details" onclick="openProjectModal('chalet')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Проект 4 -->
-                        <div class="portfolio-item" data-category="townhouse">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFybmhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Таунхаус" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Таунхаус 150м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                        <!-- Барнхаус -->
+                        <div class="project-card" onclick="openProjectModal('barnhouse')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/barn/barn.webp" alt="Дом в стиле барнхаус" loading="lazy">
+                                <div class="project-badge" style="background: #e67e22;">Барнхаус</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Современный барнхаус</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 70-200 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 2-4 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 78 000 руб</span>
+                                    <button class="btn-details" onclick="openProjectModal('barnhouse')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Проект 5 -->
-                        <div class="portfolio-item" data-category="classic">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWluaW1hbGlzdCUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Классический дом" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Классический особняк 350м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                        <!-- Классический со вторым светом -->
+                        <div class="project-card" onclick="openProjectModal('minimalism')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Classic_2/project1.webp" alt="Классический со вторым светом" loading="lazy">
+                                <div class="project-badge" style="background: #8e44ad;">Классика</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Классический со вторым светом</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 60-280 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 2-3 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 95 000 руб</span>
+                                    <button class="btn-details" onclick="openProjectModal('minimalism')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Проект 6 -->
-                        <div class="portfolio-item" data-category="modern">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1556910633-8b5a5c566d3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNjYW5kaW5hdmlhbiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Современный дом" loading="lazy">
-                                <div class="portfolio-overlay">
-                                    <h3>Скандинавский дом 220м²</h3>
-                                    <button class="btn portfolio-btn">Смотреть проект</button>
+                        <!-- Шале White -->
+                        <div class="project-card" onclick="openProjectModal('shale_white')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Shale_white/shale_white.webp" alt="Шале White" loading="lazy">
+                                <div class="project-badge" style="background: #ecf0f1;">Шале White</div>
                                 </div>
+                            <div class="project-info">
+                                <h3>Шале White</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 140-420 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 3-4 мес</li>
+                                    <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <span class="project-price">от 89 000 руб</span>
+                                    <button class="btn-details" onclick="openProjectModal('shale_white')">Подробнее</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="portfolio-cta">
-                        <button class="btn">Показать еще проекты</button>
                     </div>
                 </div>
             </section>
 
+            <!-- Модальное окно проекта -->
+            <div id="projectModal" class="project-modal">
+                <div class="modal-overlay" onclick="closeProjectModal()"></div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="modal-back-btn" onclick="closeProjectModal()">
+                            <i class="fas fa-arrow-left"></i>
+                            Назад
+                        </button>
+                        <h3>Классический коттедж</h3>
+                        <button class="modal-close-btn" onclick="closeProjectModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Слайдер для фасадов -->
+                        <div class="modal-slider active" data-tab-content="facade">
+                            <div class="slider-container">
+                                <img src="../main_img/projects/Classic/classic1.webp" alt="Фасад 1" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                <img src="../main_img/projects/Classic/classic2.webp" alt="Фасад 2" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                <img src="../main_img/projects/Classic/classic3.webp" alt="Фасад 3" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                                <img src="../main_img/projects/Classic/classic_plan.webp" alt="Фасад 4" onclick="openImageFullscreen(this)" style="cursor: zoom-in;">
+                            </div>
+                            <button class="slider-prev">&lt;</button>
+                            <button class="slider-next">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Полноэкранный просмотр изображения -->
+            <div id="imageFullscreen" class="image-fullscreen" onclick="closeImageFullscreen()">
+                <button class="fullscreen-close-btn" onclick="closeImageFullscreen()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <img id="fullscreenImage" src="" alt="" style="cursor: zoom-out;">
+            </div>
+
             <!-- Секция "FAQ" -->
             <section id="faq" class="section faq">
                 <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
                     <h2 class="section-title">Часто задаваемые вопросы</h2>
@@ -739,6 +825,17 @@
                     
                     <div class="faq-accordion">
                         <!-- Вопрос 1 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Что если ваш архитектор не будет понимать моих предпочтений?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Мы понимаем, насколько важно найти общий язык с архитектором! Именно поэтому в нашей команде работает несколько талантливых специалистов с разными стилями и подходом к проектированию. Если по какой-то причине вы не чувствуете взаимопонимания с текущим архитектором, мы без проблем переведем проект к другому специалисту, который лучше поймет и воплотит ваши идеи. Наша главная цель - создать проект, который на 100% соответствует вашим ожиданиям и предпочтениям. Мы гарантируем, что найдем идеальное совпадение между вашими пожеланиями и профессиональным видением наших архитекторов.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Вопрос 2 -->
                         <div class="faq-item">
                             <button class="faq-question">
                                 <span>Сколько времени занимает разработка проекта?</span>
@@ -749,7 +846,7 @@
                             </div>
                         </div>
                         
-                        <!-- Вопрос 2 -->
+                        <!-- Вопрос 3 -->
                         <div class="faq-item">
                             <button class="faq-question">
                                 <span>Можно ли внести изменения в готовый проект?</span>
@@ -757,17 +854,6 @@
                             </button>
                             <div class="faq-answer">
                                 <p>Да, мы адаптируем готовые проекты под ваши потребности - изменяем планировку, материалы, инженерные решения. Стоимость доработок рассчитывается индивидуально в зависимости от объема изменений.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Вопрос 3 -->
-                        <div class="faq-item">
-                            <button class="faq-question">
-                                <span>Нужно ли получать разрешение на строительство?</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Для жилых домов площадью более 50м² и высотой более 2 этажей необходимо получать разрешение на строительство. Мы помогаем подготовить все необходимые документы и пройти экспертизу проекта.</p>
                             </div>
                         </div>
                         
@@ -792,44 +878,29 @@
                                 <p>Да, вы можете заказать отдельные разделы проекта - например, только архитектурные решения или инженерные системы. Однако для строительства дома мы рекомендуем полный комплект документации.</p>
                             </div>
                         </div>
+                        
+                        <!-- Вопрос 6 -->
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Сколько стоит индивидуальный проект?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Стоимость индивидуального проекта зависит от площади дома, сложности архитектурных решений и объема документации. Базовый проект начинается от 82 000 рублей за м². Точная стоимость рассчитывается после консультации и изучения ваших требований.</p>
+                            </div>
+                        </div>
+                        
                     </div>
                     
                     <div class="faq-cta">
-                        <p>Остались вопросы? Наши специалисты с радостью на них ответят!</p>
-                        <button class="btn" aria-label="Задать вопрос">
+                        <p>Остались вопросы? Оставьте заявку и с вами свяжется руководитель компании.</p>
+                        <button class="btn" aria-label="Задать вопрос" onclick="openCallbackModal('Страница проектирования')">
                             <i class="fas fa-question-circle"></i> Задать вопрос
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Секция "Заказать проект" -->
-            <section class="section order-project" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVybiUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=80');">
-                <div class="container">
-                    <div class="order-content">
-                        <h2 class="section-title">Готовы начать проектирование вашего дома?</h2>
-                        <p class="section-subtitle">Оставьте заявку и получите бесплатную консультацию нашего архитектора</p>
-                        
-                        <form class="order-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Ваше имя" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" placeholder="Ваш телефон" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Расскажите о вашем проекте"></textarea>
-                            </div>
-                            <div class="form-footer">
-                                <button type="submit" class="btn">Отправить заявку</button>
-                                <p>Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <!-- Подвал сайта -->
@@ -988,70 +1059,27 @@
             });
         });
 
+// Табы для секции "Процесс проектирования"
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider-container');
-    const slides = document.querySelectorAll('.process-slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentSlide = 0;
-    let isAnimating = false;
-    const animationDuration = 600; // соответствует CSS transition
+    const tabButtons = document.querySelectorAll('.process-tab-btn');
+    const tabPanels = document.querySelectorAll('.process-tab-panel');
     
-    // Показ слайда с анимацией
-    function showSlide(index) {
-        if (isAnimating || index === currentSlide) return;
-        
-        isAnimating = true;
-        
-        // Скрываем текущий слайд
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
-        
-        // Показываем новый слайд
-        currentSlide = index;
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-        
-        // Сброс флага анимации после завершения
-        setTimeout(() => {
-            isAnimating = false;
-        }, animationDuration);
-    }
-    
-    // Переключение по точкам
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            if (!this.classList.contains('active')) {
-                showSlide(index);
+    // Переключение вкладок
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Убираем активный класс у всех кнопок и панелей
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+            
+            // Добавляем активный класс к выбранной кнопке и панели
+            this.classList.add('active');
+            const targetPanel = document.querySelector(`.process-tab-panel[data-panel="${targetTab}"]`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
             }
         });
-    });
-    
-    // Кнопка "Назад"
-    prevBtn.addEventListener('click', function() {
-        let newIndex = currentSlide - 1;
-        if (newIndex < 0) newIndex = slides.length - 1;
-        showSlide(newIndex);
-    });
-    
-    // Кнопка "Вперед"
-    nextBtn.addEventListener('click', function() {
-        let newIndex = currentSlide + 1;
-        if (newIndex >= slides.length) newIndex = 0;
-        showSlide(newIndex);
-    });
-    
-    // Инициализация первого слайда
-    showSlide(0);
-    
-    // Опционально: обработка клавиатуры
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-            nextBtn.click();
-        }
     });
 });
 
@@ -1114,10 +1142,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     e.stopPropagation();
                     if (heroSidebar) {
                         heroSidebar.classList.add('active');
-                    }
-                });
-            });
-
+            }
+        });
+    });
+    
             if (contactToggleBtn && heroSidebar) {
                 // Открытие сайдбара
                 contactToggleBtn.addEventListener('click', function(e) {
@@ -1143,7 +1171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 // Закрытие по ESC
-                document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function(e) {
                     if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
                         heroSidebar.classList.remove('active');
                     }
@@ -1206,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Обработка кнопок
-        document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
             const overlay = document.querySelector('.callback-modal-overlay');
             if (overlay) {
                 overlay.addEventListener('click', closeCallbackModal);
@@ -1222,6 +1250,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.contact-btn, .footer-btn, .open-sidebar-btn, [onclick*="openContactSidebar"], .hero-btn, .design-hero-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
+                        return;
+                    }
+                    
+                    // Пропускаем кнопки, которые должны открывать сайдбар
+                    if (this.onclick && this.onclick.toString().includes('openContactSidebar')) {
                         return;
                     }
                     
@@ -1272,7 +1305,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         closeCallbackModal();
                     }, 3000);
-                } else {
+            } else {
                     throw new Error(result.description || 'Ошибка отправки');
                 }
             } catch (error) {
@@ -1310,6 +1343,137 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 e.target.value = formatted.substring(0, 19);
             }
+});
+    </script>
+    
+    <script>
+        // Функции для работы с модальными окнами проектов
+        function openProjectModal(type) {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Данные для каждого типа проекта
+            const projectData = {
+                'classic': {
+                    title: 'Классический коттедж',
+                    images: [
+                        '../main_img/projects/Classic/classic1.webp',
+                        '../main_img/projects/Classic/classic2.webp',
+                        '../main_img/projects/Classic/classic3.webp',
+                        '../main_img/projects/Classic/classic_plan.webp'
+                    ]
+                },
+                'chalet': {
+                    title: 'Альпийское шале',
+                    images: [
+                        '../main_img/projects/shale_black/shale_black.webp',
+                        '../main_img/projects/shale_black/shale_black_1.webp',
+                        '../main_img/projects/shale_black/shale_black_plan1.webp',
+                        '../main_img/projects/shale_black/shale_black_plan2.webp'
+                    ]
+                },
+                'barnhouse': {
+                    title: 'Современный барнхаус',
+                    images: [
+                        '../main_img/projects/barn/barn.webp',
+                        '../main_img/projects/barn/barn1.webp',
+                        '../main_img/projects/barn/barn2.webp',
+                        '../main_img/projects/barn/barn3.webp',
+                        '../main_img/projects/barn/barn_plan1.webp',
+                        '../main_img/projects/barn/barn_plan2.webp'
+                    ]
+                },
+                'minimalism': {
+                    title: 'Классический со вторым светом',
+                    images: [
+                        '../main_img/projects/Classic_2/project1.webp',
+                        '../main_img/projects/Classic_2/project2.webp',
+                        '../main_img/projects/Classic_2/project3.webp',
+                        '../main_img/projects/Classic_2/project4.webp',
+                        '../main_img/projects/Classic_2/project5.webp'
+                    ]
+                },
+                'shale_white': {
+                    title: 'Шале White',
+                    images: [
+                        '../main_img/projects/Shale_white/shale_white.webp',
+                        '../main_img/projects/Shale_white/shale_white1.webp',
+                        '../main_img/projects/Shale_white/shale_white_plan.webp',
+                        '../main_img/projects/Shale_white/shale_white_plan2.webp'
+                    ]
+                }
+            };
+            
+            if (projectData[type]) {
+                // Обновляем заголовок
+                document.querySelector('.modal-header h3').textContent = projectData[type].title;
+                
+                // Обновляем изображения в слайдере
+                const sliderContainer = document.querySelector('.slider-container');
+                sliderContainer.innerHTML = '';
+                
+                projectData[type].images.forEach((imageSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = `Фото ${index + 1}`;
+                    img.onclick = function() { openImageFullscreen(this); };
+                    img.style.cursor = 'zoom-in';
+                    sliderContainer.appendChild(img);
+                });
+            }
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openImageFullscreen(img) {
+            const fullscreen = document.getElementById('imageFullscreen');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.src = img.src;
+            fullscreenImage.alt = img.alt;
+            fullscreen.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageFullscreen() {
+            const fullscreen = document.getElementById('imageFullscreen');
+            fullscreen.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Навигация слайдера
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.slider-prev').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const container = this.parentElement.querySelector('.slider-container');
+                    container.scrollBy({
+                        left: -container.offsetWidth,
+                        behavior: 'smooth'
+                    });
+        });
+    });
+    
+            document.querySelectorAll('.slider-next').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const container = this.parentElement.querySelector('.slider-container');
+                    container.scrollBy({
+                        left: container.offsetWidth,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Закрытие по ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeProjectModal();
+                    closeImageFullscreen();
+                }
+            });
 });
     </script>
 </body>
