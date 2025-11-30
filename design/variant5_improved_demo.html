@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доработанные варианты 5 - Демо</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --secondary-color: #d4af37;
+            --background-color: #0a0a0a;
+        }
+
+        body {
+            background: var(--background-color);
+            padding: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .demo-card {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            background: url('desing_img/Projects/Eskiz.webp') center center;
+            background-size: cover;
+            cursor: pointer;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .variant-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        /* ВАРИАНТ 5.1: С улучшенными рамками и тенями */
+        .variant-5-1 .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .variant-5-1 .card-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .variant-5-1 .card-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--secondary-color), rgba(212, 175, 55, 0.8));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .variant-5-1 .card-title {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .variant-5-1 .card-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 0.85rem;
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .variant-5-1 .card-features {
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .variant-5-1 .card-features h4 {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+
+        .variant-5-1 .card-features h4::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: var(--secondary-color);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        .variant-5-1 .card-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-5-1 .card-features li {
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .variant-5-1 .card-features li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ВАРИАНТ 5.2: С более контрастными цветами */
+        .variant-5-2 .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .variant-5-2 .card-header {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .variant-5-2 .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .variant-5-2 .card-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #000;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .variant-5-2 .card-description {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 0.87rem;
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .variant-5-2 .card-features {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .variant-5-2 .card-features h4 {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1.5px;
+        }
+
+        .variant-5-2 .card-features h4::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .variant-5-2 .card-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-5-2 .card-features li {
+            margin-bottom: 11px;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .variant-5-2 .card-features li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            width: 22px;
+            text-align: center;
+        }
+
+        /* ВАРИАНТ 5.3: С декоративными элементами */
+        .variant-5-3 .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .variant-5-3 .card-header {
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .variant-5-3 .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 30px;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+
+        .variant-5-3 .card-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--secondary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .variant-5-3 .card-icon::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            opacity: 0.5;
+        }
+
+        .variant-5-3 .card-title {
+            margin: 0;
+            font-size: 1.15rem;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .variant-5-3 .card-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 0.85rem;
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 18px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .variant-5-3 .card-description::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-color), transparent);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .variant-5-3 .card-features {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 18px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .variant-5-3 .card-features h4 {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .variant-5-3 .card-features h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 3px;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        .variant-5-3 .card-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-5-3 .card-features li {
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .variant-5-3 .card-features li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ВАРИАНТ 5.4: Минималистичный с акцентами */
+        .variant-5-4 .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .variant-5-4 .card-header {
+            background: transparent;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 0;
+            padding: 0 0 16px 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .variant-5-4 .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .variant-5-4 .card-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .variant-5-4 .card-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.75;
+            margin-bottom: 20px;
+            font-size: 0.87rem;
+            flex-grow: 1;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 18px;
+        }
+
+        .variant-5-4 .card-features {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            padding-top: 18px;
+        }
+
+        .variant-5-4 .card-features h4 {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1.5px;
+        }
+
+        .variant-5-4 .card-features h4::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .variant-5-4 .card-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-5-4 .card-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        .variant-5-4 .card-features li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            width: 22px;
+            text-align: center;
+        }
+
+        /* ВАРИАНТ 5.5: С градиентами и свечением */
+        .variant-5-5 .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .variant-5-5 .card-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.1));
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .variant-5-5 .card-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, var(--secondary-color), rgba(212, 175, 55, 0.7));
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        .variant-5-5 .card-title {
+            margin: 0;
+            font-size: 1.18rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .variant-5-5 .card-description {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 0.86rem;
+            flex-grow: 1;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        .variant-5-5 .card-features {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .variant-5-5 .card-features h4 {
+            font-size: 0.88rem;
+            color: var(--secondary-color);
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .variant-5-5 .card-features h4::before {
+            content: '';
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary-color), transparent);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        }
+
+        .variant-5-5 .card-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .variant-5-5 .card-features li {
+            margin-bottom: 11px;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .variant-5-5 .card-features li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            width: 22px;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <h2>Доработанные варианты варианта 5</h2>
+    
+    <div class="demo-container">
+        <!-- Вариант 5.1 -->
+        <div class="demo-card variant-5-1">
+            <span class="variant-label">5.1</span>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Эскизный проект</h3>
+                </div>
+                <p class="card-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности.</p>
+                <div class="card-features">
+                    <h4>Что входит:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 варианта планировки</li>
+                        <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
+                        <li><i class="fas fa-check"></i> Подбор материалов</li>
+                        <li><i class="fas fa-check"></i> Предварительная смета</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вариант 5.2 -->
+        <div class="demo-card variant-5-2">
+            <span class="variant-label">5.2</span>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Эскизный проект</h3>
+                </div>
+                <p class="card-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности.</p>
+                <div class="card-features">
+                    <h4>Что входит:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 варианта планировки</li>
+                        <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
+                        <li><i class="fas fa-check"></i> Подбор материалов</li>
+                        <li><i class="fas fa-check"></i> Предварительная смета</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вариант 5.3 -->
+        <div class="demo-card variant-5-3">
+            <span class="variant-label">5.3</span>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Эскизный проект</h3>
+                </div>
+                <p class="card-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности.</p>
+                <div class="card-features">
+                    <h4>Что входит:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 варианта планировки</li>
+                        <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
+                        <li><i class="fas fa-check"></i> Подбор материалов</li>
+                        <li><i class="fas fa-check"></i> Предварительная смета</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вариант 5.4 -->
+        <div class="demo-card variant-5-4">
+            <span class="variant-label">5.4</span>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Эскизный проект</h3>
+                </div>
+                <p class="card-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности.</p>
+                <div class="card-features">
+                    <h4>Что входит:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 варианта планировки</li>
+                        <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
+                        <li><i class="fas fa-check"></i> Подбор материалов</li>
+                        <li><i class="fas fa-check"></i> Предварительная смета</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вариант 5.5 -->
+        <div class="demo-card variant-5-5">
+            <span class="variant-label">5.5</span>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="card-title">Эскизный проект</h3>
+                </div>
+                <p class="card-description">Эскизный проект — это первый и важнейший этап создания вашего дома. Он нужен для того, чтобы визуализировать будущее строение, оценить планировочные решения и понять, насколько ваши идеи соответствуют реальности.</p>
+                <div class="card-features">
+                    <h4>Что входит:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 варианта планировки</li>
+                        <li><i class="fas fa-check"></i> 3D визуализация экстерьера</li>
+                        <li><i class="fas fa-check"></i> Подбор материалов</li>
+                        <li><i class="fas fa-check"></i> Предварительная смета</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

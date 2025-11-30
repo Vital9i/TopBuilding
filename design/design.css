@@ -374,7 +374,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     opacity: 0;
     transition: opacity 400ms;
     z-index: 3;
@@ -453,14 +453,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 15px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     opacity: 0;
     transform: translateY(30px);
     transition: all 400ms;
     z-index: 4;
-    overflow-y: auto;
+    overflow: hidden;
     color: #fff;
 }
 
@@ -473,30 +473,36 @@
 .box-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 16px;
+    margin-bottom: 20px;
+    background: transparent;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+    border-radius: 0;
+    padding: 0 0 16px 0;
 }
 
 .box-header .design-icon {
-    width: 32px;
-    height: 32px;
-    background: rgba(212, 175, 55, 0.2);
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--secondary-color);
-    font-size: 14px;
+    color: #000;
+    font-size: 1.4rem;
     flex-shrink: 0;
 }
 
 .box-header h3 {
     margin: 0;
-    font-size: 1rem;
-    color: #fff;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
     flex-grow: 1;
     font-weight: 700;
     line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .box-header .price-badge {
@@ -511,9 +517,22 @@
 
 .box-description {
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.4;
-    margin-bottom: 10px;
-    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    flex-grow: 1;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 14px;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.box-description .project-name {
+    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .box-timeline {
@@ -550,29 +569,50 @@
 }
 
 .box-features {
-    margin: 10px 0 0 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    padding-top: 12px;
+    flex-shrink: 0;
 }
 
 .box-features h4 {
-    font-size: 0.85rem;
-    color: #fff;
-    margin-bottom: 8px;
-    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+.box-features h4::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
 }
 
 .box-features ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
 }
 
 .box-features ul li {
-    margin-bottom: 5px;
-    padding-left: 20px;
+    margin-bottom: 8px;
+    padding-left: 24px;
     position: relative;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.75rem;
-    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.72rem;
+    line-height: 1.4;
 }
 
 .box-features ul li i {
@@ -580,7 +620,9 @@
     left: 0;
     top: 3px;
     color: var(--secondary-color);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
+    width: 18px;
+    text-align: center;
 }
 
 
@@ -2267,6 +2309,13 @@
   font-size: 0.9rem;
 }
 
+.pricing-card.selected {
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
 .pricing-note {
   margin-top: 15px;
   font-size: 0.8rem;
@@ -2274,6 +2323,125 @@
   text-align: center;
   opacity: 0.7;
   line-height: 1.4;
+}
+
+/* Toast-уведомление для выбора пакета */
+.pricing-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(26, 29, 41, 0.98);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10000;
+  max-width: 380px;
+}
+
+.pricing-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.pricing-toast .toast-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.pricing-toast .toast-content i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+}
+
+.pricing-toast .toast-text {
+  flex: 1;
+}
+
+.pricing-toast .toast-text strong {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.pricing-toast .toast-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.pricing-toast .toast-btn {
+  background: var(--secondary-color);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.pricing-toast .toast-btn:hover {
+  background: rgba(212, 175, 55, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.pricing-toast .toast-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  background: rgba(212, 175, 55, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.pricing-toast .toast-close:hover {
+  background: var(--secondary-color);
+  transform: rotate(90deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .pricing-toast {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    transform: translateY(100px);
+  }
+  
+  .pricing-toast.show {
+    transform: translateY(0);
+  }
+  
+  .pricing-toast .toast-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pricing-toast .toast-btn {
+    width: 100%;
+  }
 }
 
 /* FAQ */
@@ -2464,4 +2632,53 @@
   .order-form {
     padding: 20px;
   }
+}
+
+/* Стили для workflow optional элементов */
+.workflow-tabs {
+    overflow: visible !important;
+}
+
+.workflow-tab.optional {
+    opacity: 0.7;
+    position: relative;
+    overflow: visible !important;
+}
+
+.workflow-tab.optional::after {
+    content: 'Опционально';
+    position: absolute;
+    top: -12px;
+    right: -8px;
+    background: rgba(212, 175, 55, 0.95);
+    color: #000;
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 4px 7px;
+    border-radius: 6px;
+    line-height: 1;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.workflow-tab.optional:hover,
+.workflow-tab.optional.active {
+    opacity: 1;
+}
+
+.workflow-slide .optional-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+    margin-left: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }

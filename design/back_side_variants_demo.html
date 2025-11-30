@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Варианты обратной стороны карточек - Демо</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --secondary-color: #d4af37;
+            --background-color: #0a0a0a;
+        }
+
+        body {
+            background: var(--background-color);
+            padding: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .demo-card {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            background: url('desing_img/project_back_side.webp') center center;
+            background-size: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .demo-card:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .variant-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        /* ВАРИАНТ 1: Центральная иконка + название внизу */
+        .variant-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        .variant-1 .icon-center {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 90px;
+            height: 90px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 2.8rem;
+            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .variant-1::after {
+            content: 'Эскизный проект';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 3;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* ВАРИАНТ 2: Иконка в углу + название по центру */
+        .variant-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+        }
+
+        .variant-2 .icon-corner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.8rem;
+            z-index: 2;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .variant-2::after {
+            content: 'Эскизный проект';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            z-index: 3;
+            text-align: center;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+            padding: 15px 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        /* ВАРИАНТ 3: Название вверху + декоративная линия + иконка внизу */
+        .variant-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+        }
+
+        .variant-3::after {
+            content: 'Эскизный проект';
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 3;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+        }
+
+        .variant-3 .decorative-line {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+            z-index: 3;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+        }
+
+        .variant-3 .icon-bottom {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            z-index: 3;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* ВАРИАНТ 4: Полупрозрачная панель с иконкой и названием */
+        .variant-4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: 1;
+        }
+
+        .variant-4 .glass-panel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            padding: 35px 45px;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.7), inset 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .variant-4 .glass-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            border: 2px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .variant-4 .glass-title {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* ВАРИАНТ 5: Вертикальная компоновка с рамкой */
+        .variant-5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        .variant-5 .border-frame {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid var(--secondary-color);
+            border-radius: 10px;
+            z-index: 2;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), inset 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .variant-5 .icon-top {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            z-index: 3;
+            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .variant-5::after {
+            content: 'Эскизный проект';
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 3;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+            padding: 12px 25px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 8px;
+        }
+
+        /* ВАРИАНТ 6: Диагональный градиент с иконкой и названием */
+        .variant-6::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0.8) 50%, rgba(212, 175, 55, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .variant-6 .icon-diagonal {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: var(--secondary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 2rem;
+            z-index: 2;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.6);
+            transform: rotate(-5deg);
+        }
+
+        .variant-6::after {
+            content: 'Эскизный проект';
+            position: absolute;
+            bottom: 40px;
+            left: 30px;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 3;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Варианты дизайна обратной стороны карточек</h2>
+    
+    <div class="demo-container">
+        <!-- Вариант 1 -->
+        <div class="demo-card variant-1">
+            <span class="variant-label">Вариант 1</span>
+            <div class="icon-center">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+        </div>
+
+        <!-- Вариант 2 -->
+        <div class="demo-card variant-2">
+            <span class="variant-label">Вариант 2</span>
+            <div class="icon-corner">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+        </div>
+
+        <!-- Вариант 3 -->
+        <div class="demo-card variant-3">
+            <span class="variant-label">Вариант 3</span>
+            <div class="decorative-line"></div>
+            <div class="icon-bottom">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+        </div>
+
+        <!-- Вариант 4 -->
+        <div class="demo-card variant-4">
+            <span class="variant-label">Вариант 4</span>
+            <div class="glass-panel">
+                <div class="glass-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <div class="glass-title">Эскизный проект</div>
+            </div>
+        </div>
+
+        <!-- Вариант 5 -->
+        <div class="demo-card variant-5">
+            <span class="variant-label">Вариант 5</span>
+            <div class="border-frame"></div>
+            <div class="icon-top">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+        </div>
+
+        <!-- Вариант 6 -->
+        <div class="demo-card variant-6">
+            <span class="variant-label">Вариант 6</span>
+            <div class="icon-diagonal">
+                <i class="fas fa-pencil-ruler"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
