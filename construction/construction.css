@@ -1044,129 +1044,316 @@
 }
 
 /* Остекление */
-.glazing-content {
-    display: flex;
-    gap: 50px;
+/* Секция "Остекление" - новая структура */
+.glazing-intro {
     margin-top: 50px;
-    align-items: flex-start;
+    margin-bottom: 50px;
 }
 
-.glazing-info {
-    flex: 1;
+.glazing-image-top {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
 }
 
-.glazing-info h3 {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: white;
+.glazing-image-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-.glazing-info p {
-    margin-bottom: 20px;
-    color: var(--light-color);
+.glazing-intro-text {
+    background: rgba(33, 36, 44, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.glazing-intro-text .article-intro {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
 }
 
-.glazing-types {
-    margin-top: 30px;
-}
-
-.glazing-type {
-    margin-bottom: 30px;
-}
-
-.glazing-type h4 {
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 15px;
+.glazing-intro-text h4 {
+    font-size: 1.3rem;
     color: white;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.glazing-type h4 i {
-    color: var(--accent-color);
-}
-
-.glazing-type p {
+    margin-top: 25px;
     margin-bottom: 15px;
-    color: var(--light-color);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
 }
 
-.glazing-features {
+.glazing-intro-text .article-list {
     list-style: none;
     padding: 0;
     margin: 20px 0;
 }
 
-.glazing-features li {
-    margin-bottom: 8px;
+.glazing-intro-text .article-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.glazing-features strong {
-    color: var(--accent-color);
+.glazing-intro-text .article-list li i {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
 }
 
-.glazing-image {
-    flex: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+.glazing-article {
+    grid-template-columns: 1fr !important;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.glazing-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+.glazing-article .article-content {
+    background: rgba(33, 36, 44, 0.8);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* Инженерные сети */
-.engineering-systems {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
-    margin-top: 50px;
+.engineering-intro {
+    background: rgba(33, 36, 44, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.system-card {
-    background: var(--card-color);
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
+.engineering-intro .article-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
 }
 
-.system-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.system-icon {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-.system-card h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+.engineering-intro h4 {
+    font-size: 1.3rem;
     color: white;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
 }
 
-.system-card p {
-    margin-bottom: 20px;
-    color: var(--light-color);
-}
-
-.system-features {
+.engineering-intro .article-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 25px;
+    margin: 20px 0;
+}
+
+.engineering-intro .article-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.engineering-intro .article-list li i {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.engineering-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.engineering-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(33, 36, 44, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.engineering-tab:hover {
+    background: rgba(33, 36, 44, 0.95);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.engineering-tab.active {
+    background: var(--gradient-primary);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.engineering-tab i {
+    font-size: 1.1rem;
+}
+
+.engineering-slider-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.engineering-slider-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.engineering-content {
+    display: none;
+    background: rgba(33, 36, 44, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.engineering-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.engineering-info h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.engineering-info h3 i {
+    font-size: 1.6rem;
+}
+
+.engineering-info p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.engineering-info ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.engineering-info ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.engineering-info strong {
+    color: var(--secondary-color);
+}
+
+.engineering-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(33, 36, 44, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.engineering-nav-btn:hover {
+    background: var(--gradient-primary);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.engineering-summary {
+    background: rgba(33, 36, 44, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.engineering-summary h4 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.engineering-summary .article-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.engineering-summary .article-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.engineering-summary .article-list li i {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
 }
 
 .system-features li {
@@ -1272,6 +1459,53 @@
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Наружная отделка - зеркальное расположение */
+.exterior-content {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    align-items: flex-start;
+    /* Изображение слева, текст справа (зеркально к внутренней отделке) */
+}
+
+.exterior-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.exterior-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.exterior-info {
+    flex: 1;
+}
+
+.exterior-info h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.exterior-info p {
+    margin-bottom: 20px;
+    color: var(--light-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.exterior-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .interior-packages {
@@ -1954,12 +2188,29 @@
         gap: 40px;
     }
     
-    .glazing-content {
+    .glazing-intro {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .glazing-image-top {
+        margin-bottom: 30px;
+    }
+    
+    .glazing-intro-text {
+        padding: 30px 25px;
+    }
+    
+    .glazing-article .article-content {
+        padding: 40px 30px;
+    }
+    
+    .interior-content {
         flex-direction: column;
         gap: 40px;
     }
     
-    .interior-content {
+    .exterior-content {
         flex-direction: column;
         gap: 40px;
     }
@@ -1982,6 +2233,56 @@
     .section.interior,
     .section.exterior {
         padding: 60px 0 !important;
+    }
+    
+    .engineering-intro {
+        padding: 30px 25px;
+    }
+    
+    .engineering-tabs {
+        gap: 10px;
+        margin: 30px 0;
+    }
+    
+    .engineering-tab {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .engineering-tab span {
+        display: none;
+    }
+    
+    .engineering-slider-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .engineering-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    .engineering-nav-prev {
+        left: 10px;
+    }
+    
+    .engineering-nav-next {
+        right: 10px;
+    }
+    
+    .engineering-content {
+        padding: 30px 20px;
+    }
+    
+    .engineering-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .engineering-summary {
+        padding: 30px 20px;
     }
     
     .foundation-card, .foundation-card.reverse {
