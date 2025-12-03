@@ -37,8 +37,15 @@
         <header class="header" id="mainHeader">
             <div class="container">
                 <nav class="nav">
+                    <!-- Бургер меню (только для мобильных) -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <!-- Логотип компании -->
                     <div class="nav-left">
-                        <!-- Логотип компании -->
                         <a href="../index.html" class="logo-link">
                             <div class="header-logo">
                                 <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -53,6 +60,23 @@
                         </a>
                     </div>
                     
+                    <!-- Логотип по центру (только для мобильных) -->
+                    <div class="nav-logo-center">
+                        <a href="../index.html" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Меню навигации -->
                     <div class="nav-menu">
                     <ul>
                         <li>
@@ -127,9 +151,22 @@
                     <!-- Кнопка контактов -->
                     <button class="contact-toggle-btn" id="contactToggleBtn">
                         <i class="fas fa-phone-alt"></i>
-                        <span>Контакты</span>
+                        <span class="contact-btn-text">Контакты</span>
                     </button>
                 </nav>
+                
+                <!-- Мобильное меню (выпадающее) -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="mobile-menu-content">
+                        <a href="../index.html" class="mobile-menu-link">Главная</a>
+                        <a href="../design/design.html" class="mobile-menu-link" target="_blank">Проектирование</a>
+                        <a href="construction.html" class="mobile-menu-link">Строительство</a>
+                        <a href="../under_construction.html" class="mobile-menu-link" target="_blank">Благоустройство территории</a>
+                        <a href="../under_construction.html" class="mobile-menu-link" target="_blank">Ремонт и модернизация</a>
+                        <a href="../under_construction.html" class="mobile-menu-link" target="_blank">Партнеры</a>
+                        <a href="../about/about.html" class="mobile-menu-link" target="_blank">О нас</a>
+                    </div>
+                </div>
             </div>
         </header>
         
@@ -2986,6 +3023,59 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Управление мобильным меню (бургер)
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                // Открытие/закрытие мобильного меню
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpening = !mobileMenu.classList.contains('active');
+                    
+                    // Закрываем сайдбар контактов если открыт
+                    const heroSidebar = document.getElementById('heroSidebar');
+                    if (heroSidebar && heroSidebar.classList.contains('active')) {
+                        heroSidebar.classList.remove('active');
+                    }
+                    
+                    mobileMenuToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    document.body.style.overflow = isOpening ? 'hidden' : 'auto';
+                });
+                
+                // Закрытие меню при клике на ссылку
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+                
+                // Закрытие меню при клике вне его
+                document.addEventListener('click', function(e) {
+                    if (mobileMenu.classList.contains('active') && 
+                        !mobileMenu.contains(e.target) && 
+                        e.target !== mobileMenuToggle && 
+                        !mobileMenuToggle.contains(e.target)) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                // Закрытие по ESC
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
             // Управление сайдбаром контактов
             const contactToggleBtn = document.getElementById('contactToggleBtn');
             const heroSidebar = document.getElementById('heroSidebar');
@@ -3005,6 +3095,13 @@
                 // Открытие сайдбара
                 contactToggleBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
+                    
+                    // Закрываем мобильное меню если открыто
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                    
                     heroSidebar.classList.add('active');
                 });
 
