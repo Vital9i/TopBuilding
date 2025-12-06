@@ -232,7 +232,7 @@
 
                             <!-- Дополнительная информация -->
                             <div class="hero-info">
-                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд специалиста на участок</p>
+                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд на участок</p>
                                 <p><i class="fas fa-check-circle"></i> Индивидуальные и готовые проекты</p>
                                 <p><i class="fas fa-check-circle"></i> Авторский надзор на всех этапах</p>
                                 <p><i class="fas fa-check-circle"></i> Сертифицированные материалы</p>
@@ -345,7 +345,7 @@
                         </div>
 
                         <!-- Руководство -->
-                        <div class="team-cards active" id="management">
+                        <div class="team-cards active" id="management" style="scroll-behavior: auto !important;">
                             <div class="team-card">
                                 <div class="team-photo">
                                     <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
@@ -538,13 +538,16 @@
             <div class="decor decor-left-top"></div>
             <div class="decor decor-right-top"></div>
             <div class="decor decor-right-bottom"></div>
+            <div class="decor decor-left-middle-1"></div>
+            <div class="decor decor-right-middle-1"></div>
+            <div class="decor decor-right-middle-2"></div>
             <div class="content-wrapper">
             <div class="container">
                 <h2 class="section-title">Популярные проекты домов <span class="highlight">2025</span></h2>
                 <p class="section-description">Современные архитектурные решения для вашего комфортного будущего</p>
                 <div class="projects-grid">
                     <!-- Индивидуальный проект -->
-                    <div class="project-card">
+                    <div class="project-card" onclick="window.open('design/design.html', '_blank')">
                         <div class="project-image">
                             <img src="main_img/individyal_project.webp"
                                 alt="Индивидуальный проект" loading="lazy">
@@ -559,7 +562,7 @@
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 230 000 руб</span>
-                                <a href="design/design.html" class="btn-details" style="text-decoration: none;" target="_blank">Подробнее</a>
+                                <a href="design/design.html" class="btn-details" style="text-decoration: none;" target="_blank" onclick="event.stopPropagation();">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -722,6 +725,10 @@
     <div class="decor decor-left-bottom"></div>
     <div class="decor decor-right-top"></div>
     <div class="decor decor-right-bottom"></div>
+    <div class="decor decor-left-middle-1"></div>
+    <div class="decor decor-left-middle-2"></div>
+    <div class="decor decor-right-middle-1"></div>
+    <div class="decor decor-right-middle-2"></div>
     
     <div class="content-wrapper">
     <div class="container">
@@ -987,6 +994,8 @@
                 <!-- Декоративные элементы -->
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
+                <div class="decor decor-left-middle-1"></div>
+                <div class="decor decor-right-middle-1"></div>
                 
                 <div class="content-wrapper">
                 <div class="container">
@@ -1009,6 +1018,10 @@
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
+                <div class="decor decor-left-middle-1"></div>
+                <div class="decor decor-left-middle-2"></div>
+                <div class="decor decor-right-middle-1"></div>
+                <div class="decor decor-right-middle-2"></div>
                 <div class="content-wrapper">
                 <div class="container">
                     <div class="tour-intro">
@@ -1094,6 +1107,10 @@
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
+                <div class="decor decor-left-middle-1"></div>
+                <div class="decor decor-left-middle-2"></div>
+                <div class="decor decor-right-middle-1"></div>
+                <div class="decor decor-right-middle-2"></div>
                 
                 <div class="content-wrapper">
                     <div class="container">
@@ -1489,7 +1506,51 @@
         });
     </script>
     <script>
+        // Устанавливаем scrollLeft = 0 СРАЗУ, до DOMContentLoaded
+        (function() {
+            function resetScroll() {
+                const cards = document.querySelectorAll('.team-cards');
+                cards.forEach(function(card) {
+                    if (card) {
+                        card.style.scrollBehavior = 'auto';
+                        card.scrollLeft = 0;
+                    }
+                });
+            }
+            
+            // Вызываем сразу, если элементы уже есть
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', resetScroll);
+            } else {
+                resetScroll();
+            }
+            
+            // Также вызываем при полной загрузке
+            window.addEventListener('load', resetScroll);
+        })();
+        
         document.addEventListener('DOMContentLoaded', function () {
+            // Функция для принудительного сброса скролла
+            function forceResetScroll(element) {
+                if (!element) return;
+                element.style.scrollBehavior = 'auto';
+                element.style.setProperty('scroll-behavior', 'auto', 'important');
+                element.style.justifyContent = 'flex-start';
+                element.scrollLeft = 0;
+                element.scrollTo(0, 0);
+                // Принудительно проверяем и устанавливаем
+                if (element.scrollLeft !== 0) {
+                    element.scrollLeft = 0;
+                }
+            }
+            
+            // Сразу устанавливаем scrollLeft = 0 для всех карточек команды при загрузке
+            const allTeamCardsContainers = document.querySelectorAll('.team-cards');
+            allTeamCardsContainers.forEach(function(cards) {
+                forceResetScroll(cards);
+                cards.style.justifyContent = 'flex-start';
+            });
+            
             // Переключение табов команды
             const teamTabs = document.querySelectorAll('.team-tab');
             
@@ -1501,51 +1562,131 @@
                     // Добавляем active текущему табу
                     tab.classList.add('active');
                     
-                    // Скрываем все карточки
+                    // Скрываем все карточки и сбрасываем их скролл
                     const allCards = document.querySelectorAll('.team-cards');
-                    allCards.forEach(cards => cards.classList.remove('active'));
+                    allCards.forEach(cards => {
+                        cards.classList.remove('active');
+                        forceResetScroll(cards);
+                    });
                     
                     // Показываем нужные карточки
                     const teamId = tab.getAttribute('data-team');
                     const targetCards = document.getElementById(teamId);
                     
                     if (targetCards) {
+                        // Сначала устанавливаем scrollLeft = 0 ДО добавления класса active
+                        forceResetScroll(targetCards);
+                        
+                        // Добавляем класс active
                         targetCards.classList.add('active');
-                        // Прокручиваем к началу контейнера, чтобы первая карточка была видна
+                        
+                        // Множественные проверки для надежности
+                        forceResetScroll(targetCards);
+                        
                         setTimeout(() => {
-                            // Используем scrollIntoView для первой карточки
-                            const firstCard = targetCards.querySelector('.team-card:first-child');
-                            if (firstCard) {
-                                firstCard.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'nearest',
-                                    inline: 'start'
-                                });
-                            } else {
-                                targetCards.scrollLeft = 0;
-                            }
-                        }, 200);
+                            forceResetScroll(targetCards);
+                        }, 0);
+                        
+                        setTimeout(() => {
+                            forceResetScroll(targetCards);
+                        }, 10);
+                        
+                        requestAnimationFrame(() => {
+                            forceResetScroll(targetCards);
+                            requestAnimationFrame(() => {
+                                forceResetScroll(targetCards);
+                            });
+                        });
                     }
                 });
             });
             
-            // Инициализация: прокручиваем активные карточки к началу при загрузке страницы
-            const activeCards = document.querySelector('.team-cards.active');
-            if (activeCards) {
-                setTimeout(() => {
-                    // Используем scrollIntoView для первой карточки
-                    const firstCard = activeCards.querySelector('.team-card:first-child');
-                    if (firstCard) {
-                        firstCard.scrollIntoView({
-                            behavior: 'auto',
-                            block: 'nearest',
-                            inline: 'start'
-                        });
-                    } else {
-                        activeCards.scrollLeft = 0;
-                    }
-                }, 400);
+            // Функция для сброса скролла карточек команды
+            function resetTeamCardsScroll() {
+                const activeCards = document.querySelector('.team-cards.active');
+                if (activeCards) {
+                    activeCards.style.scrollBehavior = 'auto';
+                    activeCards.scrollLeft = 0;
+                    activeCards.scrollTo(0, 0);
+                }
             }
+            
+            // Используем MutationObserver для отслеживания изменений класса active
+            const teamCardsObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const target = mutation.target;
+                        if (target.classList.contains('active') && target.classList.contains('team-cards')) {
+                            target.style.scrollBehavior = 'auto';
+                            target.style.setProperty('scroll-behavior', 'auto', 'important');
+                            target.scrollLeft = 0;
+                            target.scrollTo(0, 0);
+                            target.setAttribute('data-scroll-reset', 'true');
+                        }
+                    }
+                });
+            });
+            
+            // Наблюдаем за всеми контейнерами карточек команды
+            const allTeamCards = document.querySelectorAll('.team-cards');
+            allTeamCards.forEach(function(cards) {
+                cards.style.scrollBehavior = 'auto';
+                teamCardsObserver.observe(cards, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+            });
+            
+            // Предотвращаем восстановление позиции скролла браузером
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            
+            // Инициализация: прокручиваем активные карточки к началу при загрузке страницы
+            // Вызываем сразу
+            resetTeamCardsScroll();
+            
+            // Вызываем после небольшой задержки
+            setTimeout(resetTeamCardsScroll, 50);
+            
+            // Вызываем через requestAnimationFrame
+            requestAnimationFrame(() => {
+                resetTeamCardsScroll();
+                requestAnimationFrame(() => {
+                    resetTeamCardsScroll();
+                });
+            });
+            
+            // Вызываем после полной загрузки
+            setTimeout(resetTeamCardsScroll, 200);
+            setTimeout(resetTeamCardsScroll, 500);
+            setTimeout(resetTeamCardsScroll, 1000);
+            
+            // Вызываем при полной загрузке страницы
+            window.addEventListener('load', function() {
+                resetTeamCardsScroll();
+                setTimeout(resetTeamCardsScroll, 100);
+            });
+            
+            // Также сбрасываем при изменении размера окна
+            window.addEventListener('resize', function() {
+                resetTeamCardsScroll();
+            });
+            
+            // Постоянный мониторинг и сброс scrollLeft для активных карточек
+            let scrollResetInterval = setInterval(function() {
+                const activeCards = document.querySelector('.team-cards.active');
+                if (activeCards && activeCards.scrollLeft !== 0) {
+                    activeCards.style.scrollBehavior = 'auto';
+                    activeCards.style.justifyContent = 'flex-start';
+                    activeCards.scrollLeft = 0;
+                }
+            }, 100);
+            
+            // Останавливаем интервал через 3 секунды после загрузки
+            setTimeout(function() {
+                clearInterval(scrollResetInterval);
+            }, 3000);
         
             // Переключение этапов workflow
             const workflowTabs = document.querySelectorAll('.workflow-tab');
@@ -1868,16 +2009,26 @@
                 
                 // Обновляем изображения в слайдере
                 const sliderContainer = document.querySelector('.slider-container');
-                sliderContainer.innerHTML = '';
-                
-                projectData[type].images.forEach((imageSrc, index) => {
-                    const img = document.createElement('img');
-                    img.src = imageSrc;
-                    img.alt = `Фото ${index + 1}`;
-                    img.onclick = function() { openImageFullscreen(this); };
-                    img.style.cursor = 'zoom-in';
-                    sliderContainer.appendChild(img);
-                });
+                if (sliderContainer) {
+                    sliderContainer.innerHTML = '';
+                    
+                    projectData[type].images.forEach((imageSrc, index) => {
+                        const img = document.createElement('img');
+                        img.src = imageSrc;
+                        img.alt = `Фото ${index + 1}`;
+                        img.onclick = function() { openImageFullscreen(this); };
+                        img.style.cursor = 'zoom-in';
+                        sliderContainer.appendChild(img);
+                    });
+                    
+                    // Сбрасываем скролл к началу после обновления изображений
+                    sliderContainer.scrollLeft = 0;
+                    
+                    // Переинициализируем навигацию после обновления изображений
+                    setTimeout(function() {
+                        initSliderNavigation();
+                    }, 50);
+                }
             }
         }
 
@@ -1909,26 +2060,71 @@
             });
         });
 
-        // Навигация слайдера
-        document.querySelectorAll('.slider-prev').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const container = this.parentElement.querySelector('.slider-container');
-                container.scrollBy({
-                    left: -container.offsetWidth,
-                    behavior: 'smooth'
+        // Функция для инициализации навигации слайдера
+        function initSliderNavigation() {
+            // Добавляем обработчики для кнопки "Назад"
+            document.querySelectorAll('.slider-prev').forEach(btn => {
+                // Удаляем старые обработчики
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                
+                // Добавляем новый обработчик
+                newBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const slider = this.closest('.modal-slider');
+                    if (!slider) return;
+                    
+                    const container = slider.querySelector('.slider-container');
+                    if (container) {
+                        const scrollAmount = container.offsetWidth;
+                        container.scrollBy({
+                            left: -scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
 
-        document.querySelectorAll('.slider-next').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const container = this.parentElement.querySelector('.slider-container');
-                container.scrollBy({
-                    left: container.offsetWidth,
-                    behavior: 'smooth'
+            // Добавляем обработчики для кнопки "Вперед"
+            document.querySelectorAll('.slider-next').forEach(btn => {
+                // Удаляем старые обработчики
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                
+                // Добавляем новый обработчик
+                newBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const slider = this.closest('.modal-slider');
+                    if (!slider) return;
+                    
+                    const container = slider.querySelector('.slider-container');
+                    if (container) {
+                        const scrollAmount = container.offsetWidth;
+                        container.scrollBy({
+                            left: scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
+        }
+        
+        // Инициализируем навигацию при загрузке страницы
+        initSliderNavigation();
+        
+        // Переинициализируем навигацию после открытия модального окна
+        const originalOpenProjectModal = window.openProjectModal;
+        if (originalOpenProjectModal) {
+            window.openProjectModal = function(type) {
+                originalOpenProjectModal(type);
+                // Небольшая задержка для завершения обновления DOM
+                setTimeout(function() {
+                    initSliderNavigation();
+                }, 100);
+            };
+        }
 
         // Закрытие по ESC
         document.addEventListener('keydown', function (e) {
