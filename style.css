@@ -275,6 +275,18 @@ html {
   max-width: 100vw;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 40px 0;
+  }
+}
+
 /* Премиум фоновые эффекты - удалены */
 
 .btn {
@@ -391,7 +403,9 @@ html {
   );
   padding: 60px 0 !important;
   position: relative;
-  overflow: visible;
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
 }
 
 /* Вступительный текст about */
@@ -418,7 +432,6 @@ html {
   text-align: center;
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid var(--border-color);
 }
 
 .about-more-btn {
@@ -1604,6 +1617,20 @@ html {
   justify-content: space-evenly;
   min-height: calc(100vh - 200px);
   padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-left {
+    min-height: auto;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-left {
+    min-height: auto;
+    gap: 15px;
+  }
 }
 
 /* Кнопка контактов в header */
@@ -3227,18 +3254,10 @@ position: relative;
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   min-height: 420px;
   justify-content: flex-start;
-}
-
-.team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--secondary-color);
-  background: rgba(255, 255, 255, 0.05);
 }
 
 
@@ -3257,25 +3276,13 @@ position: relative;
   overflow: hidden;
   margin: 0 auto 10px;
   border: 2px solid var(--secondary-color);
-  transition: all 0.3s ease;
   flex-shrink: 0;
-}
-
-.team-card:hover .team-photo {
-  border-color: #E5C76B;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
-  transform: scale(1.05);
 }
 
 .team-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.team-card:hover .team-photo img {
-  transform: scale(1.1);
 }
 
 /* Кнопка контактов в карточке команды */
@@ -4971,18 +4978,18 @@ address a:hover {
   .about-intro {
     grid-template-columns: 1fr;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   
   .about-intro .section-description {
-    padding: 20px;
+    padding: 18px;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
   }
   
   .about-btn-wrapper {
-    margin-top: 40px;
-    padding-top: 30px;
+    margin-top: 30px;
+    padding-top: 25px;
   }
   
   .about-more-btn {
@@ -4993,14 +5000,17 @@ address a:hover {
   /* Размеры шрифтов для секций на мобильных */
   .section-title {
     font-size: 1.75rem;
+    margin-bottom: 15px;
   }
   
   .section-subtitle {
     font-size: 1rem;
+    margin-bottom: 20px;
   }
   
   .section-description {
     font-size: 1rem;
+    line-height: 1.6;
   }
   
   /* Размеры шрифтов для карточек команды */
@@ -5030,32 +5040,58 @@ address a:hover {
   }
   
   /* Горизонтальный скролл для карточек команды на мобильных */
+  .about {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
   .about .container {
-    overflow-x: hidden;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 0;
+  }
+  
+  .about .content-wrapper {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding-left: 20px;
+    padding-right: 0;
+    max-width: 100%;
   }
   
   .team-section {
-    overflow-x: visible;
-    width: 100%;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    width: 100vw;
+    margin-left: calc(-20px - 15px);
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    padding-top: 0;
   }
   
   .team-cards {
     display: none;
     flex-direction: row;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: auto !important;
     gap: 20px;
-    padding: 0 20px 20px 0;
-    margin-left: -15px;
-    margin-right: -15px;
-    width: calc(100% + 30px);
+    padding: 0 15px 20px 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
     scroll-padding-left: 0;
+    scroll-padding-right: 0;
     scrollbar-width: thin;
     scrollbar-color: var(--secondary-color) rgba(255, 255, 255, 0.05);
     justify-content: flex-start !important;
-    align-items: stretch !important;
+    align-items: flex-start !important;
   }
   
   .team-cards.active {
@@ -5088,9 +5124,9 @@ address a:hover {
   
   .team-card {
     flex-shrink: 0 !important;
-    min-width: 260px !important;
-    max-width: 260px !important;
-    width: 260px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    width: 250px !important;
     min-height: 450px;
     height: auto;
   }
@@ -5103,7 +5139,7 @@ address a:hover {
   
   /* Последняя карточка должна быть видна полностью */
   .team-cards .team-card:last-child {
-    margin-right: 15px;
+    margin-right: 0;
   }
   
   /* Принудительно устанавливаем начальную позицию скролла через JavaScript */
@@ -5122,13 +5158,13 @@ address a:hover {
   }
   
   .section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
   
   .hero {
     height: auto;
-    min-height: 100vh;
-    padding: 100px 0 30px 0;
+    min-height: auto;
+    padding: 80px 0 30px 0;
   }
   
   .hero > .container {
@@ -5299,23 +5335,55 @@ address a:hover {
   }
   
   /* Вертикальное отображение карточек команды на маленьких экранах */
+  .about {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
   .about .container {
-    overflow-x: hidden;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 0;
+  }
+  
+  .about .content-wrapper {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding-left: 15px;
+    padding-right: 0;
+    max-width: 100%;
+  }
+  
+  .team-section {
+    width: 100vw;
+    margin-left: calc(-15px - 12px);
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-y: visible !important;
+    margin-top: 0;
+    padding-top: 0;
   }
   
   .team-cards {
     padding: 0 12px 20px 0;
-    margin-left: -12px;
-    margin-right: -12px;
-    width: calc(100% + 24px);
-    scroll-padding-left: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    scroll-padding-left: 0;
+    scroll-padding-right: 0;
     gap: 18px;
+    overflow-y: visible;
+    align-items: flex-start !important;
   }
   
   .team-card {
-    min-width: 240px !important;
-    max-width: 240px !important;
-    width: 240px !important;
+    min-width: 230px !important;
+    max-width: 230px !important;
+    width: 230px !important;
     min-height: 450px;
   }
   
@@ -5326,30 +5394,34 @@ address a:hover {
   
   /* Последняя карточка должна быть видна полностью */
   .team-cards .team-card:last-child {
-    margin-right: 12px;
+    margin-right: 0;
   }
   
   .about-intro .section-description {
-    padding: 18px;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   .about-more-btn {
     padding: 12px 28px;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   /* Размеры шрифтов для секций на маленьких экранах */
   .section-title {
     font-size: 1.5rem;
+    margin-bottom: 12px;
   }
   
   .section-subtitle {
     font-size: 0.95rem;
+    margin-bottom: 18px;
   }
   
   .section-description {
     font-size: 1rem;
+    line-height: 1.6;
   }
   
   /* Размеры шрифтов для карточек команды */
@@ -5371,8 +5443,8 @@ address a:hover {
   
   .hero {
     height: auto;
-    min-height: 100vh;
-    padding: 90px 0 30px 0;
+    min-height: auto;
+    padding: 70px 0 30px 0;
   }
   
   .hero > .container {
