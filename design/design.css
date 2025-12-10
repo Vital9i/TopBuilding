@@ -320,7 +320,7 @@
 .design-cards-grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.85fr 0.85fr 0.85fr 0.85fr 0.85fr 0.85fr;
     gap: 1em;
     width: 100%;
     max-width: 100%;
@@ -328,10 +328,11 @@
     height: 450px;
     transition: all 400ms ease;
     padding: 0 40px;
+    justify-content: center;
 }
 
 .design-cards-grid:hover .design-card-simple:not(:hover) {
-    filter: grayscale(100%) opacity(24%);
+    filter: none;
 }
 
 .design-card-simple {
@@ -348,6 +349,7 @@
     transform-style: preserve-3d;
     perspective: 1000px;
     z-index: 1;
+    transform-origin: center;
 }
 
 .design-card-simple:nth-child(1) {
@@ -381,11 +383,11 @@
     left: 0;
     right: 0;
     bottom: 0;
+    transform: rotateY(180deg);
     background-image: var(--card-bg-img);
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transform: rotateY(180deg);
     transition: all 400ms;
     z-index: 1;
     backface-visibility: hidden;
@@ -433,27 +435,27 @@
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(1):hover) {
-    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2.55fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(2):hover) {
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2.55fr 1fr 1fr 1fr 1fr;
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(3):hover) {
-    grid-template-columns: 1fr 1fr 3fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2.55fr 1fr 1fr 1fr;
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(4):hover) {
-    grid-template-columns: 1fr 1fr 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2.55fr 1fr 1fr;
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(5):hover) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2.55fr 1fr;
 }
 
 .design-cards-grid:has(.design-card-simple:nth-child(6):hover) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2.55fr;
 }
 
 .design-card-simple:nth-child(odd) {
@@ -465,11 +467,11 @@
 }
 
 .design-card-simple:nth-child(odd):hover {
-    transform: translateY(-16px) scale(1.02);
+    transform: translateY(-16px) scaleX(1.02) scaleY(1.02);
 }
 
 .design-card-simple:nth-child(even):hover {
-    transform: translateY(16px) scale(1.02);
+    transform: translateY(16px) scaleX(1.02) scaleY(1.02);
 }
 
 .design-card-simple::after {

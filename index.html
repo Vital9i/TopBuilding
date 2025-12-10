@@ -102,16 +102,16 @@
                     </ul>
                     <ul>
                         <li>
-                            <a href="under_construction.html" target="_blank">Благоустройство территории</a>
+                            <a href="landscaping/landscaping.html" target="_blank">Благоустройство территории</a>
                             <ul>
-                                <li><a href="under_construction.html" target="_blank">Установка забора</a></li>
-                                <li><a href="under_construction.html" target="_blank">Укладка тротуарной плитки</a></li>
-                                <li><a href="under_construction.html" target="_blank">Монтаж ливневок и дренажа</a></li>
-                                <li><a href="under_construction.html" target="_blank">Устройство газона</a></li>
-                                <li><a href="under_construction.html" target="_blank">Монтаж автополива</a></li>
-                                <li><a href="under_construction.html" target="_blank">Искусственные водоемы</a></li>
-                                <li><a href="under_construction.html" target="_blank">Подпорки для участка</a></li>
-                                <li><a href="under_construction.html" target="_blank">Освещение участка</a></li>
+                                <li><a href="landscaping/landscaping.html#fence" target="_blank">Установка забора</a></li>
+                                <li><a href="landscaping/landscaping.html#paving" target="_blank">Укладка тротуарной плитки</a></li>
+                                <li><a href="landscaping/landscaping.html#drainage" target="_blank">Монтаж ливневок и дренажа</a></li>
+                                <li><a href="landscaping/landscaping.html#lawn" target="_blank">Устройство газона</a></li>
+                                <li><a href="landscaping/landscaping.html#irrigation" target="_blank">Монтаж автополива</a></li>
+                                <li><a href="landscaping/landscaping.html#ponds" target="_blank">Искусственные водоемы</a></li>
+                                <li><a href="landscaping/landscaping.html#retaining-walls" target="_blank">Подпорки для участка</a></li>
+                                <li><a href="landscaping/landscaping.html#lighting" target="_blank">Освещение участка</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -141,7 +141,7 @@
                         <a href="#home" class="mobile-menu-link">Главная</a>
                         <a href="design/design.html" class="mobile-menu-link" target="_blank">Проектирование</a>
                         <a href="construction/construction.html" class="mobile-menu-link" target="_blank">Строительство</a>
-                        <a href="under_construction.html" class="mobile-menu-link" target="_blank">Благоустройство территории</a>
+                        <a href="landscaping/landscaping.html" class="mobile-menu-link" target="_blank">Благоустройство территории</a>
                         <a href="under_construction.html" class="mobile-menu-link" target="_blank">Ремонт и модернизация</a>
                         <a href="under_construction.html" class="mobile-menu-link" target="_blank">Партнеры</a>
                         <a href="about/about.html" class="mobile-menu-link" target="_blank">О нас</a>
@@ -1031,30 +1031,48 @@
                         <!-- Левая часть с видео -->
                         <div class="tour-videos">
                             <h3>Наши объекты в видеоформате</h3>
+                            
+                            <!-- 
+                            ИНСТРУКЦИЯ ПО ДОБАВЛЕНИЮ ВИДЕО С GOOGLE DRIVE:
+                            
+                            1. Загрузите видео на Google Drive
+                            2. Откройте файл и нажмите "Поделиться" (Share)
+                            3. Установите доступ: "Все, у кого есть ссылка" (Anyone with the link)
+                            4. Скопируйте ссылку на файл. Она будет выглядеть так:
+                               https://drive.google.com/file/d/1ABC123xyz456DEF789/view?usp=sharing
+                            5. Извлеките ID файла (часть между /d/ и /view):
+                               В примере выше это: 1ABC123xyz456DEF789
+                            6. Замените YOUR_FILE_ID ниже на ваш реальный ID
+                            7. Формат ссылки: https://drive.google.com/file/d/FILE_ID/preview
+                            
+                            АЛЬТЕРНАТИВА: Если Google Drive не работает, используйте YouTube:
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                            -->
+                            
+                            <!-- Видео: Экскурсия по выставочному дому -->
                             <div class="video-container">
-                                <div class="video-placeholder">
-                                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                                    <img src="https://via.placeholder.com/400x225?text=Экскурсия+по+выставочному+дому"
-                                        alt="Видео 1">
-                                    <p>Экскурсия по выставочному дому</p>
-                                </div>
-                            </div>
-
-                            <div class="video-container">
-                                <div class="video-placeholder">
-                                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                                    <img src="https://via.placeholder.com/400x225?text=Строительство+коттеджа+под+ключ"
-                                        alt="Видео 2">
-                                    <p>Строительство коттеджа под ключ</p>
-                                </div>
-                            </div>
-
-                            <div class="video-container">
-                                <div class="video-placeholder">
-                                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                                    <img src="https://via.placeholder.com/400x225?text=Отзыв+наших+клиентов"
-                                        alt="Видео 3">
-                                    <p>Отзыв наших клиентов</p>
+                                <div class="video-wrapper">
+                                    <!-- Обложка видео (кастомное изображение) -->
+                                    <div class="video-thumbnail" id="videoThumbnail">
+                                        <!-- Замените 'main_img/exhibition_house.jpg' на путь к вашей обложке видео -->
+                                        <img src="main_img/wallpaper.webp" 
+                                             alt="Экскурсия по выставочному дому">
+                                        <div class="play-button-overlay">
+                                            <div class="play-icon-large">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Видео iframe (скрыт до клика) -->
+                                    <iframe 
+                                        id="videoIframe"
+                                        src="" 
+                                        allow="autoplay; encrypted-media" 
+                                        allowfullscreen
+                                        class="google-drive-video"
+                                        style="display: none;">
+                                    </iframe>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1406,7 +1424,7 @@
                         <ul class="footer-services">
                             <li><a href="design/design.html" target="_blank">Проектирование</a></li>
                             <li><a href="under_construction.html" target="_blank">Строительство</a></li>
-                            <li><a href="under_construction.html" target="_blank">Благоустройство территории</a></li>
+                            <li><a href="landscaping/landscaping.html" target="_blank">Благоустройство территории</a></li>
                             <li><a href="under_construction.html" target="_blank">Ремонт и модернизация</a></li>
                             <li><a href="under_construction.html" target="_blank">Партнеры</a></li>
                             <li><a href="about/about.html" target="_blank">О нас</a></li>
@@ -2815,6 +2833,20 @@
                 e.target.value = formatted.substring(0, 19);
             }
         });
+
+        // Обработка клика по обложке видео для загрузки iframe
+        const videoThumbnail = document.getElementById('videoThumbnail');
+        const videoIframe = document.getElementById('videoIframe');
+        
+        if (videoThumbnail && videoIframe) {
+            videoThumbnail.addEventListener('click', function() {
+                // Устанавливаем src для iframe
+                videoIframe.src = 'https://drive.google.com/file/d/1oh-3kc4DQtbvzfkc3jKAHqxvPGp-rnHj/preview';
+                // Скрываем обложку и показываем видео
+                videoThumbnail.style.display = 'none';
+                videoIframe.style.display = 'block';
+            });
+        }
     </script>
 </body>
 

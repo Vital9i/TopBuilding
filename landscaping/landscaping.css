@@ -1,0 +1,309 @@
+/* Стили для страницы благоустройства территорий - Минималистичный дизайн */
+
+/* Общие минималистичные стили для карточек и иконок */
+[class*="-card"],
+[class*="-icon"],
+[class*="Icon"],
+[class*="Card"] {
+    transition: none !important;
+}
+
+[class*="-card"]:hover,
+[class*="Card"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+[class*="-icon"]:hover,
+[class*="Icon"]:hover {
+    transform: none !important;
+}
+
+/* Убираем все эффекты hover */
+*:hover {
+    transform: none !important;
+}
+
+/* Минималистичные размеры для всех иконок */
+[class*="icon"],
+[class*="Icon"] {
+    font-size: 0.85rem !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* Минималистичные размеры для всех карточек */
+[class*="-card"],
+[class*="Card"] {
+    padding: 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Общие стили для структурирования страницы */
+.main {
+    padding-top: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Стили для секций на странице благоустройства */
+.section.landscaping-section {
+    position: relative;
+    padding: 30px 0;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 0;
+    min-height: auto;
+}
+
+/* Hero секция */
+.landscaping-hero {
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.landscaping-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.landscaping-header .hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.landscaping-header .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Заголовки секций */
+.landscaping-section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.landscaping-section-header .section-title {
+    text-align: center !important;
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
+    margin-bottom: 10px !important;
+    color: white;
+}
+
+.landscaping-section-header .section-subtitle {
+    text-align: center !important;
+    font-size: clamp(0.9rem, 1.5vw, 1rem) !important;
+    margin-bottom: 20px !important;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Контейнеры для секций */
+.section.landscaping-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Вводный текст */
+.landscaping-intro-text {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Секции с преимуществами */
+.landscaping-benefits-section {
+    margin-bottom: 40px;
+}
+
+.landscaping-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.landscaping-section-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.landscaping-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.landscaping-benefit-card {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0 15px 15px;
+    text-align: left;
+}
+
+.landscaping-benefit-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.landscaping-benefit-card h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.landscaping-benefit-card p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Секции с типами */
+.landscaping-types-section {
+    margin-bottom: 40px;
+}
+
+.landscaping-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.landscaping-type-card {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0 20px 20px;
+    text-align: left;
+}
+
+.landscaping-type-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.landscaping-type-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.landscaping-type-card > p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+}
+
+.landscaping-type-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.landscaping-type-list li {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+    padding-left: 0;
+    position: relative;
+}
+
+.landscaping-type-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    margin-right: 8px;
+}
+
+/* Важное примечание */
+.landscaping-important-note {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 87, 34, 0.3);
+    padding: 15px 0 15px 15px;
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.landscaping-important-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: rgba(255, 87, 34, 0.9);
+    margin-top: 2px;
+}
+
+.landscaping-important-content {
+    flex: 1;
+}
+
+.landscaping-important-content h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 87, 34, 0.9);
+    margin-bottom: 6px;
+}
+
+.landscaping-important-content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .landscaping-benefits-grid,
+    .landscaping-types-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .landscaping-section-title {
+        font-size: 1.1rem;
+    }
+    
+    .landscaping-section-subtitle {
+        font-size: 0.8rem;
+    }
+}
+
