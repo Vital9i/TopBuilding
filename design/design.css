@@ -14,9 +14,14 @@
 
 /* Header стили берутся из главного style.css */
 
-/* Отступ для контента под fixed header */
+/* Отступ для контента под fixed header - убираем для hero секции */
 .main {
-  padding-top: 70px;
+  padding-top: 0;
+}
+
+/* Hero секция на весь экран, поэтому первый элемент не нуждается в отступе */
+.main > .design-hero:first-child {
+  margin-top: 0;
 }
 
 /* Золотой акцент */
@@ -132,64 +137,126 @@
 /* Design Hero Section - использует стили из style.css, добавляем только специфичные */
 .design-hero {
   /* Стили берутся из .hero в style.css */
-  margin-top: -70px; /* Компенсация padding-top у .main */
-  padding: 20px 0 30px 0 !important; /* Уменьшенный отступ сверху */
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  margin-top: 0;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .design-hero > .container {
-  padding-top: 70px; /* Отступ от fixed header */
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.design-hero .hero-content-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-top: clamp(60px, 8vh, 75px); /* Отступ от fixed header */
+  padding-bottom: clamp(10px, 1.5vh, 20px);
+  max-height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+.design-hero .hero-info {
+  margin-top: clamp(4px, 0.8vw, 8px);
+}
+
+.design-hero .hero-info p {
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  margin-bottom: clamp(2px, 0.5vw, 4px);
+  line-height: 1.3;
 }
 
 .design-hero .hero-left {
   min-height: auto !important;
   padding-top: 0 !important;
   justify-content: flex-start !important;
+  gap: clamp(4px, 0.8vw, 8px);
+}
+
+/* Убеждаемся, что видео-фон растягивается на весь экран */
+.design-hero .hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.design-hero .hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .design-hero .hero-title {
-  white-space: nowrap;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  white-space: normal;
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: clamp(4px, 0.8vw, 8px);
+}
+
+.design-hero .hero-subtitle {
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  margin-bottom: clamp(4px, 0.8vw, 8px);
+  line-height: 1.4;
 }
 
 /* Компактные USP блоки */
 .design-hero .hero-features {
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: clamp(4px, 0.8vw, 6px);
   justify-content: start;
   max-width: 450px;
+  margin-bottom: clamp(4px, 0.8vw, 8px);
 }
 
 .design-hero .hero-feature {
-  padding: 10px 14px;
-  gap: 8px;
+  padding: clamp(6px, 1.2vw, 8px) clamp(8px, 1.5vw, 12px);
+  gap: clamp(4px, 0.8vw, 6px);
   width: 100%;
   min-width: 0;
 }
 
 .design-hero .feature-icon {
-  width: 28px;
-  font-size: 1.3rem;
+  width: clamp(24px, 3vw, 28px);
+  font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 .design-hero .feature-text {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .design-hero .feature-text strong {
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
 }
 
 .design-hero .feature-text span {
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
 }
 
 /* Главное преимущество - уникальный элемент для страницы проектирования */
 .design-hero-main-feature {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px 25px;
-  margin-bottom: 30px;
+  gap: clamp(8px, 1.2vw, 12px);
+  padding: clamp(8px, 1.2vw, 12px) clamp(12px, 1.8vw, 18px);
+  margin-bottom: clamp(4px, 0.8vw, 8px);
   width: 100%;
   max-width: 600px;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%);
@@ -210,8 +277,8 @@
 
 .main-feature-icon {
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, 5vw, 50px);
+  height: clamp(40px, 5vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,19 +288,19 @@
 }
 
 .main-feature-icon i {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   color: var(--secondary-color);
 }
 
 .main-feature-content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: clamp(2px, 0.5vw, 4px);
   flex: 1;
 }
 
 .main-feature-content strong {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 700;
   color: white;
   line-height: 1.3;
@@ -241,7 +308,7 @@
 }
 
 .main-feature-content span {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
@@ -249,33 +316,82 @@
 
 /* Адаптив для главного преимущества */
 @media (max-width: 768px) {
+  .design-hero {
+    height: 100vh;
+    max-height: 100vh;
+    align-items: flex-start;
+  }
+  
+  .design-hero > .container {
+    height: 100%;
+    max-height: 100vh;
+    align-items: flex-start;
+  }
+  
+  .design-hero .hero-content-wrapper {
+    padding-top: 60px;
+    padding-bottom: 10px;
+    align-items: flex-start;
+    max-height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+  
+  .design-hero .hero-left {
+    gap: clamp(10px, 3vw, 15px);
+  }
+  
   .design-hero .hero-title {
-    white-space: normal; /* Разрешаем перенос на мобильных */
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    white-space: normal;
+    font-size: clamp(1.3rem, 6vw, 2rem);
+    margin-bottom: clamp(8px, 2vw, 12px);
+  }
+  
+  .design-hero .hero-subtitle {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    margin-bottom: clamp(8px, 2vw, 15px);
   }
   
   .design-hero-main-feature {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     max-width: 100%;
+    margin-bottom: clamp(10px, 2vw, 20px);
   }
   
   .main-feature-icon {
-    width: 45px;
-    height: 45px;
+    width: clamp(40px, 6vw, 45px);
+    height: clamp(40px, 6vw, 45px);
   }
   
   .main-feature-icon i {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
   }
   
   .main-feature-content strong {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
   }
   
   .main-feature-content span {
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+  }
+  
+  .design-hero .hero-features {
+    gap: clamp(4px, 1.5vw, 6px);
+    margin-bottom: clamp(8px, 2vw, 12px);
+  }
+  
+  .design-hero .hero-feature {
+    padding: clamp(6px, 2vw, 8px) clamp(8px, 2vw, 10px);
+  }
+  
+  .design-hero .hero-info {
+    margin-top: clamp(8px, 2vw, 12px);
+  }
+  
+  .design-hero .hero-info p {
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    margin-bottom: clamp(4px, 1vw, 6px);
   }
 }
 

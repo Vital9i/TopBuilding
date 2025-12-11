@@ -512,7 +512,7 @@ html {
 .about .decor-right-bottom {
   background-image: url('main_img/project.webp');
   bottom: -10%;
-  right: -150px;
+  right: -10px;
   transform: rotate(180deg);
 }
 
@@ -541,7 +541,7 @@ html {
 .about .decor-right-middle-2 {
   background-image: url('main_img/project.webp');
   top: 65%;
-  right: -150px;
+  right: 150px;
   transform: rotate(315deg);
 }
 
@@ -3237,7 +3237,6 @@ position: relative;
   width: 100%;
   justify-content: center;
   align-items: stretch;
-  grid-auto-rows: 1fr;
 }
 
 .team-cards.active {
@@ -3256,8 +3255,8 @@ position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 420px;
   justify-content: flex-start;
+  height: 100%;
 }
 
 
@@ -3300,7 +3299,7 @@ position: relative;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 15px;
+  margin-top: 8px;
   margin-bottom: 0;
   flex-shrink: 0;
 }
@@ -3350,14 +3349,17 @@ position: relative;
   line-height: 1.5;
   font-size: 1rem;
   margin-bottom: 0;
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
-/* Заполнитель для карточек без кнопки контактов */
+/* Прижимаем кнопку к тексту в карточке руководителя */
+.team-card .team-description + .team-contact-btn {
+  margin-top: 8px;
+}
+
+/* Заполнитель для карточек без кнопки контактов - убираем, так как больше не нужен */
 .team-card-spacer {
-  margin-top: auto;
-  height: 55px; /* padding (10px*2) + margin-top (15px) + высота текста (~20px) */
-  flex-shrink: 0;
+  display: none;
 }
 
 /* Убеждаемся, что все карточки имеют одинаковую высоту */
@@ -3635,7 +3637,9 @@ position: relative;
     margin-bottom: 25px;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: visible;
     scrollbar-width: none;
+    padding: 0 20px;
 }
 
 .workflow-tabs::-webkit-scrollbar {
@@ -3646,24 +3650,46 @@ position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    padding: 10px 12px;
+    gap: 4px;
+    padding: 6px 8px;
     background: transparent;
     border: none;
     border-radius: 10px;
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 75px;
+    min-width: 55px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
 }
 
+/* Увеличиваем z-index для первой и последней кнопки, чтобы иконки не обрезались */
+.workflow-tab:first-child,
+.workflow-tab:last-child {
+    z-index: 10;
+    overflow: visible;
+}
+
+/* Дополнительная защита для иконок первой и последней кнопки */
+.workflow-tab:first-child i,
+.workflow-tab:last-child i {
+    position: relative;
+    z-index: 15;
+    overflow: visible;
+}
+
+/* Убеждаемся, что иконки не обрезаются */
 .workflow-tab i {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
 }
 
 .workflow-tab span {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-align: center;
     white-space: nowrap;
@@ -6008,7 +6034,8 @@ address a:hover {
 }
 
 .testimonial-card-slider:hover {
-  /* Никаких изменений карточки */
+  /* Никаких изменений карточки при наведении */
+  transform: none;
 }
 
 /* Изображение отзыва */
