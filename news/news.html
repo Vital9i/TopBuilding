@@ -903,11 +903,14 @@
                 const toggleButtons = document.querySelectorAll('.news-toggle-btn');
                 
                 toggleButtons.forEach(button => {
-                    button.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
+                    // Функция для переключения состояния
+                    function toggleNews(e) {
+                        if (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
                         
-                        const newsCard = this.closest('.news-card');
+                        const newsCard = button.closest('.news-card');
                         if (!newsCard) return;
                         
                         const fullText = newsCard.querySelector('.news-full-text');
@@ -916,15 +919,41 @@
                         if (fullText.classList.contains('show')) {
                             // Сворачиваем
                             fullText.classList.remove('show');
-                            this.classList.remove('active');
-                            this.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
+                            button.classList.remove('active');
+                            button.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
                         } else {
                             // Раскрываем
                             fullText.classList.add('show');
-                            this.classList.add('active');
-                            this.innerHTML = 'Свернуть <i class="fas fa-chevron-up"></i>';
+                            button.classList.add('active');
+                            button.innerHTML = 'Свернуть <i class="fas fa-chevron-up"></i>';
+                        }
+                    }
+                    
+                    // Поддержка touch событий для мобильных устройств
+                    let touchStartTime = 0;
+                    let touchMoved = false;
+                    
+                    button.addEventListener('touchstart', function(e) {
+                        touchStartTime = Date.now();
+                        touchMoved = false;
+                    }, { passive: true });
+                    
+                    button.addEventListener('touchmove', function(e) {
+                        touchMoved = true;
+                    }, { passive: true });
+                    
+                    button.addEventListener('touchend', function(e) {
+                        const touchDuration = Date.now() - touchStartTime;
+                        // Если касание было коротким и без движения - обрабатываем как клик
+                        if (!touchMoved && touchDuration < 500) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleNews(e);
                         }
                     });
+                    
+                    // Обычный клик для десктопа
+                    button.addEventListener('click', toggleNews);
                 });
             }
             

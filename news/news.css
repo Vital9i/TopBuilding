@@ -131,8 +131,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 8px 0;
     font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 1;
 }
 
 .news-link:hover,
