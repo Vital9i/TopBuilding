@@ -3284,6 +3284,19 @@ position: relative;
   object-fit: cover;
 }
 
+.team-photo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.team-photo a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Кнопка контактов в карточке команды */
 .team-contact-btn {
   display: inline-flex;

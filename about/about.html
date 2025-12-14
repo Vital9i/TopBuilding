@@ -3,71 +3,1160 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="../main_img/Llogo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - ТОПБИЛДИНГ</title>
+    <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="about.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
-    <div class="page-container">
-        <!-- Декоративные элементы -->
-        <div class="decor decor-left-top"></div>
-        <div class="decor decor-right-top"></div>
-        <div class="decor decor-left-bottom"></div>
-        <div class="decor decor-right-bottom"></div>
-        
-        <!-- Контент -->
-        <div class="content">
-            <div class="logo">
-                <div class="header-logo">
-                    <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                    <div class="logo-text">
-                        <span class="logo-top">ТОП</span>
-                        <span class="logo-building">БИЛДИНГ</span>
+    <div class="maklknknin-content-wrapper">
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <nav class="nav">
+                    <!-- Бургер меню (только для мобильных) -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <!-- Логотип компании -->
+                    <div class="nav-left">
+                        <a href="../index.html#home" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Логотип по центру (только для мобильных) -->
+                    <div class="nav-logo-center">
+                        <a href="../index.html#home" class="logo-link">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Меню навигации -->
+                    <div class="nav-menu">
+                        <ul>
+                            <li>
+                                <a href="../index.html#home">Главная</a>
+                                <ul>
+                                    <li><a href="../index.html#home">Главная страница</a></li>
+                                    <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                                    <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                                    <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                                    <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                                    <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                                    <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
+                                    <li><a href="../index.html#footer">Контакты</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="../design/design.html">Проектирование</a>
+                                <ul>
+                                    <li><a href="../design/design.html#design-types">Виды проектов</a></li>
+                                    <li><a href="../design/design.html#design-process">Процесс проектирования</a></li>
+                                    <li><a href="../design/design.html#prices">Стоимость</a></li>
+                                    <li><a href="../design/design.html#popular-projects">Популярные проекты</a></li>
+                                    <li><a href="../design/design.html#faq">Вопросы и ответы</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="../construction/construction.html">Строительство 2026</a>
+                                <ul>
+                                    <li><a href="../construction/construction.html#geology">Геология и геодезия участка</a></li>
+                                    <li><a href="../construction/construction.html#foundation">Фундамент</a></li>
+                                    <li><a href="../construction/construction.html#technologies">Технологии и стены</a></li>
+                                    <li><a href="../construction/construction.html#roof">Крыша</a></li>
+                                    <li><a href="../construction/construction.html#glazing">Остекление</a></li>
+                                    <li><a href="../construction/construction.html#engineering">Сети</a></li>
+                                    <li><a href="../construction/construction.html#interior">Внутренняя отделка</a></li>
+                                    <li><a href="../construction/construction.html#exterior">Наружная отделка</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="../news/news.html">Новости</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="../partners/partners.html">Партнеры</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="active">
+                                <a href="about.html">О нас</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="../under_construction.html">Административные и производственные сооружения</a>
+                                <ul>
+                                    <li><a href="../under_construction.html">Административные здания</a></li>
+                                    <li><a href="../under_construction.html">Производственные объекты</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Кнопка контактов -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="contact-btn-text">Контакты</span>
+                    </button>
+                </nav>
+                
+                <!-- Мобильное меню (выпадающее) -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="mobile-menu-content">
+                        <a href="../index.html#home" class="mobile-menu-link">Главная</a>
+                        <a href="../design/design.html" class="mobile-menu-link">Проектирование</a>
+                        <a href="../construction/construction.html" class="mobile-menu-link">Строительство 2026</a>
+                        <a href="../news/news.html" class="mobile-menu-link">Новости</a>
+                        <a href="../partners/partners.html" class="mobile-menu-link">Партнеры</a>
+                        <a href="about.html" class="mobile-menu-link active">О нас</a>
+                        <a href="../under_construction.html" class="mobile-menu-link">Административные и производственные сооружения</a>
                     </div>
                 </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section id="about" class="section about">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
+                <div class="decor decor-left-middle-1"></div>
+                <div class="decor decor-left-middle-2"></div>
+                <div class="decor decor-right-middle-1"></div>
+                <div class="decor decor-right-middle-2"></div>
+                <div class="content-wrapper">
+                <div class="container">
+                    <h2 class="section-title">Почему <span class="highlight">выбирают нас</span></h2>
+                    <div class="about-intro">
+                        <p class="section-description">
+                            Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                            Республике Беларусь. Реализуем проекты любой сложности: от загородного домостроения до административных и производственных объектов. Наш опыт позволяет воплощать в жизнь самые смелые архитектурные решения с гарантией качества.
+                            <br><br>
+                            <em class="team-intro-text-desktop">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
+                        </p>
+                        <p class="section-description">Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
+                            услугой
+                            и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
+                            проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
+                            комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с
+                            Заказчиком.
+                            <br><br>
+                            <em class="team-intro-text-mobile">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
+                        </p>
+                    </div>
+
+                    <!-- Наша команда -->
+                    <div class="team-section">
+                        <div class="team-tabs">
+                            <button class="team-tab active" data-team="management">Руководство</button>
+                            <button class="team-tab" data-team="architects">Архитекторы</button>
+                            <button class="team-tab" data-team="designers">Дизайнеры</button>
+                            <button class="team-tab" data-team="builders">Строители</button>
+                        </div>
+
+                        <!-- Руководство -->
+                        <div class="team-cards active" id="management" style="scroll-behavior: auto !important;">
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Oleg.webp" alt="Руководитель организации">
+                                </div>
+                                <h3 class="team-name">Олег Олегович<br>Гриценко</h3>
+                                <p class="team-position">Руководитель организации</p>
+                                <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
+                                    компанией с
+                                    момента основания.</p>
+                                <button class="team-contact-btn open-sidebar-btn">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>Контакты</span>
+                                </button>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/TamaraGeorgievna.webp" alt="руководитель проектного отдела">
+                                </div>
+                                <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
+                                <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
+                                <p class="team-description">Координирует все строительные процессы и взаимодействие
+                                    между
+                                    отделами.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
+                                </div>
+                                <h3 class="team-name">Евгения Андреевна Кожемякина </h3>
+                                <p class="team-position">Главный бухгалтер</p>
+                                <p class="team-description"> Обеспечивает соблюдение законодательства в области
+                                    бухгалтерского и налогового учета, а также участвует в финансовом планировании и
+                                    анализе.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/AnnaArnoldovna.webp" alt="Бухгалтер">
+                                </div>
+                                <h3 class="team-name">Анна Арнольдовна Карпеко </h3>
+                                <p class="team-position">Бухгалтер</p>
+                                <p class="team-description">Занимается ведением финансового учета и отчетности компании.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/AlenaOlegovna.webp" alt="Бухгалтер">
+                                </div>
+                                <h3 class="team-name">Алена Олеговна Красулевич </h3>
+                                <p class="team-position">Инженер ПТО (производственно-технический отдел)</p>
+                                <p class="team-description">Занимается техническим сопровождением и контролем
+                                    строительных процессов.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+                        </div>
+
+
+                        <!-- Архитекторы -->
+                        <div class="team-cards" id="architects">
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Tatiana_Fedorovna.webp" alt="Татьяна Федоровна">
+                                </div>
+                                <h3 class="team-name">Татьяна Федоровна</h3>
+                                <p class="team-position">Главный архитектор</p>
+                                <p class="team-description">Разрабатывает концепции домов и контролирует их техническую
+                                    реализацию. Более 8 лет опыта в архитектурном проектировании.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-photo">
+                                   <a href="https://www.instagram.com/stepan.batykovich/"><img src="../main_img/Cast/Stepan.webp" alt="Степан Батькович"></a>
+                                </div>
+                                <h3 class="team-name">Степан Батькович</h3>
+                                <p class="team-position">Архитектор</p>
+                                <p class="team-description">Жду фото 3 неделю.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+                        </div>
+                          
+                        <!-- Дизайнеры -->
+                        <div class="team-cards" id="designers">
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Angelika_Makarevich.webp" alt="Анжелика Александровна">
+                                </div>
+                                <h3 class="team-name">Анжелика Александровна</h3>
+                                <p class="team-position">Дизайнер интерьеров</p>
+                                <p class="team-description">Создает гармоничный интерьер помещений и подбирает материалы.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+                        </div>
+
+                        <!-- Строители -->
+                        <div class="team-cards" id="builders">
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Genadi.webp" alt="Бригадир кровельщиков, фасадчиков">
+                                </div>
+                                <h3 class="team-name">Чечетко Геннадий</h3>
+                                <p class="team-position">Бригадир кровельщиков, фасадчиков</p>
+                                <p class="team-description">Выполняет руководящую и организационную работу, а также
+                                    участвует в выполнении кровельных и фасадных работ.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Said.webp" alt="Бригадир в отделке и кладке">
+                                </div>
+                                <h3 class="team-name">Саидохонов Саид</h3>
+                                <p class="team-position">Бригадир в отделке и кладке</p>
+                                <p class="team-description"> Занимается организацией работы строительной бригады,
+                                    распределением задач, контролем качества и соблюдением сроков выполнения работ.</p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Andrey_Kyzmich.webp" alt="Геодезист">
+                                </div>
+                                <h3 class="team-name">Андрей Кузьмич</h3>
+                                <p class="team-position">Геодезист</p>
+                                <p class="team-description">Осуществляет геодезический контроль и измерения на объектах строительства.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Vladimir_Domanovsky.webp" alt="Бригадир">
+                                </div>
+                                <h3 class="team-name">Домановский Владимир</h3>
+                                <p class="team-position">Бригадир</p>
+                                <p class="team-description">Отвечает за своевременное обеспечение бригады необходимыми материалами и оборудованием.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Andrey_Deredich.webp" alt="Бригадир по благоустройству">
+                                </div>
+                                <h3 class="team-name">Андрей Середич</h3>
+                                <p class="team-position">Бригадир по благоустройству</p>
+                                <p class="team-description">Организует и координирует работы по благоустройству территории.
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                            <div class="team-card">
+                                <div class="team-photo">
+                                    <img src="../main_img/Cast/Andrey_Kardash.webp" alt="Мастер общестроительных работ">
+                                </div>
+                                <h3 class="team-name">Андрей Кардаш</h3>
+                                <p class="team-position">Мастер общестроительных работ</p>
+                                <p class="team-description">Руководит бригадой или отдельным участком, контролирует соблюдение технологий и безопасности, а также следит за качеством материалов. 
+                                </p>
+                                <div class="team-card-spacer"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Проектная документация -->
+                    <div class="services-section">
+                        <h3 class="services-title">Проектная документация</h3>
+                        <p class="services-description">
+                            Разработка проектной документации осуществляется по всем основным разделам проекта:
+                        </p>
+                        <ul class="services-list">
+                            <li>Генеральный план</li>
+                            <li>Архитектурное решение</li>
+                            <li>Технологические решения</li>
+                            <li>Отопление и вентиляция</li>
+                            <li>Водоснабжение и канализация</li>
+                            <li>Тепломеханические решения</li>
+                            <li>Электроснабжение</li>
+                            <li>И другие разделы проекта</li>
+                        </ul>
             </div>
             
-            <div class="message-box">
-                <div class="icon-wrapper">
-                    <i class="fas fa-hammer"></i>
-                    <i class="fas fa-wrench"></i>
+                    <!-- Виды строительно-монтажных работ -->
+                    <div class="services-section">
+                        <h3 class="services-title">Виды строительно-монтажных работ</h3>
+                        <p class="services-description">
+                            Мы выполняем все основные функции Генподрядчика на объекте строительства. Имеем возможность выполнять следующие виды строительно-монтажных работ собственными силами:
+                        </p>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <i class="fas fa-shovel"></i>
+                                <span>Земляные работы и устройство оснований</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Бетонные работы и монтаж сборного железобетона</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-industry"></i>
+                                <span>Монтаж металлоконструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-th"></i>
+                                <span>Возведение кладки из штучных элементов</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-building"></i>
+                                <span>Монтаж стеновых ограждающих конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-home"></i>
+                                <span>Кровельные работы</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-plug"></i>
+                                <span>Монтаж внутренних и наружных сетей здания</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Монтаж каменных и армокаменных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Благоустройство территории</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Монтаж технологического оборудования</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Устройство тепловой изоляции ограждающих конструкций зданий</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-th-large"></i>
+                                <span>Монтаж сборных бетонных и железобетонных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Возведение монолитных бетонных и железобетонных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Работы по заполнению оконных и дверных проёмов</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-road"></i>
+                                <span>Устройство дорожных покрытий пешеходных зон из плит тротуарных</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1>Страница находится в разработке</h1>
-                <p>Мы работаем над тем, чтобы предоставить вам самую полную и интересную информацию о нашей компании</p>
+                </div>
+                <!-- /content-wrapper -->
+            </section>
+        </main>
+
+        <!-- Сайдбар контактов -->
+        <div class="hero-sidebar" id="heroSidebar">
+            <div class="hero-contact-card">
+                <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
                 
-                <div class="features">
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>История компании</span>
+                <div class="ceo-highlight">
+                    <div class="ceo-avatar">
+                        <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
+                        <div class="online-badge">
+                            <i class="fas fa-circle"></i>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Наши достижения</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Сертификаты и лицензии</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Подробно о команде</span>
+                    <div class="ceo-info">
+                        <div class="ceo-name">Гриценко Олег Олегович</div>
+                        <div class="ceo-title">Руководитель компании</div>
                     </div>
                 </div>
                 
-                <a href="../index.html" class="back-btn">
+                <div class="advantage-description">
+                    Вы общаетесь <strong>напрямую с руководителем</strong>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                    </div>
+
+                <!-- Контактные кнопки -->
+                <div class="hero-contact-buttons">
+                    <a href="#" class="contact-btn primary-contact" onclick="event.preventDefault(); openCallbackModal('Сайдбар контактов'); return false;">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Заказать звонок</span>
+                    </a>
+                    
+                    <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Экскурсия по объектам</span>
+                    </a>
+                    
+                    <div class="messenger-buttons">
+                        <a href="https://t.me/+375291286217" class="messenger-btn telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="viber://chat?number=%2B375291286217" class="messenger-btn viber">
+                            <i class="fab fa-viber"></i>
+                            <span>Viber</span>
+                        </a>
+                        <a href="https://wa.me/375291286217" class="messenger-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Большая кнопка "Назад" внизу -->
+                <button type="button" class="sidebar-back-btn" id="sidebarBackBtn" onclick="closeContactSidebar()">
                     <i class="fas fa-arrow-left"></i>
-                    <span>Вернуться на главную</span>
-                </a>
+                    <span>Назад</span>
+                </button>
             </div>
         </div>
+
+        <!-- Модальное окно для заказа звонка -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-modal-overlay"></div>
+            <div class="callback-modal-content">
+                <button class="callback-modal-close" onclick="closeCallbackModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="callback-modal-header">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Заказать звонок</h3>
+                    <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+                </div>
+                <form id="callbackForm" class="callback-form">
+                    <div class="form-group">
+                        <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                    </div>
+                    <button type="submit" class="callback-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Отправить заявку</span>
+                    </button>
+                </form>
+                <div id="callback-message" class="callback-message"></div>
+            </div>
+        </div>
+
+        <!-- Подвал сайта -->
+        <footer id="footer" class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Колонка 1: О компании -->
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <div class="logo-text">
+                                <span class="logo-top">ТОП</span>
+                                <span class="logo-building">БИЛДИНГ</span>
+                            </div>
+                        </div>
+                        <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
+                    </div>
+
+                    <!-- Колонка 2: Меню -->
+                    <div class="footer-col">
+                        <h4>Меню</h4>
+                        <ul class="footer-menu">
+                            <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                            <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                            <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                            <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                            <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                            <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Колонка 3: Услуги -->
+                    <div class="footer-col">
+                        <h4>Услуги</h4>
+                        <ul class="footer-services">
+                            <li><a href="../design/design.html">Проектирование</a></li>
+                            <li><a href="../construction/construction.html">Строительство 2026</a></li>
+                            <li><a href="../news/news.html">Новости</a></li>
+                            <li><a href="../partners/partners.html">Партнеры</a></li>
+                            <li><a href="about.html">О нас</a></li>
+                            <li><a href="../under_construction.html">Административные и производственные сооружения</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Колонка 4: Контакты -->
+                    <div class="footer-col">
+                        <h4>Контакты</h4>
+                        <address>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                        </address>
+
+                        <div class="footer-social">
+                            <a href="https://t.me/+375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="viber://chat?number=%2B375291286217" class="social-icon">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="https://wa.me/375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <button class="btn footer-btn open-sidebar-btn" onclick="openContactSidebar()">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Заказать звонок</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        &copy; 2025 ООО "ТОПБИЛДИНГ". Все права защищены.
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS отключен для этой страницы
+        // AOS.init({
+        //     duration: 800,
+        //     easing: 'ease-in-out',
+        //     once: true
+        // });
+
+        // Мобильное меню и обработчики кнопок
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const heroSidebar = document.getElementById('heroSidebar');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+
+            // Закрытие мобильного меню при клике на ссылку
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (mobileMenu) mobileMenu.classList.remove('active');
+                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                });
+            });
+            
+            // Обработчики для кнопок открытия сайдбара (включая кнопки в карточках команды)
+            const openSidebarBtns = document.querySelectorAll('.open-sidebar-btn');
+            openSidebarBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openContactSidebar();
+                });
+            });
+        });
+
+        // Глобальная функция открытия сайдбара
+        window.openContactSidebar = function() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+        
+        // Для обратной совместимости
+        function openContactSidebar() {
+            window.openContactSidebar();
+        }
+        
+        // Глобальная функция закрытия сайдбара
+        window.closeContactSidebar = function() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        };
+        
+        // Для обратной совместимости
+        function closeContactSidebar() {
+            window.closeContactSidebar();
+        }
+        
+        // Обработчики для сайдбара контактов
+        // Устанавливаем scrollLeft = 0 СРАЗУ, до DOMContentLoaded
+        (function() {
+            function resetScroll() {
+                const cards = document.querySelectorAll('.team-cards');
+                cards.forEach(function(card) {
+                    if (card) {
+                        card.style.scrollBehavior = 'auto';
+                        card.scrollLeft = 0;
+                    }
+                });
+            }
+            
+            // Вызываем сразу, если элементы уже есть
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', resetScroll);
+            } else {
+                resetScroll();
+            }
+            
+            // Также вызываем при полной загрузке
+            window.addEventListener('load', resetScroll);
+        })();
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            // Функция для принудительного сброса скролла
+            function forceResetScroll(element) {
+                if (!element) return;
+                element.style.scrollBehavior = 'auto';
+                element.style.setProperty('scroll-behavior', 'auto', 'important');
+                element.style.justifyContent = 'flex-start';
+                element.scrollLeft = 0;
+                element.scrollTo(0, 0);
+                // Принудительно проверяем и устанавливаем
+                if (element.scrollLeft !== 0) {
+                    element.scrollLeft = 0;
+                }
+            }
+            
+            // Сразу устанавливаем scrollLeft = 0 для всех карточек команды при загрузке
+            const allTeamCardsContainers = document.querySelectorAll('.team-cards');
+            allTeamCardsContainers.forEach(function(cards) {
+                forceResetScroll(cards);
+                cards.style.justifyContent = 'flex-start';
+            });
+            
+            // Переключение табов команды
+            const teamTabs = document.querySelectorAll('.team-tab');
+            
+            teamTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Убираем active у всех табов
+                    teamTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Добавляем active текущему табу
+                    tab.classList.add('active');
+                    
+                    // Скрываем все карточки и сбрасываем их скролл
+                    const allCards = document.querySelectorAll('.team-cards');
+                    allCards.forEach(cards => {
+                        cards.classList.remove('active');
+                        forceResetScroll(cards);
+                    });
+                    
+                    // Показываем нужные карточки
+                    const teamId = tab.getAttribute('data-team');
+                    const targetCards = document.getElementById(teamId);
+                    
+                    if (targetCards) {
+                        // Сначала устанавливаем scrollLeft = 0 ДО добавления класса active
+                        forceResetScroll(targetCards);
+                        
+                        // Добавляем класс active
+                        targetCards.classList.add('active');
+                        
+                        // Множественные проверки для надежности
+                        forceResetScroll(targetCards);
+                        
+                        setTimeout(() => {
+                            forceResetScroll(targetCards);
+                        }, 0);
+                        
+                        setTimeout(() => {
+                            forceResetScroll(targetCards);
+                        }, 10);
+                        
+                        requestAnimationFrame(() => {
+                            forceResetScroll(targetCards);
+                            requestAnimationFrame(() => {
+                                forceResetScroll(targetCards);
+                            });
+                        });
+                    }
+                });
+            });
+            
+            // Функция для сброса скролла карточек команды
+            function resetTeamCardsScroll() {
+                const activeCards = document.querySelector('.team-cards.active');
+                if (activeCards) {
+                    activeCards.style.scrollBehavior = 'auto';
+                    activeCards.scrollLeft = 0;
+                    activeCards.scrollTo(0, 0);
+                }
+            }
+            
+            // Используем MutationObserver для отслеживания изменений класса active
+            const teamCardsObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const target = mutation.target;
+                        if (target.classList.contains('active') && target.classList.contains('team-cards')) {
+                            target.style.scrollBehavior = 'auto';
+                            target.style.setProperty('scroll-behavior', 'auto', 'important');
+                            target.scrollLeft = 0;
+                            target.scrollTo(0, 0);
+                            target.setAttribute('data-scroll-reset', 'true');
+                        }
+                    }
+                });
+            });
+            
+            // Наблюдаем за всеми контейнерами карточек команды
+            const allTeamCards = document.querySelectorAll('.team-cards');
+            allTeamCards.forEach(function(cards) {
+                cards.style.scrollBehavior = 'auto';
+                teamCardsObserver.observe(cards, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
+            });
+            
+            // Предотвращаем восстановление позиции скролла браузером
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            
+            // Инициализация: прокручиваем активные карточки к началу при загрузке страницы
+            // Вызываем сразу
+            resetTeamCardsScroll();
+            
+            // Вызываем после небольшой задержки
+            setTimeout(resetTeamCardsScroll, 50);
+            
+            // Вызываем через requestAnimationFrame
+            requestAnimationFrame(() => {
+                resetTeamCardsScroll();
+                requestAnimationFrame(() => {
+                    resetTeamCardsScroll();
+                });
+            });
+            
+            // Вызываем после полной загрузки
+            setTimeout(resetTeamCardsScroll, 200);
+            setTimeout(resetTeamCardsScroll, 500);
+            setTimeout(resetTeamCardsScroll, 1000);
+            
+            // Вызываем при полной загрузке страницы
+            window.addEventListener('load', function() {
+                resetTeamCardsScroll();
+                setTimeout(resetTeamCardsScroll, 100);
+            });
+            
+            // Также сбрасываем при изменении размера окна
+            window.addEventListener('resize', function() {
+                resetTeamCardsScroll();
+            });
+            
+            // Постоянный мониторинг и сброс scrollLeft для активных карточек
+            let scrollResetInterval = setInterval(function() {
+                const activeCards = document.querySelector('.team-cards.active');
+                if (activeCards && activeCards.scrollLeft !== 0) {
+                    activeCards.style.scrollBehavior = 'auto';
+                    activeCards.style.justifyContent = 'flex-start';
+                    activeCards.scrollLeft = 0;
+                }
+            }, 100);
+            
+            // Останавливаем интервал через 3 секунды после загрузки
+            setTimeout(function() {
+                clearInterval(scrollResetInterval);
+            }, 3000);
+            
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const heroSidebar = document.getElementById('heroSidebar');
+            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+            const sidebarBackBtn = document.getElementById('sidebarBackBtn');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            // Открытие сайдбара по кнопке контактов
+            if (contactToggleBtn && heroSidebar) {
+                contactToggleBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Закрываем мобильное меню если открыто
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                    
+                    heroSidebar.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Закрытие сайдбара по кнопке закрытия
+            if (sidebarCloseBtn) {
+                sidebarCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeContactSidebar();
+                });
+            }
+            
+            // Закрытие сайдбара по клику вне его
+            if (heroSidebar) {
+                heroSidebar.addEventListener('click', function(e) {
+                    if (e.target === heroSidebar) {
+                        closeContactSidebar();
+                    }
+                });
+            }
+        });
+
+    </script>
+    
+    <!-- Конфигурация Telegram -->
+    <script src="../config.js"></script>
+    
+    <script>
+        // ============================================
+        // СИСТЕМА УВЕДОМЛЕНИЙ В TELEGRAM (JavaScript)
+        // ============================================
+        
+        // Настройки Telegram бота (загружаются из config.js)
+        const TELEGRAM_BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
+        const TELEGRAM_CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
+        
+        let currentCallbackSource = 'Страница О нас';
+        
+        // Открытие модального окна
+        window.openCallbackModal = function(source = 'Страница О нас') {
+            currentCallbackSource = source;
+            const modal = document.getElementById('callbackModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Очистка формы
+                const form = document.getElementById('callbackForm');
+                if (form) {
+                    form.reset();
+                    const messageDiv = document.getElementById('callback-message');
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '';
+                        messageDiv.className = 'callback-message';
+                    }
+                }
+            }
+        };
+        
+        // Для обратной совместимости
+        function openCallbackModal(source = 'Страница О нас') {
+            window.openCallbackModal(source);
+        }
+        
+        // Закрытие модального окна (глобальная функция)
+        window.closeCallbackModal = function() {
+            const modal = document.getElementById('callbackModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+        
+        // Для обратной совместимости
+        function closeCallbackModal() {
+            window.closeCallbackModal();
+        }
+        
+        // Отправка сообщения в Telegram
+        async function sendToTelegram(name, phone, source) {
+            const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+                          `👤 <b>Имя:</b> ${name}\n` +
+                          `📱 <b>Телефон:</b> ${phone}\n` +
+                          `📍 <b>Источник:</b> ${source}\n` +
+                          `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
+            
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            });
+            
+            return response.json();
+        }
+        
+        // Инициализация модального окна
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.querySelector('.callback-modal-overlay');
+            const modalContent = document.querySelector('.callback-modal-content');
+            
+            if (overlay) {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        window.closeCallbackModal();
+                    }
+                });
+            }
+            
+            if (modalContent) {
+                modalContent.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('callbackModal');
+                    if (modal && modal.style.display === 'flex') {
+                        closeCallbackModal();
+                    }
+                }
+            });
+            
+            // Обработка кнопки "Заказать звонок" в футере
+            const footerBtn = document.querySelector('.footer-btn.open-sidebar-btn');
+            if (footerBtn) {
+                footerBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openCallbackModal('Кнопка в футере');
+                });
+            }
+            
+            // Обработка кнопки "Заказать звонок" в сайдбаре
+            const sidebarPrimaryBtn = document.querySelector('.hero-contact-buttons .primary-contact');
+            if (sidebarPrimaryBtn) {
+                sidebarPrimaryBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeContactSidebar();
+                    setTimeout(() => {
+                        openCallbackModal('Сайдбар контактов');
+                    }, 300);
+                });
+            }
+            
+            // Отправка формы
+            const callbackForm = document.getElementById('callbackForm');
+            if (callbackForm) {
+                callbackForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('callback-name').value.trim();
+                    const phone = document.getElementById('callback-phone').value.trim();
+                    const messageDiv = document.getElementById('callback-message');
+                    const submitBtn = this.querySelector('.callback-submit-btn');
+                    
+                    // Валидация
+                    if (!name || !phone) {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                            messageDiv.className = 'callback-message error';
+                        }
+                        return;
+                    }
+                    
+                    // Блокируем кнопку
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
+                    }
+                    
+                    try {
+                        const result = await sendToTelegram(name, phone, currentCallbackSource);
+                        
+                        if (result.ok) {
+                            if (messageDiv) {
+                                messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                                messageDiv.className = 'callback-message success';
+                            }
+                            
+                            // Очищаем форму
+                            callbackForm.reset();
+                            
+                            // Закрываем модальное окно через 3 секунды
+                            setTimeout(() => {
+                                closeCallbackModal();
+                            }, 3000);
+                        } else {
+                            throw new Error(result.description || 'Ошибка отправки');
+                        }
+                    } catch (error) {
+                        console.error('Ошибка отправки в Telegram:', error);
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
+                            messageDiv.className = 'callback-message error';
+                        }
+                    }
+                    
+                    // Разблокируем кнопку
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
+                    }
+                });
+            }
+            
+            // Маска для телефона
+            const callbackPhone = document.getElementById('callback-phone');
+            if (callbackPhone) {
+                callbackPhone.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.length > 0) {
+                        if (!value.startsWith('375')) {
+                            value = '375' + value;
+                        }
+                        
+                        let formatted = '+375';
+                        if (value.length > 3) {
+                            formatted += ' (' + value.substring(3, 5);
+                        }
+                        if (value.length > 5) {
+                            formatted += ') ' + value.substring(5, 8);
+                        }
+                        if (value.length > 8) {
+                            formatted += '-' + value.substring(8, 10);
+                        }
+                        if (value.length > 10) {
+                            formatted += '-' + value.substring(10, 12);
+                        }
+                        
+                        e.target.value = formatted.substring(0, 19);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>
-
