@@ -903,57 +903,86 @@
                 const toggleButtons = document.querySelectorAll('.news-toggle-btn');
                 
                 toggleButtons.forEach(button => {
+                    let isTouchDevice = false;
+                    let touchStartY = 0;
+                    
                     // Функция для переключения состояния
-                    function toggleNews(e) {
-                        if (e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                        }
-                        
+                    function toggleNews() {
                         const newsCard = button.closest('.news-card');
                         if (!newsCard) return;
                         
                         const fullText = newsCard.querySelector('.news-full-text');
                         if (!fullText) return;
                         
-                        if (fullText.classList.contains('show')) {
-                            // Сворачиваем
+                        const isCurrentlyOpen = fullText.classList.contains('show');
+                        
+                        if (isCurrentlyOpen) {
+                            // Сворачиваем текущую новость
                             fullText.classList.remove('show');
                             button.classList.remove('active');
                             button.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
                         } else {
-                            // Раскрываем
+                            // Закрываем все другие открытые новости
+                            const allToggleButtons = document.querySelectorAll('.news-toggle-btn');
+                            allToggleButtons.forEach(otherButton => {
+                                if (otherButton !== button) {
+                                    const otherNewsCard = otherButton.closest('.news-card');
+                                    if (otherNewsCard) {
+                                        const otherFullText = otherNewsCard.querySelector('.news-full-text');
+                                        if (otherFullText && otherFullText.classList.contains('show')) {
+                                            otherFullText.classList.remove('show');
+                                            otherButton.classList.remove('active');
+                                            otherButton.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
+                                        }
+                                    }
+                                }
+                            });
+                            
+                            // Раскрываем текущую новость
                             fullText.classList.add('show');
                             button.classList.add('active');
                             button.innerHTML = 'Свернуть <i class="fas fa-chevron-up"></i>';
                         }
                     }
                     
-                    // Поддержка touch событий для мобильных устройств
-                    let touchStartTime = 0;
-                    let touchMoved = false;
-                    
+                    // Определяем touch устройство
                     button.addEventListener('touchstart', function(e) {
-                        touchStartTime = Date.now();
-                        touchMoved = false;
+                        isTouchDevice = true;
+                        touchStartY = e.touches[0].clientY;
                     }, { passive: true });
                     
-                    button.addEventListener('touchmove', function(e) {
-                        touchMoved = true;
-                    }, { passive: true });
-                    
+                    // Обработка touch событий для мобильных
                     button.addEventListener('touchend', function(e) {
-                        const touchDuration = Date.now() - touchStartTime;
-                        // Если касание было коротким и без движения - обрабатываем как клик
-                        if (!touchMoved && touchDuration < 500) {
+                        if (!isTouchDevice) return;
+                        
+                        const touchEndY = e.changedTouches[0].clientY;
+                        const touchDiff = Math.abs(touchEndY - touchStartY);
+                        
+                        // Если движение было минимальным (не прокрутка) - обрабатываем как клик
+                        if (touchDiff < 10) {
                             e.preventDefault();
                             e.stopPropagation();
-                            toggleNews(e);
+                            toggleNews();
                         }
+                        
+                        // Сбрасываем флаг через небольшую задержку
+                        setTimeout(function() {
+                            isTouchDevice = false;
+                        }, 300);
                     });
                     
-                    // Обычный клик для десктопа
-                    button.addEventListener('click', toggleNews);
+                    // Обработка клика для десктопа
+                    button.addEventListener('click', function(e) {
+                        // Если это touch устройство и недавно было touch событие - игнорируем
+                        if (isTouchDevice) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            return;
+                        }
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleNews();
+                    });
                 });
             }
             

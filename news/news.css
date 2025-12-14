@@ -213,6 +213,14 @@
     .news-excerpt {
         font-size: 0.95rem;
     }
+    
+    .news-toggle-btn {
+        min-height: 44px;
+        min-width: 120px;
+        padding: 10px 0 !important;
+        display: inline-flex !important;
+        pointer-events: auto !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -238,6 +246,14 @@
 
     .news-excerpt {
         font-size: 0.9rem;
+    }
+    
+    .news-toggle-btn {
+        min-height: 44px;
+        min-width: 120px;
+        padding: 12px 0 !important;
+        display: inline-flex !important;
+        pointer-events: auto !important;
     }
 }
 
