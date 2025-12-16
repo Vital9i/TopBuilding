@@ -1,0 +1,1154 @@
+/* Стили для страницы Административные и производственные сооружения */
+/* Основные стили берутся из style.css */
+
+/* Главная секция */
+.administrative-hero {
+    padding: 120px 0 80px;
+    background: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.administrative-hero .section-header {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.administrative-hero .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.administrative-hero .section-subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.administrative-hero .hero-description {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-intro strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.hero-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.benefit-item i {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-item div {
+    flex: 1;
+}
+
+.benefit-item strong {
+    display: block;
+    color: var(--text-color);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.benefit-item span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.benefit-item:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+.benefit-item:hover i {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.1);
+}
+
+/* Секция услуг и работ */
+.services-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные элементы фона для секции услуг */
+.services-section .decor {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.services-section .decor-left {
+    background-image: url('../main_img/project.webp');
+    top: 15%;
+    left: -225px;
+}
+
+.services-section .decor-right {
+    background-image: url('../main_img/project.webp');
+    top: 15%;
+    right: -225px;
+    transform: rotate(90deg);
+}
+
+.services-section .decor-left-bottom {
+    background-image: url('../main_img/project.webp');
+    top: 75%;
+    left: -225px;
+}
+
+.services-section .decor-right-bottom {
+    background-image: url('../main_img/project.webp');
+    top: 75%;
+    right: -225px;
+}
+
+.services-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.services-block {
+    margin-bottom: 60px;
+}
+
+.services-block:last-child {
+    margin-bottom: 0;
+}
+
+.services-title {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    position: relative;
+    z-index: 5;
+}
+
+.services-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+}
+
+.services-list li {
+    padding: 18px 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-list li i {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.services-list li span {
+    flex: 1;
+    font-weight: 500;
+}
+
+.services-list li:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border-color: var(--secondary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+}
+
+.services-list li:hover i {
+    color: var(--secondary-color);
+    transform: scale(1.15) rotate(5deg);
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-item:hover::before {
+    left: 100%;
+}
+
+.service-item:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.06));
+    border-color: var(--secondary-color);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
+}
+
+.service-item i,
+.service-item svg {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+}
+
+.service-item svg.shovel-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.service-item:hover i,
+.service-item:hover svg {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    color: var(--secondary-color);
+}
+
+.service-item span {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Секция BIM-проектирования */
+.bim-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+    position: relative;
+}
+
+.bim-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.bim-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.bim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bim-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.bim-item i {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.bim-item span {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.bim-item:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Секция усиления железобетонных плит */
+.reinforcement-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+    position: relative;
+}
+
+.problem-box {
+    background: linear-gradient(135deg, rgba(255, 100, 100, 0.1), rgba(255, 100, 100, 0.05));
+    border: 2px solid rgba(255, 100, 100, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.problem-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 100, 100, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.problem-icon i {
+    color: #ff6464;
+    font-size: 1.8rem;
+}
+
+.problem-content h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.problem-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.problem-question {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+.solution-box {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    border: 2px solid var(--secondary-color);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.solution-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.solution-icon i {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.solution-content {
+    flex: 1;
+}
+
+.solution-title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.solution-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.solution-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.solution-benefits li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.solution-benefits li i {
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.reinforcement-info {
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.reinforcement-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.reinforcement-note {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 4px solid var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.reinforcement-note strong {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Секции проектирования и строительства */
+.design-projects-section,
+.construction-projects-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+    position: relative;
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.project-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.project-icon i {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h4 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 10px 0;
+}
+
+.project-year {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.project-item:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+.project-item:hover .project-icon {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Секция отзывов */
+.testimonials-section {
+    background: linear-gradient(to bottom, 
+        var(--background-color) 0%,
+        var(--background-color) 92%,
+        var(--background-color) 100%
+    );
+    position: relative;
+    overflow: visible;
+    padding: 3rem 0;
+}
+
+.testimonials-section .content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Декоративные элементы для секции отзывов */
+.testimonials-section .decor-left-top {
+    background-image: url('../main_img/project.webp');
+    top: 10%;
+    left: -150px;
+    transform: rotate(0deg);
+}
+
+.testimonials-section .decor-left-bottom {
+    background-image: url('../main_img/project.webp');
+    bottom: 10%;
+    left: -150px;
+    transform: rotate(180deg);
+}
+
+.testimonials-section .decor-right-top {
+    background-image: url('../main_img/project.webp');
+    top: 10%;
+    right: -150px;
+    transform: rotate(0deg);
+}
+
+.testimonials-section .decor-right-bottom {
+    background-image: url('../main_img/project.webp');
+    bottom: 10%;
+    right: -150px;
+    transform: rotate(270deg);
+}
+
+
+/* Заголовок секции */
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   СЛАЙДЕР ОТЗЫВОВ
+   ============================================ */
+.testimonials-slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 80px;
+}
+
+.testimonials-slider-container {
+    position: relative;
+}
+
+.testimonials-slider {
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius-lg);
+}
+
+.testimonials-slider-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-slide {
+    min-width: 33.333%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Карточка отзыва в слайдере */
+.testimonial-card-slider {
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    height: 100%;
+}
+
+.testimonial-card-slider:hover {
+    transform: none;
+}
+
+/* Изображение отзыва */
+.testimonial-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Бейдж "Оригинал" */
+.testimonial-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gradient-primary);
+    color: var(--dark-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Оверлей при наведении */
+.testimonial-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 29, 37, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.testimonial-card-slider:hover .testimonial-hover-overlay {
+    opacity: 1;
+}
+
+.testimonial-hover-overlay i {
+    font-size: 5rem;
+    color: var(--secondary-color);
+}
+
+.testimonial-hover-overlay span {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Стрелки навигации слайдера */
+.testimonials-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonials-slider-arrow:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-gold);
+}
+
+.testimonials-slider-prev {
+    left: -80px;
+}
+
+.testimonials-slider-next {
+    right: -80px;
+}
+
+/* Точечная навигация */
+.testimonials-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.slider-dot:hover {
+    background: rgba(212, 175, 55, 0.5);
+    transform: scale(1.2);
+}
+
+.slider-dot.active {
+    background: var(--secondary-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Секция карты */
+.yandex-map {
+    padding: 60px 0;
+    background: linear-gradient(to bottom,
+        rgba(22, 24, 34, 0.95) 0%,
+        var(--background-color) 8%,
+        var(--background-color) 100%
+    );
+    position: relative;
+    overflow: visible;
+}
+
+.yandex-map .content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.yandex-map .decor-left-bottom {
+    background-image: url('../main_img/project.webp');
+    bottom: 15%;
+    left: -150px;
+    transform: rotate(180deg);
+}
+
+.yandex-map .decor-right-top {
+    background-image: url('../main_img/project.webp');
+    top: 15%;
+    right: -150px;
+    transform: rotate(0deg);
+}
+
+.yandex-map h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 2rem;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dev-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dev-notice i {
+    font-size: 1rem;
+}
+
+/* Секция документов */
+.documents-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+    position: relative;
+}
+
+.documents-note {
+    text-align: center;
+    padding: 40px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.documents-note p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.documents-note i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .administrative-hero {
+        padding: 100px 0 60px;
+    }
+
+    .administrative-hero .section-title {
+        font-size: 2rem;
+    }
+
+    .administrative-hero .section-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-intro {
+        font-size: 1.1rem;
+    }
+
+    .hero-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-box,
+    .solution-box {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .problem-icon,
+    .solution-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .solution-title {
+        font-size: 1.5rem;
+    }
+
+    .solution-text {
+        font-size: 1.1rem;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detail-item strong {
+        min-width: auto;
+    }
+
+    .services-section,
+    .bim-section,
+    .reinforcement-section,
+    .design-projects-section,
+    .construction-projects-section,
+    .testimonials-section,
+    .documents-section {
+        padding: 60px 0;
+    }
+
+    .services-section .decor {
+        opacity: 0.08;
+    }
+
+    .services-title,
+    .bim-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Слайдер отзывов */
+    .testimonial-slide {
+        min-width: 50%; /* 2 карточки */
+    }
+    
+    .testimonials-slider-wrapper {
+        padding: 0 60px;
+    }
+    
+    .testimonials-slider-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .testimonials-slider-prev {
+        left: -60px;
+    }
+    
+    .testimonials-slider-next {
+        right: -60px;
+    }
+    
+    .testimonial-image-wrapper {
+        height: 450px;
+    }
+
+    .solution-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .administrative-hero .section-title {
+        font-size: 1.75rem;
+    }
+
+    .administrative-hero .section-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .services-section .decor {
+        display: none;
+    }
+
+    .services-title,
+    .bim-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .service-item i,
+    .service-item svg {
+        font-size: 1.3rem;
+    }
+
+    /* Слайдер отзывов на мобильных */
+    .testimonial-slide {
+        min-width: 100%; /* 1 карточка */
+    }
+    
+    .testimonials-slider-wrapper {
+        padding: 0 45px;
+        margin: 30px 0;
+    }
+    
+    .testimonials-slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .testimonials-slider-prev {
+        left: 0;
+    }
+    
+    .testimonials-slider-next {
+        right: 0;
+    }
+    
+    .testimonial-image-wrapper {
+        height: 350px;
+    }
+    
+    .testimonial-badge {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+    
+    .testimonials-slider-dots {
+        margin-top: 25px;
+        gap: 10px;
+    }
+    
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+

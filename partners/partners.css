@@ -6,11 +6,49 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные элементы фона в стиле проекта */
+.partners-section .decor {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Левая сторона - видны на 50% */
+.partners-section .decor-left {
+    background-image: url('../main_img/project.webp');
+    top: 50%;
+    left: -225px;
+    transform: translateY(-50%);
+}
+
+/* Правая сторона - видны на 50% */
+.partners-section .decor-right {
+    background-image: url('../main_img/project.webp');
+    top: 50%;
+    right: -225px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.partners-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .partners-section .section-header {
     margin-bottom: 30px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .partners-section .section-title {
@@ -190,6 +228,10 @@
         padding: 60px 0 10px;
     }
 
+    .partners-section .decor {
+        display: none;
+    }
+
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 3px 6px;
@@ -207,5 +249,7 @@
         font-size: 0.7rem;
     }
 }
+
+
 
 

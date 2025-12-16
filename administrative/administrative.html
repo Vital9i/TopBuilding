@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Административные и производственные сооружения - ТОПБИЛДИНГ</title>
+    <link rel="stylesheet" href="../style.css?v=108">
+    <link rel="stylesheet" href="administrative.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Яндекс.Карты -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="maklknknin-content-wrapper">
+        <!-- Header -->
+        <header class="header" id="mainHeader">
+            <div class="container">
+                <nav class="nav">
+                    <!-- Бургер меню (только для мобильных) -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <!-- Логотип компании -->
+                    <div class="nav-left">
+                        <a href="../index.html#home" class="logo-link" target="_blank" rel="noopener">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Логотип по центру (только для мобильных) -->
+                    <div class="nav-logo-center">
+                        <a href="../index.html#home" class="logo-link" target="_blank" rel="noopener">
+                            <div class="header-logo">
+                                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <div class="logo-text">
+                                    <span class="logo-top">ТОП</span>
+                                    <span class="logo-building">БИЛДИНГ</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Меню навигации -->
+                    <div class="nav-menu">
+                    <ul>
+                        <li>
+                            <a href="../index.html#home" target="_blank" rel="noopener">Главная</a>
+                            <ul>
+                                <li><a href="../index.html#home" target="_blank" rel="noopener">Главная страница</a></li>
+                                <li><a href="../index.html#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
+                                <li><a href="../index.html#our-projects" target="_blank" rel="noopener">Наши проекты</a></li>
+                                <li><a href="../index.html#workflow" target="_blank" rel="noopener">Как мы работаем</a></li>
+                                <li><a href="../index.html#yandex-map" target="_blank" rel="noopener">Карта объектов</a></li>
+                                <li><a href="../index.html#tour-section" target="_blank" rel="noopener">Экскурсия по объектам</a></li>
+                                <li><a href="../index.html#testimonials" target="_blank" rel="noopener">Отзывы клиентов</a></li>
+                                <li><a href="../index.html#footer" target="_blank" rel="noopener">Контакты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../design/design.html" target="_blank" rel="noopener">Проектирование</a>
+                            <ul>
+                                <li><a href="../design/design.html#design-types" target="_blank" rel="noopener">Виды проектов</a></li>
+                                <li><a href="../design/design.html#design-process" target="_blank" rel="noopener">Процесс проектирования</a></li>
+                                <li><a href="../design/design.html#prices" target="_blank" rel="noopener">Стоимость</a></li>
+                                <li><a href="../design/design.html#popular-projects" target="_blank" rel="noopener">Популярные проекты</a></li>
+                                <li><a href="../design/design.html#faq" target="_blank" rel="noopener">Вопросы и ответы</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../construction/construction.html" target="_blank" rel="noopener">Строительство 2026</a>
+                            <ul>
+                                <li><a href="../construction/construction.html#geology" target="_blank" rel="noopener">Геология и геодезия участка</a></li>
+                                <li><a href="../construction/construction.html#foundation" target="_blank" rel="noopener">Фундамент</a></li>
+                                <li><a href="../construction/construction.html#technologies" target="_blank" rel="noopener">Технологии и стены</a></li>
+                                <li><a href="../construction/construction.html#roof" target="_blank" rel="noopener">Крыша</a></li>
+                                <li><a href="../construction/construction.html#glazing" target="_blank" rel="noopener">Остекление</a></li>
+                                <li><a href="../construction/construction.html#engineering" target="_blank" rel="noopener">Сети</a></li>
+                                <li><a href="../construction/construction.html#interior" target="_blank" rel="noopener">Внутренняя отделка</a></li>
+                                <li><a href="../construction/construction.html#exterior" target="_blank" rel="noopener">Наружная отделка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../news/news.html" target="_blank" rel="noopener">Новости</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../partners/partners.html" target="_blank" rel="noopener">Партнеры</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="../about/about.html" target="_blank" rel="noopener">О нас</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="active">
+                            <a href="administrative.html">Административные и производственные сооружения</a>
+                            <ul>
+                                <li><a href="administrative.html">Административные здания</a></li>
+                                <li><a href="administrative.html">Производственные объекты</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <!-- Кнопка контактов -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="contact-btn-text">Контакты</span>
+                    </button>
+                </nav>
+                
+                <!-- Мобильное меню (выпадающее) -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="mobile-menu-content">
+                        <a href="../index.html#home" class="mobile-menu-link" target="_blank" rel="noopener">Главная</a>
+                        <a href="../design/design.html" class="mobile-menu-link" target="_blank" rel="noopener">Проектирование</a>
+                        <a href="../construction/construction.html" class="mobile-menu-link" target="_blank" rel="noopener">Строительство 2026</a>
+                        <a href="../news/news.html" class="mobile-menu-link" target="_blank" rel="noopener">Новости</a>
+                        <a href="../partners/partners.html" class="mobile-menu-link" target="_blank" rel="noopener">Партнеры</a>
+                        <a href="../about/about.html" class="mobile-menu-link" target="_blank" rel="noopener">О нас</a>
+                        <a href="administrative.html" class="mobile-menu-link active">Административные и производственные сооружения</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <!-- Главная секция -->
+            <section id="administrative" class="section administrative-hero">
+                <div class="container">
+                    <div class="section-header">
+                        <h1 class="section-title">Проектирование и строительство<br>в Республике Беларусь</h1>
+                        <h2 class="section-subtitle">ООО "ТОПАГРОБЕЛ" и организация-компаньон ООО "ТОПБИЛДИНГ"</h2>
+                        <p class="hero-description">
+                            Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной услугой и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта, проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с Заказчиком.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция услуг и работ -->
+            <section id="services" class="section services-section">
+                <!-- Декоративные элементы фона -->
+                <div class="decor decor-left"></div>
+                <div class="decor decor-right"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-bottom"></div>
+                
+                <div class="container">
+                    <!-- Проектная документация -->
+                    <div class="services-block">
+                        <h3 class="services-title">Проектная документация</h3>
+                        <p class="services-description">
+                            Разработка проектной документации осуществляется по всем основным разделам проекта:
+                        </p>
+                        <ul class="services-list">
+                            <li>
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Генеральный план</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-drafting-compass"></i>
+                                <span>Архитектурное решение</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-cogs"></i>
+                                <span>Технологические решения</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-wind"></i>
+                                <span>Отопление и вентиляция</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-tint"></i>
+                                <span>Водоснабжение и канализация</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Тепломеханические решения</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-bolt"></i>
+                                <span>Электроснабжение</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-ellipsis-h"></i>
+                                <span>И другие разделы проекта</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Виды строительно-монтажных работ -->
+                    <div class="services-block">
+                        <h3 class="services-title">Виды строительно-монтажных работ</h3>
+                        <p class="services-description">
+                            Мы выполняем все основные функции Генподрядчика на объекте строительства. Имеем возможность выполнять следующие виды строительно-монтажных работ собственными силами:
+                        </p>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <svg class="shovel-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 22v-5l5-5 5 5-5 5z"></path>
+                                    <path d="M9.5 14.5L22 2l-5-5-12.5 12.5"></path>
+                                    <path d="M13 6l3-3"></path>
+                                    <path d="M17 10l3-3"></path>
+                                </svg>
+                                <span>Земляные работы и устройство оснований</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Бетонные работы и монтаж сборного железобетона</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-industry"></i>
+                                <span>Монтаж металлоконструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-th"></i>
+                                <span>Возведение кладки из штучных элементов</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-building"></i>
+                                <span>Монтаж стеновых ограждающих конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-home"></i>
+                                <span>Кровельные работы</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Монтаж внутренних и наружных сетей здания</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-gavel"></i>
+                                <span>Монтаж каменных и армокаменных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Благоустройство территории</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>Монтаж технологического оборудования</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Устройство тепловой изоляции ограждающих конструкций зданий</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Монтаж сборных бетонных и железобетонных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Возведение монолитных бетонных и железобетонных конструкций</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>Работы по заполнению оконных и дверных проёмов</span>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-road"></i>
+                                <span>Устройство дорожных покрытий пешеходных зон из плит тротуарных</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция BIM-проектирования -->
+            <section id="bim" class="section bim-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">BIM-проектирование</h2>
+                        <p class="section-description">
+                            Наша команда готова разработать проект в трехмерной BIM-модели. BIM-проектирование позволяет визуально воспринимать проект. Вы увидите, как будет выглядеть Ваше здание или сооружение. Разработка всех спроектированных этапов строительства из чертежа в полноценную 3D-модель.
+                        </p>
+                    </div>
+
+                    <div class="bim-features">
+                        <h3 class="bim-subtitle">Возможности BIM-проектирования</h3>
+                        <div class="bim-grid">
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Стандарты моделирования</h4>
+                                    <p>Разработка стандартов моделирования (BEP, EIR)</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Локальные инструкции</h4>
+                                    <p>Разработка локальных инструкций использования BIM технологий</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Техническое сопровождение</h4>
+                                    <p>Техническое BIM сопровождение проектов</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-shapes"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Разработка семейств</h4>
+                                    <p>Семейства для всех разделов (КЖ, АР, ОВ, ВК, ЭЛ, ТХ и др.)</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>3D-моделирование</h4>
+                                    <p>Моделирование всех разделов из 2D в 3D</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Автоматизация</h4>
+                                    <p>Разработка скриптов и плагинов для автоматизации проектирования</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Увязка с графиком</h4>
+                                    <p>Увязка элементов с графиком строительно-монтажных работ</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Визуализация</h4>
+                                    <p>Статическая и динамическая визуализация проектов</p>
+                                </div>
+                            </div>
+                            <div class="bim-item">
+                                <div class="bim-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="bim-content">
+                                    <h4>Многоцелевое моделирование</h4>
+                                    <p>Разработка проекта средствами BIM для различных целей</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция карты -->
+            <section id="yandex-map" class="yandex-map">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                
+                <div class="content-wrapper">
+                    <div class="container">
+                        <h2>География выполненных объектов</h2>
+                        <div id="map"
+                            style="width: 100%; height: 500px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="dev-notice">
+                            <i class="fas fa-tools"></i>
+                            <span>Секция находится в разработке</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /content-wrapper -->
+            </section>
+
+            <!-- Секция отзывов -->
+            <section id="testimonials" class="section testimonials-section">
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-right-bottom"></div>
+                
+                <div class="content-wrapper">
+                    <div class="container">
+                        <div class="testimonials-header">
+                            <h2 class="section-title">
+                                Что говорят <span class="highlight">наши клиенты</span>
+                            </h2>
+                            <p class="section-description">
+                                Каждый отзыв - это реальный документ с подписью клиента
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Слайдер с отзывами -->
+                    <div class="testimonials-slider-wrapper">
+                        <div class="testimonials-slider-container">
+                            <button class="testimonials-slider-arrow testimonials-slider-prev" onclick="moveTestimonialSlider(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            
+                            <div class="testimonials-slider">
+                                <div class="testimonials-slider-track" id="testimonialsSliderTrack">
+                                    <!-- Слайд 1: Асаналиева -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(1)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Asanalieva.webp" alt="Отзыв от Асаналиева" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 2: Evrostore -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(2)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Evrostore.webp" alt="Отзыв от Evrostore" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 3: MetroProect -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(3)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/MetroProect.webp" alt="Отзыв от MetroProect" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 4: Ynikom -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(4)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Ynikom.webp" alt="Отзыв от Ynikom" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 5: 4 Солнца -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(5)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/4_solnca.webp" alt="Отзыв от 4 Солнца" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 6: Alexandrov -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(6)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Alexandrov.webp" alt="Отзыв от Alexandrov" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 7: BMT -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(7)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/BMT.webp" alt="Отзыв от БМТ" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 8: Granyldrev -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(8)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Granyldrev.webp" alt="Отзыв от Гранилдрев" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 9: Terushki -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(9)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Terushki.webp" alt="Отзыв от Терюшки" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 10: Victory -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(10)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Victory.webp" alt="Отзыв от Victory" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 11: Vodokanal -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(11)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Vodokanal.webp" alt="Отзыв от Водоканал" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 12: Zelenstroy -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openTestimonialDocument(12)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-stamp"></i>
+                                                    <span>Оригинал</span>
+                                                </div>
+                                                <img src="../main_img/testimonials/Zelenstroy.webp" alt="Отзыв от Зеленстрой" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="testimonials-slider-arrow testimonials-slider-next" onclick="moveTestimonialSlider(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Точечная навигация -->
+                        <div class="testimonials-slider-dots" id="testimonialsSliderDots"></div>
+                    </div>
+
+                </div>
+                <!-- /content-wrapper -->
+
+                <!-- Модальное окно для просмотра документов -->
+                <div id="testimonialDocumentModal" class="testimonial-document-modal">
+                    <div class="document-modal-overlay" onclick="window.closeTestimonialDocument()"></div>
+                    <div class="document-modal-content">
+                        <button class="document-modal-close" onclick="window.closeTestimonialDocument()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="document-modal-nav">
+                            <button class="document-modal-prev" onclick="window.navigateTestimonial(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="document-modal-next" onclick="window.navigateTestimonial(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="document-modal-body">
+                            <img id="testimonialDocumentImage" src="" alt="Документ отзыва">
+                        </div>
+                        <div class="document-modal-info">
+                            <h4 id="testimonialDocumentTitle"></h4>
+                            <p id="testimonialDocumentDescription"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция документов -->
+            <section id="documents" class="section documents-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Документы: нам можно доверять!</h2>
+                        <p class="section-description">
+                            ООО "ТОПАГРОБЕЛ" и ООО "ТОПБИЛДИНГ" предоставлено право, на основании аттестатов соответствия, на выполнение заявленного перечня проектных и строительных работ.
+                        </p>
+                        <p class="section-description">
+                            С нашими документами можете ознакомиться ниже:
+                        </p>
+                    </div>
+                    <div class="documents-note">
+                        <p><i class="fas fa-info-circle"></i> Документы будут добавлены позже</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Колонка 1: О компании -->
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <div class="logo-text">
+                                <span class="logo-top">ТОП</span>
+                                <span class="logo-building">БИЛДИНГ</span>
+                            </div>
+                        </div>
+                        <p>ООО "ТОПБИЛДИНГ" - проектирование и строительство домов под ключ в Республике Беларусь.</p>
+                    </div>
+
+                    <!-- Колонка 2: Меню -->
+                    <div class="footer-col">
+                        <h4>Меню</h4>
+                        <ul class="footer-menu">
+                            <li><a href="../index.html#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
+                            <li><a href="../index.html#our-projects" target="_blank" rel="noopener">Наши проекты</a></li>
+                            <li><a href="../index.html#workflow" target="_blank" rel="noopener">Как мы работаем</a></li>
+                            <li><a href="../index.html#yandex-map" target="_blank" rel="noopener">Карта объектов</a></li>
+                            <li><a href="../index.html#tour-section" target="_blank" rel="noopener">Экскурсия по объектам</a></li>
+                            <li><a href="../index.html#testimonials" target="_blank" rel="noopener">Отзывы клиентов</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Колонка 3: Услуги -->
+                    <div class="footer-col">
+                        <h4>Услуги</h4>
+                        <ul class="footer-services">
+                            <li><a href="../design/design.html" target="_blank" rel="noopener">Проектирование</a></li>
+                            <li><a href="../construction/construction.html" target="_blank" rel="noopener">Строительство 2026</a></li>
+                            <li><a href="../news/news.html" target="_blank" rel="noopener">Новости</a></li>
+                            <li><a href="../partners/partners.html" target="_blank" rel="noopener">Партнеры</a></li>
+                            <li><a href="../about/about.html" target="_blank" rel="noopener">О нас</a></li>
+                            <li><a href="administrative.html">Административные и производственные сооружения</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Колонка 4: Контакты -->
+                    <div class="footer-col">
+                        <h4>Контакты</h4>
+                        <address>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                        </address>
+
+                        <div class="footer-social">
+                            <a href="https://t.me/+375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="viber://chat?number=%2B375291286217" class="social-icon">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                            <a href="https://wa.me/375291286217" class="social-icon" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <button class="btn footer-btn open-sidebar-btn" onclick="openContactSidebar()">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Заказать звонок</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        &copy; 2025 ООО "ТОПБИЛДИНГ". Все права защищены.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Сайдбар контактов -->
+        <div class="hero-sidebar" id="heroSidebar">
+            <div class="hero-contact-card">
+                <button class="sidebar-close-btn" id="sidebarCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <div class="ceo-highlight">
+                    <div class="ceo-avatar">
+                        <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
+                        <div class="online-badge">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div class="ceo-info">
+                        <div class="ceo-name">Гриценко Олег Олегович</div>
+                        <div class="ceo-title">Руководитель компании</div>
+                    </div>
+                </div>
+
+                <div class="advantage-description">
+                    Вы общаетесь <strong>напрямую с руководителем</strong>
+                </div>
+
+                <div class="contact-info-footer">
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                </div>
+
+                <!-- Контактные кнопки -->
+                <div class="contact-buttons">
+                    <a href="tel:+375291286217" class="contact-btn primary">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Позвонить</span>
+                    </a>
+                    <a href="https://t.me/+375291286217" class="contact-btn secondary" target="_blank" rel="noopener">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="viber://chat?number=%2B375291286217" class="contact-btn secondary">
+                        <i class="fab fa-viber"></i>
+                        <span>Viber</span>
+                    </a>
+                    <a href="https://wa.me/375291286217" class="contact-btn secondary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Глобальные функции для работы с сайдбаром (должны быть определены до использования в onclick)
+        window.openContactSidebar = function() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+        
+        window.closeContactSidebar = function() {
+            const heroSidebar = document.getElementById('heroSidebar');
+            if (heroSidebar) {
+                heroSidebar.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        };
+        
+        // Для обратной совместимости
+        function openContactSidebar() {
+            window.openContactSidebar();
+        }
+        
+        function closeContactSidebar() {
+            window.closeContactSidebar();
+        }
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Мобильное меню и обработчики кнопок
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const heroSidebar = document.getElementById('heroSidebar');
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+
+            // Закрытие мобильного меню при клике на ссылку
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (mobileMenu) mobileMenu.classList.remove('active');
+                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                });
+            });
+            
+            // Открытие сайдбара по кнопке контактов
+            if (contactToggleBtn && heroSidebar) {
+                contactToggleBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Закрываем мобильное меню если открыто
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                    
+                    heroSidebar.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Закрытие сайдбара по кнопке закрытия
+            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+            const sidebarBackBtn = document.getElementById('sidebarBackBtn');
+            
+            if (sidebarCloseBtn) {
+                sidebarCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeContactSidebar();
+                });
+            }
+            
+            if (sidebarBackBtn) {
+                sidebarBackBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeContactSidebar();
+                });
+            }
+            
+            // Закрытие сайдбара по клику вне его
+            if (heroSidebar) {
+                heroSidebar.addEventListener('click', function(e) {
+                    if (e.target === heroSidebar) {
+                        closeContactSidebar();
+                    }
+                });
+            }
+            
+            // Обработчики для кнопок открытия сайдбара (включая кнопки в футере)
+            const openSidebarBtns = document.querySelectorAll('.open-sidebar-btn');
+            openSidebarBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openContactSidebar();
+                });
+            });
+        });
+
+        // ============================================
+        // СЛАЙДЕР ОТЗЫВОВ
+        // ============================================
+        let currentSlide = 0;
+        let currentTestimonialIndex = 1;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const totalSlides = testimonialSlides.length;
+
+        // Определяем количество видимых слайдов в зависимости от ширины экрана
+        function getSlidesPerView() {
+            if (window.innerWidth >= 1024) return 3; // Desktop
+            if (window.innerWidth >= 768) return 2;  // Tablet
+            return 1; // Mobile
+        }
+
+        // Инициализация точечной навигации
+        function initTestimonialsDots() {
+            const dotsContainer = document.getElementById('testimonialsSliderDots');
+            const slidesPerView = getSlidesPerView();
+            const dotsCount = Math.ceil(totalSlides / slidesPerView);
+            
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < dotsCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('slider-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i * slidesPerView));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Обновление активной точки
+        function updateDots() {
+            const dots = document.querySelectorAll('.slider-dot');
+            const slidesPerView = getSlidesPerView();
+            const activeDot = Math.floor(currentSlide / slidesPerView);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDot);
+            });
+        }
+
+        // Переход к определенному слайду
+        function goToSlide(slideIndex) {
+            const slidesPerView = getSlidesPerView();
+            const maxSlide = totalSlides - slidesPerView;
+            
+            currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
+            updateSliderPosition();
+        }
+
+        // Обновление позиции слайдера
+        function updateSliderPosition() {
+            const track = document.getElementById('testimonialsSliderTrack');
+            const slidesPerView = getSlidesPerView();
+            const slideWidth = 100 / slidesPerView;
+            const offset = -currentSlide * slideWidth;
+            
+            track.style.transform = `translateX(${offset}%)`;
+            updateDots();
+            updateArrows();
+        }
+
+        // Обновление состояния стрелок
+        function updateArrows() {
+            const prevBtn = document.querySelector('.testimonials-slider-prev');
+            const nextBtn = document.querySelector('.testimonials-slider-next');
+            const slidesPerView = getSlidesPerView();
+            const maxSlide = totalSlides - slidesPerView;
+            
+            // Скрываем стрелку назад, если на первом слайде
+            if (prevBtn) prevBtn.style.display = currentSlide === 0 ? 'none' : 'flex';
+            
+            // Скрываем стрелку вперед, если на последнем слайде
+            if (nextBtn) nextBtn.style.display = currentSlide >= maxSlide ? 'none' : 'flex';
+        }
+
+        // Перемещение слайдера
+        window.moveTestimonialSlider = function(direction) {
+            const slidesPerView = getSlidesPerView();
+            const newSlide = currentSlide + direction;
+            const maxSlide = totalSlides - slidesPerView;
+            
+            if (newSlide >= 0 && newSlide <= maxSlide) {
+                goToSlide(newSlide);
+            }
+        };
+
+        // Инициализация слайдера
+        function initTestimonialsSlider() {
+            testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            totalSlides = testimonialSlides.length;
+            
+            if (totalSlides > 0) {
+                initTestimonialsDots();
+                updateSliderPosition();
+            }
+        }
+
+        // Обновление при изменении размера окна
+        window.addEventListener('resize', function() {
+            if (totalSlides > 0) {
+                initTestimonialsDots();
+                updateSliderPosition();
+            }
+        });
+
+        // ============================================
+        // МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ОТЗЫВОВ
+        // ============================================
+        const testimonials = [
+            {
+                id: 1,
+                image: '../main_img/testimonials/Asanalieva.webp',
+                title: 'Благодарственное письмо',
+                description: 'Строительство производственного здания • 2024 • г. Минск, ул. Асаналиева'
+            },
+            {
+                id: 2,
+                image: '../main_img/testimonials/Evrostore.webp',
+                title: 'Отзыв от Evrostore',
+                description: 'Строительство торгового объекта • 2024 • Беларусь'
+            },
+            {
+                id: 3,
+                image: '../main_img/testimonials/MetroProect.webp',
+                title: 'Благодарность от MetroProect',
+                description: 'Сотрудничество по проектированию • 2023 • г. Минск'
+            },
+            {
+                id: 4,
+                image: '../main_img/testimonials/Ynikom.webp',
+                title: 'Отзыв от Ynikom',
+                description: 'Строительство офисного здания • 2023 • Беларусь'
+            },
+            {
+                id: 5,
+                image: '../main_img/testimonials/4_solnca.webp',
+                title: 'Отзыв от "4 Солнца"',
+                description: 'Строительство объекта • Беларусь'
+            },
+            {
+                id: 6,
+                image: '../main_img/testimonials/Alexandrov.webp',
+                title: 'Благодарственное письмо',
+                description: 'Строительный проект • Беларусь'
+            },
+            {
+                id: 7,
+                image: '../main_img/testimonials/BMT.webp',
+                title: 'Отзыв от БМТ',
+                description: 'Строительство производственного объекта • Беларусь'
+            },
+            {
+                id: 8,
+                image: '../main_img/testimonials/Granyldrev.webp',
+                title: 'Отзыв от Гранилдрев',
+                description: 'Строительство и ремонт • Беларусь'
+            },
+            {
+                id: 9,
+                image: '../main_img/testimonials/Terushki.webp',
+                title: 'Благодарственное письмо',
+                description: 'Строительство загородного дома • Беларусь'
+            },
+            {
+                id: 10,
+                image: '../main_img/testimonials/Victory.webp',
+                title: 'Отзыв от Victory',
+                description: 'Строительный проект • Беларусь'
+            },
+            {
+                id: 11,
+                image: '../main_img/testimonials/Vodokanal.webp',
+                title: 'Отзыв от Водоканал',
+                description: 'Строительство инфраструктурных объектов • Беларусь'
+            },
+            {
+                id: 12,
+                image: '../main_img/testimonials/Zelenstroy.webp',
+                title: 'Отзыв от Зеленстрой',
+                description: 'Ландшафтные и строительные работы • Беларусь'
+            }
+        ];
+
+        window.openTestimonialDocument = function(index) {
+            currentTestimonialIndex = index;
+            const modal = document.getElementById('testimonialDocumentModal');
+            const testimonial = testimonials.find(t => t.id === index);
+            
+            if (modal && testimonial) {
+                document.getElementById('testimonialDocumentImage').src = testimonial.image;
+                document.getElementById('testimonialDocumentTitle').textContent = testimonial.title;
+                document.getElementById('testimonialDocumentDescription').textContent = testimonial.description;
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                updateTestimonialNavigation();
+            }
+        };
+
+        window.closeTestimonialDocument = function() {
+            const modal = document.getElementById('testimonialDocumentModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        window.navigateTestimonial = function(direction) {
+            currentTestimonialIndex += direction;
+            
+            if (currentTestimonialIndex > testimonials.length) {
+                currentTestimonialIndex = 1;
+            } else if (currentTestimonialIndex < 1) {
+                currentTestimonialIndex = testimonials.length;
+            }
+            
+            const testimonial = testimonials.find(t => t.id === currentTestimonialIndex);
+            
+            if (testimonial) {
+                document.getElementById('testimonialDocumentImage').src = testimonial.image;
+                document.getElementById('testimonialDocumentTitle').textContent = testimonial.title;
+                document.getElementById('testimonialDocumentDescription').textContent = testimonial.description;
+                
+                updateTestimonialNavigation();
+            }
+        };
+
+        function updateTestimonialNavigation() {
+            const prevBtn = document.querySelector('.document-modal-prev');
+            const nextBtn = document.querySelector('.document-modal-next');
+            
+            if (prevBtn) prevBtn.style.display = 'flex';
+            if (nextBtn) nextBtn.style.display = 'flex';
+        }
+
+        // Закрытие модального окна по ESC
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('testimonialDocumentModal');
+            if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+                window.closeTestimonialDocument();
+            }
+            if (modal && modal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') {
+                    window.navigateTestimonial(-1);
+                } else if (e.key === 'ArrowRight') {
+                    window.navigateTestimonial(1);
+                }
+            }
+        });
+
+        // ============================================
+        // ЯНДЕКС.КАРТЫ
+        // ============================================
+        var globalMap; // Глобальная переменная для карты
+
+        // Глобальная функция для закрытия балуна карты
+        window.closeMapBalloon = function() {
+            if (globalMap) {
+                globalMap.balloon.close();
+            }
+        };
+        
+        function initMap() {
+            // Проверяем, что элемент карты существует
+            const mapElement = document.getElementById('map');
+            if (!mapElement) {
+                console.error('Элемент карты не найден');
+                return;
+            }
+
+            // Создаем карту с центром на Беларуси
+            globalMap = new ymaps.Map("map", {
+                center: [53.7098, 27.9534],
+                zoom: 7,
+                controls: ['zoomControl']
+            });
+            
+            var myMap = globalMap; // Сохраняем для совместимости с существующим кодом
+            
+            // Закрываем балун при клике по карте
+            globalMap.events.add('click', function (e) {
+                if (globalMap.balloon.isOpen()) {
+                    globalMap.balloon.close();
+                }
+            });
+
+            // Удаляем ненужные элементы управления
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('searchControl');
+            myMap.controls.remove('trafficControl');
+            myMap.controls.remove('typeSelector');
+            myMap.controls.remove('fullscreenControl');
+            myMap.controls.remove('rulerControl');
+
+            // Массив объектов для отображения на карте
+            var objects = [
+                {
+                    coords: [53.864331, 27.535735], // Минск, Белградская 14
+                    title: "Ресторан Ettal",
+                    description: "Ремонт ресторана",
+                    address: "г. Минск, ул. Белградская, 14",
+                    photos: [
+                        '../main_img/mapFoto/ettal.webp'
+                    ]
+                },
+                {
+                    coords: [53.470762, 25.417660], // Дятлово, Новогрудская 6
+                    title: "Производственное здание",
+                    description: "Строительство административного здания",
+                    address: "г. Дятлово, ул. Новогрудская, 6",
+                    photos: [
+                        '../main_img/mapFoto/novogrydskaya.webp'
+                    ]
+                },
+                {
+                    coords: [53.476572, 25.416394], // Дятлово, Советская 106б
+                    title: "Производственное здание",
+                    description: "Строительство производственного здания",
+                    address: "г. Дятлово, ул. Советская, 106б",
+                    photos: [
+                        '../main_img/mapFoto/sovetskaya.webp'
+                    ]
+                },
+                {
+                    coords: [53.898496, 27.584738], // Минск, Соломенная 13
+                    title: "Модернизация крыши",
+                    description: "Модернизация крыши",
+                    address: "г. Минск, ул. Соломенная, 13",
+                    photos: [
+                        '../main_img/mapFoto/solomennaya.webp'
+                    ]
+                },
+                {
+                    coords: [54.719328, 25.745758], // Котловка
+                    title: "Реконструкция ГИС",
+                    description: "Реконструкция ГИС",
+                    address: "д. Котловка",
+                    photos: [
+                        '../main_img/mapFoto/kotlovka.webp'
+                    ]
+                },
+                {
+                    coords: [53.814017, 27.686167], // Минск, Селицкого 17а
+                    title: "Модернизация производственного сооружения",
+                    description: "Модернизация производственного сооружения",
+                    address: "г. Минск, ул. Селицкого, 17а",
+                    photos: [
+                        '../main_img/mapFoto/selickogo.webp'
+                    ]
+                },
+                {
+                    coords: [53.799863, 27.289570], // д. Чики
+                    title: "Загородный дом",
+                    description: "Строительство загородного дома",
+                    address: "д. Чики",
+                    photos: [
+                        '../main_img/projects/Classic_2/project1.webp',
+                        '../main_img/projects/Classic_2/project2.webp',
+                        '../main_img/projects/Classic_2/project3.webp',
+                        '../main_img/projects/Classic_2/project4.webp',
+                        '../main_img/projects/Classic_2/project5.webp'
+                    ]
+                },
+                {
+                    coords: [53.839702, 27.542311], // Минск, Асаналиева 84к2
+                    title: "Производственное здание",
+                    description: "Строительство производственного здания",
+                    address: "г. Минск, ул. Асаналиева, 84к2",
+                    photos: [
+                        '../main_img/mapFoto/asanalieva.webp'
+                    ]
+                },
+                {
+                    coords: [53.887979, 27.608202], // Минск, Стахановская 17
+                    title: "Ремонт квартиры",
+                    description: "Ремонт квартиры",
+                    address: "г. Минск, Стахановская ул., 17"
+                }
+            ];
+
+            // Создаем метки для каждого объекта
+            objects.forEach(function (obj) {
+                var photosHTML = '';
+                if (obj.photos && obj.photos.length > 0) {
+                    photosHTML = '<div style="display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1);">';
+                    obj.photos.forEach(function(photo) {
+                        photosHTML += `
+                            <div style="flex-shrink: 0; width: 180px; height: 140px; border-radius: 8px; overflow: hidden; border: 2px solid rgba(212, 175, 55, 0.3);">
+                                <img src="${photo}" alt="${obj.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        `;
+                    });
+                    photosHTML += '</div>';
+                }
+                
+                var balloonContent = `
+                    <div style="background: linear-gradient(135deg, #1a1d25 0%, #2c2f38 100%); border-radius: 15px; overflow: hidden; min-width: 280px; max-width: 350px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);">
+                        <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%); padding: 15px 50px 15px 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); position: relative;">
+                            <h3 style="margin: 0; font-size: 1.1rem; font-weight: 700; color: #D4AF37; text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);">${obj.title}</h3>
+                            <button onclick="closeMapBalloon()" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: transparent; border: none; color: #D4AF37; font-size: 1.3rem; cursor: pointer; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; border-radius: 50%;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div style="padding: 15px 20px;">
+                            <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; font-weight: 500; margin-bottom: 8px;">${obj.description}</div>
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; margin-bottom: 12px;">
+                                <i class="fas fa-map-marker-alt" style="color: #D4AF37; font-size: 0.9rem;"></i>
+                                <span>${obj.address}</span>
+                            </div>
+                            ${photosHTML}
+                        </div>
+                    </div>
+                `;
+                
+                var placemark = new ymaps.Placemark(obj.coords, {
+                    balloonContent: balloonContent,
+                    hintContent: obj.title
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyMCAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAsMSBDNS41LDEgMiw0LjUgMiw5IEMyLDE0IDEwLDI1IDEwLDI1IFMxOCwxNCAxOCw5IEMxOCw0LjUgMTQuNSwxIDEwLDEgWiIgZmlsbD0iI0Q0QUYzNyIgc3Ryb2tlPSIjMWExZDI5IiBzdHJva2Utd2lkdGg9IjEiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjgiIHI9IjMiIGZpbGw9IiMxYTFkMjkiLz48L3N2Zz4=',
+                    iconImageSize: [20, 26],
+                    iconImageOffset: [-10, -26]
+                });
+
+                myMap.geoObjects.add(placemark);
+            });
+
+            // Карта остается на центре Беларуси - автоцентрирование отключено
+        }
+
+        // Инициализация карты после загрузки DOM и Яндекс.Карт
+        function initYandexMap() {
+            if (typeof ymaps !== 'undefined') {
+                ymaps.ready(initMap);
+            } else {
+                // Если ymaps еще не загружен, ждем его загрузки
+                setTimeout(function() {
+                    if (typeof ymaps !== 'undefined') {
+                        ymaps.ready(initMap);
+                    } else {
+                        console.error('Яндекс.Карты не загружены');
+                    }
+                }, 100);
+            }
+        }
+
+        // Запускаем инициализацию после загрузки DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initYandexMap);
+        } else {
+            initYandexMap();
+        }
+    </script>
+    <script src="../config.js"></script>
+</body>
+</html>
+
