@@ -181,40 +181,40 @@
                         <p class="services-description">
                             Разработка проектной документации осуществляется по всем основным разделам проекта:
                         </p>
-                        <ul class="services-list">
-                            <li>
+                        <div class="services-grid">
+                            <div class="service-item">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>Генеральный план</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-drafting-compass"></i>
                                 <span>Архитектурное решение</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-cogs"></i>
                                 <span>Технологические решения</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-wind"></i>
                                 <span>Отопление и вентиляция</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-tint"></i>
                                 <span>Водоснабжение и канализация</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-fire-alt"></i>
                                 <span>Тепломеханические решения</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-bolt"></i>
                                 <span>Электроснабжение</span>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="service-item">
                                 <i class="fas fa-ellipsis-h"></i>
                                 <span>И другие разделы проекта</span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Виды строительно-монтажных работ -->
@@ -296,6 +296,12 @@
 
             <!-- Секция BIM-проектирования -->
             <section id="bim" class="section bim-section">
+                <!-- Декоративные элементы фона -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-bottom"></div>
+                
                 <div class="container">
                     <div class="section-header">
                         <h2 class="section-title">BIM-проектирование</h2>
@@ -687,18 +693,172 @@
 
             <!-- Секция документов -->
             <section id="documents" class="section documents-section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-title">Документы: нам можно доверять!</h2>
-                        <p class="section-description">
-                            ООО "ТОПАГРОБЕЛ" и ООО "ТОПБИЛДИНГ" предоставлено право, на основании аттестатов соответствия, на выполнение заявленного перечня проектных и строительных работ.
-                        </p>
-                        <p class="section-description">
-                            С нашими документами можете ознакомиться ниже:
-                        </p>
+                <!-- Декоративные элементы -->
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-right-bottom"></div>
+                
+                <div class="content-wrapper">
+                    <div class="container">
+                        <div class="documents-header">
+                            <h2 class="section-title">
+                                Документы: нам можно <span class="highlight">доверять!</span>
+                            </h2>
+                            <p class="section-description">
+                                ООО "ТОПАГРОБЕЛ" и ООО "ТОПБИЛДИНГ" предоставлено право, на основании аттестатов соответствия, на выполнение заявленного перечня проектных и строительных работ.
+                            </p>
+                            <p class="section-description">
+                                С нашими документами можете ознакомиться ниже:
+                            </p>
+                        </div>
                     </div>
-                    <div class="documents-note">
-                        <p><i class="fas fa-info-circle"></i> Документы будут добавлены позже</p>
+
+                    <!-- Слайдер с документами -->
+                    <div class="testimonials-slider-wrapper">
+                        <div class="testimonials-slider-container">
+                            <button class="testimonials-slider-arrow testimonials-slider-prev" onclick="moveDocumentSlider(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            
+                            <div class="testimonials-slider">
+                                <div class="testimonials-slider-track" id="documentsSliderTrack">
+                                    <!-- Слайд 1: Otestat -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(1)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 2: Otestat2 -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(2)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat2.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 3: Otestat3 -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(3)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat3.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 4: Otestat4 -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(4)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat4.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 5: Otestat5 -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(5)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat5.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Слайд 6: Otestat6 -->
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-card-slider" onclick="openDocumentModal(6)">
+                                            <div class="testimonial-image-wrapper">
+                                                <div class="testimonial-badge">
+                                                    <i class="fas fa-file-alt"></i>
+                                                    <span>Документ</span>
+                                                </div>
+                                                <img src="../about/about_img/Otestat6.webp" alt="Аттестат соответствия" loading="lazy">
+                                                <div class="testimonial-hover-overlay">
+                                                    <i class="fas fa-search-plus"></i>
+                                                    <span>Увеличить</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="testimonials-slider-arrow testimonials-slider-next" onclick="moveDocumentSlider(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Точечная навигация -->
+                        <div class="testimonials-slider-dots" id="documentsSliderDots"></div>
+                    </div>
+
+                </div>
+                <!-- /content-wrapper -->
+
+                <!-- Модальное окно для просмотра документов -->
+                <div id="documentModal" class="testimonial-document-modal">
+                    <div class="document-modal-overlay" onclick="window.closeDocumentModal()"></div>
+                    <div class="document-modal-content">
+                        <button class="document-modal-close" onclick="window.closeDocumentModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="document-modal-nav">
+                            <button class="document-modal-prev" onclick="window.navigateDocument(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="document-modal-next" onclick="window.navigateDocument(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="document-modal-body">
+                            <img id="documentModalImage" src="" alt="Документ">
+                        </div>
+                        <div class="document-modal-info">
+                            <h4 id="documentModalTitle"></h4>
+                            <p id="documentModalDescription"></p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -813,29 +973,42 @@
                 <div class="contact-info-footer">
                     <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
                     <p><i class="fas fa-phone-alt"></i> <a href="tel:+375296200314">+375 (29) 620-03-14</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:buildingtop@yandex.by">buildingtop@yandex.by</a></p>
                     <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
                 </div>
 
                 <!-- Контактные кнопки -->
-                <div class="contact-buttons">
-                    <a href="tel:+375291286217" class="contact-btn primary">
+                <div class="hero-contact-buttons">
+                    <a href="tel:+375291286217" class="contact-btn primary-contact">
                         <i class="fas fa-phone-alt"></i>
-                        <span>Позвонить</span>
+                        <span>Заказать звонок</span>
                     </a>
-                    <a href="https://t.me/+375291286217" class="contact-btn secondary" target="_blank" rel="noopener">
-                        <i class="fab fa-telegram-plane"></i>
-                        <span>Telegram</span>
+                    
+                    <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Экскурсия по объектам</span>
                     </a>
-                    <a href="viber://chat?number=%2B375291286217" class="contact-btn secondary">
-                        <i class="fab fa-viber"></i>
-                        <span>Viber</span>
-                    </a>
-                    <a href="https://wa.me/375291286217" class="contact-btn secondary" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
+                    
+                    <div class="messenger-buttons">
+                        <a href="https://t.me/+375291286217" class="messenger-btn telegram" target="_blank" rel="noopener">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="viber://chat?number=%2B375291286217" class="messenger-btn viber">
+                            <i class="fab fa-viber"></i>
+                            <span>Viber</span>
+                        </a>
+                        <a href="https://wa.me/375291286217" class="messenger-btn whatsapp" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
                 </div>
+                
+                <!-- Большая кнопка "Назад" внизу -->
+                <button type="button" class="sidebar-back-btn" id="sidebarBackBtn" onclick="closeContactSidebar()">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Назад</span>
+                </button>
             </div>
         </div>
     </div>
@@ -958,8 +1131,8 @@
         // ============================================
         let currentSlide = 0;
         let currentTestimonialIndex = 1;
-        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-        const totalSlides = testimonialSlides.length;
+        let testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        let totalSlides = testimonialSlides.length;
 
         // Определяем количество видимых слайдов в зависимости от ширины экрана
         function getSlidesPerView() {
@@ -1051,6 +1224,11 @@
                 updateSliderPosition();
             }
         }
+
+        // Инициализация слайдера при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            initTestimonialsSlider();
+        });
 
         // Обновление при изменении размера окна
         window.addEventListener('resize', function() {
@@ -1202,6 +1380,230 @@
                     window.navigateTestimonial(-1);
                 } else if (e.key === 'ArrowRight') {
                     window.navigateTestimonial(1);
+                }
+            }
+        });
+
+        // ============================================
+        // СЛАЙДЕР ДОКУМЕНТОВ
+        // ============================================
+        let currentDocumentSlide = 0;
+        let currentDocumentIndex = 1;
+        let documentSlides = document.querySelectorAll('#documentsSliderTrack .testimonial-slide');
+        let totalDocumentSlides = documentSlides.length;
+
+        // Определяем количество видимых слайдов в зависимости от ширины экрана
+        function getDocumentSlidesPerView() {
+            if (window.innerWidth >= 1024) return 3; // Desktop
+            if (window.innerWidth >= 768) return 2;  // Tablet
+            return 1; // Mobile
+        }
+
+        // Инициализация точечной навигации для документов
+        function initDocumentsDots() {
+            const dotsContainer = document.getElementById('documentsSliderDots');
+            if (!dotsContainer) return;
+            const slidesPerView = getDocumentSlidesPerView();
+            const dotsCount = Math.ceil(totalDocumentSlides / slidesPerView);
+            
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < dotsCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('slider-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToDocumentSlide(i * slidesPerView));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Обновление активной точки для документов
+        function updateDocumentDots() {
+            const dots = document.querySelectorAll('#documentsSliderDots .slider-dot');
+            const slidesPerView = getDocumentSlidesPerView();
+            const activeDot = Math.floor(currentDocumentSlide / slidesPerView);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDot);
+            });
+        }
+
+        // Переход к определенному слайду документов
+        function goToDocumentSlide(slideIndex) {
+            const slidesPerView = getDocumentSlidesPerView();
+            const maxSlide = totalDocumentSlides - slidesPerView;
+            
+            currentDocumentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
+            updateDocumentSliderPosition();
+        }
+
+        // Обновление позиции слайдера документов
+        function updateDocumentSliderPosition() {
+            const track = document.getElementById('documentsSliderTrack');
+            if (!track) return;
+            const slidesPerView = getDocumentSlidesPerView();
+            const slideWidth = 100 / slidesPerView;
+            const offset = -currentDocumentSlide * slideWidth;
+            
+            track.style.transform = `translateX(${offset}%)`;
+            updateDocumentDots();
+            updateDocumentArrows();
+        }
+
+        // Обновление состояния стрелок для документов
+        function updateDocumentArrows() {
+            const prevBtn = document.querySelector('#documents .testimonials-slider-prev');
+            const nextBtn = document.querySelector('#documents .testimonials-slider-next');
+            const slidesPerView = getDocumentSlidesPerView();
+            const maxSlide = totalDocumentSlides - slidesPerView;
+            
+            // Скрываем стрелку назад, если на первом слайде
+            if (prevBtn) prevBtn.style.display = currentDocumentSlide === 0 ? 'none' : 'flex';
+            
+            // Скрываем стрелку вперед, если на последнем слайде
+            if (nextBtn) nextBtn.style.display = currentDocumentSlide >= maxSlide ? 'none' : 'flex';
+        }
+
+        // Перемещение слайдера документов
+        window.moveDocumentSlider = function(direction) {
+            const slidesPerView = getDocumentSlidesPerView();
+            const newSlide = currentDocumentSlide + direction;
+            const maxSlide = totalDocumentSlides - slidesPerView;
+            
+            if (newSlide >= 0 && newSlide <= maxSlide) {
+                goToDocumentSlide(newSlide);
+            }
+        };
+
+        // Инициализация слайдера документов
+        function initDocumentsSlider() {
+            documentSlides = document.querySelectorAll('#documentsSliderTrack .testimonial-slide');
+            totalDocumentSlides = documentSlides.length;
+            
+            if (totalDocumentSlides > 0) {
+                initDocumentsDots();
+                updateDocumentSliderPosition();
+            }
+        }
+
+        // Инициализация слайдера документов при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            initDocumentsSlider();
+        });
+
+        // Обновление при изменении размера окна для документов
+        window.addEventListener('resize', function() {
+            if (totalDocumentSlides > 0) {
+                initDocumentsDots();
+                updateDocumentSliderPosition();
+            }
+        });
+
+        // ============================================
+        // МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ДОКУМЕНТОВ
+        // ============================================
+        const documents = [
+            {
+                id: 1,
+                image: '../about/about_img/Otestat.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПАГРОБЕЛ" • Аттестат соответствия'
+            },
+            {
+                id: 2,
+                image: '../about/about_img/Otestat2.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПАГРОБЕЛ" • Аттестат соответствия'
+            },
+            {
+                id: 3,
+                image: '../about/about_img/Otestat3.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПАГРОБЕЛ" • Аттестат соответствия'
+            },
+            {
+                id: 4,
+                image: '../about/about_img/Otestat4.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПБИЛДИНГ" • Аттестат соответствия'
+            },
+            {
+                id: 5,
+                image: '../about/about_img/Otestat5.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПБИЛДИНГ" • Аттестат соответствия'
+            },
+            {
+                id: 6,
+                image: '../about/about_img/Otestat6.webp',
+                title: 'Аттестат соответствия',
+                description: 'ООО "ТОПБИЛДИНГ" • Аттестат соответствия'
+            }
+        ];
+
+        window.openDocumentModal = function(index) {
+            currentDocumentIndex = index;
+            const modal = document.getElementById('documentModal');
+            const docItem = documents.find(d => d.id === index);
+            
+            if (modal && docItem) {
+                document.getElementById('documentModalImage').src = docItem.image;
+                document.getElementById('documentModalTitle').textContent = docItem.title;
+                document.getElementById('documentModalDescription').textContent = docItem.description;
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                updateDocumentNavigation();
+            }
+        };
+
+        window.closeDocumentModal = function() {
+            const modal = document.getElementById('documentModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        window.navigateDocument = function(direction) {
+            currentDocumentIndex += direction;
+            
+            if (currentDocumentIndex > documents.length) {
+                currentDocumentIndex = 1;
+            } else if (currentDocumentIndex < 1) {
+                currentDocumentIndex = documents.length;
+            }
+            
+            const docItem = documents.find(d => d.id === currentDocumentIndex);
+            
+            if (docItem) {
+                document.getElementById('documentModalImage').src = docItem.image;
+                document.getElementById('documentModalTitle').textContent = docItem.title;
+                document.getElementById('documentModalDescription').textContent = docItem.description;
+                
+                updateDocumentNavigation();
+            }
+        };
+
+        function updateDocumentNavigation() {
+            const prevBtn = document.querySelector('#documentModal .document-modal-prev');
+            const nextBtn = document.querySelector('#documentModal .document-modal-next');
+            
+            if (prevBtn) prevBtn.style.display = 'flex';
+            if (nextBtn) nextBtn.style.display = 'flex';
+        }
+
+        // Закрытие модального окна документов по ESC
+        document.addEventListener('keydown', function(e) {
+            const documentModal = document.getElementById('documentModal');
+            if (e.key === 'Escape' && documentModal && documentModal.style.display === 'flex') {
+                window.closeDocumentModal();
+            }
+            if (documentModal && documentModal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') {
+                    window.navigateDocument(-1);
+                } else if (e.key === 'ArrowRight') {
+                    window.navigateDocument(1);
                 }
             }
         });
@@ -1412,4 +1814,5 @@
     <script src="../config.js"></script>
 </body>
 </html>
+
 
