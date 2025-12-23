@@ -6,13 +6,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Партнеры - ТОПБИЛДИНГ</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Надежные партнеры ТОПБИЛДИНГ - проверенные поставщики материалов и оборудования для строительства домов под ключ. Качество и надежность на всех этапах строительства.">
+    <meta name="keywords" content="партнеры ТОПБИЛДИНГ, поставщики строительных материалов, партнеры строительства, надежные поставщики Беларусь">
+    <meta name="author" content="ООО ТОПБИЛДИНГ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://topbuilding.by/partners/partners.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://topbuilding.by/partners/partners.html">
+    <meta property="og:title" content="Партнеры - ТОПБИЛДИНГ | Надежные поставщики">
+    <meta property="og:description" content="Надежные партнеры ТОПБИЛДИНГ - проверенные поставщики материалов и оборудования для строительства домов под ключ.">
+    <meta property="og:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://topbuilding.by/partners/partners.html">
+    <meta property="twitter:title" content="Партнеры - ТОПБИЛДИНГ | Надежные поставщики">
+    <meta property="twitter:description" content="Надежные партнеры ТОПБИЛДИНГ - проверенные поставщики материалов и оборудования.">
+    <meta property="twitter:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
+    
     <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="partners.css">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="../snow.css">
 </head>
 
 <body>
+    <!-- Snow Effect Container -->
+    <div class="snow-container" id="snowContainer"></div>
     <div class="maklknknin-content-wrapper">
         <!-- Header -->
         <header class="header" id="mainHeader">
@@ -146,7 +171,7 @@
                 
                 <div class="container">
                     <div class="section-header" data-aos="fade-up">
-                        <h2 class="section-title">Наши партнеры</h2>
+                        <h1 class="section-title">Наши партнеры</h1>
                         <p class="section-subtitle">Мы сотрудничаем с ведущими компаниями и организациями Беларуси</p>
                     </div>
 
@@ -425,111 +450,7 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // Мобильное меню
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const contactToggleBtn = document.getElementById('contactToggleBtn');
-            const heroSidebar = document.getElementById('heroSidebar');
-
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
-            }
-
-            // Закрытие мобильного меню при клике на ссылку
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    if (mobileMenu) mobileMenu.classList.remove('active');
-                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                });
-            });
-            
-            // Открытие сайдбара по кнопке контактов
-            if (contactToggleBtn && heroSidebar) {
-                contactToggleBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    
-                    // Закрываем мобильное меню если открыто
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                    }
-                    
-                    heroSidebar.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            // Закрытие сайдбара по кнопке закрытия
-            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-            const sidebarBackBtn = document.getElementById('sidebarBackBtn');
-            
-            if (sidebarCloseBtn) {
-                sidebarCloseBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeContactSidebar();
-                });
-            }
-            
-            if (sidebarBackBtn) {
-                sidebarBackBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeContactSidebar();
-                });
-            }
-            
-            // Закрытие сайдбара по клику вне его
-            if (heroSidebar) {
-                heroSidebar.addEventListener('click', function(e) {
-                    if (e.target === heroSidebar) {
-                        closeContactSidebar();
-                    }
-                });
-            }
-        });
-
-        // Глобальная функция открытия сайдбара
-        window.openContactSidebar = function() {
-            const heroSidebar = document.getElementById('heroSidebar');
-            if (heroSidebar) {
-                heroSidebar.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        };
-        
-        // Для обратной совместимости
-        function openContactSidebar() {
-            window.openContactSidebar();
-        }
-        
-        // Глобальная функция закрытия сайдбара
-        window.closeContactSidebar = function() {
-            const heroSidebar = document.getElementById('heroSidebar');
-            if (heroSidebar) {
-                heroSidebar.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        };
-        
-        // Для обратной совместимости
-        function closeContactSidebar() {
-            window.closeContactSidebar();
-        }
-    </script>
-    <script src="../config.js"></script>
+    <!-- Основной JavaScript файл -->
+    <script src="partners.js" defer></script>
 </body>
 </html>
-

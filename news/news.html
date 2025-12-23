@@ -6,13 +6,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости - ТОПБИЛДИНГ</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Новости и актуальная информация от ТОПБИЛДИНГ. Следите за последними проектами, акциями и событиями в сфере строительства домов под ключ в Беларуси.">
+    <meta name="keywords" content="новости ТОПБИЛДИНГ, строительные новости, акции строительства, события строительной компании">
+    <meta name="author" content="ООО ТОПБИЛДИНГ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://topbuilding.by/news/news.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://topbuilding.by/news/news.html">
+    <meta property="og:title" content="Новости - ТОПБИЛДИНГ | Актуальная информация">
+    <meta property="og:description" content="Новости и актуальная информация от ТОПБИЛДИНГ. Следите за последними проектами и событиями в сфере строительства.">
+    <meta property="og:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://topbuilding.by/news/news.html">
+    <meta property="twitter:title" content="Новости - ТОПБИЛДИНГ | Актуальная информация">
+    <meta property="twitter:description" content="Новости и актуальная информация от ТОПБИЛДИНГ.">
+    <meta property="twitter:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
+    
     <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="news.css">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="../snow.css">
 </head>
 
 <body>
+    <!-- Snow Effect Container -->
+    <div class="snow-container" id="snowContainer"></div>
     <div class="maklknknin-content-wrapper">
         <!-- Header -->
         <header class="header" id="mainHeader">
@@ -152,7 +177,7 @@
                 
                 <div class="container">
                     <div class="section-header">
-                        <h2 class="section-title">Новости <span class="highlight">компании</span></h2>
+                        <h1 class="section-title">Новости <span class="highlight">компании</span></h1>
                         <p class="section-subtitle">Актуальные события и обновления от ТОПБИЛДИНГ</p>
                     </div>
 
@@ -652,431 +677,10 @@
         </footer>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // Мобильное меню
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const contactToggleBtn = document.getElementById('contactToggleBtn');
-            const heroSidebar = document.getElementById('heroSidebar');
-
-            if (mobileMenuToggle && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
-            }
-
-            // Закрытие мобильного меню при клике на ссылку
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    if (mobileMenu) mobileMenu.classList.remove('active');
-                    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                });
-            });
-            
-            // Открытие сайдбара по кнопке контактов
-            if (contactToggleBtn && heroSidebar) {
-                contactToggleBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    
-                    // Закрываем мобильное меню если открыто
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                    }
-                    
-                    heroSidebar.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            // Закрытие сайдбара по кнопке закрытия
-            const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-            const sidebarBackBtn = document.getElementById('sidebarBackBtn');
-            
-            if (sidebarCloseBtn) {
-                sidebarCloseBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeContactSidebar();
-                });
-            }
-            
-            if (sidebarBackBtn) {
-                sidebarBackBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeContactSidebar();
-                });
-            }
-            
-            // Закрытие сайдбара по клику вне его
-            if (heroSidebar) {
-                heroSidebar.addEventListener('click', function(e) {
-                    if (e.target === heroSidebar) {
-                        closeContactSidebar();
-                    }
-                });
-            }
-        });
-
-        // Глобальная функция открытия сайдбара
-        window.openContactSidebar = function() {
-            const heroSidebar = document.getElementById('heroSidebar');
-            if (heroSidebar) {
-                heroSidebar.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        };
-        
-        // Для обратной совместимости
-        function openContactSidebar() {
-            window.openContactSidebar();
-        }
-        
-        // Глобальная функция закрытия сайдбара
-        window.closeContactSidebar = function() {
-            const heroSidebar = document.getElementById('heroSidebar');
-            if (heroSidebar) {
-                heroSidebar.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        };
-        
-        // Для обратной совместимости
-        function closeContactSidebar() {
-            window.closeContactSidebar();
-        }
-    </script>
-    
     <!-- Конфигурация Telegram -->
     <script src="../config.js"></script>
-    
-    <script>
-        // ============================================
-        // СИСТЕМА УВЕДОМЛЕНИЙ В TELEGRAM (JavaScript)
-        // ============================================
-        
-        // Настройки Telegram бота (загружаются из config.js)
-        const TELEGRAM_BOT_TOKEN = TELEGRAM_CONFIG.BOT_TOKEN;
-        const TELEGRAM_CHAT_ID = TELEGRAM_CONFIG.CHAT_ID;
-        
-        let currentCallbackSource = 'Страница Новостей';
-        
-        // Открытие модального окна
-        window.openCallbackModal = function(source = 'Страница Новостей') {
-            currentCallbackSource = source;
-            const modal = document.getElementById('callbackModal');
-            if (modal) {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                
-                // Очистка формы
-                const form = document.getElementById('callbackForm');
-                if (form) {
-                    form.reset();
-                    const messageDiv = document.getElementById('callback-message');
-                    if (messageDiv) {
-                        messageDiv.innerHTML = '';
-                        messageDiv.className = 'callback-message';
-                    }
-                }
-            }
-        };
-        
-        // Для обратной совместимости
-        function openCallbackModal(source = 'Страница Новостей') {
-            window.openCallbackModal(source);
-        }
-        
-        // Закрытие модального окна (глобальная функция)
-        window.closeCallbackModal = function() {
-            const modal = document.getElementById('callbackModal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        };
-        
-        // Для обратной совместимости
-        function closeCallbackModal() {
-            window.closeCallbackModal();
-        }
-        
-        // Отправка сообщения в Telegram
-        async function sendToTelegram(name, phone, source) {
-            const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
-                          `👤 <b>Имя:</b> ${name}\n` +
-                          `📱 <b>Телефон:</b> ${phone}\n` +
-                          `📍 <b>Источник:</b> ${source}\n` +
-                          `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
-            
-            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-            
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: message,
-                    parse_mode: 'HTML'
-                })
-            });
-            
-            return response.json();
-        }
-        
-        // Инициализация модального окна
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.querySelector('.callback-modal-overlay');
-            const modalContent = document.querySelector('.callback-modal-content');
-            
-            if (overlay) {
-                overlay.addEventListener('click', function(e) {
-                    if (e.target === overlay) {
-                        window.closeCallbackModal();
-                    }
-                });
-            }
-            
-            if (modalContent) {
-                modalContent.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-            
-            // Закрытие по ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    const modal = document.getElementById('callbackModal');
-                    if (modal && modal.style.display === 'flex') {
-                        closeCallbackModal();
-                    }
-                }
-            });
-            
-            // Обработка кнопки "Заказать звонок" в футере
-            const footerBtn = document.querySelector('.footer-btn.open-sidebar-btn');
-            if (footerBtn) {
-                footerBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    openCallbackModal('Кнопка в футере');
-                });
-            }
-            
-            // Обработка кнопки "Заказать звонок" в сайдбаре
-            const sidebarPrimaryBtn = document.querySelector('.hero-contact-buttons .primary-contact');
-            if (sidebarPrimaryBtn) {
-                sidebarPrimaryBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeContactSidebar();
-                    setTimeout(() => {
-                        openCallbackModal('Сайдбар контактов');
-                    }, 300);
-                });
-            }
-            
-            // Отправка формы
-            const callbackForm = document.getElementById('callbackForm');
-            if (callbackForm) {
-                callbackForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const name = document.getElementById('callback-name').value.trim();
-                    const phone = document.getElementById('callback-phone').value.trim();
-                    const messageDiv = document.getElementById('callback-message');
-                    const submitBtn = this.querySelector('.callback-submit-btn');
-                    
-                    // Валидация
-                    if (!name || !phone) {
-                        if (messageDiv) {
-                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
-                            messageDiv.className = 'callback-message error';
-                        }
-                        return;
-                    }
-                    
-                    // Блокируем кнопку
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
-                    }
-                    
-                    try {
-                        const result = await sendToTelegram(name, phone, currentCallbackSource);
-                        
-                        if (result.ok) {
-                            if (messageDiv) {
-                                messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
-                                messageDiv.className = 'callback-message success';
-                            }
-                            
-                            // Очищаем форму
-                            callbackForm.reset();
-                            
-                            // Закрываем модальное окно через 3 секунды
-                            setTimeout(() => {
-                                closeCallbackModal();
-                            }, 3000);
-                        } else {
-                            throw new Error(result.description || 'Ошибка отправки');
-                        }
-                    } catch (error) {
-                        console.error('Ошибка отправки в Telegram:', error);
-                        if (messageDiv) {
-                            messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
-                            messageDiv.className = 'callback-message error';
-                        }
-                    }
-                    
-                    // Разблокируем кнопку
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
-                    }
-                });
-            }
-            
-            // Маска для телефона
-            const callbackPhone = document.getElementById('callback-phone');
-            if (callbackPhone) {
-                callbackPhone.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    
-                    if (value.length > 0) {
-                        if (!value.startsWith('375')) {
-                            value = '375' + value;
-                        }
-                        
-                        let formatted = '+375';
-                        if (value.length > 3) {
-                            formatted += ' (' + value.substring(3, 5);
-                        }
-                        if (value.length > 5) {
-                            formatted += ') ' + value.substring(5, 8);
-                        }
-                        if (value.length > 8) {
-                            formatted += '-' + value.substring(8, 10);
-                        }
-                        if (value.length > 10) {
-                            formatted += '-' + value.substring(10, 12);
-                        }
-                        
-                        e.target.value = formatted.substring(0, 19);
-                    }
-                });
-            }
-        });
-
-        // Раскрытие/сворачивание новостей
-        (function() {
-            function initNewsToggle() {
-                const toggleButtons = document.querySelectorAll('.news-toggle-btn');
-                
-                toggleButtons.forEach(button => {
-                    let isTouchDevice = false;
-                    let touchStartY = 0;
-                    
-                    // Функция для переключения состояния
-                    function toggleNews() {
-                        const newsCard = button.closest('.news-card');
-                        if (!newsCard) return;
-                        
-                        const fullText = newsCard.querySelector('.news-full-text');
-                        if (!fullText) return;
-                        
-                        const isCurrentlyOpen = fullText.classList.contains('show');
-                        
-                        if (isCurrentlyOpen) {
-                            // Сворачиваем текущую новость
-                            fullText.classList.remove('show');
-                            button.classList.remove('active');
-                            button.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
-                        } else {
-                            // Закрываем все другие открытые новости
-                            const allToggleButtons = document.querySelectorAll('.news-toggle-btn');
-                            allToggleButtons.forEach(otherButton => {
-                                if (otherButton !== button) {
-                                    const otherNewsCard = otherButton.closest('.news-card');
-                                    if (otherNewsCard) {
-                                        const otherFullText = otherNewsCard.querySelector('.news-full-text');
-                                        if (otherFullText && otherFullText.classList.contains('show')) {
-                                            otherFullText.classList.remove('show');
-                                            otherButton.classList.remove('active');
-                                            otherButton.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
-                                        }
-                                    }
-                                }
-                            });
-                            
-                            // Раскрываем текущую новость
-                            fullText.classList.add('show');
-                            button.classList.add('active');
-                            button.innerHTML = 'Свернуть <i class="fas fa-chevron-up"></i>';
-                        }
-                    }
-                    
-                    // Определяем touch устройство
-                    button.addEventListener('touchstart', function(e) {
-                        isTouchDevice = true;
-                        touchStartY = e.touches[0].clientY;
-                    }, { passive: true });
-                    
-                    // Обработка touch событий для мобильных
-                    button.addEventListener('touchend', function(e) {
-                        if (!isTouchDevice) return;
-                        
-                        const touchEndY = e.changedTouches[0].clientY;
-                        const touchDiff = Math.abs(touchEndY - touchStartY);
-                        
-                        // Если движение было минимальным (не прокрутка) - обрабатываем как клик
-                        if (touchDiff < 10) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            toggleNews();
-                        }
-                        
-                        // Сбрасываем флаг через небольшую задержку
-                        setTimeout(function() {
-                            isTouchDevice = false;
-                        }, 300);
-                    });
-                    
-                    // Обработка клика для десктопа
-                    button.addEventListener('click', function(e) {
-                        // Если это touch устройство и недавно было touch событие - игнорируем
-                        if (isTouchDevice) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            return;
-                        }
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleNews();
-                    });
-                });
-            }
-            
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initNewsToggle);
-            } else {
-                initNewsToggle();
-            }
-        })();
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Основной JavaScript файл -->
+    <script src="news.js" defer></script>
 </body>
 </html>
-

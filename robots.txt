@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных файлов
+Disallow: /config.js
+Disallow: /config.example.js
+
+# Разрешаем индексацию всех основных страниц
+Allow: /index.html
+Allow: /about/
+Allow: /news/
+Allow: /partners/
+Allow: /design/
+Allow: /construction/
+Allow: /administrative/
+
+# Sitemap
+Sitemap: https://topbuilding.by/sitemap.xml
+
+# Crawl-delay для уважения к серверу
+Crawl-delay: 1
+
+
+
