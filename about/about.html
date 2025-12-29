@@ -28,6 +28,13 @@
     <meta property="twitter:description" content="ООО ТОПБИЛДИНГ - команда профессионалов с опытом более 150 реализованных проектов.">
     <meta property="twitter:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="about.css">
     <!-- AOS Animation Library -->
@@ -210,7 +217,7 @@
                                 <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
                                     компанией с
                                     момента основания.</p>
-                                <button class="team-contact-btn open-sidebar-btn" onclick="openContactSidebar(); return false;">
+                                <button class="team-contact-btn open-sidebar-btn">
                                     <i class="fas fa-phone-alt"></i>
                                     <span>Контакты</span>
                                 </button>
@@ -281,11 +288,11 @@
                             </div>
                             <div class="team-card">
                                 <div class="team-photo">
-                                   <a href="https://www.instagram.com/stepan.batykovich/" target="_blank" rel="noopener"><img src="../main_img/Cast/Stepan.webp" alt="Степан Батькович"></a>
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces&auto=format&q=80" alt="Степан Александрович" loading="lazy">
                                 </div>
-                                <h3 class="team-name">Степан Батькович</h3>
+                                <h3 class="team-name">Степан Александрович</h3>
                                 <p class="team-position">Архитектор</p>
-                                <p class="team-description">Жду фото 3 неделю.</p>
+                                <p class="team-description">Создает архитектурные проекты и разрабатывает технические решения. Участвует в разработке концепций и визуализации проектов.</p>
                                 <div class="team-card-spacer"></div>
                             </div>
                         </div>
@@ -856,12 +863,12 @@
 
                 <!-- Контактные кнопки -->
                 <div class="hero-contact-buttons">
-                    <a href="tel:+375291286217" class="contact-btn primary-contact">
+                    <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (О нас)">
                         <i class="fas fa-phone-alt"></i>
                         <span>Заказать звонок</span>
                     </a>
                     
-                    <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                    <a href="#" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
                         <i class="fas fa-map-marked-alt"></i>
                         <span>Экскурсия по объектам</span>
                     </a>
@@ -883,10 +890,38 @@
                 </div>
                 
                 <!-- Большая кнопка "Назад" внизу -->
-                <button type="button" class="sidebar-back-btn" id="sidebarBackBtn" onclick="closeContactSidebar()">
+                <button type="button" class="sidebar-back-btn" id="sidebarBackBtn">
                     <i class="fas fa-arrow-left"></i>
                     <span>Назад</span>
                 </button>
+            </div>
+        </div>
+
+        <!-- Модальное окно для заказа звонка -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-modal-overlay" onclick="closeCallbackModal()"></div>
+            <div class="callback-modal-content">
+                <button class="callback-modal-close" onclick="closeCallbackModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="callback-modal-header">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Заказать звонок</h3>
+                    <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+                </div>
+                <form id="callbackForm" class="callback-form">
+                    <div class="form-group">
+                        <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                    </div>
+                    <button type="submit" class="callback-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Отправить заявку</span>
+                    </button>
+                </form>
+                <div id="callback-message" class="callback-message"></div>
             </div>
         </div>
 
@@ -913,12 +948,12 @@
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="../index.html#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
-                            <li><a href="../index.html#our-projects" target="_blank" rel="noopener">Наши проекты</a></li>
-                            <li><a href="../index.html#workflow" target="_blank" rel="noopener">Как мы работаем</a></li>
-                            <li><a href="../index.html#yandex-map" target="_blank" rel="noopener">Карта объектов</a></li>
-                            <li><a href="../index.html#tour-section" target="_blank" rel="noopener">Экскурсия по объектам</a></li>
-                            <li><a href="../index.html#testimonials" target="_blank" rel="noopener">Отзывы клиентов</a></li>
+                            <li><a href="../index.html#about">Почему выбирают нас</a></li>
+                            <li><a href="../index.html#our-projects">Наши проекты</a></li>
+                            <li><a href="../index.html#workflow">Как мы работаем</a></li>
+                            <li><a href="../index.html#yandex-map">Карта объектов</a></li>
+                            <li><a href="../index.html#tour-section">Экскурсия по объектам</a></li>
+                            <li><a href="../index.html#testimonials">Отзывы клиентов</a></li>
                         </ul>
                     </div>
 
@@ -929,7 +964,7 @@
                             <li><a href="../design/design.html" target="_blank" rel="noopener">Проектирование</a></li>
                             <li><a href="../news/news.html" target="_blank" rel="noopener">Новости</a></li>
                             <li><a href="../partners/partners.html" target="_blank" rel="noopener">Партнеры</a></li>
-                            <li><a href="about.html">О нас</a></li>
+                            <li><a href="about.html" target="_blank" rel="noopener">О нас</a></li>
                             <li><a href="../administrative/administrative.html" target="_blank" rel="noopener">Административные и производственные сооружения</a></li>
                         </ul>
                     </div>
@@ -956,7 +991,7 @@
                             </a>
                         </div>
 
-                        <button class="btn footer-btn open-sidebar-btn" onclick="openContactSidebar()">
+                        <button class="btn footer-btn open-sidebar-btn">
                             <i class="fas fa-phone-alt"></i>
                             <span>Заказать звонок</span>
                         </button>
@@ -972,6 +1007,9 @@
         </footer>
     </div>
 
+    <!-- Конфигурация Telegram (не попадает в Git) -->
+    <script src="../config.js"></script>
+    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Основной JavaScript файл -->
     <script src="about.js" defer></script>

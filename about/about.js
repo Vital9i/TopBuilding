@@ -1,13 +1,156 @@
 // ============================================
 // AOS INITIALIZATION
 // ============================================
-if (typeof AOS !== 'undefined') {
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
+});
+
+// ============================================
+// TELEGRAM CALLBACK SYSTEM
+// ============================================
+let currentCallbackSource = 'Страница "О нас"';
+
+window.openCallbackModal = function(source = 'Страница "О нас"') {
+    currentCallbackSource = source;
+    const modal = document.getElementById('callbackModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        const form = document.getElementById('callbackForm');
+        if (form) {
+            form.reset();
+            const messageDiv = document.getElementById('callback-message');
+            if (messageDiv) {
+                messageDiv.innerHTML = '';
+                messageDiv.className = 'callback-message';
+            }
+        }
+    }
+    
+    if (typeof TELEGRAM_CONFIG === 'undefined') {
+        console.warn('TELEGRAM_CONFIG не загружен. Форма будет работать, но отправка может не работать.');
+    }
+};
+
+window.closeCallbackModal = function() {
+    const modal = document.getElementById('callbackModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
+
+function closeCallbackModal() {
+    window.closeCallbackModal();
 }
+
+async function sendToTelegram(name, phone, source) {
+    if (typeof TELEGRAM_CONFIG === 'undefined') {
+        console.error('TELEGRAM_CONFIG не загружен');
+        return { ok: false };
+    }
+    
+    const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+                  `👤 <b>Имя:</b> ${name}\n` +
+                  `📱 <b>Телефон:</b> ${phone}\n` +
+                  `📍 <b>Источник:</b> ${source}\n` +
+                  `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
+    
+    const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.BOT_TOKEN}/sendMessage`;
+    
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CONFIG.CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+        })
+    });
+    
+    return await response.json();
+}
+
+// Обработчик формы обратного звонка и модального окна
+document.addEventListener('DOMContentLoaded', function() {
+    const callbackForm = document.getElementById('callbackForm');
+    if (callbackForm) {
+        callbackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('callback-name').value.trim();
+            const phone = document.getElementById('callback-phone').value.trim();
+            const messageDiv = document.getElementById('callback-message');
+            const submitBtn = this.querySelector('.callback-submit-btn');
+            
+            if (!name || !phone) {
+                if (messageDiv) {
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                    messageDiv.className = 'callback-message error';
+                }
+                return;
+            }
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
+            }
+            
+            try {
+                const result = await sendToTelegram(name, phone, currentCallbackSource);
+                
+                if (result.ok) {
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                        messageDiv.className = 'callback-message success';
+                    }
+                    callbackForm.reset();
+                    
+                    setTimeout(() => {
+                        window.closeCallbackModal();
+                    }, 3000);
+                } else {
+                    throw new Error(result.description || 'Ошибка отправки');
+                }
+            } catch (error) {
+                console.error('Ошибка отправки в Telegram:', error);
+                if (messageDiv) {
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
+                    messageDiv.className = 'callback-message error';
+                }
+            }
+            
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            window.closeCallbackModal();
+        }
+    });
+    
+    const overlay = document.querySelector('.callback-modal-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                window.closeCallbackModal();
+            }
+        });
+    }
+});
 
 // ============================================
 // CONTACT SIDEBAR FUNCTIONS
@@ -101,14 +244,169 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
-    const openSidebarBtns = document.querySelectorAll('.open-sidebar-btn');
+    // Обработчик для всех кнопок открытия сайдбара, включая кнопки сотрудников
+    const openSidebarBtns = document.querySelectorAll('.open-sidebar-btn, .team-contact-btn');
     openSidebarBtns.forEach(btn => {
+        // Проверяем, что кнопка не является ссылкой в навигации
+        if (btn.tagName === 'A' && btn.closest('.nav-menu')) {
+            return;
+        }
+        
+        // Удаляем inline onclick если есть
+        if (btn.hasAttribute('onclick')) {
+            btn.removeAttribute('onclick');
+        }
+        
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             openContactSidebar();
         });
     });
+    
+    // Обработчики для кнопок в сайдбаре
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+        if (btn.tagName === 'A' && btn.closest('.nav-menu')) {
+            return;
+        }
+        
+        // Пропускаем кнопки экскурсий - у них свой обработчик
+        if (btn.classList.contains('excursion-btn')) {
+            return;
+        }
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const source = this.getAttribute('data-source') || 'Страница "О нас"';
+            if (typeof window.openCallbackModal === 'function') {
+                window.openCallbackModal(source);
+            }
+        });
+    });
+    
+    // Отдельная обработка кнопки экскурсии
+    document.querySelectorAll('.excursion-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const source = this.getAttribute('data-source') || 'Экскурсия по объектам';
+            if (typeof window.openCallbackModal === 'function') {
+                window.openCallbackModal(source);
+            }
+        });
+    });
+    
+    // Обработчик для кнопок footer-btn
+    document.querySelectorAll('.footer-btn').forEach(btn => {
+        // Пропускаем кнопки, которые уже обработаны как open-sidebar-btn
+        if (btn.classList.contains('open-sidebar-btn')) {
+            return;
+        }
+        
+        // Удаляем inline onclick если есть
+        if (btn.hasAttribute('onclick')) {
+            btn.removeAttribute('onclick');
+        }
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const source = this.getAttribute('data-source') || 'Футер (О нас)';
+            if (typeof window.openCallbackModal === 'function') {
+                window.openCallbackModal(source);
+            } else {
+                // Если модальное окно недоступно, открываем сайдбар
+                openContactSidebar();
+            }
+        });
+    });
+    
+    // Обработчик для вкладок команды (Руководство, Архитекторы, Дизайнеры, Строители)
+    // Используем прямой обработчик для каждой кнопки
+    const teamTabs = document.querySelectorAll('button.team-tab');
+    if (teamTabs.length > 0) {
+        teamTabs.forEach(tab => {
+            // Проверяем, что это действительно кнопка вкладки
+            if (!tab.hasAttribute('data-team')) {
+                return;
+            }
+            
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Удаляем активный класс со всех вкладок
+                const allTabs = document.querySelectorAll('button.team-tab');
+                allTabs.forEach(t => t.classList.remove('active'));
+                
+                // Добавляем активный класс к текущей вкладке
+                tab.classList.add('active');
+                
+                // Скрываем все блоки с карточками команды
+                const allCards = document.querySelectorAll('.team-cards');
+                allCards.forEach(cards => {
+                    cards.classList.remove('active');
+                });
+                
+                // Показываем нужный блок с карточками
+                const teamId = tab.getAttribute('data-team');
+                if (teamId) {
+                    const targetCards = document.getElementById(teamId);
+                    if (targetCards) {
+                        targetCards.classList.add('active');
+                    }
+                }
+            });
+        });
+    }
+    
+    // ============================================
+    // SNOW EFFECT
+    // ============================================
+    const snowContainer = document.getElementById('snowContainer');
+    if (snowContainer) {
+        const snowflakes = ['❄', '❅', '❆', '✻', '✼', '✽', '✾', '✿', '❀'];
+        const totalSnowflakes = 100;
+        
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+            
+            const size = Math.random() * 0.8 + 0.4;
+            snowflake.style.fontSize = size + 'em';
+            snowflake.style.left = Math.random() * 100 + '%';
+            
+            const duration = Math.random() * 10 + 10;
+            snowflake.style.animationDuration = duration + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            
+            const swayAmount = Math.random() * 50 + 25;
+            snowflake.style.setProperty('--sway', swayAmount + 'px');
+            
+            snowContainer.appendChild(snowflake);
+            
+            setTimeout(() => {
+                if (snowflake.parentNode) {
+                    snowflake.parentNode.removeChild(snowflake);
+                }
+            }, duration * 1000);
+        }
+        
+        for (let i = 0; i < totalSnowflakes; i++) {
+            setTimeout(() => createSnowflake(), i * 200);
+        }
+        
+        setInterval(() => {
+            if (snowContainer.children.length < totalSnowflakes) {
+                createSnowflake();
+            }
+        }, 500);
+    }
 });
 
 // ============================================
@@ -153,44 +451,9 @@ document.addEventListener('DOMContentLoaded', function () {
         cards.style.justifyContent = 'flex-start';
     });
     
-    const teamTabs = document.querySelectorAll('.team-tab');
-    
-    teamTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            teamTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            const allCards = document.querySelectorAll('.team-cards');
-            allCards.forEach(cards => {
-                cards.classList.remove('active');
-                forceResetScroll(cards);
-            });
-            
-            const teamId = tab.getAttribute('data-team');
-            const targetCards = document.getElementById(teamId);
-            
-            if (targetCards) {
-                forceResetScroll(targetCards);
-                targetCards.classList.add('active');
-                forceResetScroll(targetCards);
-                
-                setTimeout(() => {
-                    forceResetScroll(targetCards);
-                }, 0);
-                
-                setTimeout(() => {
-                    forceResetScroll(targetCards);
-                }, 10);
-                
-                requestAnimationFrame(() => {
-                    forceResetScroll(targetCards);
-                    requestAnimationFrame(() => {
-                        forceResetScroll(targetCards);
-                    });
-                });
-            }
-        });
-    });
+    // Обработчик для вкладок команды уже добавлен в первом блоке DOMContentLoaded
+    // Здесь только обновляем скролл при переключении вкладок через делегирование событий
+    // Используем MutationObserver для отслеживания изменений класса active
     
     function resetTeamCardsScroll() {
         const activeCards = document.querySelector('.team-cards.active');
@@ -673,49 +936,28 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ============================================
-// SNOW EFFECT
-// ============================================
-(function() {
-    const snowContainer = document.getElementById('snowContainer');
-    if (!snowContainer) return;
-    
-    const snowflakes = ['❄', '❅', '❆', '✻', '✼', '✽', '✾', '✿', '❀'];
-    const totalSnowflakes = 100;
-    
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-        
-        const size = Math.random() * 0.8 + 0.4;
-        snowflake.style.fontSize = size + 'em';
-        snowflake.style.left = Math.random() * 100 + '%';
-        
-        const duration = Math.random() * 10 + 10;
-        snowflake.style.animationDuration = duration + 's';
-        snowflake.style.animationDelay = Math.random() * 5 + 's';
-        
-        const swayAmount = Math.random() * 50 + 25;
-        snowflake.style.setProperty('--sway', swayAmount + 'px');
-        
-        snowContainer.appendChild(snowflake);
-        
-        setTimeout(() => {
-            if (snowflake.parentNode) {
-                snowflake.parentNode.removeChild(snowflake);
-            }
-        }, duration * 1000);
-    }
-    
-    for (let i = 0; i < totalSnowflakes; i++) {
-        setTimeout(() => createSnowflake(), i * 200);
-    }
-    
-    setInterval(() => {
-        if (snowContainer.children.length < totalSnowflakes) {
-            createSnowflake();
-        }
-    }, 500);
-})();
+// Делаем функции глобальными для совместимости
+if (typeof window.openCallbackModal !== 'function') {
+    window.openCallbackModal = function(source) {
+        console.warn('openCallbackModal не определена');
+    };
+}
+
+if (typeof window.closeCallbackModal !== 'function') {
+    window.closeCallbackModal = function() {
+        console.warn('closeCallbackModal не определена');
+    };
+}
+
+if (typeof window.openContactSidebar !== 'function') {
+    window.openContactSidebar = function() {
+        console.warn('openContactSidebar не определена');
+    };
+}
+
+if (typeof window.closeContactSidebar !== 'function') {
+    window.closeContactSidebar = function() {
+        console.warn('closeContactSidebar не определена');
+    };
+}
 

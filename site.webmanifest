@@ -1,0 +1,22 @@
+{
+    "name": "ТОПБИЛДИНГ - Проектирование и строительство",
+    "short_name": "ТОПБИЛДИНГ",
+    "description": "ООО ТОПБИЛДИНГ - проектирование и строительство домов под ключ в Республике Беларусь",
+    "icons": [
+        {
+            "src": "/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1a73e8",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
+

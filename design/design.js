@@ -308,19 +308,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Обработка всех кнопок "Заказать звонок"
     document.querySelectorAll('.contact-btn, .footer-btn, .open-sidebar-btn, [onclick*="openContactSidebar"], .hero-btn, .design-hero-btn').forEach(btn => {
+        // Пропускаем кнопки экскурсий - у них свой обработчик
+        if (btn.classList.contains('excursion-btn')) {
+            return;
+        }
+        
+        // Пропускаем кнопки, которые должны открывать сайдбар
+        if (btn.onclick && btn.onclick.toString().includes('openContactSidebar')) {
+            return;
+        }
+        
         btn.addEventListener('click', function(e) {
-            if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
-                return;
-            }
-            
-            // Пропускаем кнопки, которые должны открывать сайдбар
-            if (this.onclick && this.onclick.toString().includes('openContactSidebar')) {
-                return;
-            }
-            
             e.preventDefault();
             e.stopPropagation();
-            window.openCallbackModal('Страница проектирования');
+            
+            // Используем data-source если есть, иначе используем значение по умолчанию
+            const source = this.getAttribute('data-source') || 'Страница проектирования';
+            window.openCallbackModal(source);
         });
     });
     

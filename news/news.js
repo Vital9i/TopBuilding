@@ -235,6 +235,69 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Обработчики для кнопок в сайдбаре
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+        if (btn.tagName === 'A' && btn.closest('.nav-menu')) {
+            return;
+        }
+        
+        btn.addEventListener('click', function(e) {
+            if (this.classList.contains('excursion-btn')) {
+                return;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const source = this.getAttribute('data-source') || 'Страница новостей';
+            window.openCallbackModal(source);
+        });
+    });
+    
+    document.querySelectorAll('.excursion-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const source = this.getAttribute('data-source') || 'Экскурсия по объектам';
+            window.openCallbackModal(source);
+        });
+    });
+    
+    // Обработчик кнопок "Подробнее" для новостей
+    const toggleButtons = document.querySelectorAll('.news-toggle-btn');
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Находим родительскую карточку новости
+            let newsCard = this.closest('article.news-card');
+            if (!newsCard) {
+                newsCard = this.closest('.news-card');
+            }
+            
+            if (newsCard) {
+                const fullText = newsCard.querySelector('.news-full-text');
+                
+                if (fullText) {
+                    // Переключаем класс show для показа/скрытия текста
+                    const isExpanded = fullText.classList.contains('show');
+                    
+                    if (isExpanded) {
+                        fullText.classList.remove('show');
+                        this.classList.remove('active');
+                        this.innerHTML = 'Подробнее <i class="fas fa-chevron-down"></i>';
+                    } else {
+                        fullText.classList.add('show');
+                        this.classList.add('active');
+                        this.innerHTML = 'Свернуть <i class="fas fa-chevron-up"></i>';
+                    }
+                }
+            }
+        });
+    });
 });
 
 // ============================================

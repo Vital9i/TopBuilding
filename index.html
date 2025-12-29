@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"ТОПБИЛДИНГ" - Проектирование и строительство в РБ</title>
+    <title>ТОПБИЛДИНГ - Проектирование и строительство в РБ</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="ООО ТОПБИЛДИНГ - проектирование и строительство домов под ключ в Минской области. Полный цикл от идеи до заселения. Более 150 реализованных проектов. Гарантия 5 лет.">
@@ -28,6 +28,13 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://topbuilding.by/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -284,12 +291,12 @@
 
                         <!-- Контактные кнопки -->
                         <div class="hero-contact-buttons">
-                            <a href="tel:+375291286217" class="contact-btn primary-contact">
+                            <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов">
                                 <i class="fas fa-phone-alt"></i>
                                 <span>Заказать звонок</span>
                             </a>
                             
-                            <a href="#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                            <a href="#" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>Экскурсия по объектам</span>
                             </a>
@@ -437,11 +444,11 @@
                             </div>
                             <div class="team-card">
                                 <div class="team-photo">
-                                   <a href="https://www.instagram.com/stepan.batykovich/"><img src="main_img/Cast/Stepan.webp" alt="Степан Батькович"></a>
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces&auto=format&q=80" alt="Степан Батькович" loading="lazy">
                                 </div>
                                 <h3 class="team-name">Степан Батькович</h3>
                                 <p class="team-position">Архитектор</p>
-                                <p class="team-description">Жду фото 3 неделю.</p>
+                                <p class="team-description">Создает архитектурные проекты и разрабатывает технические решения. Участвует в разработке концепций и визуализации проектов.</p>
                                 <div class="team-card-spacer"></div>
                             </div>
                         </div>
@@ -572,7 +579,7 @@
                             </ul>
                             <div class="project-footer">
                                 <span class="project-price">от 230 000 руб</span>
-                                <a href="design/design.html" class="btn-details" style="text-decoration: none;" onclick="event.stopPropagation();">Подробнее</a>
+                                <a href="design/design.html" class="btn-details" style="text-decoration: none;" target="_blank" rel="noopener" onclick="event.stopPropagation();">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -592,7 +599,7 @@
                                 <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                             </ul>
                             <div class="project-footer">
-                                <span class="project-price">от  000 руб</span>
+                                <span class="project-price">от 95 000 руб</span>
                                 <button class="btn-details" onclick="openProjectModal('classic')">Подробнее</button>
                             </div>
                         </div>
@@ -1085,29 +1092,30 @@
 
                         <!-- Правая часть с формой -->
                         <div class="tour-form-wrapper">
-                            <form class="tour-form">
+                            <form class="tour-form" id="tourForm">
                                 <h3>Записаться на экскурсию</h3>
                                 <div class="form-group">
-                                    <input type="text" placeholder="Ваше имя" required>
+                                    <input type="text" id="tour-name" name="name" placeholder="Ваше имя" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" placeholder="Ваш телефон" required>
+                                    <input type="tel" id="tour-phone" name="phone" placeholder="Ваш телефон" required>
                                 </div>
                                 <div class="form-group">
-                                    <select required>
+                                    <select id="tour-type" name="tour-type" required>
                                         <option value="" disabled selected>Выберите тип экскурсии</option>
-                                        <option>Индивидуальная экскурсия</option>
-                                        <option>Групповая экскурсия</option>
-                                        <option>Профессиональный тур</option>
+                                        <option value="Индивидуальная экскурсия">Индивидуальная экскурсия</option>
+                                        <option value="Групповая экскурсия">Групповая экскурсия</option>
+                                        <option value="Профессиональный тур">Профессиональный тур</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" placeholder="Предпочтительная дата" required>
+                                    <input type="date" id="tour-date" name="date" placeholder="Предпочтительная дата" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Ваши пожелания и вопросы"></textarea>
+                                    <textarea id="tour-message" name="message" placeholder="Ваши пожелания и вопросы"></textarea>
                                 </div>
-                                <button type="submit" class="btn">Отправить заявку</button>
+                                <div id="tour-message-div" class="callback-message"></div>
+                                <button type="submit" class="btn tour-submit-btn">Отправить заявку</button>
                             </form>
                         </div>
                     </div>
@@ -1470,9 +1478,37 @@
                 </div>
             </div>
         </footer>
-        </main>
     </div>
     <!-- /maklknknin-content-wrapper -->
+    
+    <!-- Модальное окно для заказа звонка -->
+    <div id="callbackModal" class="callback-modal">
+        <div class="callback-modal-overlay" onclick="closeCallbackModal()"></div>
+        <div class="callback-modal-content">
+            <button class="callback-modal-close" onclick="closeCallbackModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="callback-modal-header">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Заказать звонок</h3>
+                <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+            </div>
+            <form id="callbackForm" class="callback-form">
+                <div class="form-group">
+                    <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                </div>
+                <button type="submit" class="callback-submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Отправить заявку</span>
+                </button>
+            </form>
+            <div id="callback-message" class="callback-message"></div>
+        </div>
+    </div>
+    
      <!-- Конфигурация Telegram (не попадает в Git) -->
      <script src="config.js"></script>
      <script src="https://api-maps.yandex.ru/2.1/?apikey=12fcf8e0-ecaa-4a73-aefd-d28ec0384927&lang=ru_RU"

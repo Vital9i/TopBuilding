@@ -28,6 +28,13 @@
     <meta property="twitter:description" content="Надежные партнеры ТОПБИЛДИНГ - проверенные поставщики материалов и оборудования.">
     <meta property="twitter:image" content="https://topbuilding.by/main_img/exhibition_house.jpg">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
     <link rel="stylesheet" href="../style.css?v=108">
     <link rel="stylesheet" href="partners.css">
     <!-- AOS Animation Library -->
@@ -333,12 +340,12 @@
 
                 <!-- Контактные кнопки -->
                 <div class="hero-contact-buttons">
-                    <a href="tel:+375291286217" class="contact-btn primary-contact">
+                    <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (Партнеры)">
                         <i class="fas fa-phone-alt"></i>
                         <span>Заказать звонок</span>
                     </a>
                     
-                    <a href="../index.html#tour-section" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
+                    <a href="#" class="contact-btn secondary-contact excursion-btn" data-source="Экскурсия по объектам">
                         <i class="fas fa-map-marked-alt"></i>
                         <span>Экскурсия по объектам</span>
                     </a>
@@ -405,7 +412,7 @@
                         <ul class="footer-services">
                             <li><a href="../design/design.html" target="_blank" rel="noopener">Проектирование</a></li>
                             <li><a href="../news/news.html" target="_blank" rel="noopener">Новости</a></li>
-                            <li><a href="partners.html">Партнеры</a></li>
+                            <li><a href="partners.html" target="_blank" rel="noopener">Партнеры</a></li>
                             <li><a href="../about/about.html" target="_blank" rel="noopener">О нас</a></li>
                             <li><a href="../administrative/administrative.html" target="_blank" rel="noopener">Административные и производственные сооружения</a></li>
                         </ul>
@@ -447,6 +454,34 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- Модальное окно для заказа звонка -->
+    <div id="callbackModal" class="callback-modal">
+        <div class="callback-modal-overlay" onclick="closeCallbackModal()"></div>
+        <div class="callback-modal-content">
+            <button class="callback-modal-close" onclick="closeCallbackModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="callback-modal-header">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Заказать звонок</h3>
+                <p>Оставьте свои контакты и мы свяжемся с вами в ближайшее время</p>
+            </div>
+            <form id="callbackForm" class="callback-form">
+                <div class="form-group">
+                    <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
+                </div>
+                <button type="submit" class="callback-submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Отправить заявку</span>
+                </button>
+            </form>
+            <div id="callback-message" class="callback-message"></div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

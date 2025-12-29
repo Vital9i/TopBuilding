@@ -272,28 +272,29 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Обработка всех кнопок "Заказать звонок"
     document.querySelectorAll('.contact-btn, .footer-btn, .open-sidebar-btn, .hero-btn').forEach(btn => {
+        if (btn.tagName === 'A' && btn.closest('.nav-menu')) {
+            return;
+        }
+        
         btn.addEventListener('click', function(e) {
-            if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
-                return;
-            }
-            
-            if (this.onclick && this.onclick.toString().includes('openContactSidebar')) {
-                return;
-            }
-            
-            if (this.onclick && this.onclick.toString().includes('openCallbackModal')) {
+            if (this.classList.contains('excursion-btn')) {
                 return;
             }
             
             e.preventDefault();
             e.stopPropagation();
-            openCallbackModal('Страница строительства');
+            
+            const source = this.getAttribute('data-source') || 'Страница строительства';
+            openCallbackModal(source);
         });
     });
     
     // Обработка кнопок экскурсии
     document.querySelectorAll('.excursion-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const source = this.getAttribute('data-source') || 'Экскурсия по объектам';
             openCallbackModal(source);
         });
@@ -473,6 +474,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, 500);
 })();
+
+
 
 
 

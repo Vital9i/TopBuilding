@@ -1240,16 +1240,21 @@ function closeCallbackModal() {
     window.closeCallbackModal();
 }
 
-async function sendToTelegram(name, phone, source) {
+async function sendToTelegram(name, phone, source, additionalInfo = '') {
     if (typeof TELEGRAM_CONFIG === 'undefined') {
         throw new Error('TELEGRAM_CONFIG не загружен');
     }
     
-    const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+    let message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
                   `👤 <b>Имя:</b> ${name}\n` +
                   `📱 <b>Телефон:</b> ${phone}\n` +
-                  `📍 <b>Источник:</b> ${source}\n` +
-                  `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
+                  `📍 <b>Источник:</b> ${source}\n`;
+    
+    if (additionalInfo) {
+        message += `\n${additionalInfo}`;
+    }
+    
+    message += `\n🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
     
     const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.BOT_TOKEN}/sendMessage`;
     
@@ -1298,7 +1303,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         btn.addEventListener('click', function(e) {
-            if (this.classList.contains('excursion-btn') || this.getAttribute('data-source')) {
+            // Пропускаем кнопки экскурсий - у них свой обработчик
+            if (this.classList.contains('excursion-btn')) {
                 return;
             }
             
@@ -1309,9 +1315,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation();
             
-            let source = 'Главная страница';
-            if (this.closest('.tour-section')) {
-                source = 'Секция экскурсий';
+            // Используем data-source если есть, иначе определяем источник по контексту
+            let source = this.getAttribute('data-source');
+            if (!source) {
+                source = 'Главная страница';
+                if (this.closest('.tour-section')) {
+                    source = 'Секция экскурсий';
+                }
             }
             
             openCallbackModal(source);
@@ -1327,6 +1337,76 @@ document.addEventListener('DOMContentLoaded', function() {
             openCallbackModal(source);
         });
     });
+    
+    // Обработчик формы записи на экскурсию
+    const tourForm = document.getElementById('tourForm');
+    if (tourForm) {
+        tourForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('tour-name').value.trim();
+            const phone = document.getElementById('tour-phone').value.trim();
+            const tourType = document.getElementById('tour-type').value;
+            const tourDate = document.getElementById('tour-date').value;
+            const tourMessage = document.getElementById('tour-message').value.trim();
+            const messageDiv = document.getElementById('tour-message-div');
+            const submitBtn = this.querySelector('.tour-submit-btn');
+            
+            if (!name || !phone || !tourType || !tourDate) {
+                if (messageDiv) {
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все обязательные поля';
+                    messageDiv.className = 'callback-message error';
+                }
+                return;
+            }
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+            }
+            
+            try {
+                // Формируем дополнительную информацию для Telegram
+                let additionalInfo = `🎯 <b>Тип экскурсии:</b> ${tourType}\n` +
+                                    `📅 <b>Предпочтительная дата:</b> ${tourDate}`;
+                
+                if (tourMessage) {
+                    additionalInfo += `\n💬 <b>Пожелания:</b> ${tourMessage}`;
+                }
+                
+                const result = await sendToTelegram(name, phone, 'Запись на экскурсию', additionalInfo);
+                
+                if (result.ok) {
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
+                        messageDiv.className = 'callback-message success';
+                    }
+                    tourForm.reset();
+                    
+                    // Очистка сообщения через 5 секунд
+                    setTimeout(() => {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '';
+                            messageDiv.className = 'callback-message';
+                        }
+                    }, 5000);
+                } else {
+                    throw new Error(result.description || 'Ошибка отправки');
+                }
+            } catch (error) {
+                console.error('Ошибка отправки формы экскурсии:', error);
+                if (messageDiv) {
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Произошла ошибка. Пожалуйста, позвоните нам напрямую: +375 (29) 128-62-17';
+                    messageDiv.className = 'callback-message error';
+                }
+            }
+            
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Отправить заявку';
+            }
+        });
+    }
     
     const callbackForm = document.getElementById('callbackForm');
     if (callbackForm) {
