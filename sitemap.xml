@@ -28,14 +28,6 @@
         <priority>0.9</priority>
     </url>
     
-    <!-- Строительство -->
-    <url>
-        <loc>https://topbuilding.by/construction/construction.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
     <!-- Новости -->
     <url>
         <loc>https://topbuilding.by/news/news.html</loc>
