@@ -44,13 +44,7 @@
         <priority>0.6</priority>
     </url>
     
-    <!-- Административные здания -->
-    <url>
-        <loc>https://topbuilding.by/administrative/administrative.html</loc>
-        <lastmod>2025-01-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
     
 </urlset>
 

@@ -11,15 +11,8 @@ Allow: /about/
 Allow: /news/
 Allow: /partners/
 Allow: /design/
-Allow: /administrative/
+
 
 # Sitemap
 Sitemap: https://topbuilding.by/sitemap.xml
-
-# Crawl-delay для уважения к серверу
-Crawl-delay: 1
-
-
-
-
 

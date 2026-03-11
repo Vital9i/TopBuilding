@@ -971,51 +971,6 @@ if (document.readyState === 'loading') {
     initYandexMap();
 }
 
-// ============================================
-// SNOW EFFECT
-// ============================================
-(function() {
-    const snowContainer = document.getElementById('snowContainer');
-    const snowflakes = ['❄', '❅', '❆', '✻', '✼', '✽', '✾', '✿', '❀'];
-    const totalSnowflakes = 100;
-    
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-        
-        const size = Math.random() * 0.8 + 0.4;
-        snowflake.style.fontSize = size + 'em';
-        snowflake.style.left = Math.random() * 100 + '%';
-        
-        const duration = Math.random() * 10 + 10;
-        snowflake.style.animationDuration = duration + 's';
-        snowflake.style.animationDelay = Math.random() * 5 + 's';
-        
-        const swayAmount = Math.random() * 50 + 25;
-        snowflake.style.setProperty('--sway', swayAmount + 'px');
-        
-        snowContainer.appendChild(snowflake);
-        
-        setTimeout(() => {
-            if (snowflake.parentNode) {
-                snowflake.parentNode.removeChild(snowflake);
-            }
-        }, duration * 1000);
-    }
-    
-    for (let i = 0; i < totalSnowflakes; i++) {
-        setTimeout(() => createSnowflake(), i * 200);
-    }
-    
-    setInterval(() => {
-        if (snowContainer.children.length < totalSnowflakes) {
-            createSnowflake();
-        }
-    }, 500);
-})();
-
-
 
 
 

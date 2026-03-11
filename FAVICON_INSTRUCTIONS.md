@@ -52,3 +52,9 @@ magick favicon.svg -resize 512x512 favicon-512x512.png
 - Проверьте вкладку браузера - должен отображаться иконка
 - Проверьте через https://realfavicongenerator.net/favicon_checker
 
+
+
+
+
+
+

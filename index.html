@@ -31,20 +31,14 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="style.css?v=108">
-    <link rel="stylesheet" href="snow.css">
 </head>
 
 <body>
-    <!-- Snow Effect Container -->
-    <div class="snow-container" id="snowContainer"></div>
     <div class="maklknknin-content-wrapper">
         <!-- Header -->
         <header class="header" id="mainHeader">
@@ -99,6 +93,7 @@
                                 <li><a href="#about">Почему выбирают нас</a></li>
                                 <li><a href="#our-projects">Наши проекты</a></li>
                                 <li><a href="#workflow">Как мы работаем</a></li>
+                                <li><a href="#youtube">Мы на YouTube</a></li>
                                 <li><a href="#yandex-map">Карта объектов</a></li>
                                 <li><a href="#tour-section">Экскурсия по объектам</a></li>
                                 <li><a href="#testimonials">Отзывы клиентов</a></li>
@@ -158,6 +153,7 @@
                 <div class="mobile-menu" id="mobileMenu">
                     <div class="mobile-menu-content">
                         <a href="#home" class="mobile-menu-link">Главная</a>
+                        <a href="#youtube" class="mobile-menu-link">Мы на YouTube</a>
                         <a href="design/design.html" class="mobile-menu-link">Проектирование</a>
                         <a href="news/news.html" class="mobile-menu-link">Новости</a>
                         <a href="partners/partners.html" class="mobile-menu-link">Партнеры</a>
@@ -172,8 +168,11 @@
             <section id="home" class="section hero">
                 <!-- Видео-фон -->
                 <div class="hero-video-background">
-                    <video autoplay muted loop playsinline class="hero-video">
+                    <video autoplay muted loop playsinline class="hero-video hero-video-desktop">
                         <source src="main_video/Plan_Architecture.mp4" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop playsinline class="hero-video hero-video-mobile">
+                        <source src="main_video/Plan_Architecture_mobile.mp4" type="video/mp4">
                     </video>
                     <div class="hero-video-overlay"></div>
                 </div>
@@ -332,224 +331,196 @@
                 <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
+                
                 <div class="content-wrapper">
-                <div class="container">
-                    <h2 class="section-title">Почему <span class="highlight">выбирают нас</span></h2>
-                    <div class="about-intro">
-                        <p class="section-description">
-                            Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
-                            Республике Беларусь. Реализуем проекты любой сложности: от загородного домостроения до административных и производственных объектов. Наш опыт позволяет воплощать в жизнь самые смелые архитектурные решения с гарантией качества.
-                            <br><br>
-                            <em class="team-intro-text-desktop">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
-                        </p>
-                        <p class="section-description">Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной
-                            услугой
-                            и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта,
-                            проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего
-                            комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с
-                            Заказчиком.
-                            <br><br>
-                            <em class="team-intro-text-mobile">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
-                        </p>
-                    </div>
-
-                    <!-- Наша команда -->
-                    <div class="team-section">
-                        <div class="team-tabs">
-                            <button class="team-tab active" data-team="management">Руководство</button>
-                            <button class="team-tab" data-team="architects">Архитекторы</button>
-                            <button class="team-tab" data-team="designers">Дизайнеры</button>
-                            <button class="team-tab" data-team="builders">Строители</button>
+                    <div class="container">
+                        <h2 class="section-title">Почему <span class="highlight">выбирают нас</span></h2>
+                        
+                        <div class="about-intro">
+                            <p class="section-description">
+                                Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
+                                Республике Беларусь. Реализуем проекты любой сложности: от загородного домостроения до административных и производственных объектов. Наш опыт позволяет воплощать в жизнь самые смелые архитектурные решения с гарантией качества.
+                                <br><br>
+                                <em class="team-intro-text-desktop">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
+                            </p>
+                            
+                            <p class="section-description">
+                                Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной услугой и в качестве готового продукта получает предпроектную проработку и планируемый бюджет объекта, проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с Заказчиком.
+                                <br><br>
+                                <em class="team-intro-text-mobile">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
+                            </p>
                         </div>
-
-                        <!-- Руководство -->
-                        <div class="team-cards active" id="management" style="scroll-behavior: auto !important;">
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
-                                </div>
-                                <h3 class="team-name">Олег Олегович<br>Гриценко</h3>
-                                <p class="team-position">Руководитель организации</p>
-                                <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит
-                                    компанией с
-                                    момента основания.</p>
-                                <button class="team-contact-btn open-sidebar-btn">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <span>Контакты</span>
-                                </button>
+            
+                        <!-- Наша команда -->
+                        <div class="team-section">
+                            <div class="team-tabs">
+                                <button class="team-tab active" data-team="management">Руководство</button>
+                                <button class="team-tab" data-team="architects">Архитекторы</button>
+                                <button class="team-tab" data-team="designers">Дизайнеры</button>
+                                <button class="team-tab" data-team="builders">Строители</button>
                             </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/TamaraGeorgievna.webp" alt="руководитель проектного отдела">
+            
+                            <!-- Контейнер для всех карточек -->
+                            <div class="team-cards-container">
+                                <!-- Руководство -->
+                                <div class="team-cards active" id="management">
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
+                                        </div>
+                                        <h3 class="team-name">Олег Олегович<br>Гриценко</h3>
+                                        <p class="team-position">Руководитель организации</p>
+                                        <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит компанией с момента основания.</p>
+                                        <button class="team-contact-btn open-sidebar-btn">
+                                            <i class="fas fa-phone-alt"></i>
+                                            <span>Контакты</span>
+                                        </button>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/TamaraGeorgievna.webp" alt="Руководитель проектного отдела">
+                                        </div>
+                                        <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
+                                        <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
+                                        <p class="team-description">Координирует все строительные процессы и взаимодействие между отделами.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
+                                        </div>
+                                        <h3 class="team-name">Евгения Андреевна Кожемякина</h3>
+                                        <p class="team-position">Главный бухгалтер</p>
+                                        <p class="team-description">Обеспечивает соблюдение законодательства в области бухгалтерского и налогового учета, а также участвует в финансовом планировании и анализе.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
                                 </div>
-                                <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
-                                <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
-                                <p class="team-description">Координирует все строительные процессы и взаимодействие
-                                    между
-                                    отделами.</p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
+            
+                                <!-- Архитекторы -->
+                                <div class="team-cards" id="architects">
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Tatiana_Fedorovna.webp" alt="Татьяна Федоровна">
+                                        </div>
+                                        <h3 class="team-name">Татьяна Федоровна</h3>
+                                        <p class="team-position">Главный архитектор</p>
+                                        <p class="team-description">Разрабатывает концепции домов и контролирует их техническую реализацию. Более 8 лет опыта в архитектурном проектировании.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+                                    
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/stepan.webp" alt="Архитектор Степан Сергеевич" loading="lazy">
+                                        </div>
+                                        <h3 class="team-name">Степан Сергеевич</h3>
+                                        <p class="team-position">Архитектор</p>
+                                        <p class="team-description">Создает архитектурные проекты и разрабатывает технические решения. Участвует в разработке концепций и визуализации проектов.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+                                    
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <!-- Добавьте корректный путь к изображению вместо # -->
+                                            <img src="main_img/Cast/placeholder.svg" alt="Архитектор Жарина Яна">
+                                        </div>
+                                        <h3 class="team-name">Жарина Яна</h3>
+                                        <p class="team-position">Архитектор</p>
+                                        <p class="team-description">Также разрабатывает концепции домов и контролирует их техническую реализацию.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
                                 </div>
-                                <h3 class="team-name">Евгения Андреевна Кожемякина </h3>
-                                <p class="team-position">Главный бухгалтер</p>
-                                <p class="team-description"> Обеспечивает соблюдение законодательства в области
-                                    бухгалтерского и налогового учета, а также участвует в финансовом планировании и
-                                    анализе.</p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/AnnaArnoldovna.webp" alt="Бухгалтер">
+            
+                                <!-- Дизайнеры -->
+                                <div class="team-cards" id="designers">
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Angelika_Makarevich.webp" alt="Дизайнер интерьеров Анжелика Александровна">
+                                        </div>
+                                        <h3 class="team-name">Анжелика Александровна</h3>
+                                        <p class="team-position">Дизайнер интерьеров</p>
+                                        <p class="team-description">Создает гармоничный интерьер помещений и подбирает материалы.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
                                 </div>
-                                <h3 class="team-name">Анна Арнольдовна Карпеко </h3>
-                                <p class="team-position">Бухгалтер</p>
-                                <p class="team-description">Занимается ведением финансового учета и отчетности компании.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/AlenaOlegovna.webp" alt="Бухгалтер">
+            
+                                <!-- Строители -->
+                                <div class="team-cards" id="builders">
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Alesya.webp" alt="Штукатур 3 разряда Алеся Владимировна">
+                                        </div>
+                                        <h3 class="team-name">Алеся Владимировна</h3>
+                                        <p class="team-position">Штукатур 3 разряда</p>
+                                        <p class="team-description">Специалист по внутренней и наружной отделке зданий, который подготавливает и выравнивает поверхности (стены, потолки, фасады).</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Said.webp" alt="Слесарь-сантехник Каримов Дмитрий">
+                                        </div>
+                                        <h3 class="team-name">Каримов Дмитрий</h3>
+                                        <p class="team-position">Слесарь-сантехник</p>
+                                        <p class="team-description">Занимается монтажом, обслуживанием, диагностикой систем водоснабжения, канализации, отопления и газоснабжения.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Andrey_Kyzmich.webp" alt="Геодезист Андрей Кузьмич">
+                                        </div>
+                                        <h3 class="team-name">Андрей Кузьмич</h3>
+                                        <p class="team-position">Геодезист</p>
+                                        <p class="team-description">Осуществляет геодезический контроль и измерения на объектах строительства.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Vladimir_Domanovsky.webp" alt="Бригадир Галуза Сергей">
+                                        </div>
+                                        <h3 class="team-name">Галуза Сергей</h3>
+                                        <p class="team-position">Бригадир</p>
+                                        <p class="team-description">Отвечает за своевременное обеспечение бригады необходимыми материалами и оборудованием.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Genadi.webp" alt="Штукатур Корнев Александр">
+                                        </div>
+                                        <h3 class="team-name">Корнев Александр</h3>
+                                        <p class="team-position">Штукатур</p>
+                                        <p class="team-description">Специалист по внутренней и наружной отделке зданий, который подготавливает и выравнивает поверхности (стены, потолки, фасады).</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
+            
+                                    <div class="team-card">
+                                        <div class="team-photo">
+                                            <img src="main_img/Cast/Andrey_Kardash.webp" alt="Мастер общестроительных работ Андрей Кардаш">
+                                        </div>
+                                        <h3 class="team-name">Андрей Кардаш</h3>
+                                        <p class="team-position">Мастер общестроительных работ</p>
+                                        <p class="team-description">Руководит бригадой или отдельным участком, контролирует соблюдение технологий и безопасности, а также следит за качеством материалов.</p>
+                                        <div class="team-card-spacer"></div>
+                                    </div>
                                 </div>
-                                <h3 class="team-name">Алена Олеговна Красулевич </h3>
-                                <p class="team-position">Инженер ПТО (производственно-технический отдел)</p>
-                                <p class="team-description">Занимается техническим сопровождением и контролем
-                                    строительных процессов.</p>
-                                <div class="team-card-spacer"></div>
                             </div>
                         </div>
-
-
-                        <!-- Архитекторы -->
-                        <div class="team-cards" id="architects">
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Tatiana_Fedorovna.webp" alt="Татьяна Федоровна">
-                                </div>
-                                <h3 class="team-name">Татьяна Федоровна</h3>
-                                <p class="team-position">Главный архитектор</p>
-                                <p class="team-description">Разрабатывает концепции домов и контролирует их техническую
-                                    реализацию. Более 8 лет опыта в архитектурном проектировании.</p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces&auto=format&q=80" alt="Степан Батькович" loading="lazy">
-                                </div>
-                                <h3 class="team-name">Степан Батькович</h3>
-                                <p class="team-position">Архитектор</p>
-                                <p class="team-description">Создает архитектурные проекты и разрабатывает технические решения. Участвует в разработке концепций и визуализации проектов.</p>
-                                <div class="team-card-spacer"></div>
-                            </div>
+                        
+                        <!-- Кнопка "Подробнее о нас" -->
+                        <div class="about-btn-wrapper">
+                            <a href="about/about.html" class="btn about-more-btn">
+                                <i class="fas fa-users"></i>
+                                <span>Подробнее о нас</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                          
-                        <!-- Дизайнеры -->
-                        <div class="team-cards" id="designers">
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Angelika_Makarevich.webp" alt="Анжелика Александровна">
-                                </div>
-                                <h3 class="team-name">Анжелика Александровна</h3>
-                                <p class="team-position">Дизайнер интерьеров</p>
-                                <p class="team-description">Создает гармоничный интерьер помещений и подбирает материалы.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-                        </div>
-
-                        <!-- Строители -->
-                        <div class="team-cards" id="builders">
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Genadi.webp" alt="Бригадир кровельщиков, фасадчиков">
-                                </div>
-                                <h3 class="team-name">Чечетко Геннадий</h3>
-                                <p class="team-position">Бригадир кровельщиков, фасадчиков</p>
-                                <p class="team-description">Выполняет руководящую и организационную работу, а также
-                                    участвует в выполнении кровельных и фасадных работ.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Said.webp" alt="Бригадир в отделке и кладке">
-                                </div>
-                                <h3 class="team-name">Саидохонов Саид</h3>
-                                <p class="team-position">Бригадир в отделке и кладке</p>
-                                <p class="team-description"> Занимается организацией работы строительной бригады,
-                                    распределением задач, контролем качества и соблюдением сроков выполнения работ.</p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Andrey_Kyzmich.webp" alt="Геодезист">
-                                </div>
-                                <h3 class="team-name">Андрей Кузьмич</h3>
-                                <p class="team-position">Геодезист</p>
-                                <p class="team-description">Осуществляет геодезический контроль и измерения на объектах строительства.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Vladimir_Domanovsky.webp" alt="Бригадир">
-                                </div>
-                                <h3 class="team-name">Домановский Владимир</h3>
-                                <p class="team-position">Бригадир</p>
-                                <p class="team-description">Отвечает за своевременное обеспечение бригады необходимыми материалами и оборудованием.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Andrey_Deredich.webp" alt="Бригадир по благоустройству">
-                                </div>
-                                <h3 class="team-name">Андрей Середич</h3>
-                                <p class="team-position">Бригадир по благоустройству</p>
-                                <p class="team-description">Организует и координирует работы по благоустройству территории.
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-photo">
-                                    <img src="main_img/Cast/Andrey_Kardash.webp" alt="Мастер общестроительных работ">
-                                </div>
-                                <h3 class="team-name">Андрей Кардаш</h3>
-                                <p class="team-position">Мастер общестроительных работ</p>
-                                <p class="team-description">Руководит бригадой или отдельным участком, контролирует соблюдение технологий и безопасности, а также следит за качеством материалов. 
-                                </p>
-                                <div class="team-card-spacer"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <!-- Кнопка "Подробнее о нас" -->
-                    <div class="about-btn-wrapper">
-                        <a href="about/about.html" class="btn about-more-btn">
-                            <i class="fas fa-users"></i>
-                            <span>Подробнее о нас</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
                     </div>
                 </div>
-                </div>
-                <!-- /content-wrapper -->
             </section>
             <section id="our-projects" class="our-projects">
             <!-- Декоративные элементы -->
@@ -1006,6 +977,73 @@
     </div>
     <!-- /content-wrapper -->
 </section>
+            <section id="youtube" class="section youtube-section">
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-right-bottom"></div>
+                
+                <div class="content-wrapper">
+                    <div class="container">
+                        <h2 class="section-title">Мы на <span class="highlight">YouTube</span></h2>
+                        <p class="section-description">
+                            Смотрите наши видеообзоры, процесс строительства и готовые объекты
+                        </p>
+            
+                        <div class="youtube-grid">
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/AHl0RueSh9M" 
+                                            title="Экскурсия по готовому дому в стиле шале" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <h3 class="youtube-title">Познакомьтесь с нами поближе</h3>
+                            </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/KTHbEwuUEDE" 
+                                            title="Видео 2" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <h3 class="youtube-title">Наш дом 13 лет спустя + отзыв клиента</h3>
+                            </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/_KDpv7E0u4k" 
+                                            title="Видео 3" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <h3 class="youtube-title">Строительство завода - бросаем себе вызов<h3>
+                            </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" 
+                                            title="Видео 4" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <h3 class="youtube-title">Как не ошибиться про выборе участка</h3>
+                            </div>
+                        </div>
+                        <div class="youtube-cta-wrapper">
+                            <a href="https://www.youtube.com/@%D0%A2%D0%BE%D0%BF%D0%91%D0%B8%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3" class="youtube-cta btn secondary" target="_blank" rel="noopener">
+                                <i class="fab fa-youtube"></i>
+                                <span>Перейти на канал</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="yandex-map" class="yandex-map">
                 <!-- Декоративные элементы -->
                 <div class="decor decor-left-bottom"></div>
@@ -1424,6 +1462,7 @@
                             <li><a href="#about">Почему выбирают нас</a></li>
                             <li><a href="#our-projects">Наши проекты</a></li>
                             <li><a href="#workflow">Как мы работаем</a></li>
+                            <li><a href="#youtube">Мы на YouTube</a></li>
                             <li><a href="#yandex-map">Карта объектов</a></li>
                             <li><a href="#tour-section">Экскурсия по объектам</a></li>
                             <li><a href="#testimonials">Отзывы клиентов</a></li>
@@ -1453,6 +1492,9 @@
                         </address>
 
                         <div class="footer-social">
+                            <a href="https://www.youtube.com/@TopBuildingBY" class="social-icon" title="Мы на YouTube" target="_blank" rel="noopener">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                             <a href="https://t.me/+375291286217" class="social-icon" target="_blank" rel="noopener">
                                 <i class="fab fa-telegram-plane"></i>
                             </a>
