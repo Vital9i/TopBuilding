@@ -7260,20 +7260,8 @@ address a:hover {
   border-top: 1px solid var(--border-color);
 }
 
-.youtube-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: var(--transition);
-}
-
-.youtube-cta i {
-  font-size: 1.4rem;
+.youtube-cta-wrapper .about-more-btn i:first-child {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

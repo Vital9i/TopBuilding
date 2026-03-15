@@ -1303,6 +1303,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         btn.addEventListener('click', function(e) {
+            // Кнопки только сайдбара (карточка руководителя и т.п.) — не открываем форму заявки
+            if (this.classList.contains('open-sidebar-btn')) {
+                return;
+            }
             // Пропускаем кнопки экскурсий - у них свой обработчик
             if (this.classList.contains('excursion-btn')) {
                 return;
