@@ -7,7 +7,7 @@
     <!-- Главная страница -->
     <url>
         <loc>https://topbuilding.by/</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- О нас -->
     <url>
         <loc>https://topbuilding.by/about/about.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,15 +23,31 @@
     <!-- Проектирование -->
     <url>
         <loc>https://topbuilding.by/design/design.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+    
+    <!-- Строительство -->
+    <url>
+        <loc>https://topbuilding.by/construction/construction.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- Административные сооружения -->
+    <url>
+        <loc>https://topbuilding.by/administrative/administrative.html</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     
     <!-- Новости -->
     <url>
         <loc>https://topbuilding.by/news/news.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -39,7 +55,7 @@
     <!-- Партнеры -->
     <url>
         <loc>https://topbuilding.by/partners/partners.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2026-03-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
