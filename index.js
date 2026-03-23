@@ -1496,16 +1496,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const videoThumbnail = document.getElementById('videoThumbnail');
-    const videoIframe = document.getElementById('videoIframe');
-    
-    if (videoThumbnail && videoIframe) {
-        videoThumbnail.addEventListener('click', function() {
-            videoIframe.src = 'https://drive.google.com/file/d/1oh-3kc4DQtbvzfkc3jKAHqxvPGp-rnHj/preview';
-            videoThumbnail.style.display = 'none';
-            videoIframe.style.display = 'block';
-        });
-    }
 });
 
 // ============================================

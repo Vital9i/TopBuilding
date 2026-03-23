@@ -395,10 +395,10 @@ html {
 
 /* about */
 .about {
-  background: linear-gradient(to bottom, 
+  background: linear-gradient(to bottom,
     var(--background-color) 0%,
-    rgba(22, 24, 34, 0.95) 10%,
-    rgba(22, 24, 34, 0.95) 90%,
+    rgba(22, 24, 34, 0.98) 5%,
+    rgba(22, 24, 34, 0.98) 95%,
     var(--background-color) 100%
   );
   padding: 60px 0 !important;
@@ -2973,11 +2973,11 @@ html {
 /* Projects Section */
 .our-projects {
   padding: 40px 0 80px 0;
-  background: linear-gradient(to bottom, 
-    rgba(22, 24, 34, 0.95) 0%,
-    var(--background-color) 8%,
-    var(--background-color) 92%,
-    rgba(22, 24, 34, 0.95) 100%
+  background: linear-gradient(to bottom,
+    var(--background-color) 0%,
+    rgba(22, 24, 34, 0.98) 5%,
+    rgba(22, 24, 34, 0.98) 95%,
+    var(--background-color) 100%
   );
   position: relative;
   overflow: visible;
@@ -3390,6 +3390,37 @@ position: relative;
   display: none;
 }
 
+.team-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.team-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.team-social-links a:hover {
+  background: var(--gradient-primary);
+  color: var(--dark-color);
+  transform: translateY(-2px);
+}
+
+.team-social-links a i {
+  font-size: 1.1rem;
+}
+
 /* Убеждаемся, что все карточки имеют одинаковую высоту */
 .team-card {
   justify-content: flex-start;
@@ -3445,9 +3476,20 @@ position: relative;
 .video-wrapper {
   position: relative;
   width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
   border-radius: 8px;
   overflow: hidden;
   background: transparent;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
 }
 
 .video-thumbnail {
@@ -3632,10 +3674,10 @@ position: relative;
 .workflow {
     position: relative;
     padding: 3rem 0;
-    background: linear-gradient(to bottom, 
+    background: linear-gradient(to bottom,
       var(--background-color) 0%,
-      rgba(22, 24, 34, 0.95) 10%,
-      rgba(22, 24, 34, 0.95) 90%,
+      rgba(22, 24, 34, 0.98) 5%,
+      rgba(22, 24, 34, 0.98) 95%,
       var(--background-color) 100%
     );
     color: #fff;
@@ -4332,9 +4374,10 @@ position: relative;
 /* Yandex Map Section */
 .yandex-map {
   padding: 60px 0;
-  background: linear-gradient(to bottom, 
-    rgba(22, 24, 34, 0.95) 0%,
-    var(--background-color) 8%,
+  background: linear-gradient(to bottom,
+    var(--background-color) 0%,
+    rgba(22, 24, 34, 0.98) 5%,
+    rgba(22, 24, 34, 0.98) 95%,
     var(--background-color) 100%
   );
   position: relative;
@@ -4449,7 +4492,8 @@ position: relative;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   padding: 12px 24px;
   color: var(--secondary-color);
   font-size: 0.9rem;
@@ -5888,9 +5932,10 @@ address a:hover {
    СЕКЦИЯ: ОТЗЫВЫ КЛИЕНТОВ (СЛАЙДЕР)
    ============================================ */
 .testimonials-section {
-  background: linear-gradient(to bottom, 
+  background: linear-gradient(to bottom,
     var(--background-color) 0%,
-    var(--background-color) 92%,
+    rgba(22, 24, 34, 0.98) 5%,
+    rgba(22, 24, 34, 0.98) 95%,
     var(--background-color) 100%
   );
   position: relative;
@@ -7206,6 +7251,33 @@ address a:hover {
   z-index: 5;
 }
 
+.youtube-top {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.youtube-top .youtube-card-centered {
+  max-width: 640px;
+  width: 100%;
+}
+
+.youtube-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0 30px;
+  align-items: start;
+}
+
+.youtube-left .youtube-grid,
+.youtube-right .youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 0;
+}
+
 .youtube-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7249,7 +7321,7 @@ address a:hover {
   border: none;
 }
 
-.youtube-title {
+.youtube-section .youtube-title {
   padding: 20px 24px;
   margin: 0;
   font-size: 1.1rem;
@@ -7265,6 +7337,25 @@ address a:hover {
 }
 
 @media (max-width: 768px) {
+  .youtube-top {
+    margin-bottom: 24px;
+  }
+
+  .youtube-top .youtube-card-centered {
+    max-width: 100%;
+  }
+
+  .youtube-split {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    gap: 24px;
+  }
+
+  .youtube-left .youtube-grid,
+  .youtube-right .youtube-grid {
+    grid-template-columns: 1fr;
+  }
+
   .youtube-grid {
     grid-template-columns: 1fr;
     margin-top: 30px;
