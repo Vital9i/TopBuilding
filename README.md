@@ -84,7 +84,7 @@ TopBuilding/
 
 - 📱 +375 (29) 128-62-17
 - 📱 +375 (29) 620-03-14
-- 📧 buildingtop@yandex.by
+- 📧 topbuilding.by@gmail.com
 - 🕐 Ежедневно 9:00 - 21:00
 
 ---

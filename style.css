@@ -57,14 +57,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: auto;
-  max-width: 100vw;
+  max-width: 100%;
+  width: 100%;
   height: auto;
   min-height: 100vh;
 }
 
 html {
   overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100%;
+  width: 100%;
   overflow-y: auto;
 }
 
@@ -272,7 +274,7 @@ html {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -1029,7 +1031,7 @@ html {
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   background: linear-gradient(90deg, 
     rgba(22, 24, 34, 0.95) 0%, 
     rgba(20, 22, 31, 0.95) 50%, 
@@ -1428,8 +1430,29 @@ html {
   padding-left: 30px;
 }
 
+.mobile-menu-link.active {
+  color: var(--secondary-color);
+  font-weight: 600;
+  background: rgba(212, 175, 55, 0.08);
+}
+
 .mobile-menu-link:last-child {
   border-bottom: none;
+}
+
+/* Подпункты (как в выпадающем десктоп-меню) */
+.mobile-menu-link.mobile-menu-sub {
+  padding-left: 28px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.95;
+  border-left: 3px solid rgba(212, 175, 55, 0.4);
+  margin-left: 4px;
+}
+
+.mobile-menu-link.mobile-menu-sub:hover,
+.mobile-menu-link.mobile-menu-sub:active {
+  padding-left: 32px;
 }
 
 /* Фикс для мобильных устройств */
@@ -1532,8 +1555,11 @@ html {
 /* Родительские контейнеры для sticky */
 .maklknknin-content-wrapper,
 .main {
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   height: auto;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Hero Section с видео-фоном */
@@ -1545,7 +1571,7 @@ html {
   height: auto;
   min-height: 100vh;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 .hero > .container {
@@ -1973,6 +1999,7 @@ html {
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 16px;
+  pointer-events: none;
 }
 
 .sidebar-back-btn:hover {
@@ -2017,6 +2044,9 @@ html {
   font-size: 0.85rem;
   transition: var(--transition);
   border: 2px solid transparent;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .messenger-btn i {
@@ -4668,7 +4698,7 @@ position: relative;
   border-top: 1px solid var(--border-color);
   position: relative;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   overflow: hidden;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -4685,9 +4715,11 @@ position: relative;
 }
 
 .footer-container {
-  max-width: 1400px;
+  width: 100%;
+  max-width: min(1400px, 100%);
   margin: 0 auto;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .footer-logo {
@@ -4735,10 +4767,12 @@ position: relative;
   margin-bottom: 15px;
   max-width: 100%;
   width: 100%;
+  min-width: 0;
 }
 
 .footer-col {
   margin-bottom: 0;
+  min-width: 0;
 }
 
 .footer-col p {
@@ -4800,6 +4834,8 @@ position: relative;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .footer-menu a:hover,
@@ -4816,6 +4852,8 @@ address p {
   font-style: normal;
   opacity: 0.8;
   font-size: 0.9rem;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 address p i {
@@ -4826,6 +4864,8 @@ address a {
   color: rgba(255,255,255,0.8);
   text-decoration: none;
   transition: color 0.3s ease;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 address a:hover {
@@ -4922,12 +4962,18 @@ address a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .footer-copyright {
   font-size: 0.85rem;
   opacity: 0.7;
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .footer-links {
