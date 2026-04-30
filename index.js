@@ -87,10 +87,22 @@ function animateCounter(element, target, duration = 2000) {
 let countersInitialized = false; // Флаг для предотвращения повторной инициализации
 
 document.addEventListener('DOMContentLoaded', function () {
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll('.hero .counter');
     const heroSection = document.querySelector('.hero');
-    
+
     if (counters.length === 0 || countersInitialized) {
+        return;
+    }
+
+    /** На мобильных в hero счётчики сразу в финальных значениях (без анимации) */
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        countersInitialized = true;
+        counters.forEach(function (counter) {
+            const target = parseInt(counter.getAttribute('data-target'), 10);
+            if (!isNaN(target)) {
+                counter.textContent = String(Math.floor(target));
+            }
+        });
         return;
     }
     
@@ -686,15 +698,15 @@ function openProjectModal(type) {
             ]
         }
     };
-    
+
     if (projectData[type]) {
         const header = document.querySelector('.modal-header h3');
         if (header) header.textContent = projectData[type].title;
-        
+
         const sliderContainer = document.querySelector('.slider-container');
         if (sliderContainer) {
             sliderContainer.innerHTML = '';
-            
+
             projectData[type].images.forEach((imageSrc, index) => {
                 const img = document.createElement('img');
                 img.src = imageSrc;
@@ -703,9 +715,9 @@ function openProjectModal(type) {
                 img.style.cursor = 'zoom-in';
                 sliderContainer.appendChild(img);
             });
-            
+
             sliderContainer.scrollLeft = 0;
-            
+
             setTimeout(function() {
                 initSliderNavigation();
             }, 50);
@@ -721,17 +733,16 @@ function closeProjectModal() {
     }
 }
 
-// Переключение между табами
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.modal-tab').forEach(tab => {
         tab.addEventListener('click', () => {
             document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
+
             document.querySelectorAll('.modal-slider').forEach(slider => {
                 slider.classList.remove('active');
             });
-            
+
             const tabName = tab.getAttribute('data-tab');
             const targetSlider = document.querySelector(`.modal-slider[data-tab-content="${tabName}"]`);
             if (targetSlider) targetSlider.classList.add('active');
@@ -739,18 +750,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Функция для инициализации навигации слайдера
 function initSliderNavigation() {
     document.querySelectorAll('.slider-prev').forEach(btn => {
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
-        
+
         newBtn.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             const slider = this.closest('.modal-slider');
             if (!slider) return;
-            
+
             const container = slider.querySelector('.slider-container');
             if (container) {
                 const scrollAmount = container.offsetWidth;
@@ -765,13 +775,13 @@ function initSliderNavigation() {
     document.querySelectorAll('.slider-next').forEach(btn => {
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
-        
+
         newBtn.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             const slider = this.closest('.modal-slider');
             if (!slider) return;
-            
+
             const container = slider.querySelector('.slider-container');
             if (container) {
                 const scrollAmount = container.offsetWidth;
@@ -784,10 +794,9 @@ function initSliderNavigation() {
     });
 }
 
-// Инициализируем навигацию при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     initSliderNavigation();
-    
+
     const originalOpenProjectModal = window.openProjectModal;
     if (originalOpenProjectModal) {
         window.openProjectModal = function(type) {
@@ -799,7 +808,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Закрытие по ESC
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         closeProjectModal();
@@ -1220,7 +1228,12 @@ function openCallbackModal(source = 'Не указано') {
         
         const form = document.getElementById('callbackForm');
         const messageDiv = document.getElementById('callback-message');
+        const submitLink = document.getElementById('callbackSubmitLink');
         if (form) form.reset();
+        if (submitLink) {
+            submitLink.removeAttribute('aria-disabled');
+            submitLink.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
+        }
         if (messageDiv) {
             messageDiv.innerHTML = '';
             messageDiv.className = 'callback-message';
@@ -1228,7 +1241,14 @@ function openCallbackModal(source = 'Не указано') {
     }
 }
 
+function clearCallbackSuccessHash() {
+    if (window.location.hash === '#callback-form-success' && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+}
+
 window.closeCallbackModal = function() {
+    clearCallbackSuccessHash();
     const modal = document.getElementById('callbackModal');
     if (modal) {
         modal.style.display = 'none';
@@ -1245,8 +1265,9 @@ async function sendToTelegram(name, phone, source, additionalInfo = '') {
         throw new Error('TELEGRAM_CONFIG не загружен');
     }
     
+    const nameLine = (name && name.trim()) ? name.trim() : 'не указано';
     let message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
-                  `👤 <b>Имя:</b> ${name}\n` +
+                  `👤 <b>Имя:</b> ${nameLine}\n` +
                   `📱 <b>Телефон:</b> ${phone}\n` +
                   `📍 <b>Источник:</b> ${source}\n`;
     
@@ -1414,6 +1435,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const callbackForm = document.getElementById('callbackForm');
     if (callbackForm) {
+        function setCallbackSubmitBusy(submitControl, busy) {
+            if (!submitControl) return;
+            if (submitControl.tagName === 'A' || submitControl.getAttribute('role') === 'button') {
+                if (busy) {
+                    submitControl.setAttribute('aria-disabled', 'true');
+                } else {
+                    submitControl.removeAttribute('aria-disabled');
+                }
+            } else {
+                submitControl.disabled = busy;
+            }
+        }
+
+        const callbackSubmitLink = document.getElementById('callbackSubmitLink');
+        if (callbackSubmitLink) {
+            callbackSubmitLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.getAttribute('aria-disabled') === 'true') return;
+                if (typeof callbackForm.requestSubmit === 'function') {
+                    callbackForm.requestSubmit();
+                } else {
+                    callbackForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+                }
+            });
+        }
+
         callbackForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -1422,16 +1469,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const messageDiv = document.getElementById('callback-message');
             const submitBtn = this.querySelector('.callback-submit-btn');
             
-            if (!name || !phone) {
+            if (!phone) {
                 if (messageDiv) {
-                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, укажите телефон';
                     messageDiv.className = 'callback-message error';
                 }
                 return;
             }
             
             if (submitBtn) {
-                submitBtn.disabled = true;
+                setCallbackSubmitBusy(submitBtn, true);
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Отправка...</span>';
             }
             
@@ -1443,6 +1490,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.';
                         messageDiv.className = 'callback-message success';
                     }
+
+                    if (window.history && window.history.replaceState) {
+                        var baseUrl = window.location.pathname + window.location.search;
+                        window.history.replaceState(null, '', baseUrl + '#callback-form-success');
+                    }
+
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'callback_form_success',
+                        callback_source: currentCallbackSource || '',
+                        page_location: window.location.href
+                    });
                     
                     callbackForm.reset();
                     
@@ -1461,7 +1520,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (submitBtn) {
-                submitBtn.disabled = false;
+                setCallbackSubmitBusy(submitBtn, false);
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Отправить заявку</span>';
             }
         });

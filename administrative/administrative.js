@@ -82,8 +82,9 @@ async function sendToTelegram(name, phone, source) {
         return { ok: false };
     }
     
+    const nameLine = (name && name.trim()) ? name.trim() : 'не указано';
     const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
-                  `👤 <b>Имя:</b> ${name}\n` +
+                  `👤 <b>Имя:</b> ${nameLine}\n` +
                   `📱 <b>Телефон:</b> ${phone}\n` +
                   `📍 <b>Источник:</b> ${source}\n` +
                   `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
@@ -116,9 +117,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const messageDiv = document.getElementById('callback-message');
             const submitBtn = this.querySelector('.callback-submit-btn');
             
-            if (!name || !phone) {
+            if (!phone) {
                 if (messageDiv) {
-                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, заполните все поля';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Пожалуйста, укажите телефон';
                     messageDiv.className = 'callback-message error';
                 }
                 return;

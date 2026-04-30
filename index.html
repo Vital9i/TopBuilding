@@ -2,6 +2,8 @@
 <html lang="ru">
 
 <head>
+    <!-- dataLayer до GTM: очередь событий не теряется (рекомендация Google) -->
+    <script>window.dataLayer = window.dataLayer || [];</script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,6 +11,13 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MDM9B4MX');</script>
     <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wjjglyal80");
+    </script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -212,7 +221,29 @@
                                 Проектируем и Строим дома вашей мечты
                                 <span class="highlight">под ключ</span>
                             </h1>
-                            <p class="hero-subtitle">Полный цикл: от идеи до заселения в Минской области</p>
+                            <p class="hero-materials">
+                                <span class="hero-materials-inner">
+                                    <span class="hero-materials-line">
+                                        <span class="hero-materials-lead">Строим из</span>
+                                        <span class="hero-materials-chip"><i class="fas fa-cubes" aria-hidden="true"></i><strong>керамзитных блоков</strong></span><span class="hero-materials-punct">, </span>
+                                        <span class="hero-materials-chip"><i class="fas fa-cubes" aria-hidden="true"></i><strong>газосиликатных блоков</strong></span><span class="hero-materials-punct">, </span>
+                                        <span class="hero-materials-chip"><i class="fas fa-th" aria-hidden="true"></i><strong>кирпича</strong></span><span class="hero-materials-punct"> и </span>
+                                        <span class="hero-materials-chip"><i class="fas fa-monument" aria-hidden="true"></i><strong>монолита</strong></span><span class="hero-materials-punct">.</span>
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="hero-subtitle">
+                                <span class="hero-subtitle-inner">
+                                    <span class="hero-subtitle-icon-wrap" aria-hidden="true"><i class="fas fa-route"></i></span>
+                                    <span class="hero-subtitle-text-wrap">
+                                        <span class="hero-subtitle-main"><strong class="hero-subtitle-label">Полный цикл:</strong> от идеи до заселения в Минской области</span>
+                                        <span class="hero-subtitle-accent">
+                                            <i class="fas fa-clock" aria-hidden="true"></i>
+                                            <span>за <strong>11</strong> месяцев</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </p>
                             
                             <!-- USP блоки с анимированными счетчиками -->
                             <div class="hero-features">
@@ -276,10 +307,10 @@
 
                             <!-- Дополнительная информация -->
                             <div class="hero-info">
-                                <p><i class="fas fa-check-circle"></i> Бесплатный выезд на участок</p>
-                                <p><i class="fas fa-check-circle"></i> Индивидуальные и готовые проекты</p>
-                                <p><i class="fas fa-check-circle"></i> Авторский надзор на всех этапах</p>
-                                <p><i class="fas fa-check-circle"></i> Сертифицированные материалы</p>
+                                <p><i class="fas fa-check-circle"></i><span>Бесплатный выезд на участок</span></p>
+                                <p><i class="fas fa-check-circle"></i><span>Индивидуальные и готовые проекты</span></p>
+                                <p><i class="fas fa-check-circle"></i><span>Авторский надзор на всех этапах</span></p>
+                                <p><i class="fas fa-check-circle"></i><span>Сертифицированные материалы</span></p>
                             </div>
                         </div>
                     </div>
@@ -569,71 +600,46 @@
                             Смотрите наши видеообзоры, процесс строительства и готовые объекты
                         </p>
             
-                        <div class="youtube-top">
-                            <div class="youtube-card youtube-card-centered">
+                        <div class="youtube-section-grid">
+                            <div class="youtube-card">
                                 <div class="youtube-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/AHl0RueSh9M" 
-                                            title="Экскурсия по готовому дому в стиле шале" 
-                                            frameborder="0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                            allowfullscreen>
-                                    </iframe>
+                                    <iframe src="https://www.youtube.com/embed/AHl0RueSh9M"
+                                            title="Экскурсия по готовому дому в стиле шале"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
                                 </div>
                                 <h3 class="youtube-title">Познакомьтесь с нами поближе</h3>
                             </div>
-                        </div>
-                        <div class="youtube-split">
-                            <div class="youtube-left">
-                                <div class="youtube-grid">
-                                    <div class="youtube-card">
-                                        <div class="youtube-wrapper">
-                                            <iframe src="https://www.youtube.com/embed/-FMpVVJmpsA" 
-                                                    title="Как выбрать участок" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <h3 class="youtube-title">Как выбрать участок для строительства дома</h3>
-                                    </div>
-                                    <div class="youtube-card">
-                                        <div class="youtube-wrapper">
-                                            <iframe src="https://www.youtube.com/embed/XwDCS3asd30" 
-                                                    title="Построили дом в 17 км от Минска — вот что получилось" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <h3 class="youtube-title">Построили дом в 17 км от Минска — вот что получилось</h3>
-                                    </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/lqhM23TOljM"
+                                            title="С чего начать строительство дома в Беларуси? Геология, геодезия, проект"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
                                 </div>
+                                <h3 class="youtube-title">С чего начать строительство дома в Беларуси? Геология, геодезия, проект</h3>
                             </div>
-                            <div class="youtube-right">
-                                <div class="youtube-grid">
-                                    <div class="youtube-card">
-                                        <div class="youtube-wrapper">
-                                            <iframe src="https://www.youtube.com/embed/KTHbEwuUEDE" 
-                                                    title="Наш дом 13 лет спустя" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <h3 class="youtube-title">Наш дом 13 лет спустя + отзыв клиента</h3>
-                                    </div>
-                                    <div class="youtube-card">
-                                        <div class="youtube-wrapper">
-                                            <iframe src="https://www.youtube.com/embed/_KDpv7E0u4k" 
-                                                    title="Строительство завода" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <h3 class="youtube-title">Строительство завода - бросаем себе вызов</h3>
-                                    </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/XwDCS3asd30"
+                                            title="Построили дом в 17 км от Минска — вот что получилось"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
                                 </div>
+                                <h3 class="youtube-title">Построили дом в 17 км от Минска — вот что получилось</h3>
+                            </div>
+                            <div class="youtube-card">
+                                <div class="youtube-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/_KDpv7E0u4k"
+                                            title="Строительство завода"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                </div>
+                                <h3 class="youtube-title">Строительство завода — бросаем себе вызов</h3>
                             </div>
                         </div>
                         <div class="youtube-cta-wrapper">
@@ -678,7 +684,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Классический стиль -->
                     <div class="project-card" onclick="openProjectModal('classic')">
                         <div class="project-image">
@@ -1579,15 +1585,17 @@
             </div>
             <form id="callbackForm" class="callback-form">
                 <div class="form-group">
-                    <input type="text" id="callback-name" name="name" placeholder="Ваше имя" required>
+                    <input type="text" id="callback-name" name="name" placeholder="Ваше имя (необязательно)">
                 </div>
                 <div class="form-group">
                     <input type="tel" id="callback-phone" name="phone" placeholder="+375 (29) 123-45-67" required>
                 </div>
-                <button type="submit" class="callback-submit-btn">
+                <a href="#callback-form-submit" id="callbackSubmitLink" class="callback-submit-btn" role="button" data-gtm-form="callback-order">
                     <i class="fas fa-paper-plane"></i>
                     <span>Отправить заявку</span>
-                </button>
+                </a>
+                <!-- Скрытая кнопка: нужна для отправки формы по Enter в полях (ссылка не считается submit-кнопкой) -->
+                <button type="submit" class="callback-submit-fallback" tabindex="-1" aria-hidden="true">Отправить</button>
             </form>
             <div id="callback-message" class="callback-message"></div>
         </div>

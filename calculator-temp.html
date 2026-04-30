@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wjjglyal80");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Временная разработка - Калькулятор стоимости дома</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a1d29;
+            --secondary-color: #D4AF37;
+            --text-color: #FFFFFF;
+            --text-secondary: #B8BCC8;
+            --dark-color: #0F1117;
+            --gradient-dark: linear-gradient(135deg, #1a1d29 0%, #252936 100%);
+            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
+            --gradient-overlay: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(201, 169, 97, 0.04) 100%);
+            --border-color: rgba(212, 175, 55, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.25);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-md: 16px;
+            --radius-sm: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            max-height: 100dvh;
+            overflow: hidden;
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            max-height: 100dvh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .calc-page {
+            position: relative;
+            flex: 1 1 0;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .calc-hero-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -20%, rgba(212, 175, 55, 0.12), transparent 55%),
+                linear-gradient(160deg, #1a1d29 0%, #252936 45%, #0f1117 100%);
+            pointer-events: none;
+        }
+
+        .calc-hero-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.58);
+            pointer-events: none;
+        }
+
+        .calc-topbar {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding:
+                max(9px, env(safe-area-inset-top, 0px))
+                max(16px, env(safe-area-inset-right, 0px))
+                9px
+                max(16px, env(safe-area-inset-left, 0px));
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(26, 29, 41, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .calc-home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .calc-home-link:hover {
+            color: #E5C76B;
+        }
+
+        .calc-wrap {
+            position: relative;
+            z-index: 2;
+            flex: 1 1 0;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4px 12px 4px;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .calc-fit-host {
+            flex: 1 1 0;
+            min-height: 0;
+            width: 100%;
+            max-width: 1120px;
+            margin-inline: auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+
+        .calc-section {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 0;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow:
+                0 16px 48px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .calc-section.calc-section--scaled {
+            will-change: transform;
+        }
+
+        .calc-section-head {
+            flex-shrink: 0;
+            padding: 5px 10px 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .calc-section-head-top {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 10px;
+            margin-bottom: 3px;
+        }
+
+        .calc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(201, 169, 97, 0.1) 100%);
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 4px 11px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            margin: 0;
+            text-transform: uppercase;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                var(--shadow-gold),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .calc-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.32rem, 3.2vw, 1.85rem);
+            font-weight: 800;
+            line-height: 1.12;
+            margin: 0;
+            flex: 1 1 200px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.55);
+            color: #fff;
+        }
+
+        .calc-title .highlight {
+            color: var(--secondary-color);
+        }
+
+        .calc-subtitle-wrap {
+            margin: 0;
+            max-width: none;
+        }
+
+        .calc-subtitle-inner {
+            display: block;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background: linear-gradient(
+                145deg,
+                rgba(212, 175, 55, 0.06) 0%,
+                rgba(0, 0, 0, 0.32) 55%,
+                rgba(0, 0, 0, 0.38) 100%
+            );
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .calc-subtitle {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.28;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        .calc-section-body {
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc-layout {
+            flex: 1 1 0;
+            width: 100%;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(220px, 0.92fr);
+            gap: 0;
+            align-items: stretch;
+            overflow: hidden;
+        }
+
+        .calc-form-panel {
+            padding: 8px 10px 10px;
+            border-right: 1px solid var(--glass-border);
+            min-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .calc-preview-panel {
+            padding: 8px 10px 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.12);
+            gap: 0;
+        }
+
+        .calc-fields-grid {
+            display: block;
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .calc-field-row-pair {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.85fr);
+            gap: 10px 12px;
+            align-items: stretch;
+            margin-bottom: 0;
+            width: 100%;
+            min-height: 0;
+        }
+
+        .calc-field-row-pair .field {
+            margin-bottom: 0;
+            min-height: 0;
+        }
+
+        @media (min-width: 660px) {
+            .calc-fields-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 12px;
+                row-gap: 10px;
+                align-items: stretch;
+                align-content: stretch;
+                grid-auto-rows: minmax(52px, 1fr);
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .calc-fields-grid .field {
+                margin-bottom: 0;
+                height: 100%;
+                min-height: 0;
+            }
+
+            .calc-field-row-pair.calc-field-span-2 {
+                grid-column: 1 / -1;
+                height: 100%;
+                min-height: 0;
+            }
+
+            .calc-field-span-2 {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .calc-fields-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 12px;
+            }
+        }
+
+        .calc-form-footer {
+            margin-top: 10px;
+            padding-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .field {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 6px;
+            justify-content: flex-start;
+            transition: transform 0.2s ease;
+        }
+
+        @media (min-width: 660px) {
+            .calc-fields-grid > .field {
+                margin-bottom: 0;
+            }
+        }
+
+        label {
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(26, 29, 41, 0.72);
+            color: var(--text-color);
+            font-size: 14px;
+            font-family: inherit;
+            transition: var(--transition);
+            min-height: 46px;
+            box-sizing: border-box;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1.5L7 6.5L13 1.5' stroke='%23D4AF37' stroke-opacity='0.85' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 14px 8px;
+        }
+
+        @media (min-width: 660px) {
+            .calc-fields-grid .field input,
+            .calc-fields-grid .field select {
+                flex: 1 1 auto;
+                min-height: 48px;
+                max-height: 72px;
+            }
+
+            .calc-field-row-pair .field {
+                height: 100%;
+            }
+        }
+
+        input:hover,
+        select:hover {
+            border-color: rgba(212, 175, 55, 0.28);
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 22px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: inherit;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            transition: left 0.5s ease;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--dark-color);
+            box-shadow: var(--shadow-gold);
+            border-radius: 50px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .result {
+            margin-top: 8px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: rgba(26, 29, 41, 0.55);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--secondary-color);
+            line-height: 1.4;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .result strong {
+            color: var(--secondary-color);
+        }
+
+        .preview-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0 0 8px;
+            flex-shrink: 0;
+        }
+
+        .preview-image-wrap {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: rgba(15, 17, 23, 0.5);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            flex: 3 1 0;
+            min-height: 0;
+            transition: box-shadow 0.35s ease, transform 0.35s ease;
+        }
+
+        .preview-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        .preview-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: minmax(44px, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+            flex: 1 1 0;
+            min-height: 0;
+            align-content: stretch;
+        }
+
+        .meta-item {
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 0;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.2s ease;
+        }
+
+        .meta-label {
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .calc-section-notes {
+            flex-shrink: 0;
+            margin: 0;
+            padding: 3px 9px 5px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 899px) {
+            .preview-meta {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-auto-rows: auto;
+                flex: 0 1 auto;
+                align-content: start;
+                min-height: 0;
+            }
+
+            .calc-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                align-content: start;
+                overflow: visible;
+                flex: 0 1 auto;
+                min-height: 0;
+            }
+
+            .calc-form-panel {
+                border-right: none;
+                border-bottom: 1px solid var(--glass-border);
+                flex: 0 0 auto;
+                min-height: 0;
+                overflow: visible;
+            }
+
+            .calc-preview-panel {
+                background: transparent;
+                flex: 0 1 auto;
+                min-height: 0;
+                overflow: visible;
+            }
+
+            .calc-fields-grid {
+                overflow: visible;
+                flex: 0 1 auto;
+            }
+
+            .preview-image-wrap {
+                flex: 0 0 auto;
+                min-height: min(220px, 42vw);
+                max-height: min(320px, 48vh);
+                aspect-ratio: 5 / 4;
+            }
+
+            .preview-title {
+                font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+            }
+
+            html {
+                height: auto;
+                min-height: 100%;
+                min-height: 100dvh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-height: none;
+            }
+
+            body {
+                height: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-height: none;
+                min-height: 100%;
+                min-height: 100dvh;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+            }
+
+            .calc-page {
+                flex: 0 0 auto;
+                min-height: 100dvh;
+                overflow: visible;
+            }
+
+            .calc-wrap {
+                flex: 0 0 auto;
+                min-height: 0;
+                overflow: visible;
+                padding:
+                    6px
+                    max(10px, env(safe-area-inset-left, 0px))
+                    calc(10px + env(safe-area-inset-bottom, 0px))
+                    max(10px, env(safe-area-inset-right, 0px));
+            }
+
+            .calc-fit-host {
+                flex: 0 0 auto;
+                overflow: visible;
+                min-height: 0;
+            }
+
+            .calc-section {
+                flex: 0 0 auto;
+                overflow: visible;
+                border-radius: clamp(12px, 3vw, var(--radius-md));
+            }
+
+            .calc-section-head {
+                padding: 6px 10px 5px;
+            }
+
+            .calc-section-body {
+                overflow: visible;
+                flex: 0 1 auto;
+            }
+
+            .calc-section-notes {
+                padding:
+                    4px 10px 6px
+                    max(10px, env(safe-area-inset-left, 0px))
+                    calc(6px + env(safe-area-inset-bottom, 0px))
+                    max(10px, env(safe-area-inset-right, 0px));
+            }
+
+            input,
+            select,
+            button,
+            .area-range {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        @media (max-width: 559px) {
+            .calc-field-row-pair {
+                grid-template-columns: 1fr;
+                gap: 10px 0;
+            }
+
+            .preview-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-progress-label {
+                font-size: 10px;
+                line-height: 1.35;
+            }
+
+            .calc-progress-hint {
+                display: block;
+                margin-top: 2px;
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .actions button {
+                width: 100%;
+            }
+        }
+
+        /* Интерактив: прогресс, подписи с иконками, фокус, слайдер */
+        .calc-progress {
+            grid-column: 1 / -1;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .calc-progress-track {
+            height: 8px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .calc-progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #b8922e, var(--secondary-color), #e8d089);
+            box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+            transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .calc-progress-label {
+            display: block;
+            margin-top: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .calc-progress-hint {
+            font-weight: 400;
+            color: var(--text-secondary);
+            opacity: 0.85;
+        }
+
+        .field-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: default;
+        }
+
+        .field-label i {
+            width: 1.1em;
+            color: var(--secondary-color);
+            opacity: 0.95;
+            font-size: 0.95em;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .field:focus-within .field-label i {
+            transform: scale(1.12);
+            color: #e8c84d;
+        }
+
+        .field:focus-within {
+            z-index: 1;
+        }
+
+        .field:focus-within::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
+            pointer-events: none;
+            animation: fieldGlowIn 0.25s ease-out forwards;
+        }
+
+        @keyframes fieldGlowIn {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .area-range-wrap {
+            margin-top: 8px;
+        }
+
+        .area-range {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .area-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            box-shadow: 0 2px 12px rgba(212, 175, 55, 0.45);
+            cursor: grab;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .area-range:active::-webkit-slider-thumb {
+            cursor: grabbing;
+            transform: scale(1.08);
+        }
+
+        .area-range::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            box-shadow: 0 2px 12px rgba(212, 175, 55, 0.45);
+            cursor: grab;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .preview-image-wrap.preview-flash {
+            animation: previewFlash 0.7s ease-out;
+        }
+
+        @keyframes previewFlash {
+            0% {
+                box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.65);
+            }
+            100% {
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        .meta-item.meta-pulse {
+            animation: metaPulse 0.55s ease-out;
+        }
+
+        @keyframes metaPulse {
+            0% {
+                border-color: rgba(212, 175, 55, 0.75);
+                background: rgba(212, 175, 55, 0.12);
+            }
+            100% {
+                border-color: var(--glass-border);
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        .result.result-pop {
+            animation: resultPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes resultPop {
+            0% {
+                transform: scale(1);
+            }
+            40% {
+                transform: scale(1.02);
+                box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .calc-progress-fill,
+            .field,
+            .meta-item,
+            .preview-image-wrap,
+            .result,
+            .field:focus-within::after {
+                transition: none !important;
+                animation: none !important;
+            }
+
+            .preview-image-wrap.preview-flash,
+            .meta-item.meta-pulse,
+            .result.result-pop {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calc-page">
+        <div class="calc-hero-bg" aria-hidden="true"></div>
+        <div class="calc-hero-overlay" aria-hidden="true"></div>
+        <nav class="calc-topbar">
+            <a href="index.html" class="calc-home-link"><i class="fas fa-arrow-left"></i><span>На главную</span></a>
+        </nav>
+        <main class="calc-wrap">
+        <div class="calc-fit-host">
+        <section class="calc-section" aria-labelledby="calc-heading">
+            <header class="calc-section-head">
+                <div class="calc-section-head-top">
+                    <span class="calc-badge">Временная разработка</span>
+                    <h1 class="calc-title" id="calc-heading">Калькулятор <span class="highlight">стоимости</span> дома</h1>
+                </div>
+                <div class="calc-subtitle-wrap">
+                    <div class="calc-subtitle-inner">
+                        <p class="calc-subtitle">
+                            Здесь разрабатываем логику и интерфейс отдельно от главной страницы.
+                            После согласования перенесем готовый блок в index.html.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="calc-section-body">
+            <div class="calc-layout">
+            <div class="calc-form-panel">
+            <div class="calc-fields-grid">
+                <div class="calc-progress calc-field-span-2">
+                    <div class="calc-progress-track">
+                        <div class="calc-progress-fill" id="calcProgressFill"></div>
+                    </div>
+                    <span class="calc-progress-label" id="calcProgressLabel">
+                        Заполнение: <strong id="calcProgressPct">0</strong>% ·
+                        <span class="calc-progress-hint" id="calcProgressHint">меняйте параметры — превью обновится</span>
+                    </span>
+                </div>
+
+                <div class="calc-field-row-pair calc-field-span-2">
+                    <div class="field">
+                        <label for="projectType" class="field-label"><i class="fas fa-pen-ruler" aria-hidden="true"></i>Проект</label>
+                        <select id="projectType">
+                            <option value="ready" data-multiplier="1">Есть проект</option>
+                            <option value="client" data-multiplier="1.04">Ваш проект</option>
+                            <option value="custom" data-multiplier="1.12">Разрабатываем индивидуальный</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="area" class="field-label"><i class="fas fa-vector-square" aria-hidden="true"></i>Площадь дома (м²)</label>
+                        <input id="area" type="number" min="20" max="500" step="1" value="120">
+                        <div class="area-range-wrap">
+                            <input type="range" id="areaRange" class="area-range" min="20" max="500" step="1" value="120" aria-label="Площадь дома, ползунок">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="floors" class="field-label"><i class="fas fa-layer-group" aria-hidden="true"></i>Этажность</label>
+                    <select id="floors">
+                        <option value="1" data-multiplier="1">1 этаж</option>
+                        <option value="2" data-multiplier="1.15">2 этажа</option>
+                        <option value="3" data-multiplier="1.25">3 этажа</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="foundation" class="field-label"><i class="fas fa-border-all" aria-hidden="true"></i>Тип фундамента</label>
+                    <select id="foundation">
+                        <option value="strip" data-multiplier="1">Лента</option>
+                        <option value="slab" data-multiplier="1.08">Плита</option>
+                        <option value="pile" data-multiplier="0.95">Свайно-ростверковый</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="walls" class="field-label"><i class="fas fa-cubes" aria-hidden="true"></i>Материал стен</label>
+                    <select id="walls">
+                        <option value="keramzit" data-price="980">Керамзитный блок</option>
+                        <option value="gas" data-price="1040">Газосиликатный блок</option>
+                        <option value="brick" data-price="1280">Кирпич</option>
+                        <option value="monolith" data-price="1420">Монолит</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="roof" class="field-label"><i class="fas fa-house-chimney" aria-hidden="true"></i>Материал крыши</label>
+                    <select id="roof">
+                        <option value="tile" data-multiplier="1.07">Черепица</option>
+                        <option value="soft" data-multiplier="1.04">Гибкая черепица</option>
+                        <option value="clickfalz" data-multiplier="1.1">Кликфальц</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="roofShape" class="field-label"><i class="fas fa-shapes" aria-hidden="true"></i>Форма крыши</label>
+                    <select id="roofShape">
+                        <option value="flat" data-multiplier="0.98">Плоская</option>
+                        <option value="shed" data-multiplier="1.02">Односкатная</option>
+                        <option value="gable" data-multiplier="1">Двускатная</option>
+                        <option value="hip" data-multiplier="1.12">Четырёхскатная</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="mansard" class="field-label"><i class="fas fa-building" aria-hidden="true"></i>Мансардный этаж</label>
+                    <select id="mansard">
+                        <option value="no" data-multiplier="1">Нет</option>
+                        <option value="yes" data-multiplier="1.1">Да</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="terrace" class="field-label"><i class="fas fa-umbrella-beach" aria-hidden="true"></i>Терраса</label>
+                    <select id="terrace">
+                        <option value="no" data-add="0">Нет</option>
+                        <option value="yes" data-add="12000">Да</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="exteriorFinish" class="field-label"><i class="fas fa-paintbrush" aria-hidden="true"></i>Наружная отделка</label>
+                    <select id="exteriorFinish">
+                        <option value="no" data-add="0">Нет</option>
+                        <option value="yes" data-add="11000">Да</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="package" class="field-label"><i class="fas fa-box-open" aria-hidden="true"></i>Комплектация</label>
+                    <select id="package">
+                        <option value="box" data-multiplier="1">Коробка</option>
+                        <option value="rough" data-multiplier="1.22">Черновая</option>
+                        <option value="turnkey" data-multiplier="1.45">Под ключ</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="calc-form-footer">
+                <div class="actions">
+                    <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                    <button class="btn-ghost" id="resetBtn" type="button">Сбросить</button>
+                </div>
+                <div class="result" id="result">
+                    Ориентировочная стоимость: <strong>0 BYN</strong>
+                </div>
+            </div>
+            </div>
+
+            <div class="calc-preview-panel">
+                <p class="preview-title">Визуализация дома по выбранным параметрам</p>
+                <div class="preview-image-wrap">
+                    <img id="housePreview" class="preview-image" alt="Предпросмотр дома">
+                </div>
+
+                <div class="preview-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Материал стен</div>
+                        <div class="meta-value" id="metaWalls">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Материал крыши</div>
+                        <div class="meta-value" id="metaRoof">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Форма крыши</div>
+                        <div class="meta-value" id="metaRoofShape">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Мансарда</div>
+                        <div class="meta-value" id="metaMansard">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Этажность</div>
+                        <div class="meta-value" id="metaFloors">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Площадь</div>
+                        <div class="meta-value" id="metaArea">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Комплектация</div>
+                        <div class="meta-value" id="metaPackage">-</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Доп. опции</div>
+                        <div class="meta-value" id="metaOptions">-</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <p class="calc-section-notes">
+                Текущая формула тестовая. Здесь можно спокойно менять поля, коэффициенты,
+                валидации и внешний вид до финального переноса на главную.
+            </p>
+        </section>
+        </div>
+    </main>
+    </div>
+
+    <script>
+        function fitCalculatorViewport() {
+            var wrap = document.querySelector('.calc-wrap');
+            var host = document.querySelector('.calc-fit-host');
+            var section = document.querySelector('.calc-section');
+            if (!wrap || !host || !section) return;
+
+            if (
+                typeof window.matchMedia === 'function' &&
+                window.matchMedia('(max-width: 899px)').matches
+            ) {
+                section.classList.remove('calc-section--scaled');
+                section.style.zoom = '';
+                section.style.transform = '';
+                section.style.transformOrigin = '';
+                return;
+            }
+
+            section.classList.remove('calc-section--scaled');
+            section.style.zoom = '';
+            section.style.transform = '';
+            section.style.transformOrigin = '';
+
+            requestAnimationFrame(function () {
+                var avail = Math.max(host.clientHeight - 2, 0);
+                if (avail < 48) {
+                    setTimeout(scheduleFitCalculatorViewport, 60);
+                    return;
+                }
+
+                var need = section.scrollHeight;
+                if (!need || need < 8) return;
+                if (need <= avail + 1) return;
+
+                var z = Math.max(0.45, avail / need - 0.025);
+                if (!isFinite(z) || z <= 0) return;
+                section.classList.add('calc-section--scaled');
+                section.style.transformOrigin = 'top center';
+                section.style.transform = 'scale(' + z + ')';
+
+                requestAnimationFrame(function () {
+                    var sb = section.getBoundingClientRect();
+                    var hb = host.getBoundingClientRect();
+                    if (sb.bottom <= hb.bottom + 2) return;
+                    if (sb.bottom < 12) return;
+                    var z2 = Math.max(0.45, z * (hb.bottom / sb.bottom));
+                    if (!isFinite(z2)) return;
+                    section.style.transform = 'scale(' + z2 + ')';
+                });
+            });
+        }
+
+        function scheduleFitCalculatorViewport() {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(fitCalculatorViewport);
+            });
+        }
+
+        window.addEventListener('resize', scheduleFitCalculatorViewport);
+        window.addEventListener('orientationchange', function () {
+            setTimeout(scheduleFitCalculatorViewport, 200);
+        });
+
+        window.addEventListener('load', function () {
+            scheduleFitCalculatorViewport();
+        });
+
+        if (window.visualViewport) {
+            visualViewport.addEventListener('resize', scheduleFitCalculatorViewport);
+        }
+
+        const areaEl = document.getElementById('area');
+        const projectTypeEl = document.getElementById('projectType');
+        const floorsEl = document.getElementById('floors');
+        const foundationEl = document.getElementById('foundation');
+        const wallsEl = document.getElementById('walls');
+        const roofEl = document.getElementById('roof');
+        const roofShapeEl = document.getElementById('roofShape');
+        const mansardEl = document.getElementById('mansard');
+        const terraceEl = document.getElementById('terrace');
+        const exteriorFinishEl = document.getElementById('exteriorFinish');
+        const packageEl = document.getElementById('package');
+        const resultEl = document.getElementById('result');
+        const calcBtn = document.getElementById('calcBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const housePreviewEl = document.getElementById('housePreview');
+        const metaWallsEl = document.getElementById('metaWalls');
+        const metaRoofEl = document.getElementById('metaRoof');
+        const metaRoofShapeEl = document.getElementById('metaRoofShape');
+        const metaMansardEl = document.getElementById('metaMansard');
+        const metaFloorsEl = document.getElementById('metaFloors');
+        const metaAreaEl = document.getElementById('metaArea');
+        const metaPackageEl = document.getElementById('metaPackage');
+        const metaOptionsEl = document.getElementById('metaOptions');
+        const areaRangeEl = document.getElementById('areaRange');
+        const calcProgressFill = document.getElementById('calcProgressFill');
+        const calcProgressPct = document.getElementById('calcProgressPct');
+        const calcProgressHint = document.getElementById('calcProgressHint');
+        const previewImageWrap = document.querySelector('.preview-image-wrap');
+
+        const touchedFields = new Set();
+        const FIELD_KEYS = [
+            'projectType',
+            'area',
+            'floors',
+            'foundation',
+            'walls',
+            'roof',
+            'roofShape',
+            'mansard',
+            'terrace',
+            'exteriorFinish',
+            'package'
+        ];
+        const TRACK_TOTAL = FIELD_KEYS.length;
+        var calculatePassCount = 0;
+
+        function markFieldTouched(key) {
+            if (touchedFields.has(key)) return;
+            touchedFields.add(key);
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            if (!calcProgressFill || !calcProgressPct) return;
+            var pct = Math.min(100, Math.round((touchedFields.size / TRACK_TOTAL) * 100));
+            calcProgressFill.style.width = pct + '%';
+            calcProgressPct.textContent = String(pct);
+            if (calcProgressHint) {
+                if (pct >= 100) {
+                    calcProgressHint.textContent = 'все блоки затронуты — можно нажать «Рассчитать»';
+                } else if (pct >= 66) {
+                    calcProgressHint.textContent =
+                        'осталось немного — проверьте блок с превью и итогом';
+                } else if (pct >= 33) {
+                    calcProgressHint.textContent = 'картинка дома обновляется при каждом изменении';
+                } else {
+                    calcProgressHint.textContent = 'пройдитесь по полям — полоска покажет прогресс';
+                }
+            }
+        }
+
+        function clampArea(v) {
+            var n = Number(v);
+            if (isNaN(n)) n = 120;
+            return Math.min(500, Math.max(20, Math.round(n)));
+        }
+
+        function syncAreaFromRange() {
+            if (!areaRangeEl || !areaEl) return;
+            areaEl.value = String(clampArea(areaRangeEl.value));
+        }
+
+        function syncRangeFromArea() {
+            if (!areaRangeEl || !areaEl) return;
+            areaRangeEl.value = String(clampArea(areaEl.value));
+        }
+
+        function playUpdateAnimations() {
+            if (previewImageWrap) {
+                previewImageWrap.classList.remove('preview-flash');
+                void previewImageWrap.offsetWidth;
+                previewImageWrap.classList.add('preview-flash');
+            }
+            resultEl.classList.remove('result-pop');
+            void resultEl.offsetWidth;
+            resultEl.classList.add('result-pop');
+            document.querySelectorAll('.preview-meta .meta-item').forEach(function (el) {
+                el.classList.remove('meta-pulse');
+                void el.offsetWidth;
+                el.classList.add('meta-pulse');
+            });
+        }
+
+        FIELD_KEYS.forEach(function (key) {
+            var el = document.getElementById(key);
+            if (!el) return;
+            var ev = el.tagName === 'INPUT' && el.type === 'number' ? 'input' : 'change';
+            el.addEventListener(ev, function () {
+                markFieldTouched(key);
+            });
+        });
+
+        if (areaRangeEl) {
+            areaRangeEl.addEventListener('input', function () {
+                syncAreaFromRange();
+                markFieldTouched('area');
+                calculate();
+            });
+        }
+
+        const ROOF_LABELS = {
+            tile: 'Черепица',
+            soft: 'Гибкая черепица',
+            clickfalz: 'Кликфальц'
+        };
+
+        const ROOF_SHAPE_LABELS = {
+            flat: 'Плоская',
+            shed: 'Односкатная',
+            gable: 'Двускатная',
+            hip: 'Четырёхскатная'
+        };
+
+        const MANSARD_LABELS = {
+            no: 'Нет',
+            yes: 'Да'
+        };
+
+        const PACKAGE_LABELS = {
+            box: 'Коробка',
+            rough: 'Черновая',
+            turnkey: 'Под ключ'
+        };
+
+        function getMultiplier(selectEl) {
+            return Number(selectEl.options[selectEl.selectedIndex].dataset.multiplier) || 1;
+        }
+
+        function getPrice(selectEl) {
+            return Number(selectEl.options[selectEl.selectedIndex].dataset.price) || 0;
+        }
+
+        function getAdd(selectEl) {
+            return Number(selectEl.options[selectEl.selectedIndex].dataset.add) || 0;
+        }
+
+        function getOptionText(selectEl) {
+            return selectEl.options[selectEl.selectedIndex].textContent;
+        }
+
+        function formatBYN(value) {
+            return new Intl.NumberFormat('ru-BY').format(Math.round(value)) + ' BYN';
+        }
+
+        function calculate() {
+            if (areaEl && areaRangeEl) {
+                areaEl.value = String(clampArea(areaEl.value));
+                areaRangeEl.value = areaEl.value;
+            }
+            const area = Number(areaEl.value) || 0;
+            const floorsCount = Number(floorsEl.value) || 1;
+            const projectCost = getMultiplier(projectTypeEl);
+            const floorsCost = getMultiplier(floorsEl);
+            const foundationCost = getMultiplier(foundationEl);
+            const wallsCost = getPrice(wallsEl);
+            const roofMatCost = getMultiplier(roofEl);
+            const roofShapeCost = getMultiplier(roofShapeEl);
+            const mansardCost = getMultiplier(mansardEl);
+            const terraceCost = getAdd(terraceEl);
+            const exteriorFinishCost = getAdd(exteriorFinishEl);
+            const packageCost = getMultiplier(packageEl);
+
+            const total =
+                area *
+                    wallsCost *
+                    projectCost *
+                    floorsCost *
+                    foundationCost *
+                    roofMatCost *
+                    roofShapeCost *
+                    mansardCost *
+                    packageCost +
+                terraceCost +
+                exteriorFinishCost;
+            resultEl.innerHTML =
+                'Ориентировочная стоимость: <strong>' + formatBYN(total) + '</strong>';
+            updatePreview(
+                area,
+                floorsCount,
+                wallsEl.value,
+                roofEl.value,
+                roofShapeEl.value,
+                mansardEl.value
+            );
+            calculatePassCount += 1;
+            if (calculatePassCount > 1) {
+                playUpdateAnimations();
+            }
+            scheduleFitCalculatorViewport();
+        }
+
+        function colorByWalls(walls) {
+            const w = String(walls ?? '').trim();
+            if (w === 'keramzit') return { wall: '#cec4b3', stroke: '#8f8778' };
+            if (w === 'gas') return { wall: '#d2d8e2', stroke: '#8f98a8' };
+            if (w === 'brick') return { wall: '#bf8571', stroke: '#8f5e4f' };
+            if (w === 'monolith') return { wall: '#b8bec5', stroke: '#69707d' };
+            return { wall: '#c7ccd2', stroke: '#808a96' };
+        }
+
+        function colorByRoof(roof) {
+            if (roof === 'tile') return '#7c4b44';
+            if (roof === 'soft') return '#4f5666';
+            return '#6d7178';
+        }
+
+        function buildHouseSvg(area, floors, walls, roofMaterial, roofShape, mansard) {
+            const wall = colorByWalls(walls);
+            const roofColor = colorByRoof(roofMaterial);
+            const bodyHeight = floors === 1 ? 165 : floors === 2 ? 210 : 240;
+            const bodyY = 290 - bodyHeight;
+            const windows = floors === 1 ? 3 : floors === 2 ? 6 : 9;
+            const sizeCoef = Math.max(0.82, Math.min(1.18, area / 120));
+            const houseWidth = Math.round(250 * sizeCoef);
+            const houseX = Math.round((500 - houseWidth) / 2);
+            const hx = houseX + houseWidth;
+
+            let windowsSvg = '';
+            const rows = floors;
+            const cols = Math.ceil(windows / rows);
+            let count = 0;
+
+            for (let row = 0; row < rows; row += 1) {
+                for (let col = 0; col < cols; col += 1) {
+                    if (count >= windows) break;
+                    const w = Math.max(18, Math.floor(houseWidth / 9));
+                    const x =
+                        houseX +
+                        24 +
+                        col * Math.floor((houseWidth - 54) / Math.max(1, cols - 1));
+                    const y =
+                        bodyY +
+                        24 +
+                        row * Math.floor((bodyHeight - 60) / Math.max(1, rows - 1));
+                    windowsSvg +=
+                        '<rect x="' +
+                        x +
+                        '" y="' +
+                        y +
+                        '" width="' +
+                        w +
+                        '" height="20" rx="3" fill="#89b4ff" opacity="0.9" />';
+                    count += 1;
+                }
+            }
+
+            let roofSvg = '';
+            if (roofShape === 'flat') {
+                roofSvg =
+                    '<rect x="' +
+                    houseX +
+                    '" y="' +
+                    (bodyY - 15) +
+                    '" width="' +
+                    houseWidth +
+                    '" height="15" rx="2" fill="' +
+                    roofColor +
+                    '"/>';
+            } else if (roofShape === 'shed') {
+                roofSvg =
+                    '<polygon points="' +
+                    houseX +
+                    ',' +
+                    bodyY +
+                    ' ' +
+                    hx +
+                    ',' +
+                    bodyY +
+                    ' ' +
+                    hx +
+                    ',' +
+                    (bodyY - 58) +
+                    ' ' +
+                    (houseX - 8) +
+                    ',' +
+                    (bodyY - 20) +
+                    '" fill="' +
+                    roofColor +
+                    '"/>';
+            } else if (roofShape === 'hip') {
+                const peakY = bodyY - 66;
+                const inset = houseWidth * 0.14;
+                roofSvg =
+                    '<polygon points="' +
+                    (houseX - 12) +
+                    ',' +
+                    bodyY +
+                    ' ' +
+                    (houseX + inset) +
+                    ',' +
+                    (bodyY - 26) +
+                    ' 250,' +
+                    peakY +
+                    ' ' +
+                    (hx - inset) +
+                    ',' +
+                    (bodyY - 26) +
+                    ' ' +
+                    (hx + 12) +
+                    ',' +
+                    bodyY +
+                    '" fill="' +
+                    roofColor +
+                    '"/>';
+            } else {
+                roofSvg =
+                    '<polygon points="' +
+                    (houseX - 16) +
+                    ',' +
+                    bodyY +
+                    ' 250,' +
+                    (bodyY - 76) +
+                    ' ' +
+                    (hx + 16) +
+                    ',' +
+                    bodyY +
+                    '" fill="' +
+                    roofColor +
+                    '"/>';
+            }
+
+            if (mansard === 'yes' && roofShape !== 'flat') {
+                roofSvg +=
+                    '<polygon points="' +
+                    (houseX + 8) +
+                    ',' +
+                    bodyY +
+                    ' ' +
+                    (hx - 8) +
+                    ',' +
+                    bodyY +
+                    ' ' +
+                    (hx - 22) +
+                    ',' +
+                    (bodyY - 34) +
+                    ' ' +
+                    (houseX + 22) +
+                    ',' +
+                    (bodyY - 34) +
+                    '" fill="' +
+                    roofColor +
+                    '" opacity="0.88"/>' +
+                    '<line x1="' +
+                    (houseX + 6) +
+                    '" y1="' +
+                    (bodyY - 3) +
+                    '" x2="' +
+                    (hx - 6) +
+                    '" y2="' +
+                    (bodyY - 3) +
+                    '" stroke="rgba(0,0,0,0.18)" stroke-width="1.5"/>';
+            }
+
+            let dormerSvg = '';
+            if (mansard === 'yes' && floors >= 2) {
+                const upperRow = Math.max(0, rows - 1);
+                const rowY =
+                    bodyY +
+                    24 +
+                    upperRow *
+                        Math.floor((bodyHeight - 60) / Math.max(1, rows - 1));
+                const cx = houseX + Math.floor(houseWidth / 2);
+                dormerSvg =
+                    '<rect x="' +
+                    (cx - 30) +
+                    '" y="' +
+                    (rowY - 6) +
+                    '" width="60" height="34" rx="3" fill="' +
+                    wall.wall +
+                    '" stroke="' +
+                    wall.stroke +
+                    '" stroke-width="2"/>' +
+                    '<polygon points="' +
+                    (cx - 34) +
+                    ',' +
+                    (rowY - 6) +
+                    ' ' +
+                    cx +
+                    ',' +
+                    (rowY - 22) +
+                    ' ' +
+                    (cx + 34) +
+                    ',' +
+                    (rowY - 6) +
+                    '" fill="' +
+                    roofColor +
+                    '"/>' +
+                    '<rect x="' +
+                    (cx - 16) +
+                    '" y="' +
+                    (rowY + 2) +
+                    '" width="14" height="18" rx="2" fill="#89b4ff" opacity="0.95"/>' +
+                    '<rect x="' +
+                    (cx + 2) +
+                    '" y="' +
+                    (rowY + 2) +
+                    '" width="14" height="18" rx="2" fill="#89b4ff" opacity="0.95"/>';
+            }
+
+            const svg =
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320">' +
+                '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">' +
+                '<stop offset="0%" stop-color="#9ec5ff"/>' +
+                '<stop offset="100%" stop-color="#dfeeff"/></linearGradient></defs>' +
+                '<rect x="0" y="0" width="500" height="320" fill="url(#sky)"/>' +
+                '<rect x="0" y="290" width="500" height="30" fill="#709a67"/>' +
+                '<rect x="' +
+                houseX +
+                '" y="' +
+                bodyY +
+                '" width="' +
+                houseWidth +
+                '" height="' +
+                bodyHeight +
+                '" rx="6" fill="' +
+                wall.wall +
+                '" stroke="' +
+                wall.stroke +
+                '" stroke-width="3"/>' +
+                windowsSvg +
+                roofSvg +
+                dormerSvg +
+                '<rect x="228" y="' +
+                (bodyY + bodyHeight - 56) +
+                '" width="44" height="56" rx="4" fill="#6b4f3f"/>' +
+                '<circle cx="263" cy="' +
+                (bodyY + bodyHeight - 28) +
+                '" r="3" fill="#f2dfb0"/>' +
+                '</svg>';
+            return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+        }
+
+        function updatePreview(area, floors, walls, roofMaterial, roofShape, mansard) {
+            housePreviewEl.src = buildHouseSvg(
+                area,
+                floors,
+                walls,
+                roofMaterial,
+                roofShape,
+                mansard
+            );
+            metaWallsEl.textContent = getOptionText(wallsEl);
+            metaRoofEl.textContent = ROOF_LABELS[roofMaterial] || '-';
+            metaRoofShapeEl.textContent = ROOF_SHAPE_LABELS[roofShape] || '-';
+            metaMansardEl.textContent = MANSARD_LABELS[mansard] || '-';
+            metaFloorsEl.textContent =
+                floors +
+                (floors === 1 ? ' этаж' : floors < 5 ? ' этажа' : ' этажей');
+            metaAreaEl.textContent = area + ' м2';
+            metaPackageEl.textContent = PACKAGE_LABELS[packageEl.value] || '-';
+            metaOptionsEl.textContent =
+                'Терраса: ' +
+                getOptionText(terraceEl) +
+                ', Наруж. отделка: ' +
+                getOptionText(exteriorFinishEl);
+        }
+
+        function resetForm() {
+            touchedFields.clear();
+            updateProgressBar();
+            projectTypeEl.value = 'ready';
+            areaEl.value = 120;
+            if (areaRangeEl) areaRangeEl.value = '120';
+            calculatePassCount = 0;
+            floorsEl.value = '1';
+            foundationEl.value = 'strip';
+            wallsEl.value = 'keramzit';
+            roofEl.value = 'tile';
+            roofShapeEl.value = 'gable';
+            mansardEl.value = 'no';
+            terraceEl.value = 'no';
+            exteriorFinishEl.value = 'no';
+            packageEl.value = 'box';
+            calculate();
+        }
+
+        calcBtn.addEventListener('click', calculate);
+        resetBtn.addEventListener('click', resetForm);
+        areaEl.addEventListener('input', calculate);
+        projectTypeEl.addEventListener('change', calculate);
+        floorsEl.addEventListener('change', calculate);
+        foundationEl.addEventListener('change', calculate);
+        wallsEl.addEventListener('change', calculate);
+        roofEl.addEventListener('change', calculate);
+        roofShapeEl.addEventListener('change', calculate);
+        mansardEl.addEventListener('change', calculate);
+        terraceEl.addEventListener('change', calculate);
+        exteriorFinishEl.addEventListener('change', calculate);
+        packageEl.addEventListener('change', calculate);
+        updateProgressBar();
+        calculate();
+        scheduleFitCalculatorViewport();
+    </script>
+</body>
+</html>
