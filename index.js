@@ -44,136 +44,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
-// COUNTER ANIMATION
+// СЧЁТЧИКИ В HERO (без анимации — значения из data-target)
 // ============================================
-// Хранилище активных таймеров для каждого счетчика
-const counterTimers = new Map();
-
-function animateCounter(element, target, duration = 2000) {
-    // Если для этого элемента уже есть активный таймер, останавливаем его
-    if (counterTimers.has(element)) {
-        clearInterval(counterTimers.get(element));
-    }
-    
-    // Получаем текущее значение из элемента или начинаем с 0
-    const currentText = element.textContent.trim();
-    const start = parseInt(currentText) || 0;
-    
-    // Если уже достигли цели, не запускаем анимацию
-    if (start >= target) {
-        element.textContent = Math.floor(target);
-        return;
-    }
-    
-    const increment = (target - start) / (duration / 16); // 60 FPS
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = Math.floor(target);
-            clearInterval(timer);
-            counterTimers.delete(element);
-        } else {
-            element.textContent = Math.floor(current);
+function initHeroCounters() {
+    document.querySelectorAll('.hero .counter').forEach(function (counter) {
+        const raw = counter.getAttribute('data-target');
+        const target = raw == null ? NaN : parseInt(raw, 10);
+        if (!isNaN(target)) {
+            counter.textContent = String(Math.floor(target));
         }
-    }, 16);
-    
-    // Сохраняем таймер для этого элемента
-    counterTimers.set(element, timer);
+    });
 }
 
-// Запуск анимации счетчиков при появлении секции в видимой области
-let countersInitialized = false; // Флаг для предотвращения повторной инициализации
-
-document.addEventListener('DOMContentLoaded', function () {
-    const counters = document.querySelectorAll('.hero .counter');
-    const heroSection = document.querySelector('.hero');
-
-    if (counters.length === 0 || countersInitialized) {
-        return;
-    }
-
-    /** На мобильных в hero счётчики сразу в финальных значениях (без анимации) */
-    if (window.matchMedia('(max-width: 768px)').matches) {
-        countersInitialized = true;
-        counters.forEach(function (counter) {
-            const target = parseInt(counter.getAttribute('data-target'), 10);
-            if (!isNaN(target)) {
-                counter.textContent = String(Math.floor(target));
-            }
-        });
-        return;
-    }
-    
-    // Проверяем, запущена ли уже анимация для каждого счетчика
-    const animatedCounters = new Set();
-    
-    // Функция для запуска анимации счетчика
-    function startCounterAnimation(counter) {
-        // Проверяем, не запущена ли уже анимация
-        if (animatedCounters.has(counter)) {
-            return; // Анимация уже запущена
-        }
-        
-        // Проверяем, не достиг ли счетчик уже целевого значения
-        const target = parseInt(counter.getAttribute('data-target'));
-        const currentValue = parseInt(counter.textContent.trim()) || 0;
-        
-        if (!isNaN(target) && currentValue < target) {
-            animatedCounters.add(counter);
-            animateCounter(counter, target);
-        } else if (!isNaN(target) && currentValue >= target) {
-            // Если уже достигли цели, просто устанавливаем финальное значение
-            counter.textContent = Math.floor(target);
-            animatedCounters.add(counter);
-        }
-    }
-    
-    // Функция для проверки видимости элемента
-    function isElementVisible(element) {
-        if (!element) return false;
-        const rect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        return rect.top < windowHeight && rect.bottom > 0;
-    }
-    
-    // Функция для запуска анимации всех счетчиков (вызывается только один раз)
-    function startAllCounters() {
-        if (countersInitialized) {
-            return; // Уже инициализировано
-        }
-        
-        countersInitialized = true;
-        
-        setTimeout(() => {
-            counters.forEach(counter => {
-                startCounterAnimation(counter);
-            });
-        }, 300);
-    }
-    
-    // Проверяем, видна ли секция при загрузке
-    if (heroSection && isElementVisible(heroSection)) {
-        // Секция уже видна, запускаем анимацию сразу
-        startAllCounters();
-    } else if ('IntersectionObserver' in window && heroSection) {
-        // Используем IntersectionObserver для запуска анимации при появлении секции
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersInitialized) {
-                    startAllCounters();
-                    observer.disconnect(); // Отключаем observer после первого запуска
-                }
-            });
-        }, {
-            threshold: 0.1 // Запускаем когда 10% секции видно
-        });
-        
-        observer.observe(heroSection);
+function scheduleHeroCounters() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHeroCounters);
     } else {
-        // Fallback: запускаем анимацию при загрузке страницы
-        startAllCounters();
+        initHeroCounters();
+    }
+}
+
+scheduleHeroCounters();
+
+window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+        initHeroCounters();
     }
 });
 

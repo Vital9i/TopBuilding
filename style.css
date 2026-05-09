@@ -195,19 +195,6 @@ html {
     padding: 0 40px;
   }
   
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .hero-materials-inner {
-    font-size: 1rem;
-    padding: 10px 0 12px 0;
-  }
-  
   .hero-badge {
     font-size: 1rem;
     padding: 10px 22px;
@@ -227,11 +214,11 @@ html {
   
   .hero-features {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 6px;
   }
   
   .hero-feature {
-    padding: 11px 13px;
+    padding: 7px 10px;
   }
   
   .feature-icon {
@@ -248,11 +235,11 @@ html {
   }
   
   .hero-info {
-    gap: 9px;
+    gap: 5px;
   }
   
   .hero-info p {
-    font-size: 0.95rem;
+    font-size: 0.925rem;
   }
   
   .header-logo {
@@ -1569,21 +1556,29 @@ html {
 
 /* Hero Section с видео-фоном */
 .hero {
-  padding: 100px 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 72px 0 12px 0;
   color: white;
   position: relative;
   overflow: visible !important;
   height: auto;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero > .container {
-  min-height: auto;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   padding-top: 0;
   padding-bottom: 0;
   min-width: 0;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -1653,7 +1648,10 @@ html {
   position: relative;
   z-index: 2;
   max-width: 800px;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   min-width: 0;
   width: 100%;
   box-sizing: border-box;
@@ -1662,11 +1660,13 @@ html {
 /* Левая часть Hero */
 .hero-left {
   text-align: left;
-  animation: fadeInUp 1s ease-out;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   justify-content: space-evenly;
-  min-height: calc(100vh - 200px);
+  align-items: stretch;
+  gap: 0;
+  min-height: 0;
   padding-top: 0;
   min-width: 0;
   width: 100%;
@@ -1676,15 +1676,21 @@ html {
 
 @media (max-width: 768px) {
   .hero-left {
-    min-height: auto;
-    gap: 20px;
+    min-height: 0;
+    flex: 1 1 auto;
+    justify-content: space-evenly;
+    gap: clamp(14px, 3.2vmin, 24px);
+    padding-block: clamp(10px, 2.4vmin, 20px);
   }
 }
 
 @media (max-width: 576px) {
   .hero-left {
-    min-height: auto;
-    gap: 15px;
+    min-height: 0;
+    flex: 1 1 auto;
+    justify-content: space-evenly;
+    gap: clamp(12px, 3vmin, 22px);
+    padding-block: clamp(8px, 2vmin, 16px);
   }
 }
 
@@ -2326,11 +2332,12 @@ html {
   }
 }
 
-/* Заголовок */
+/* Заголовок h1 hero — умеренный масштаб (типично ~32–42px на десктопе) */
 .hero-title {
-  font-size: 2.8rem;
+  flex-shrink: 0;
+  font-size: clamp(1.875rem, 3.5vw + 1rem, 2.625rem);
   line-height: 1.2;
-  margin-bottom: 25px;
+  margin-bottom: 0;
   font-weight: 800;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   color: #fff;
@@ -2340,185 +2347,146 @@ html {
   color: var(--secondary-color);
   position: relative;
   display: inline-block;
-  animation: glow 2s ease-in-out infinite;
 }
 
-.hero-subtitle {
-  margin: 0 0 36px 0;
-  padding: 0;
-  max-width: 100%;
-  font-size: 1.1rem;
-  line-height: 1.5;
+/* Hero без анимаций появления: AOS здесь не используется, правило подстраховывает любые атрибуты */
+.hero [data-aos],
+.hero [data-aos].aos-animate {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
-.hero-subtitle-inner {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 14px;
-  max-width: 100%;
-  padding: 10px 0 12px 0;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(
-    145deg,
-    rgba(212, 175, 55, 0.08) 0%,
-    rgba(0, 0, 0, 0.35) 55%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-sizing: border-box;
-}
-
-.hero-subtitle-icon-wrap {
+.hero-intro {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   flex-shrink: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: linear-gradient(
-    160deg,
-    rgba(212, 175, 55, 0.28) 0%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-  border: none;
-  color: var(--secondary-color);
-  font-size: 1.2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+  gap: clamp(12px, 2vmin, 18px);
+  width: 100%;
+  max-width: 860px;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: left;
 }
 
-.hero-subtitle-text-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 12px;
-  min-width: 0;
-  flex: 1 1 220px;
-  font-size: 1.1rem;
+/* Подзаголовки hero (h2) — около основного текста / чуть крупнее, не «второй главный заголовок» */
+.hero-intro-line {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: clamp(1rem, 0.35vw + 0.92rem, 1.1875rem);
+  line-height: 1.45;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.98);
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-}
-
-.hero-subtitle-main {
-  min-width: 0;
   overflow-wrap: anywhere;
-  letter-spacing: 0.01em;
 }
 
-.hero-subtitle-label {
+.hero-intro-lead {
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-intro-lead--accent {
+  color: var(--secondary-color);
+}
+
+.hero-intro-item {
   color: var(--secondary-color);
   font-weight: 700;
-  letter-spacing: 0.04em;
 }
 
-.hero-subtitle-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(212, 175, 55, 0.16);
-  border: none;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
-  font-size: 0.96em;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.98);
-  white-space: nowrap;
-}
-
-.hero-subtitle-accent i {
-  color: var(--secondary-color);
-  font-size: 0.95em;
-  opacity: 0.95;
-}
-
-.hero-subtitle-accent strong {
+.hero-intro-time {
   color: var(--secondary-color);
   font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
 
-/* Акцент: материалы строительства (между заголовком и подзаголовком) */
-.hero-materials {
-  margin: 0 0 16px 0;
-  padding: 0;
-  max-width: 100%;
+/* «За 11 месяцев» целиком на одной строке */
+.hero-intro-duration {
+  white-space: nowrap;
 }
 
-.hero-materials-inner {
-  display: inline-block;
-  max-width: 100%;
-  padding: 8px 0 10px 0;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(
-    135deg,
-    rgba(212, 175, 55, 0.08) 0%,
-    rgba(0, 0, 0, 0.32) 100%
-  );
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
-  box-sizing: border-box;
-  text-align: left;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.98);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.65);
+@media (min-width: 993px) {
+  .hero-intro {
+    gap: clamp(16px, 2.2vh, 24px);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 2vw + 1.25rem, 2.75rem);
+    line-height: 1.15;
+  }
+
+  .hero-intro-line {
+    font-size: clamp(1.0625rem, 0.25vw + 0.98rem, 1.25rem);
+    line-height: 1.45;
+  }
+
+  .hero-intro-lead {
+    letter-spacing: 0.02em;
+  }
+
+  .hero-info p {
+    font-size: 0.95rem;
+    line-height: 1.48;
+  }
+
+  .hero-info i {
+    font-size: 1.025rem;
+  }
+
+  .hero .feature-icon {
+    font-size: 1.4rem;
+    width: 30px;
+  }
+
+  .hero .feature-text strong {
+    font-size: 1.0625rem;
+  }
+
+  .hero .feature-text span {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+  }
 }
 
-.hero-materials-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 6px;
-  row-gap: 8px;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
+@media (min-width: 1400px) {
+  .hero-title {
+    font-size: clamp(2.125rem, 1.65vw + 1.35rem, 2.875rem);
+  }
 
-.hero-materials-lead {
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.98);
-  margin-right: 2px;
-}
+  .hero-intro-line {
+    font-size: clamp(1.125rem, 0.2vw + 1.025rem, 1.3125rem);
+    line-height: 1.45;
+  }
 
-.hero-materials-punct {
-  color: rgba(255, 255, 255, 0.88);
-  font-weight: 400;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.65);
-}
+  .hero-intro {
+    gap: clamp(18px, 2.4vh, 28px);
+  }
 
-.hero-materials-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+  .hero-info p {
+    font-size: 1.025rem;
+  }
 
-.hero-materials-chip i {
-  color: var(--secondary-color);
-  flex-shrink: 0;
-  font-size: 0.95em;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
-}
+  .hero .feature-text strong {
+    font-size: 1.11rem;
+  }
 
-.hero-materials-chip strong {
-  color: var(--secondary-color);
-  font-weight: 700;
+  .hero .feature-text span {
+    font-size: 0.84rem;
+  }
 }
 
 /* USP Features с счетчиками */
 .hero-features {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 280px));
-  column-gap: 8px;
-  row-gap: 8px;
-  margin-bottom: 40px;
+  column-gap: 5px;
+  row-gap: 5px;
+  margin: 0;
   justify-content: start;
+  flex-shrink: 0;
 }
 
 @media (max-width: 992px) {
@@ -2533,11 +2501,11 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 6px 9px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
   position: relative;
@@ -2596,7 +2564,7 @@ html {
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
-  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 
 .feature-text span {
@@ -2607,12 +2575,10 @@ html {
   overflow-wrap: anywhere;
 }
 
-/* Анимированный счетчик */
 .counter {
   display: inline-block;
   font-weight: 700;
   color: var(--secondary-color);
-  transition: all 0.3s ease;
 }
 
 /* Старые стили hero-social-proof удалены, используется hero-contact-card */
@@ -2690,7 +2656,8 @@ html {
 .hero-info {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  flex-shrink: 0;
+  gap: 6px;
   margin-top: 0;
   width: 100%;
   max-width: 100%;
@@ -2701,13 +2668,13 @@ html {
 .hero-info p {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 0.88rem;
+  gap: 7px;
+  font-size: 0.875rem;
   opacity: 0.9;
   margin: 0;
   transition: all 0.3s ease;
   text-align: left;
-  line-height: 1.5;
+  line-height: 1.38;
   min-width: 0;
   max-width: 100%;
 }
@@ -2739,18 +2706,73 @@ html {
   word-break: normal;
 }
 
-/* Анимации */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Низкий экран по высоте — дополнительно уплотняем hero под «один экран» */
+@media (max-height: 720px) and (min-width: 769px) {
+  .hero {
+    padding-top: clamp(56px, 8vh, 68px);
+    padding-bottom: 8px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .hero-left {
+    gap: 0;
+    justify-content: space-evenly;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
+    margin-bottom: 0;
+  }
+
+  .hero-intro {
+    gap: clamp(10px, 2vh, 16px);
+    margin-bottom: 0;
+  }
+
+  .hero-intro-line {
+    font-size: clamp(1rem, 0.4vw + 0.92rem, 1.0625rem);
+    line-height: 1.4;
+  }
+
+  .hero-features {
+    gap: 4px;
+    margin-bottom: 0;
+  }
+
+  .hero-feature {
+    padding: 5px 8px;
+    gap: 6px;
+  }
+
+  .hero-info {
+    gap: 4px;
   }
 }
 
+@media (max-height: 640px) and (max-width: 768px) {
+  .hero {
+    padding-top: max(56px, calc(52px + env(safe-area-inset-top, 0px)));
+    padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero-left {
+    gap: clamp(8px, 2vmin, 14px);
+    padding-block: clamp(4px, 1.2vmin, 10px);
+  }
+
+  .hero-intro {
+    margin-bottom: 0;
+  }
+
+  .hero-features {
+    margin-bottom: 0;
+  }
+
+  .hero-info {
+    margin-top: 0;
+  }
+}
+
+/* Анимации */
 @keyframes pulse {
   0%, 100% {
     box-shadow: 
@@ -2764,25 +2786,8 @@ html {
   }
 }
 
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 232, 72, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 232, 72, 0.8), 0 0 30px rgba(255, 232, 72, 0.6);
-  }
-}
-
 /* Мобильный hero: без декоративных анимаций (CSS + AOS-состояния) */
 @media (max-width: 768px) {
-  .hero .hero-left {
-    animation: none;
-  }
-
-  .hero .hero-title .highlight {
-    animation: none;
-  }
-
   .hero .hero-badge,
   .hero .hero-badge::before,
   .hero .hero-logo-icon,
@@ -2815,10 +2820,6 @@ html {
 
   .hero .hero-feature:hover {
     transform: none;
-  }
-
-  .hero .counter {
-    transition: none;
   }
 
   .hero .hero-info p,
@@ -5261,13 +5262,7 @@ address a:hover {
 
 @media (max-width: 992px) {
   .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: center;
+    font-size: clamp(1.75rem, 4vw + 0.875rem, 2.125rem);
   }
   
   .hero-badge {
@@ -5276,11 +5271,11 @@ address a:hover {
   }
   
   .hero-features {
-    gap: 15px;
+    gap: 6px;
   }
   
   .hero-feature {
-    padding: 12px 20px;
+    padding: 8px 12px;
     min-width: 120px;
   }
   
@@ -5381,6 +5376,16 @@ address a:hover {
   .hero-left {
     text-align: center;
   }
+
+  .hero-intro {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-intro-line {
+    text-align: center;
+  }
   
   .hero-features {
     gap: 12px;
@@ -5407,7 +5412,7 @@ address a:hover {
   }
   
   .hero-info {
-    gap: 7px;
+    gap: 5px;
   }
   
   .hero-contact-card {
@@ -5638,88 +5643,66 @@ address a:hover {
   }
   
   .hero {
+    display: flex;
+    flex-direction: column;
     height: auto;
-    min-height: auto;
-    padding: 80px 0 30px 0;
+    min-height: 100dvh;
+    /* Фиксированный хедер 60px + отступ; safe-area сверху для вырезов; снизу — для home indicator */
+    padding-top: max(76px, calc(60px + env(safe-area-inset-top, 0px) + 14px));
+    padding-bottom: max(26px, env(safe-area-inset-bottom, 0px));
   }
   
   .hero > .container {
-    min-height: auto;
-    padding-top: 0;
-    padding-bottom: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: clamp(4px, 1.5vmin, 12px);
+    padding-bottom: clamp(6px, 2vmin, 14px);
   }
-  
+
   .hero-content-wrapper {
-    gap: 30px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 12px;
+    padding-block: clamp(6px, 1.8vmin, 14px);
   }
   
   .hero-title {
-    font-size: 2.25rem;
+    font-size: clamp(1.625rem, 5vw + 0.65rem, 2rem);
     font-weight: 800;
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
     color: #fff;
     line-height: 1.2;
+    margin-bottom: 0;
   }
   
-  .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 22px;
-    opacity: 1;
-    color: #fff;
-    font-weight: 400;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.6);
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
+  .hero-intro {
+    gap: clamp(14px, 3.8vmin, 22px);
+    margin-bottom: 0;
   }
-  
-  .hero-subtitle-inner {
-    padding: 8px 0 10px 0;
-    gap: 10px 12px;
+
+  .hero-intro-line {
+    font-size: clamp(1rem, 2.8vw + 0.82rem, 1.125rem);
+    line-height: 1.42;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85), 0 0 12px rgba(0, 0, 0, 0.5);
   }
-  
-  .hero-subtitle-icon-wrap {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-  }
-  
-  .hero-subtitle-text-wrap {
-    font-size: 1.15rem;
-  }
-  
-  .hero-subtitle-accent {
-    padding: 6px 12px;
-    font-size: 0.92em;
-  }
-  
-  .hero-materials {
-    margin: 0 0 14px 0;
-  }
-  
-  .hero-materials-inner {
-    padding: 8px 0 10px 0;
-    font-size: 1.05rem;
-    line-height: 1.45;
-  }
-  
-  .hero-materials-line {
-    row-gap: 10px;
-  }
-  
-  .hero-materials-chip i {
-    font-size: 1em;
+
+  .hero-intro-time {
+    font-size: 1.12em;
   }
   
   .hero-features {
-    gap: 12px;
-    margin-bottom: 22px;
+    gap: 5px;
+    margin-bottom: 0;
     max-width: 100%;
   }
   
   .hero-feature {
-    padding: 14px 16px;
-    gap: 12px;
+    padding: 9px 12px;
+    gap: 8px;
     max-width: 100%;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(15px);
@@ -5778,7 +5761,7 @@ address a:hover {
   }
   
   .hero-info {
-    margin-top: 8px;
+    margin-top: 0;
   }
   
   .hero-badge {
@@ -5788,11 +5771,11 @@ address a:hover {
   }
   
   .hero-features {
-    gap: 8px;
+    gap: 5px;
   }
   
   .hero-feature {
-    padding: 10px 8px;
+    padding: 8px 9px;
   }
   
   .ceo-avatar {
@@ -5802,7 +5785,7 @@ address a:hover {
   
   
   .hero-info {
-    gap: 7px;
+    gap: 5px;
   }
   
   .contact-container {
@@ -5957,76 +5940,60 @@ address a:hover {
   }
   
   .hero {
+    display: flex;
+    flex-direction: column;
     height: auto;
-    min-height: auto;
-    padding: 70px 0 30px 0;
+    min-height: 100dvh;
+    padding: 60px 0 22px 0;
   }
   
   .hero > .container {
-    min-height: auto;
-    padding-top: 0;
-    padding-bottom: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: clamp(2px, 1.2vmin, 10px);
+    padding-bottom: clamp(8px, 2.2vmin, 16px);
+  }
+
+  .hero-content-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 0;
+    padding-block: clamp(4px, 1.6vmin, 14px);
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: clamp(1.55rem, 5.2vw + 0.5rem, 1.875rem);
     line-height: 1.2;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     font-weight: 800;
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
     color: #fff;
   }
   
-  .hero-subtitle {
-    font-size: 1.125rem;
-    margin-bottom: 20px;
-    opacity: 1;
-    color: #fff;
-    font-weight: 400;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.6);
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
+  .hero-intro {
+    gap: clamp(14px, 3.6vmin, 22px);
+    margin-bottom: 0;
   }
-  
-  .hero-subtitle-inner {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 8px 0 10px 0;
-    gap: 10px;
-  }
-  
-  .hero-subtitle-icon-wrap {
-    width: 40px;
-    height: 40px;
-    font-size: 1.05rem;
-  }
-  
-  .hero-subtitle-text-wrap {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    font-size: 1.05rem;
-  }
-  
-  .hero-subtitle-accent {
-    white-space: normal;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
+
+  .hero-intro-line {
+    font-size: clamp(0.9625rem, 2.6vw + 0.78rem, 1.0625rem);
+    line-height: 1.42;
   }
   
   .hero-features {
-    gap: 10px;
+    gap: 6px;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   
   .hero-feature {
     max-width: 100%;
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 9px 11px;
+    gap: 8px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -6052,12 +6019,12 @@ address a:hover {
   }
   
   .hero-info {
-    margin-top: 12px;
-    gap: 10px;
+    margin-top: 0;
+    gap: 5px;
   }
   
   .hero-info p {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     color: #fff;
     opacity: 1;
     font-weight: 500;
@@ -6140,68 +6107,29 @@ address a:hover {
   }
   
   .hero-title {
-    font-size: 1.875rem;
+    font-size: clamp(1.5rem, 5vw + 0.55rem, 1.8125rem);
+    line-height: 1.2;
+    margin-bottom: 0;
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
   }
-  
-  .hero-subtitle {
-    font-size: 1.0625rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.6);
-  }
-  
-  .hero-subtitle-inner {
-    padding: 6px 0 8px 0;
-    border-radius: 12px;
-  }
-  
-  .hero-subtitle-icon-wrap {
-    width: 36px;
-    height: 36px;
-    font-size: 0.95rem;
-    border-radius: 10px;
-  }
-  
-  .hero-subtitle-text-wrap {
-    font-size: 1rem;
-  }
-  
-  .hero-subtitle-accent {
-    padding: 6px 10px;
-    font-size: 0.9em;
-  }
-  
-  .hero-materials {
-    margin: 0 0 10px 0;
-  }
-  
-  .hero-materials-inner {
-    padding: 6px 0 8px 0;
-    border-radius: 9px;
-    font-size: 0.9375rem;
+
+  .hero-intro-line {
+    font-size: clamp(0.9375rem, 2.8vw + 0.72rem, 1.0625rem);
     line-height: 1.42;
   }
-  
-  .hero-materials-line {
-    row-gap: 8px;
-    column-gap: 4px;
-  }
-  
-  .hero-materials-chip {
-    gap: 5px;
-  }
-  
-  .hero-materials-chip i {
-    font-size: 0.95em;
+
+  .hero-intro {
+    gap: clamp(14px, 3.5vmin, 22px);
   }
   
   .hero-features {
-    gap: 10px;
-    margin-bottom: 18px;
+    gap: 6px;
+    margin-bottom: 0;
   }
   
   .hero-feature {
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 8px 10px;
+    gap: 8px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -6223,8 +6151,8 @@ address a:hover {
   }
   
   .hero-info {
-    margin-top: 12px;
-    gap: 8px;
+    margin-top: 0;
+    gap: 5px;
   }
   
   .hero-info p {
@@ -7011,6 +6939,51 @@ address a:hover {
 
 /* Очень маленькие экраны */
 @media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.4rem, 6vw + 0.55rem, 1.6875rem);
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .hero-intro {
+    gap: clamp(12px, 3.5vmin, 20px);
+  }
+
+  .hero-intro-line {
+    font-size: clamp(0.875rem, 3vw + 0.65rem, 1rem);
+    line-height: 1.42;
+  }
+
+  .hero-intro-time {
+    font-size: 1.1em;
+  }
+
+  .hero-features {
+    gap: 5px;
+    margin-bottom: 0;
+  }
+
+  .hero-feature {
+    padding: 7px 9px;
+  }
+
+  .feature-text strong {
+    font-size: 0.9625rem;
+  }
+
+  .feature-text span {
+    font-size: 0.86rem;
+  }
+
+  .hero-info p {
+    font-size: 0.925rem;
+  }
+
+  .hero-info {
+    gap: 4px;
+    margin-top: 0;
+  }
+
   .testimonials-slider-wrapper {
     padding: 0 45px;
   }
@@ -7767,188 +7740,5 @@ address a:hover {
   .youtube-section .decor {
     width: 220px;
     height: 220px;
-  }
-}
-
-/*
- * Hero mobile — «единый блок», белый текст, без рамок и разделителей.
- */
-@media (max-width: 768px) {
-  .hero .hero-materials,
-  .hero .hero-subtitle {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    text-align: left;
-    box-sizing: border-box;
-  }
-
-  .hero .hero-materials {
-    margin-bottom: 0;
-  }
-
-  .hero .hero-materials-inner {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 13px 15px 12px;
-    background: rgba(10, 12, 20, 0.58);
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-
-  .hero .hero-subtitle-inner {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 11px 15px 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-    background: rgba(10, 12, 20, 0.58);
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .hero .hero-materials-line {
-    display: block;
-    line-height: 1.48;
-    text-align: left;
-  }
-
-  .hero .hero-materials-lead {
-    display: block;
-    margin: 0 0 8px;
-    padding: 0 0 4px;
-    border: none;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
-    text-shadow: none;
-    opacity: 1;
-  }
-
-  .hero .hero-materials-punct {
-    display: inline;
-    color: rgba(255, 255, 255, 0.45);
-    font-size: inherit;
-    font-weight: 400;
-  }
-
-  .hero .hero-materials-chip {
-    display: inline;
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    max-width: none;
-    gap: 0;
-    vertical-align: baseline;
-  }
-
-  .hero .hero-materials-chip i {
-    display: inline;
-    margin-right: 3px;
-    font-size: 0.76em;
-    color: rgba(255, 255, 255, 0.5);
-    vertical-align: 0;
-  }
-
-  .hero .hero-materials-chip strong {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.95);
-    letter-spacing: 0.015em;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
-  }
-
-  .hero .hero-subtitle-icon-wrap {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    margin-top: 1px;
-    border-radius: 9px;
-    border: none;
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.85rem;
-    box-shadow: none;
-  }
-
-  .hero .hero-subtitle-text-wrap {
-    flex: 1;
-    min-width: 0;
-    font-size: 0.9375rem;
-    line-height: 1.46;
-    color: rgba(255, 255, 255, 0.95);
-    text-align: left;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .hero .hero-subtitle-main {
-    display: block;
-    margin: 0 0 6px;
-    padding: 0;
-    border: none;
-    max-width: none;
-    margin-inline: 0;
-  }
-
-  .hero .hero-subtitle-label {
-    display: inline;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-right: 0.35em;
-  }
-
-  .hero .hero-subtitle-accent {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 6px 0 0;
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 0.855rem;
-    font-weight: 400;
-    line-height: 1.35;
-    color: rgba(255, 255, 255, 0.88);
-    white-space: normal;
-  }
-
-  .hero .hero-subtitle-accent i {
-    display: inline;
-    flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.85em;
-    opacity: 1;
-    filter: none;
-  }
-
-  .hero .hero-subtitle-accent strong {
-    font-weight: 700;
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.98);
-    font-variant-numeric: tabular-nums;
-    text-shadow: none;
   }
 }
