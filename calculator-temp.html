@@ -1388,6 +1388,26 @@
             return new Intl.NumberFormat('ru-BY').format(Math.round(value)) + ' BYN/м²';
         }
 
+        /** Пути к растровым превью (папка img_calculator в корне проекта) */
+        var IMG_CALC_EMPTY = 'img_calculator/Ychastok1.webp';
+        var IMG_CALC_FOUNDATION_STRIP = 'img_calculator/Fundament_lenta1.webp';
+
+        /** True, если пользователь выбрал хотя бы один параметр (не только «Не указано» и площадь > 0). */
+        function hasAnyCalculatorSelection() {
+            if (projectTypeEl && projectTypeEl.value !== '') return true;
+            if (parseAreaValue() > 0) return true;
+            if (floorsEl && floorsEl.value !== '') return true;
+            if (foundationEl && foundationEl.value !== '') return true;
+            if (wallsEl && wallsEl.value !== '') return true;
+            if (roofEl && roofEl.value !== '') return true;
+            if (roofShapeEl && roofShapeEl.value !== '') return true;
+            if (mansardEl && mansardEl.value !== '') return true;
+            if (terraceEl && terraceEl.value !== '') return true;
+            if (exteriorFinishEl && exteriorFinishEl.value !== '') return true;
+            if (packageEl && packageEl.value !== '') return true;
+            return false;
+        }
+
         function calculate() {
             syncAreaProgressField();
             syncCalcSelectEmptyState();
@@ -1686,14 +1706,20 @@
         }
 
         function updatePreview(area, floors, walls, roofMaterial, roofShape, mansard) {
-            housePreviewEl.src = buildHouseSvg(
-                area,
-                floors,
-                walls,
-                roofMaterial,
-                roofShape,
-                mansard
-            );
+            if (!hasAnyCalculatorSelection()) {
+                housePreviewEl.src = IMG_CALC_EMPTY;
+            } else if (foundationEl && foundationEl.value === 'strip') {
+                housePreviewEl.src = IMG_CALC_FOUNDATION_STRIP;
+            } else {
+                housePreviewEl.src = buildHouseSvg(
+                    area,
+                    floors,
+                    walls,
+                    roofMaterial,
+                    roofShape,
+                    mansard
+                );
+            }
             metaWallsEl.textContent = getOptionText(wallsEl);
             metaRoofEl.textContent =
                 roofMaterial === '' ? 'Не указано' : ROOF_LABELS[roofMaterial] || '—';
