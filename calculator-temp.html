@@ -974,9 +974,8 @@
                     <label for="floors" class="field-label"><i class="fas fa-layer-group" aria-hidden="true"></i>Этажность</label>
                     <select id="floors">
                         <option value="" disabled hidden selected>Не указано</option>
-                        <option value="1" data-multiplier="1">1 этаж</option>
-                        <option value="2" data-multiplier="1.7">2 этажа</option>
-                        <option value="3" data-multiplier="1.9">3 этажа</option>
+                        <option value="1">1 этаж</option>
+                        <option value="2">2 этажа</option>
                     </select>
                 </div>
 
@@ -1028,6 +1027,15 @@
                         <option value="" disabled hidden selected>Не указано</option>
                         <option value="no">Нет</option>
                         <option value="yes">Да</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="basement" class="field-label"><i class="fas fa-archway" aria-hidden="true"></i>Цокольный этаж</label>
+                    <select id="basement">
+                        <option value="" disabled hidden selected>Не указано</option>
+                        <option value="no">Нет</option>
+                        <option value="yes" data-persqm="1200">Да</option>
                     </select>
                 </div>
 
@@ -1128,6 +1136,7 @@
     </div>
 
     <script>
+        
         function fitCalculatorViewport() {
             var wrap = document.querySelector('.calc-wrap');
             var host = document.querySelector('.calc-fit-host');
@@ -1206,6 +1215,7 @@
         const roofEl = document.getElementById('roof');
         const roofShapeEl = document.getElementById('roofShape');
         const mansardEl = document.getElementById('mansard');
+        const basementEl = document.getElementById('basement');
         const terraceEl = document.getElementById('terrace');
         const exteriorFinishEl = document.getElementById('exteriorFinish');
         const packageEl = document.getElementById('package');
@@ -1236,6 +1246,7 @@
             'roof',
             'roofShape',
             'mansard',
+            'basement',
             'terrace',
             'exteriorFinish',
             'package'
@@ -1356,12 +1367,6 @@
             turnkey: 'Под ключ'
         };
 
-        function getMultiplier(selectEl) {
-            if (!selectEl || selectEl.value === '') return 1;
-            var v = Number(selectEl.options[selectEl.selectedIndex].dataset.multiplier);
-            return isNaN(v) ? 1 : v;
-        }
-
         function getPrice(selectEl) {
             if (!selectEl || selectEl.value === '') return 0;
             var v = Number(selectEl.options[selectEl.selectedIndex].dataset.price);
@@ -1402,6 +1407,7 @@
             if (roofEl && roofEl.value !== '') return true;
             if (roofShapeEl && roofShapeEl.value !== '') return true;
             if (mansardEl && mansardEl.value !== '') return true;
+            if (basementEl && basementEl.value !== '') return true;
             if (terraceEl && terraceEl.value !== '') return true;
             if (exteriorFinishEl && exteriorFinishEl.value !== '') return true;
             if (packageEl && packageEl.value !== '') return true;
@@ -1413,36 +1419,49 @@
             syncCalcSelectEmptyState();
             syncAreaInputEmptyState();
             const area = parseAreaValue();
+            const isTwoFloors = floorsEl.value === '2';
             const floorsCount =
                 floorsEl.value === ''
                     ? 1
-                    : Math.min(3, Math.max(1, Number(floorsEl.value) || 1));
+                    : Math.min(2, Math.max(1, Number(floorsEl.value) || 1));
+            /** 2 этажа: (площадь / 2) × 1,7; иначе полная площадь */
+            const bodyArea = isTwoFloors ? (area / 2) * 1.7 : area;
             const projectPerSqm = getPerSqm(projectTypeEl);
-            const projectAdd = area * projectPerSqm;
-            const foundationAdd = area * getPerSqm(foundationEl);
+            const projectAdd = bodyArea * projectPerSqm;
+            const foundationAdd = bodyArea * getPerSqm(foundationEl);
             const wallsPerSqm = getPrice(wallsEl);
-            const wallsAdd = area * wallsPerSqm;
+            const wallsAdd = bodyArea * wallsPerSqm;
             const roofAdd = area * getPerSqm(roofEl);
             const roofShapeAdd = area * getPerSqm(roofShapeEl);
-            const mansardRoofCoef =
-                mansardEl && mansardEl.value === 'yes' ? 1.2 : 1;
-            const terraceRoofCoef =
-                terraceEl && terraceEl.value === 'yes' ? 1.2 : 1;
+            const roofBase = roofAdd + roofShapeAdd;
             const roofTotal =
-                (roofAdd + roofShapeAdd) * mansardRoofCoef * terraceRoofCoef;
-            const exteriorFinishAdd = area * getPerSqm(exteriorFinishEl);
-            const packageAdd = area * getPerSqm(packageEl);
+                terraceEl && terraceEl.value === 'yes' ? roofBase * 1.2 : roofBase;
+            const exteriorPerSqm = getPerSqm(exteriorFinishEl);
+            const packagePerSqm = getPerSqm(packageEl);
+            const exteriorFinishAdd = isTwoFloors
+                ? area * exteriorPerSqm * 1.7
+                : area * exteriorPerSqm;
+            const packageAdd = isTwoFloors
+                ? area * packagePerSqm * 1.7
+                : area * packagePerSqm;
+            const basementAdd =
+                basementEl && basementEl.value === 'yes'
+                    ? isTwoFloors
+                        ? (area / 2) * getPerSqm(basementEl)
+                        : area * getPerSqm(basementEl)
+                    : 0;
 
-            const floorsCoef = getMultiplier(floorsEl);
-            const constructionBase =
+            var total =
                 projectAdd +
                 foundationAdd +
                 wallsAdd +
                 roofTotal +
                 exteriorFinishAdd +
-                packageAdd;
-
-            var total = constructionBase * floorsCoef;
+                packageAdd +
+                basementAdd;
+            if (mansardEl && mansardEl.value === 'yes') {
+                total *= 1.3;
+            }
             var perSqmHtml =
                 area > 0 && isFinite(total)
                     ? '<span class="result-per-m2"> · ' + formatBYNPerSqm(total / area) + '</span>'
@@ -1736,7 +1755,9 @@
             metaPackageEl.textContent =
                 packageEl.value === '' ? 'Не указано' : PACKAGE_LABELS[packageEl.value] || '—';
             metaOptionsEl.textContent =
-                'Крытая терраса: ' +
+                'Цокольный этаж: ' +
+                getOptionText(basementEl) +
+                ', Крытая терраса: ' +
                 getOptionText(terraceEl) +
                 ', Наруж. отделка: ' +
                 getOptionText(exteriorFinishEl);
@@ -1754,6 +1775,7 @@
             roofEl.value = '';
             roofShapeEl.value = '';
             mansardEl.value = '';
+            basementEl.value = '';
             terraceEl.value = '';
             exteriorFinishEl.value = '';
             packageEl.value = '';
@@ -1785,6 +1807,7 @@
         roofEl.addEventListener('change', calculate);
         roofShapeEl.addEventListener('change', calculate);
         mansardEl.addEventListener('change', calculate);
+        basementEl.addEventListener('change', calculate);
         terraceEl.addEventListener('change', calculate);
         exteriorFinishEl.addEventListener('change', calculate);
         packageEl.addEventListener('change', calculate);
