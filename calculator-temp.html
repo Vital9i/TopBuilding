@@ -1438,17 +1438,11 @@
                 terraceEl && terraceEl.value === 'yes' ? roofBase * 1.2 : roofBase;
             const exteriorPerSqm = getPerSqm(exteriorFinishEl);
             const packagePerSqm = getPerSqm(packageEl);
-            const exteriorFinishAdd = isTwoFloors
-                ? area * exteriorPerSqm * 1.7
-                : area * exteriorPerSqm;
-            const packageAdd = isTwoFloors
-                ? area * packagePerSqm * 1.7
-                : area * packagePerSqm;
+            const exteriorFinishAdd = bodyArea * exteriorPerSqm;
+            const packageAdd = bodyArea * packagePerSqm;
             const basementAdd =
                 basementEl && basementEl.value === 'yes'
-                    ? isTwoFloors
-                        ? (area / 2) * getPerSqm(basementEl)
-                        : area * getPerSqm(basementEl)
+                    ? bodyArea * getPerSqm(basementEl)
                     : 0;
 
             var total =
