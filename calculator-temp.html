@@ -1085,7 +1085,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=2" alt="Предпросмотр дома">
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=3" alt="Предпросмотр дома">
                 </div>
 
                 <div class="preview-meta">
@@ -1395,7 +1395,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '2';
+        var IMG_CALC_VER = '3';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1429,6 +1429,14 @@
             monolith: 'monolit'
         };
 
+        /** Плоская крыша + материал стен → {этаж}_ploskaya_{материал}.webp */
+        var FLAT_ROOF_WALL_FILES = {
+            keramzit: 'keramzit',
+            gas: { 1: 'gazoblock', 2: 'gazoblok' },
+            brick: 'kirpich',
+            monolith: 'monolit'
+        };
+
         function getWallPreviewPath(floors, walls) {
             var fileStem = WALL_PREVIEW_FILES[String(walls || '').trim()];
             if (!fileStem) return '';
@@ -1436,9 +1444,28 @@
             return IMG_CALC_DIR + floorNum + '_' + fileStem + '.webp';
         }
 
-        function resolvePreviewSrc(floors, walls) {
-            var wallPreview = getWallPreviewPath(floors, walls);
-            if (wallPreview) return wallPreview;
+        function getFlatRoofWallPreviewPath(floors, walls) {
+            var wallKey = String(walls || '').trim();
+            if (!wallKey) return '';
+            var floorNum = Number(floors) === 2 ? 2 : 1;
+            var stem = FLAT_ROOF_WALL_FILES[wallKey];
+            if (!stem) return '';
+            if (typeof stem === 'object') {
+                stem = stem[floorNum] || stem[1];
+            }
+            return IMG_CALC_DIR + floorNum + '_ploskaya_' + stem + '.webp';
+        }
+
+        function resolvePreviewSrc(floors, walls, roofShape) {
+            var wallKey = String(walls || '').trim();
+            if (wallKey && roofShape === 'flat') {
+                var flatPreview = getFlatRoofWallPreviewPath(floors, wallKey);
+                if (flatPreview) return flatPreview;
+            }
+            if (wallKey) {
+                var wallPreview = getWallPreviewPath(floors, wallKey);
+                if (wallPreview) return wallPreview;
+            }
 
             var foundation = foundationEl && foundationEl.value;
             if (foundation === 'strip' || foundation === 'pile') {
@@ -1754,7 +1781,7 @@
         }
 
         function updatePreview(area, floors, walls, roofMaterial, roofShape, mansard) {
-            setHousePreviewSrc(resolvePreviewSrc(floors, walls));
+            setHousePreviewSrc(resolvePreviewSrc(floors, walls, roofShape));
             metaWallsEl.textContent = getOptionText(wallsEl);
             metaRoofEl.textContent =
                 roofMaterial === '' ? 'Не указано' : ROOF_LABELS[roofMaterial] || '—';
