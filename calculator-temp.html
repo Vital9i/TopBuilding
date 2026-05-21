@@ -1085,7 +1085,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=3" alt="Предпросмотр дома">
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=4" alt="Предпросмотр дома">
                 </div>
 
                 <div class="preview-meta">
@@ -1395,7 +1395,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '3';
+        var IMG_CALC_VER = '4';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1437,6 +1437,37 @@
             monolith: 'monolit'
         };
 
+        /**
+         * Двускатная крыша + стены + материал крыши.
+         * tile/soft → cherepica, clickfalz → falc / falc_1
+         */
+        var GABLE_PREVIEW_FILES = {
+            '1|keramzit|tile': '1_keramzit_2skat_cherepica.webp',
+            '1|keramzit|soft': '1_keramzit_2skat_cherepica.webp',
+            '1|keramzit|clickfalz': '1_keramzit_2skat_falc_1.webp',
+            '1|gas|clickfalz': '1_gazobeton_2skat_falc_1.webp',
+            '1|brick|tile': '1_kirpich_2skat_cherepica.png_1.webp',
+            '1|brick|soft': '1_kirpich_2skat_cherepica.png_1.webp',
+            '1|monolith|tile': '1_monolit_2skat_cherepica.webp',
+            '1|monolith|soft': '1_monolit_2skat_cherepica.webp',
+            '1|monolith|clickfalz': '1_monolit_2skat_falc_1.webp',
+            '2|keramzit|tile': '2_keramzit_2skat_cherepica.webp',
+            '2|keramzit|soft': '2_keramzit_2skat_cherepica.webp',
+            '2|keramzit|clickfalz': '2_keramzit_2skat_falc.webp',
+            '2|gas|tile': '2_gazoblok_2skat_cherepica.webp',
+            '2|gas|soft': '2_gazoblok_2skat_cherepica.webp',
+            '2|gas|clickfalz': '2_gazoblok_2skat_falc.webp'
+        };
+
+        function getGableRoofPreviewPath(floors, walls, roofMaterial) {
+            var wallKey = String(walls || '').trim();
+            var roofKey = String(roofMaterial || '').trim();
+            if (!wallKey || !roofKey) return '';
+            var floorNum = Number(floors) === 2 ? 2 : 1;
+            var file = GABLE_PREVIEW_FILES[floorNum + '|' + wallKey + '|' + roofKey];
+            return file ? IMG_CALC_DIR + file : '';
+        }
+
         function getWallPreviewPath(floors, walls) {
             var fileStem = WALL_PREVIEW_FILES[String(walls || '').trim()];
             if (!fileStem) return '';
@@ -1456,8 +1487,16 @@
             return IMG_CALC_DIR + floorNum + '_ploskaya_' + stem + '.webp';
         }
 
-        function resolvePreviewSrc(floors, walls, roofShape) {
+        function resolvePreviewSrc(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
+            if (wallKey && roofShape === 'gable' && roofMaterial) {
+                var gablePreview = getGableRoofPreviewPath(
+                    floors,
+                    wallKey,
+                    roofMaterial
+                );
+                if (gablePreview) return gablePreview;
+            }
             if (wallKey && roofShape === 'flat') {
                 var flatPreview = getFlatRoofWallPreviewPath(floors, wallKey);
                 if (flatPreview) return flatPreview;
@@ -1781,7 +1820,9 @@
         }
 
         function updatePreview(area, floors, walls, roofMaterial, roofShape, mansard) {
-            setHousePreviewSrc(resolvePreviewSrc(floors, walls, roofShape));
+            setHousePreviewSrc(
+                resolvePreviewSrc(floors, walls, roofShape, roofMaterial)
+            );
             metaWallsEl.textContent = getOptionText(wallsEl);
             metaRoofEl.textContent =
                 roofMaterial === '' ? 'Не указано' : ROOF_LABELS[roofMaterial] || '—';
