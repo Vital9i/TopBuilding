@@ -1085,7 +1085,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=4" alt="Предпросмотр дома">
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=5" alt="Предпросмотр дома">
                 </div>
 
                 <div class="preview-meta">
@@ -1395,7 +1395,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '4';
+        var IMG_CALC_VER = '5';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1445,9 +1445,12 @@
             '1|keramzit|tile': '1_keramzit_2skat_cherepica.webp',
             '1|keramzit|soft': '1_keramzit_2skat_cherepica.webp',
             '1|keramzit|clickfalz': '1_keramzit_2skat_falc_1.webp',
+            '1|gas|tile': '1_gazobeton_2skat_cherepica.webp',
+            '1|gas|soft': '1_gazobeton_2skat_cherepica.webp',
             '1|gas|clickfalz': '1_gazobeton_2skat_falc_1.webp',
             '1|brick|tile': '1_kirpich_2skat_cherepica.png_1.webp',
             '1|brick|soft': '1_kirpich_2skat_cherepica.png_1.webp',
+            '1|brick|clickfalz': '1_kirpich_2skat_falc.webp',
             '1|monolith|tile': '1_monolit_2skat_cherepica.webp',
             '1|monolith|soft': '1_monolit_2skat_cherepica.webp',
             '1|monolith|clickfalz': '1_monolit_2skat_falc_1.webp',
@@ -1456,7 +1459,13 @@
             '2|keramzit|clickfalz': '2_keramzit_2skat_falc.webp',
             '2|gas|tile': '2_gazoblok_2skat_cherepica.webp',
             '2|gas|soft': '2_gazoblok_2skat_cherepica.webp',
-            '2|gas|clickfalz': '2_gazoblok_2skat_falc.webp'
+            '2|gas|clickfalz': '2_gazoblok_2skat_falc.webp',
+            '2|brick|tile': '2_kirpich_2skat_cherepica.webp',
+            '2|brick|soft': '2_kirpich_2skat_cherepica.webp',
+            '2|brick|clickfalz': '2_kirpich_2skat_falc.webp',
+            '2|monolith|tile': '2_monolit_2skat_cherepica.webp',
+            '2|monolith|soft': '2_monolit_2skat_cherepica.webp',
+            '2|monolith|clickfalz': '2_monolit_2skat_falc.webp'
         };
 
         function getGableRoofPreviewPath(floors, walls, roofMaterial) {
