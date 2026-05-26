@@ -1085,7 +1085,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=6" alt="Предпросмотр дома">
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=7" alt="Предпросмотр дома">
                 </div>
 
                 <div class="preview-meta">
@@ -1395,7 +1395,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '6';
+        var IMG_CALC_VER = '7';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1498,6 +1498,84 @@
             '2|monolith|shed': '2_monolit_odnoskat.webp'
         };
 
+        /**
+         * Превью для наружной отделки / комплектации.
+         * Ключ: этаж|покрытие|[материал крыши].
+         */
+        /** Наружная отделка / комплектация (naryzhnya_*) */
+        var FINISH_PREVIEW_FILES = {
+            '1|hip|tile': '1_naryzhnya_4_cherepica.webp',
+            '1|hip|soft': '1_naryzhnya_4_gibkaya.webp',
+            '2|gable|tile': '2_naryzhnya_2_cherepica.webp',
+            '2|gable|soft': '2_naryzhnya_2_gibkaya.webp',
+            '2|gable|clickfalz': '2_naryzhnya_2_clickfalc.webp',
+            '2|hip|tile': '2_naryzhnya_4_cherepica.webp',
+            '2|hip|soft': '2_naryzhnya_4_gibkaya.webp',
+            '2|hip|clickfalz': '2_naryzhnya_4_clickfalc.webp',
+            '2|shed': '2_naryzhnya_odnoskatnaya.webp',
+            '2|flat': '2_naryzhnya_ploskaya.webp'
+        };
+
+        var FINISH_DEFAULT_BY_FLOOR = {
+            1: '1_naryzhnya_4_cherepica.webp',
+            2: '2_naryzhnya_4_cherepica.webp'
+        };
+
+        function shouldUseFinishPreview() {
+            return (
+                (exteriorFinishEl && exteriorFinishEl.value !== '') ||
+                (packageEl && packageEl.value !== '')
+            );
+        }
+
+        function getFinishPreviewPath(floors, roofShape, roofMaterial) {
+            var floorNum = Number(floors) === 2 ? 2 : 1;
+            var shape = String(roofShape || '').trim();
+            var roofKey = String(roofMaterial || '').trim();
+            var file;
+            var key;
+            var i;
+            var j;
+            var materials = ['tile', 'soft', 'clickfalz'];
+            var shapes = ['gable', 'hip'];
+
+            function finishPathForKey(mapKey) {
+                file = FINISH_PREVIEW_FILES[mapKey];
+                return file ? IMG_CALC_DIR + file : '';
+            }
+
+            if (shape === 'shed' || shape === 'flat') {
+                key = floorNum + '|' + shape;
+                file = finishPathForKey(key);
+                if (file) return file;
+            } else if (shape === 'gable' || shape === 'hip') {
+                if (roofKey) {
+                    file = finishPathForKey(
+                        floorNum + '|' + shape + '|' + roofKey
+                    );
+                    if (file) return file;
+                }
+                for (i = 0; i < materials.length; i += 1) {
+                    file = finishPathForKey(
+                        floorNum + '|' + shape + '|' + materials[i]
+                    );
+                    if (file) return file;
+                }
+                if (roofKey) {
+                    for (j = 0; j < shapes.length; j += 1) {
+                        if (shapes[j] === shape) continue;
+                        file = finishPathForKey(
+                            floorNum + '|' + shapes[j] + '|' + roofKey
+                        );
+                        if (file) return file;
+                    }
+                }
+            }
+
+            file = FINISH_DEFAULT_BY_FLOOR[floorNum];
+            return file ? IMG_CALC_DIR + file : '';
+        }
+
         function getCompositePreviewPath(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
             var shape = String(roofShape || '').trim();
@@ -1538,6 +1616,15 @@
 
         function resolvePreviewSrc(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
+
+            if (shouldUseFinishPreview()) {
+                return getFinishPreviewPath(
+                    floors,
+                    roofShape,
+                    roofMaterial
+                );
+            }
+
             if (wallKey && roofShape) {
                 var compositePreview = getCompositePreviewPath(
                     floors,
