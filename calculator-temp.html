@@ -1085,7 +1085,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=5" alt="Предпросмотр дома">
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=6" alt="Предпросмотр дома">
                 </div>
 
                 <div class="preview-meta">
@@ -1395,7 +1395,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '5';
+        var IMG_CALC_VER = '6';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1438,42 +1438,82 @@
         };
 
         /**
-         * Двускатная крыша + стены + материал крыши.
-         * tile/soft → cherepica, clickfalz → falc / falc_1
+         * Превью: этаж|стены|покрытие|[материал крыши].
+         * gable/hip — нужен материал крыши; shed — без материала.
          */
-        var GABLE_PREVIEW_FILES = {
-            '1|keramzit|tile': '1_keramzit_2skat_cherepica.webp',
-            '1|keramzit|soft': '1_keramzit_2skat_cherepica.webp',
-            '1|keramzit|clickfalz': '1_keramzit_2skat_falc_1.webp',
-            '1|gas|tile': '1_gazobeton_2skat_cherepica.webp',
-            '1|gas|soft': '1_gazobeton_2skat_cherepica.webp',
-            '1|gas|clickfalz': '1_gazobeton_2skat_falc_1.webp',
-            '1|brick|tile': '1_kirpich_2skat_cherepica.png_1.webp',
-            '1|brick|soft': '1_kirpich_2skat_cherepica.png_1.webp',
-            '1|brick|clickfalz': '1_kirpich_2skat_falc.webp',
-            '1|monolith|tile': '1_monolit_2skat_cherepica.webp',
-            '1|monolith|soft': '1_monolit_2skat_cherepica.webp',
-            '1|monolith|clickfalz': '1_monolit_2skat_falc_1.webp',
-            '2|keramzit|tile': '2_keramzit_2skat_cherepica.webp',
-            '2|keramzit|soft': '2_keramzit_2skat_cherepica.webp',
-            '2|keramzit|clickfalz': '2_keramzit_2skat_falc.webp',
-            '2|gas|tile': '2_gazoblok_2skat_cherepica.webp',
-            '2|gas|soft': '2_gazoblok_2skat_cherepica.webp',
-            '2|gas|clickfalz': '2_gazoblok_2skat_falc.webp',
-            '2|brick|tile': '2_kirpich_2skat_cherepica.webp',
-            '2|brick|soft': '2_kirpich_2skat_cherepica.webp',
-            '2|brick|clickfalz': '2_kirpich_2skat_falc.webp',
-            '2|monolith|tile': '2_monolit_2skat_cherepica.webp',
-            '2|monolith|soft': '2_monolit_2skat_cherepica.webp',
-            '2|monolith|clickfalz': '2_monolit_2skat_falc.webp'
+        var CALC_PREVIEW_FILES = {
+            '1|keramzit|gable|tile': '1_keramzit_2skat_cherepica.webp',
+            '1|keramzit|gable|soft': '1_keramzit_2skat_gibkaya.webp',
+            '1|keramzit|gable|clickfalz': '1_keramzit_2skat_falc_1.webp',
+            '1|keramzit|hip|tile': '1_keramzit_4_chirepica.webp',
+            '1|keramzit|hip|soft': '1_keramzit_4skat_gibkaya.webp',
+            '1|keramzit|hip|clickfalz': '1_keramzit_4skat_clickfalc.webp',
+            '1|keramzit|shed': '1_keramzit_odnoskat.webp',
+            '1|gas|gable|tile': '1_gazobeton_2skat_cherepica.webp',
+            '1|gas|gable|soft': '1_gazosilikat_2skat_gibkaya.webp',
+            '1|gas|gable|clickfalz': '1_gazobeton_2skat_falc_1.webp',
+            '1|gas|hip|tile': '1_gazosilikat_4_chirepica.webp',
+            '1|gas|hip|soft': '1_gazosilikat_4skat_gibkaya.webp',
+            '1|gas|hip|clickfalz': '1_gazoblok_4skat_clickfalc.webp',
+            '1|gas|shed': '1_gazosilikat_odnoskat.webp',
+            '1|brick|gable|tile': '1_kirpich_2skat_cherepica.png_1.webp',
+            '1|brick|gable|soft': '1_kirpich_gibkaya.webp',
+            '1|brick|gable|clickfalz': '1_kirpich_2skat_falc.webp',
+            '1|brick|hip|tile': '1_kirpich_4_chirepica.webp',
+            '1|brick|hip|soft': '1_kirpich_4skat_gibkaya.webp',
+            '1|brick|hip|clickfalz': '1_kirpich_4skat_clickfalc.webp',
+            '1|brick|shed': '1_kirpich_odnoskat.webp',
+            '1|monolith|gable|tile': '1_monolit_2skat_cherepica.webp',
+            '1|monolith|gable|clickfalz': '1_monolit_2skat_falc_1.webp',
+            '1|monolith|hip|tile': '1_monolit_4_chirepica.webp',
+            '1|monolith|hip|soft': '1_monolit_4skat_gibkaya.webp',
+            '1|monolith|hip|clickfalz': '1_monolit_4skat_clickfalc.webp',
+            '1|monolith|shed': '1_monolit_odnoskat.webp',
+            '2|keramzit|gable|tile': '2_keramzit_2skat_cherepica.webp',
+            '2|keramzit|gable|soft': '2_keramzit_2skat_gibkaya.webp',
+            '2|keramzit|gable|clickfalz': '2_keramzit_2skat_falc.webp',
+            '2|keramzit|hip|tile': '2_keramzit_4_chirepica.webp',
+            '2|keramzit|hip|soft': '2_keramzit_4skat_gibkaya.webp',
+            '2|keramzit|hip|clickfalz': '2_keramzit_4skat_clickfalc.webp',
+            '2|gas|gable|tile': '2_gazoblok_2skat_cherepica.webp',
+            '2|gas|gable|soft': '2_gazoblok_2skat_gibkaya.webp',
+            '2|gas|gable|clickfalz': '2_gazoblok_2skat_falc.webp',
+            '2|gas|hip|tile': '2_gazosilikat_4_chirepica.webp',
+            '2|gas|hip|soft': '2_gazoblok_4skat_gibkaya.webp',
+            '2|gas|hip|clickfalz': '2_gazoblok_4skat_clickfalc.webp',
+            '2|gas|shed': '2_gazoblok_odnoskat.webp',
+            '2|brick|gable|tile': '2_kirpich_2skat_cherepica.webp',
+            '2|brick|gable|soft': '2_kirpich_2skat_gibkaya.webp',
+            '2|brick|gable|clickfalz': '2_kirpich_2skat_falc.webp',
+            '2|brick|hip|tile': '2_kirpich_4_chirepica.webp',
+            '2|brick|hip|soft': '2_kirpich_4skat_gibkaya.webp',
+            '2|brick|hip|clickfalz': '2_kirpich_4skat_clickfalc.webp',
+            '2|brick|shed': '2_kirpich_odnoskat.webp',
+            '2|monolith|gable|tile': '2_monolit_2skat_cherepica.webp',
+            '2|monolith|gable|soft': '2_monolit_2skat_gibkaya.webp',
+            '2|monolith|gable|clickfalz': '2_monolit_2skat_falc.webp',
+            '2|monolith|hip|tile': '2_monolit_4_chirepica.webp',
+            '2|monolith|hip|soft': '2_monolit_4skat_gibkaya.webp',
+            '2|monolith|hip|clickfalz': '2_monolit_4skat_clickfalc.webp',
+            '2|monolith|shed': '2_monolit_odnoskat.webp'
         };
 
-        function getGableRoofPreviewPath(floors, walls, roofMaterial) {
+        function getCompositePreviewPath(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
-            var roofKey = String(roofMaterial || '').trim();
-            if (!wallKey || !roofKey) return '';
+            var shape = String(roofShape || '').trim();
+            if (!wallKey || !shape) return '';
             var floorNum = Number(floors) === 2 ? 2 : 1;
-            var file = GABLE_PREVIEW_FILES[floorNum + '|' + wallKey + '|' + roofKey];
+            var mapKey;
+            if (shape === 'shed') {
+                mapKey = floorNum + '|' + wallKey + '|shed';
+            } else if (shape === 'gable' || shape === 'hip') {
+                var roofKey = String(roofMaterial || '').trim();
+                if (!roofKey) return '';
+                mapKey = floorNum + '|' + wallKey + '|' + shape + '|' + roofKey;
+            } else {
+                return '';
+            }
+            var file = CALC_PREVIEW_FILES[mapKey];
             return file ? IMG_CALC_DIR + file : '';
         }
 
@@ -1498,13 +1538,14 @@
 
         function resolvePreviewSrc(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
-            if (wallKey && roofShape === 'gable' && roofMaterial) {
-                var gablePreview = getGableRoofPreviewPath(
+            if (wallKey && roofShape) {
+                var compositePreview = getCompositePreviewPath(
                     floors,
                     wallKey,
+                    roofShape,
                     roofMaterial
                 );
-                if (gablePreview) return gablePreview;
+                if (compositePreview) return compositePreview;
             }
             if (wallKey && roofShape === 'flat') {
                 var flatPreview = getFlatRoofWallPreviewPath(floors, wallKey);
