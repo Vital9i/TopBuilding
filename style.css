@@ -2990,6 +2990,27 @@ html {
     
     /* Стили для мобильной версии - стрелки ниже фото с желтым border-radius */
     @media (max-width: 768px) {
+        .modal-slider .slider-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            overscroll-behavior-x: contain;
+            touch-action: pan-x pinch-zoom;
+        }
+
+        .modal-slider .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modal-slider .slider-container img {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
         .slider-prev, .slider-next {
             top: auto !important;
             bottom: 20px !important;
@@ -7740,5 +7761,39 @@ address a:hover {
   .youtube-section .decor {
     width: 220px;
     height: 220px;
+  }
+}
+
+/* Телефон: кликабельный на мобильных, обычный текст на десктопе */
+@media (min-width: 769px) {
+  a.phone-static,
+  a[href^="tel:"]:not([data-phone-always]) {
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  a.phone-static:hover,
+  .hero-sidebar a.phone-static:hover,
+  .footer a.phone-static:hover,
+  .contact-info-footer a.phone-static:hover {
+    color: inherit;
+    text-decoration: none;
+    transform: none;
+  }
+
+  .contact-info-footer a.phone-static::after {
+    display: none;
+  }
+
+  .contact-info-footer a.phone-static {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  a[data-tel-href][href^="tel:"] {
+    cursor: pointer;
   }
 }

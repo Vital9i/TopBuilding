@@ -57,11 +57,11 @@ async function sendToTelegram(name, phone, source) {
         return { ok: false };
     }
     
-    const nameLine = (name && name.trim()) ? name.trim() : 'не указано';
-    const message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+    const nameLine = formatTelegramLeadName(name);
+    const message = `🔔 <b>${TELEGRAM_LEAD_TITLE}</b>\n\n` +
                   `👤 <b>Имя:</b> ${nameLine}\n` +
-                  `📱 <b>Телефон:</b> ${phone}\n` +
-                  `📍 <b>Источник:</b> ${source}\n` +
+                  `📱 <b>Телефон:</b> ${formatTelegramPhone(phone)}\n` +
+                  `📍 <b>Источник:</b> ${buildTelegramLeadSource(source)}\n` +
                   `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
     
     const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.BOT_TOKEN}/sendMessage`;
@@ -74,7 +74,8 @@ async function sendToTelegram(name, phone, source) {
         body: JSON.stringify({
             chat_id: TELEGRAM_CONFIG.CHAT_ID,
             text: message,
-            parse_mode: 'HTML'
+            parse_mode: 'HTML',
+            disable_web_page_preview: true
         })
     });
     

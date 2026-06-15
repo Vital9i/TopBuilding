@@ -613,8 +613,10 @@ function openProjectModal(type) {
 
             sliderContainer.scrollLeft = 0;
 
-            setTimeout(function() {
-                initSliderNavigation();
+            setTimeout(function () {
+                if (typeof initAllProjectModalSliders === 'function') {
+                    initAllProjectModalSliders();
+                }
             }, 50);
         }
     }
@@ -643,64 +645,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetSlider) targetSlider.classList.add('active');
         });
     });
-});
-
-function initSliderNavigation() {
-    document.querySelectorAll('.slider-prev').forEach(btn => {
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-
-        newBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const slider = this.closest('.modal-slider');
-            if (!slider) return;
-
-            const container = slider.querySelector('.slider-container');
-            if (container) {
-                const scrollAmount = container.offsetWidth;
-                container.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    document.querySelectorAll('.slider-next').forEach(btn => {
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-
-        newBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const slider = this.closest('.modal-slider');
-            if (!slider) return;
-
-            const container = slider.querySelector('.slider-container');
-            if (container) {
-                const scrollAmount = container.offsetWidth;
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    initSliderNavigation();
-
-    const originalOpenProjectModal = window.openProjectModal;
-    if (originalOpenProjectModal) {
-        window.openProjectModal = function(type) {
-            originalOpenProjectModal(type);
-            setTimeout(function() {
-                initSliderNavigation();
-            }, 100);
-        };
-    }
 });
 
 document.addEventListener('keydown', function (e) {
@@ -1160,11 +1104,11 @@ async function sendToTelegram(name, phone, source, additionalInfo = '') {
         throw new Error('TELEGRAM_CONFIG не загружен');
     }
     
-    const nameLine = (name && name.trim()) ? name.trim() : 'не указано';
-    let message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+    const nameLine = formatTelegramLeadName(name);
+    let message = `🔔 <b>${TELEGRAM_LEAD_TITLE}</b>\n\n` +
                   `👤 <b>Имя:</b> ${nameLine}\n` +
-                  `📱 <b>Телефон:</b> ${phone}\n` +
-                  `📍 <b>Источник:</b> ${source}\n`;
+                  `📱 <b>Телефон:</b> ${formatTelegramPhone(phone)}\n` +
+                  `📍 <b>Источник:</b> ${buildTelegramLeadSource(source)}\n`;
     
     if (additionalInfo) {
         message += `\n${additionalInfo}`;
@@ -1182,7 +1126,8 @@ async function sendToTelegram(name, phone, source, additionalInfo = '') {
         body: JSON.stringify({
             chat_id: TELEGRAM_CONFIG.CHAT_ID,
             text: message,
-            parse_mode: 'HTML'
+            parse_mode: 'HTML',
+            disable_web_page_preview: true
         })
     });
     

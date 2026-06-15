@@ -264,7 +264,7 @@
             width: 100%;
             min-height: 0;
             display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(220px, 0.92fr);
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 1.15fr);
             gap: 0;
             align-items: stretch;
             overflow: hidden;
@@ -299,7 +299,7 @@
 
         .calc-field-row-pair {
             display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.85fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px 12px;
             align-items: stretch;
             margin-bottom: 0;
@@ -542,7 +542,7 @@
             border: 1px solid var(--glass-border);
             background: rgba(15, 17, 23, 0.5);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            flex: 3 1 0;
+            flex: 1 1 auto;
             min-height: 0;
             transition: box-shadow 0.35s ease, transform 0.35s ease;
         }
@@ -556,50 +556,6 @@
             object-position: center bottom;
         }
 
-        .preview-meta {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            grid-auto-rows: minmax(44px, 1fr);
-            gap: 8px;
-            margin-top: 8px;
-            flex: 1 1 0;
-            min-height: 0;
-            align-content: stretch;
-        }
-
-        .meta-item {
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 12px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 0;
-            transition:
-                background 0.25s ease,
-                border-color 0.25s ease,
-                transform 0.2s ease;
-        }
-
-        .meta-label {
-            font-size: 10px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-        }
-
-        .meta-value {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-color);
-            line-height: 1.3;
-            word-break: break-word;
-        }
-
         .calc-section-notes {
             flex-shrink: 0;
             margin: 0;
@@ -611,14 +567,6 @@
         }
 
         @media (max-width: 899px) {
-            .preview-meta {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                grid-auto-rows: auto;
-                flex: 0 1 auto;
-                align-content: start;
-                min-height: 0;
-            }
-
             .calc-layout {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto;
@@ -649,10 +597,9 @@
             }
 
             .preview-image-wrap {
-                flex: 0 0 auto;
-                min-height: min(220px, 42vw);
-                max-height: min(320px, 48vh);
-                aspect-ratio: 5 / 4;
+                flex: 1 1 auto;
+                min-height: min(320px, 55vw);
+                max-height: min(520px, 68vh);
             }
 
             .preview-title {
@@ -738,10 +685,6 @@
                 gap: 10px 0;
             }
 
-            .preview-meta {
-                grid-template-columns: 1fr;
-            }
-
             .calc-progress-label {
                 font-size: 10px;
                 line-height: 1.35;
@@ -762,7 +705,7 @@
             }
         }
 
-        /* Интерактив: прогресс, подписи с иконками, фокус */
+        /* ╨Ш╨╜╤В╨╡╤А╨░╨║╤В╨╕╨▓: ╨┐╤А╨╛╨│╤А╨╡╤Б╤Б, ╨┐╨╛╨┤╨┐╨╕╤Б╨╕ ╤Б ╨╕╨║╨╛╨╜╨║╨░╨╝╨╕, ╤Д╨╛╨║╤Г╤Б */
         .calc-progress {
             grid-column: 1 / -1;
             margin-bottom: 8px;
@@ -822,32 +765,6 @@
             color: #e8c84d;
         }
 
-        .field:focus-within {
-            z-index: 1;
-        }
-
-        .field:focus-within::after {
-            content: '';
-            position: absolute;
-            inset: -5px;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
-            pointer-events: none;
-            animation: fieldGlowIn 0.25s ease-out forwards;
-        }
-
-        @keyframes fieldGlowIn {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
         .preview-image-wrap.preview-flash {
             animation: previewFlash 0.7s ease-out;
         }
@@ -858,21 +775,6 @@
             }
             100% {
                 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            }
-        }
-
-        .meta-item.meta-pulse {
-            animation: metaPulse 0.55s ease-out;
-        }
-
-        @keyframes metaPulse {
-            0% {
-                border-color: rgba(212, 175, 55, 0.75);
-                background: rgba(212, 175, 55, 0.12);
-            }
-            100% {
-                border-color: var(--glass-border);
-                background: rgba(255, 255, 255, 0.05);
             }
         }
 
@@ -900,19 +802,45 @@
         @media (prefers-reduced-motion: reduce) {
             .calc-progress-fill,
             .field,
-            .meta-item,
             .preview-image-wrap,
-            .result,
-            .field:focus-within::after {
+            .result {
                 transition: none !important;
                 animation: none !important;
             }
 
             .preview-image-wrap.preview-flash,
-            .meta-item.meta-pulse,
             .result.result-pop {
                 animation: none !important;
             }
+        }
+        /* Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ: РІР°Р»РёРґР°С†РёСЏ Рё Р±Р»РѕРєРёСЂРѕРІРєР° РјР°С‚РµСЂРёР°Р»Р° РєСЂС‹С€Рё */
+        .field.field--error .field-label {
+            color: #f87171;
+        }
+
+        .field.field--error .field-label i {
+            color: #f87171;
+        }
+
+        .field.field--error input,
+        .field.field--error select {
+            border-color: rgba(248, 113, 113, 0.75);
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.12);
+        }
+
+        .field.field--disabled .field-label {
+            opacity: 0.55;
+        }
+
+        .field.field--disabled .field-label i {
+            opacity: 0.7;
+        }
+
+        .field.field--disabled select:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            background-color: rgba(26, 29, 41, 0.4);
+            border-color: rgba(255, 255, 255, 0.06);
         }
     </style>
 </head>
@@ -965,18 +893,17 @@
                         </select>
                     </div>
                     <div class="field">
-                        <label for="area" class="field-label"><i class="fas fa-vector-square" aria-hidden="true"></i>Площадь дома (м²)</label>
+                        <label for="area" class="field-label"><i class="fas fa-vector-square" aria-hidden="true"></i>Площадь, м²</label>
                         <input id="area" type="number" step="any" value="0" inputmode="decimal" aria-label="Площадь дома, м²" placeholder="Не указано">
                     </div>
-                </div>
-
-                <div class="field">
-                    <label for="floors" class="field-label"><i class="fas fa-layer-group" aria-hidden="true"></i>Этажность</label>
-                    <select id="floors">
-                        <option value="" disabled hidden selected>Не указано</option>
-                        <option value="1">1 этаж</option>
-                        <option value="2">2 этажа</option>
-                    </select>
+                    <div class="field">
+                        <label for="basement" class="field-label"><i class="fas fa-archway" aria-hidden="true"></i>Цокольный этаж</label>
+                        <select id="basement">
+                            <option value="" disabled hidden selected>Не указано</option>
+                            <option value="no">Нет</option>
+                            <option value="yes" data-persqm="1200">Да</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="field">
@@ -1001,12 +928,11 @@
                 </div>
 
                 <div class="field">
-                    <label for="roof" class="field-label"><i class="fas fa-house-chimney" aria-hidden="true"></i>Материал крыши</label>
-                    <select id="roof">
+                    <label for="floors" class="field-label"><i class="fas fa-layer-group" aria-hidden="true"></i>Этажность</label>
+                    <select id="floors">
                         <option value="" disabled hidden selected>Не указано</option>
-                        <option value="tile" data-persqm="500">Металлочерепица</option>
-                        <option value="soft" data-persqm="650">Гибкая черепица</option>
-                        <option value="clickfalz" data-persqm="550">Клик-фальц</option>
+                        <option value="1">1 этаж</option>
+                        <option value="2">2 этажа</option>
                     </select>
                 </div>
 
@@ -1022,26 +948,19 @@
                 </div>
 
                 <div class="field">
+                    <label for="roof" class="field-label"><i class="fas fa-house-chimney" aria-hidden="true"></i>Материал крыши</label>
+                    <select id="roof">
+                        <option value="" disabled hidden selected>Не указано</option>
+                        <option value="flat_membrane" data-persqm="0" hidden>Полимерные мембраны</option>
+                        <option value="tile" data-persqm="500">Металлочерепица</option>
+                        <option value="soft" data-persqm="650">Гибкая черепица</option>
+                        <option value="clickfalz" data-persqm="550">Клик-фальц</option>
+                    </select>
+                </div>
+
+                <div class="field">
                     <label for="mansard" class="field-label"><i class="fas fa-building" aria-hidden="true"></i>Мансардный этаж</label>
                     <select id="mansard">
-                        <option value="" disabled hidden selected>Не указано</option>
-                        <option value="no">Нет</option>
-                        <option value="yes">Да</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label for="basement" class="field-label"><i class="fas fa-archway" aria-hidden="true"></i>Цокольный этаж</label>
-                    <select id="basement">
-                        <option value="" disabled hidden selected>Не указано</option>
-                        <option value="no">Нет</option>
-                        <option value="yes" data-persqm="1200">Да</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label for="terrace" class="field-label"><i class="fas fa-umbrella-beach" aria-hidden="true"></i>Крытая терраса</label>
-                    <select id="terrace">
                         <option value="" disabled hidden selected>Не указано</option>
                         <option value="no">Нет</option>
                         <option value="yes">Да</option>
@@ -1052,11 +971,19 @@
                     <label for="exteriorFinish" class="field-label"><i class="fas fa-paintbrush" aria-hidden="true"></i>Наружная отделка</label>
                     <select id="exteriorFinish">
                         <option value="" disabled hidden selected>Не указано</option>
-                        <option value="none" data-persqm="0">Без отделки</option>
                         <option value="wet_insulated" data-persqm="280">Мокрый фасад с утеплением</option>
                         <option value="ventilated_insulated" data-persqm="355">Вентилируемый фасад с утеплением</option>
                         <option value="cold" data-persqm="142">По холодному</option>
                         <option value="clinker" data-persqm="440">Клинкер</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="terrace" class="field-label"><i class="fas fa-umbrella-beach" aria-hidden="true"></i>Крытая терраса</label>
+                    <select id="terrace">
+                        <option value="" disabled hidden selected>Не указано</option>
+                        <option value="no">Нет</option>
+                        <option value="yes">Да</option>
                     </select>
                 </div>
 
@@ -1077,7 +1004,7 @@
                     <button class="btn-ghost" id="resetBtn" type="button">Сбросить</button>
                 </div>
                 <div class="result" id="result">
-                    Ориентировочная стоимость: <strong>0 BYN</strong><span class="result-per-m2"> · — BYN/м²</span>
+                    Ориентировочная стоимость: <strong>—</strong><span class="result-per-m2"> · — BYN/м²</span>
                 </div>
             </div>
             </div>
@@ -1085,42 +1012,7 @@
             <div class="calc-preview-panel">
                 <p class="preview-title">Визуализация дома по выбранным параметрам</p>
                 <div class="preview-image-wrap">
-                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=7" alt="Предпросмотр дома">
-                </div>
-
-                <div class="preview-meta">
-                    <div class="meta-item">
-                        <div class="meta-label">Материал стен</div>
-                        <div class="meta-value" id="metaWalls">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Материал крыши</div>
-                        <div class="meta-value" id="metaRoof">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Покрытие крыши</div>
-                        <div class="meta-value" id="metaRoofShape">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Мансарда</div>
-                        <div class="meta-value" id="metaMansard">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Этажность</div>
-                        <div class="meta-value" id="metaFloors">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Площадь</div>
-                        <div class="meta-value" id="metaArea">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Комплектация</div>
-                        <div class="meta-value" id="metaPackage">-</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Доп. опции</div>
-                        <div class="meta-value" id="metaOptions">-</div>
-                    </div>
+                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=12" alt="Предпросмотр дома">
                 </div>
             </div>
             </div>
@@ -1223,51 +1115,96 @@
         const calcBtn = document.getElementById('calcBtn');
         const resetBtn = document.getElementById('resetBtn');
         const housePreviewEl = document.getElementById('housePreview');
-        const metaWallsEl = document.getElementById('metaWalls');
-        const metaRoofEl = document.getElementById('metaRoof');
-        const metaRoofShapeEl = document.getElementById('metaRoofShape');
-        const metaMansardEl = document.getElementById('metaMansard');
-        const metaFloorsEl = document.getElementById('metaFloors');
-        const metaAreaEl = document.getElementById('metaArea');
-        const metaPackageEl = document.getElementById('metaPackage');
-        const metaOptionsEl = document.getElementById('metaOptions');
         const calcProgressFill = document.getElementById('calcProgressFill');
         const calcProgressPct = document.getElementById('calcProgressPct');
         const calcProgressHint = document.getElementById('calcProgressHint');
         const previewImageWrap = document.querySelector('.preview-image-wrap');
 
-        const touchedFields = new Set();
         const FIELD_KEYS = [
             'projectType',
             'area',
-            'floors',
             'foundation',
             'walls',
-            'roof',
+            'floors',
             'roofShape',
+            'roof',
             'mansard',
             'basement',
-            'terrace',
             'exteriorFinish',
+            'terrace',
             'package'
         ];
         const TRACK_TOTAL = FIELD_KEYS.length;
         var calculatePassCount = 0;
+        var priceCalculated = false;
+        var roofValueBeforeFlat = '';
+        var mansardValueBeforeGable = '';
 
-        function markFieldTouched(key) {
-            if (touchedFields.has(key)) return;
-            touchedFields.add(key);
-            updateProgressBar();
+        function isRoofMaterialLocked() {
+            return roofShapeEl && roofShapeEl.value === 'flat';
+        }
+
+        function isMansardAvailable() {
+            return roofShapeEl && roofShapeEl.value === 'gable';
+        }
+
+        function isFieldValid(key) {
+            var el = document.getElementById(key);
+            if (!el) return true;
+            if (key === 'area') return parseAreaValue() > 0;
+            if (key === 'roof' && isRoofMaterialLocked()) return true;
+            if (key === 'mansard' && !isMansardAvailable()) return true;
+            return String(el.value).trim() !== '';
+        }
+
+        function areAllFieldsValid() {
+            return FIELD_KEYS.every(isFieldValid);
+        }
+
+        function getFieldContainer(el) {
+            return el && el.closest('.field');
+        }
+
+        function clearFieldErrors() {
+            document.querySelectorAll('.field.field--error').forEach(function (field) {
+                field.classList.remove('field--error');
+            });
+        }
+
+        function clearFieldError(key) {
+            var el = document.getElementById(key);
+            var container = getFieldContainer(el);
+            if (container) container.classList.remove('field--error');
+        }
+
+        function highlightInvalidFields() {
+            clearFieldErrors();
+            FIELD_KEYS.forEach(function (key) {
+                if (!isFieldValid(key)) {
+                    var el = document.getElementById(key);
+                    var container = getFieldContainer(el);
+                    if (container) container.classList.add('field--error');
+                }
+            });
+        }
+
+        function countValidFields() {
+            var count = 0;
+            FIELD_KEYS.forEach(function (key) {
+                if (isFieldValid(key)) count += 1;
+            });
+            return count;
         }
 
         function updateProgressBar() {
             if (!calcProgressFill || !calcProgressPct) return;
-            var pct = Math.min(100, Math.round((touchedFields.size / TRACK_TOTAL) * 100));
+            var filled = countValidFields();
+            var pct = Math.min(100, Math.round((filled / TRACK_TOTAL) * 100));
             calcProgressFill.style.width = pct + '%';
             calcProgressPct.textContent = String(pct);
             if (calcProgressHint) {
-                if (pct >= 100) {
-                    calcProgressHint.textContent = 'все блоки затронуты — можно нажать «Рассчитать»';
+                if (filled >= TRACK_TOTAL) {
+                    calcProgressHint.textContent = 'все параметры выбраны — нажмите «Рассчитать»';
                 } else if (pct >= 66) {
                     calcProgressHint.textContent =
                         'осталось немного — проверьте блок с превью и итогом';
@@ -1290,11 +1227,6 @@
 
         /** Прогресс: площадь считается заполненной только если значение > 0 */
         function syncAreaProgressField() {
-            if (parseAreaValue() > 0) {
-                touchedFields.add('area');
-            } else {
-                touchedFields.delete('area');
-            }
             updateProgressBar();
         }
 
@@ -1308,6 +1240,50 @@
             });
         }
 
+        function syncRoofMaterialState() {
+            if (!roofEl) return;
+            var locked = isRoofMaterialLocked();
+            var container = getFieldContainer(roofEl);
+            if (locked) {
+                if (roofEl.value && roofEl.value !== 'flat_membrane') {
+                    roofValueBeforeFlat = roofEl.value;
+                }
+                roofEl.value = 'flat_membrane';
+                roofEl.disabled = true;
+                if (container) container.classList.add('field--disabled');
+                clearFieldError('roof');
+            } else {
+                roofEl.disabled = false;
+                if (roofEl.value === 'flat_membrane') {
+                    roofEl.value = roofValueBeforeFlat || '';
+                    roofValueBeforeFlat = '';
+                }
+                if (container) container.classList.remove('field--disabled');
+            }
+        }
+
+        function syncMansardState() {
+            if (!mansardEl) return;
+            var available = isMansardAvailable();
+            var container = getFieldContainer(mansardEl);
+            if (!available) {
+                if (mansardEl.value && mansardEl.value !== 'no') {
+                    mansardValueBeforeGable = mansardEl.value;
+                }
+                mansardEl.value = 'no';
+                mansardEl.disabled = true;
+                if (container) container.classList.add('field--disabled');
+                clearFieldError('mansard');
+            } else {
+                mansardEl.disabled = false;
+                if (mansardEl.value === 'no' && mansardValueBeforeGable) {
+                    mansardEl.value = mansardValueBeforeGable;
+                    mansardValueBeforeGable = '';
+                }
+                if (container) container.classList.remove('field--disabled');
+            }
+        }
+
         function syncAreaInputEmptyState() {
             if (!areaEl) return;
             if (parseAreaValue() > 0) {
@@ -1317,55 +1293,35 @@
             }
         }
 
-        function playUpdateAnimations() {
+        function playPreviewAnimations() {
             if (previewImageWrap) {
                 previewImageWrap.classList.remove('preview-flash');
                 void previewImageWrap.offsetWidth;
                 previewImageWrap.classList.add('preview-flash');
             }
+        }
+
+        function playUpdateAnimations() {
+            playPreviewAnimations();
             resultEl.classList.remove('result-pop');
             void resultEl.offsetWidth;
             resultEl.classList.add('result-pop');
-            document.querySelectorAll('.preview-meta .meta-item').forEach(function (el) {
-                el.classList.remove('meta-pulse');
-                void el.offsetWidth;
-                el.classList.add('meta-pulse');
-            });
+        }
+
+        function setResultPlaceholder() {
+            resultEl.innerHTML =
+                'Ориентировочная стоимость: <strong>—</strong>' +
+                '<span class="result-per-m2"> · — BYN/м²</span>';
         }
 
         FIELD_KEYS.forEach(function (key) {
-            if (key === 'area') return;
             var el = document.getElementById(key);
             if (!el) return;
             var ev = el.tagName === 'INPUT' && el.type === 'number' ? 'input' : 'change';
             el.addEventListener(ev, function () {
-                markFieldTouched(key);
+                clearFieldError(key);
             });
         });
-
-        const ROOF_LABELS = {
-            tile: 'Металлочерепица',
-            soft: 'Гибкая черепица',
-            clickfalz: 'Клик-фальц'
-        };
-
-        const ROOF_SHAPE_LABELS = {
-            flat: 'Плоское',
-            shed: 'Односкатное',
-            gable: 'Двускатное',
-            hip: 'Четырёхскатная / вальмовая'
-        };
-
-        const MANSARD_LABELS = {
-            no: 'Нет',
-            yes: 'Да'
-        };
-
-        const PACKAGE_LABELS = {
-            box: 'Коробка',
-            rough: 'Черновая',
-            turnkey: 'Под ключ'
-        };
 
         function getPrice(selectEl) {
             if (!selectEl || selectEl.value === '') return 0;
@@ -1380,11 +1336,6 @@
             return isNaN(v) ? 0 : v;
         }
 
-        function getOptionText(selectEl) {
-            if (!selectEl || selectEl.value === '') return 'Не указано';
-            return selectEl.options[selectEl.selectedIndex].textContent;
-        }
-
         function formatBYN(value) {
             return new Intl.NumberFormat('ru-BY').format(Math.round(value)) + ' BYN';
         }
@@ -1395,7 +1346,7 @@
 
         /** Пути к растровым превью (папка img_calculator в корне проекта) */
         var IMG_CALC_DIR = 'img_calculator/';
-        var IMG_CALC_VER = '7';
+        var IMG_CALC_VER = '12';
         var IMG_CALC_EMPTY = IMG_CALC_DIR + 'Ychastok1.webp';
         var IMG_CALC_FOUNDATION_STRIP = IMG_CALC_DIR + 'Fundament_lenta1.webp';
         var IMG_CALC_FOUNDATION_SLAB = IMG_CALC_DIR + 'Fundament_plita.webp';
@@ -1407,10 +1358,7 @@
         function setHousePreviewSrc(src) {
             if (!housePreviewEl || !src) return;
             delete housePreviewEl.dataset.fallbackApplied;
-            var url = calcImgUrl(src);
-            if (housePreviewEl.getAttribute('src') !== url) {
-                housePreviewEl.src = url;
-            }
+            housePreviewEl.src = calcImgUrl(src);
         }
 
         if (housePreviewEl && !housePreviewEl.dataset.previewErrorBound) {
@@ -1422,6 +1370,131 @@
             });
         }
 
+        /**
+         * Имена файлов в img_calculator/ (для проверки кандидатов).
+         * Схема имён:
+         *   {этаж}_{стены}.webp — коробка без крыши
+         *   {этаж}_ploskaya_{стены}.webp — плоская крыша
+         *   {этаж}_{стены}_odnoskat.webp — односкатная
+         *   {этаж}_{стены}_2skat_{cherepica|gibkaya|falc*} — двускатная
+         *   {этаж}_{стены}_4_chirepica.webp / _4skat_{gibkaya|clickfalc} — четырёхскатная
+         *   {этаж}_naryzhnya_{2skat|4skat}_{cherepica|gibkaya|clickfalc}[+terrasa].webp
+         *   {этаж}_naryzhnya_odnoskatnaya|ploskaya[+terrasa].webp — с отделкой
+         */
+        var IMG_CALC_KNOWN = {
+            '1_gazobeton.webp': 1,
+            '1_gazobeton_2skat_cherepica.webp': 1,
+            '1_gazobeton_2skat_falc_1.webp': 1,
+            '1_gazoblok_4skat_clickfalc.webp': 1,
+            '1_gazoblok_4skat_gibkaya.webp': 1,
+            '1_gazosilikat_2skat_gibkaya.webp': 1,
+            '1_gazosilikat_4_chirepica.webp': 1,
+            '1_gazosilikat_4skat_gibkaya.webp': 1,
+            '1_gazosilikat_odnoskat.webp': 1,
+            '1_keramzit_2skat_cherepica.webp': 1,
+            '1_keramzit_2skat_falc_1.webp': 1,
+            '1_keramzit_2skat_gibkaya.webp': 1,
+            '1_keramzit_4_chirepica.webp': 1,
+            '1_keramzit_4skat_clickfalc.webp': 1,
+            '1_keramzit_4skat_gibkaya.webp': 1,
+            '1_keramzit_gibkaya.webp': 1,
+            '1_keramzit_odnoskat.webp': 1,
+            '1_kiramzit.webp': 1,
+            '1_kirpich.webp': 1,
+            '1_kirpich_2skat_cherepica.png_1.webp': 1,
+            '1_kirpich_2skat_falc.webp': 1,
+            '1_kirpich_4_chirepica.webp': 1,
+            '1_kirpich_4skat_clickfalc.webp': 1,
+            '1_kirpich_4skat_gibkaya.webp': 1,
+            '1_kirpich_gibkaya.webp': 1,
+            '1_kirpich_odnoskat.webp': 1,
+            '1_monolit.webp': 1,
+            '1_monolit_2skat_cherepica.webp': 1,
+            '1_monolit_2skat_falc_1.webp': 1,
+            '1_monolit_4_chirepica.webp': 1,
+            '1_monolit_4skat_clickfalc.webp': 1,
+            '1_monolit_4skat_gibkaya.webp': 1,
+            '1_monolit_odnoskat.webp': 1,
+            '1_naryzhnya_2skat_cherepica+terrasa.webp': 1,
+            '1_naryzhnya_2skat_chirepica.webp': 1,
+            '1_naryzhnya_2skat_clickfalc.webp': 1,
+            '1_naryzhnya_2skat_clickfalc+terrasa.webp': 1,
+            '1_naryzhnya_2skat_gibkaya.webp': 1,
+            '1_naryzhnya_2skat_gibkaya+terrasa.webp': 1,
+            '1_naryzhnya_4skat_cherepica.webp': 1,
+            '1_naryzhnya_4skat_cherepica+terrasa.webp': 1,
+            '1_naryzhnya_4skat_clickfalc.webp': 1,
+            '1_naryzhnya_4skat_clickfalc+terrasa.webp': 1,
+            '1_naryzhnya_4skat_gibkaya.webp': 1,
+            '1_naryzhnya_4skat_gibkaya+terrasa.webp': 1,
+            '1_naryzhnya_odnoskatnaya.webp': 1,
+            '1_naryzhnya_odnoskatnaya+terrasa.webp': 1,
+            '1_naryzhnya_ploskaya.webp': 1,
+            '1_naryzhnya_ploskaya+terrasa.webp': 1,
+            '1_ploskaya_gazoblock.webp': 1,
+            '1_ploskaya_keramzit.webp': 1,
+            '1_ploskaya_kirpich.webp': 1,
+            '1_ploskaya_monolit.webp': 1,
+            '2_gazobeton.webp': 1,
+            '2_gazoblok_2skat_cherepica.webp': 1,
+            '2_gazoblok_2skat_falc.webp': 1,
+            '2_gazoblok_2skat_gibkaya.webp': 1,
+            '2_gazoblok_4skat_clickfalc.webp': 1,
+            '2_gazoblok_4skat_gibkaya.webp': 1,
+            '2_gazoblok_odnoskat.webp': 1,
+            '2_gazosilikat_4_chirepica.webp': 1,
+            '2_keramzit_2skat_cherepica.webp': 1,
+            '2_keramzit_2skat_falc.webp': 1,
+            '2_keramzit_2skat_gibkaya.webp': 1,
+            '2_keramzit_4_chirepica.webp': 1,
+            '2_keramzit_4skat_clickfalc.webp': 1,
+            '2_keramzit_4skat_gibkaya.webp': 1,
+            '2_keramzitobeton_odnoskat.webp': 1,
+            '2_kiramzit.webp': 1,
+            '2_kirpich.webp': 1,
+            '2_kirpich_2skat_cherepica.webp': 1,
+            '2_kirpich_2skat_falc.webp': 1,
+            '2_kirpich_2skat_gibkaya.webp': 1,
+            '2_kirpich_4_chirepica.webp': 1,
+            '2_kirpich_4skat_clickfalc.webp': 1,
+            '2_kirpich_4skat_gibkaya.webp': 1,
+            '2_kirpich_odnoskat.webp': 1,
+            '2_monolit.webp': 1,
+            '2_monolit_2skat_cherepica.webp': 1,
+            '2_monolit_2skat_falc.webp': 1,
+            '2_monolit_2skat_gibkaya.webp': 1,
+            '2_monolit_4_chirepica.webp': 1,
+            '2_monolit_4skat_clickfalc.webp': 1,
+            '2_monolit_4skat_gibkaya.webp': 1,
+            '2_monolit_odnoskat.webp': 1,
+            '2_naryzhnya_2skat_cherepica.webp': 1,
+            '2_naryzhnya_2skat_cherepica+terrasa.webp': 1,
+            '2_naryzhnya_2skat_clickfalc.webp': 1,
+            '2_naryzhnya_2skat_clickfalc+terrasa.webp': 1,
+            '2_naryzhnya_2skat_gibkaya.webp': 1,
+            '2_naryzhnya_2skat_gibkaya+terrasa.webp': 1,
+            '2_naryzhnya_4skat_cherepica.webp': 1,
+            '2_naryzhnya_4skat_cherepica+terrasa.webp': 1,
+            '2_naryzhnya_4skat_clickfalc.webp': 1,
+            '2_naryzhnya_4skat_clickfalc+terrasa.webp': 1,
+            '2_naryzhnya_4skat_gibkaya.webp': 1,
+            '2_naryzhnya_4skat_gibkaya+terrasa.webp': 1,
+            '2_naryzhnya_odnoskatnaya.webp': 1,
+            '2_naryzhnya_odnoskatnaya+terrasa.webp': 1,
+            '2_naryzhnya_ploskaya.webp': 1,
+            '2_naryzhnya_ploskaya+terrasa.webp': 1,
+            '2_ploskaya_gazoblok.webp': 1,
+            '2_ploskaya_keramzit.webp': 1,
+            '2_ploskaya_kirpich.webp': 1,
+            '2_ploskaya_monolit.webp': 1,
+            'Fundament_lenta1.webp': 1,
+            'Fundament_plita.webp': 1,
+            'Ychastok1.webp': 1
+        };
+
+        var ROOF_MATERIALS = ['tile', 'soft', 'clickfalz'];
+
+        /** Материал стен → имя в файле (базовое превью) */
         var WALL_PREVIEW_FILES = {
             keramzit: 'kiramzit',
             gas: 'gazobeton',
@@ -1429,7 +1502,7 @@
             monolith: 'monolit'
         };
 
-        /** Плоская крыша + материал стен → {этаж}_ploskaya_{материал}.webp */
+        /** Плоская крыша: {этаж}_ploskaya_{имя в файле}.webp */
         var FLAT_ROOF_WALL_FILES = {
             keramzit: 'keramzit',
             gas: { 1: 'gazoblock', 2: 'gazoblok' },
@@ -1438,8 +1511,47 @@
         };
 
         /**
-         * Превью: этаж|стены|покрытие|[материал крыши].
-         * gable/hip — нужен материал крыши; shed — без материала.
+         * Стены в составном превью: этаж|стены|[форма|материал крыши] → stem в имени файла.
+         * У газосиликата и керамзита имена в файлах неоднородны.
+         */
+        var COMPOSITE_WALL_STEM = {
+            '1|keramzit': 'keramzit',
+            '2|keramzit': 'keramzit',
+            '2|keramzit|shed': 'keramzitobeton',
+            '1|gas|gable|tile': 'gazobeton',
+            '1|gas|gable|soft': 'gazosilikat',
+            '1|gas|gable|clickfalz': 'gazobeton',
+            '1|gas|hip|tile': 'gazosilikat',
+            '1|gas|hip|soft': 'gazosilikat',
+            '1|gas|hip|clickfalz': 'gazoblok',
+            '1|gas|shed': 'gazosilikat',
+            '2|gas|hip|tile': 'gazosilikat',
+            '1|brick': 'kirpich',
+            '2|brick': 'kirpich',
+            '1|monolith': 'monolit',
+            '2|monolith': 'monolit'
+        };
+
+        var GABLE_ROOF_SUFFIX = {
+            tile: ['2skat_cherepica'],
+            soft: ['2skat_gibkaya', 'gibkaya'],
+            clickfalz: ['2skat_falc_1', '2skat_falc']
+        };
+
+        var HIP_ROOF_SUFFIX = {
+            tile: ['4_chirepica'],
+            soft: ['4skat_gibkaya'],
+            clickfalz: ['4skat_clickfalc']
+        };
+
+        var COMPOSITE_EXTRA_CANDIDATES = {
+            '1|brick|gable|tile': ['1_kirpich_2skat_cherepica.png_1.webp'],
+            '1|monolith|gable|soft': ['1_monolit_4skat_gibkaya.webp']
+        };
+
+        /**
+         * Явная матрица: этаж|стены|форма|[материал крыши] → файл.
+         * Дублирует авто-подбор для нестандартных имён.
          */
         var CALC_PREVIEW_FILES = {
             '1|keramzit|gable|tile': '1_keramzit_2skat_cherepica.webp',
@@ -1464,6 +1576,7 @@
             '1|brick|hip|clickfalz': '1_kirpich_4skat_clickfalc.webp',
             '1|brick|shed': '1_kirpich_odnoskat.webp',
             '1|monolith|gable|tile': '1_monolit_2skat_cherepica.webp',
+            '1|monolith|gable|soft': '1_monolit_4skat_gibkaya.webp',
             '1|monolith|gable|clickfalz': '1_monolit_2skat_falc_1.webp',
             '1|monolith|hip|tile': '1_monolit_4_chirepica.webp',
             '1|monolith|hip|soft': '1_monolit_4skat_gibkaya.webp',
@@ -1475,6 +1588,7 @@
             '2|keramzit|hip|tile': '2_keramzit_4_chirepica.webp',
             '2|keramzit|hip|soft': '2_keramzit_4skat_gibkaya.webp',
             '2|keramzit|hip|clickfalz': '2_keramzit_4skat_clickfalc.webp',
+            '2|keramzit|shed': '2_keramzitobeton_odnoskat.webp',
             '2|gas|gable|tile': '2_gazoblok_2skat_cherepica.webp',
             '2|gas|gable|soft': '2_gazoblok_2skat_gibkaya.webp',
             '2|gas|gable|clickfalz': '2_gazoblok_2skat_falc.webp',
@@ -1498,101 +1612,210 @@
             '2|monolith|shed': '2_monolit_odnoskat.webp'
         };
 
-        /**
-         * Превью для наружной отделки / комплектации.
-         * Ключ: этаж|покрытие|[материал крыши].
-         */
-        /** Наружная отделка / комплектация (naryzhnya_*) */
+        /** Наружная отделка: этаж|форма|[материал крыши] → naryzhnya_* */
         var FINISH_PREVIEW_FILES = {
-            '1|hip|tile': '1_naryzhnya_4_cherepica.webp',
-            '1|hip|soft': '1_naryzhnya_4_gibkaya.webp',
-            '2|gable|tile': '2_naryzhnya_2_cherepica.webp',
-            '2|gable|soft': '2_naryzhnya_2_gibkaya.webp',
-            '2|gable|clickfalz': '2_naryzhnya_2_clickfalc.webp',
-            '2|hip|tile': '2_naryzhnya_4_cherepica.webp',
-            '2|hip|soft': '2_naryzhnya_4_gibkaya.webp',
-            '2|hip|clickfalz': '2_naryzhnya_4_clickfalc.webp',
+            '1|gable|tile': '1_naryzhnya_2skat_chirepica.webp',
+            '1|gable|soft': '1_naryzhnya_2skat_gibkaya.webp',
+            '1|gable|clickfalz': '1_naryzhnya_2skat_clickfalc.webp',
+            '1|hip|tile': '1_naryzhnya_4skat_cherepica.webp',
+            '1|hip|soft': '1_naryzhnya_4skat_gibkaya.webp',
+            '1|hip|clickfalz': '1_naryzhnya_4skat_clickfalc.webp',
+            '1|shed': '1_naryzhnya_odnoskatnaya.webp',
+            '1|flat': '1_naryzhnya_ploskaya.webp',
+            '2|gable|tile': '2_naryzhnya_2skat_cherepica.webp',
+            '2|gable|soft': '2_naryzhnya_2skat_gibkaya.webp',
+            '2|gable|clickfalz': '2_naryzhnya_2skat_clickfalc.webp',
+            '2|hip|tile': '2_naryzhnya_4skat_cherepica.webp',
+            '2|hip|soft': '2_naryzhnya_4skat_gibkaya.webp',
+            '2|hip|clickfalz': '2_naryzhnya_4skat_clickfalc.webp',
             '2|shed': '2_naryzhnya_odnoskatnaya.webp',
             '2|flat': '2_naryzhnya_ploskaya.webp'
         };
 
         var FINISH_DEFAULT_BY_FLOOR = {
-            1: '1_naryzhnya_4_cherepica.webp',
-            2: '2_naryzhnya_4_cherepica.webp'
+            1: '1_naryzhnya_4skat_cherepica.webp',
+            2: '2_naryzhnya_4skat_cherepica.webp'
         };
 
-        function shouldUseFinishPreview() {
-            return (
-                (exteriorFinishEl && exteriorFinishEl.value !== '') ||
-                (packageEl && packageEl.value !== '')
-            );
+        function pickKnownFile(candidates) {
+            var i;
+            var name;
+            for (i = 0; i < candidates.length; i += 1) {
+                name = candidates[i];
+                if (IMG_CALC_KNOWN[name]) return name;
+            }
+            return '';
         }
 
-        function getFinishPreviewPath(floors, roofShape, roofMaterial) {
+        var FINISH_TERRACE_FILE_OVERRIDES = {
+            '1_naryzhnya_2skat_chirepica.webp':
+                '1_naryzhnya_2skat_cherepica+terrasa.webp'
+        };
+
+        /** Вариант с террасой: *_+terrasa.webp (с учётом chirepica/cherepica) */
+        function applyTerraceToFinishFile(fileName, hasTerrace) {
+            var terraced;
+            var i;
+            var candidates;
+            if (!fileName || !hasTerrace) return fileName;
+            if (FINISH_TERRACE_FILE_OVERRIDES[fileName]) {
+                candidates = [FINISH_TERRACE_FILE_OVERRIDES[fileName]];
+            } else {
+                candidates = [fileName.replace(/\.webp$/, '+terrasa.webp')];
+            }
+            candidates.push(
+                fileName.replace(/chirepica\.webp$/, 'cherepica+terrasa.webp')
+            );
+            for (i = 0; i < candidates.length; i += 1) {
+                terraced = candidates[i];
+                if (IMG_CALC_KNOWN[terraced]) return terraced;
+            }
+            return fileName;
+        }
+
+        function finishPreviewPath(fileName, hasTerrace) {
+            var resolved = applyTerraceToFinishFile(fileName, hasTerrace);
+            return resolved ? IMG_CALC_DIR + resolved : '';
+        }
+
+        function getCompositeWallStem(floorNum, wallKey, shape, roofKey) {
+            var stemKey = String(floorNum) + '|' + wallKey;
+            if (shape === 'shed') {
+                stemKey += '|shed';
+            } else if (shape === 'gable' || shape === 'hip') {
+                stemKey += '|' + shape + '|' + roofKey;
+            }
+            if (COMPOSITE_WALL_STEM[stemKey]) return COMPOSITE_WALL_STEM[stemKey];
+            if (COMPOSITE_WALL_STEM[floorNum + '|' + wallKey]) {
+                return COMPOSITE_WALL_STEM[floorNum + '|' + wallKey];
+            }
+            if (wallKey === 'gas') return floorNum === 1 ? 'gazobeton' : 'gazoblok';
+            if (wallKey === 'keramzit') return 'keramzit';
+            if (wallKey === 'brick') return 'kirpich';
+            if (wallKey === 'monolith') return 'monolit';
+            return '';
+        }
+
+        function buildCompositeCandidates(floorNum, wallKey, shape, roofKey) {
+            var stem = getCompositeWallStem(floorNum, wallKey, shape, roofKey);
+            var prefix = floorNum + '_' + stem + '_';
+            var suffixes;
+            var candidates = [];
+            var mapKey;
+            var extra;
+            var i;
+
+            mapKey =
+                floorNum +
+                '|' +
+                wallKey +
+                '|' +
+                shape +
+                (roofKey ? '|' + roofKey : '');
+            if (shape === 'shed') {
+                mapKey = floorNum + '|' + wallKey + '|shed';
+            }
+            if (CALC_PREVIEW_FILES[mapKey]) {
+                candidates.push(CALC_PREVIEW_FILES[mapKey]);
+            }
+            extra = COMPOSITE_EXTRA_CANDIDATES[mapKey];
+            if (extra) {
+                for (i = 0; i < extra.length; i += 1) {
+                    candidates.push(extra[i]);
+                }
+            }
+            if (!stem) return candidates;
+
+            if (shape === 'shed') {
+                candidates.push(prefix + 'odnoskat.webp');
+                if (wallKey === 'keramzit' && floorNum === 2) {
+                    candidates.push('2_keramzitobeton_odnoskat.webp');
+                }
+            } else if (shape === 'gable') {
+                suffixes = GABLE_ROOF_SUFFIX[roofKey] || [];
+                for (i = 0; i < suffixes.length; i += 1) {
+                    candidates.push(prefix + suffixes[i] + '.webp');
+                }
+            } else if (shape === 'hip') {
+                suffixes = HIP_ROOF_SUFFIX[roofKey] || [];
+                for (i = 0; i < suffixes.length; i += 1) {
+                    candidates.push(prefix + suffixes[i] + '.webp');
+                }
+            }
+
+            return candidates;
+        }
+
+        /** Наружная отделка или комплектация черновая / под ключ — превью с отделкой. */
+        function shouldUseFinishPreview() {
+            var finish = exteriorFinishEl ? exteriorFinishEl.value : '';
+            var pkg = packageEl ? packageEl.value : '';
+            if (finish) return true;
+            if (pkg === 'rough' || pkg === 'turnkey') return true;
+            return false;
+        }
+
+        function getFinishPreviewPath(floors, roofShape, roofMaterial, hasTerrace) {
             var floorNum = Number(floors) === 2 ? 2 : 1;
             var shape = String(roofShape || '').trim();
             var roofKey = String(roofMaterial || '').trim();
+            var materials = roofKey ? [roofKey] : ROOF_MATERIALS;
             var file;
-            var key;
             var i;
-            var j;
-            var materials = ['tile', 'soft', 'clickfalz'];
-            var shapes = ['gable', 'hip'];
-
-            function finishPathForKey(mapKey) {
-                file = FINISH_PREVIEW_FILES[mapKey];
-                return file ? IMG_CALC_DIR + file : '';
-            }
 
             if (shape === 'shed' || shape === 'flat') {
-                key = floorNum + '|' + shape;
-                file = finishPathForKey(key);
-                if (file) return file;
+                file = FINISH_PREVIEW_FILES[floorNum + '|' + shape];
+                if (file) return finishPreviewPath(file, hasTerrace);
             } else if (shape === 'gable' || shape === 'hip') {
-                if (roofKey) {
-                    file = finishPathForKey(
-                        floorNum + '|' + shape + '|' + roofKey
-                    );
-                    if (file) return file;
-                }
                 for (i = 0; i < materials.length; i += 1) {
-                    file = finishPathForKey(
+                    file = FINISH_PREVIEW_FILES[
                         floorNum + '|' + shape + '|' + materials[i]
-                    );
-                    if (file) return file;
-                }
-                if (roofKey) {
-                    for (j = 0; j < shapes.length; j += 1) {
-                        if (shapes[j] === shape) continue;
-                        file = finishPathForKey(
-                            floorNum + '|' + shapes[j] + '|' + roofKey
-                        );
-                        if (file) return file;
-                    }
+                    ];
+                    if (file) return finishPreviewPath(file, hasTerrace);
                 }
             }
 
             file = FINISH_DEFAULT_BY_FLOOR[floorNum];
-            return file ? IMG_CALC_DIR + file : '';
+            return finishPreviewPath(file, hasTerrace);
         }
 
         function getCompositePreviewPath(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
             var shape = String(roofShape || '').trim();
-            if (!wallKey || !shape) return '';
+            var roofKey = String(roofMaterial || '').trim();
             var floorNum = Number(floors) === 2 ? 2 : 1;
-            var mapKey;
+            var materials;
+            var candidates;
+            var file;
+            var i;
+
+            if (!wallKey || !shape || shape === 'flat') return '';
+
             if (shape === 'shed') {
-                mapKey = floorNum + '|' + wallKey + '|shed';
-            } else if (shape === 'gable' || shape === 'hip') {
-                var roofKey = String(roofMaterial || '').trim();
-                if (!roofKey) return '';
-                mapKey = floorNum + '|' + wallKey + '|' + shape + '|' + roofKey;
-            } else {
-                return '';
+                candidates = buildCompositeCandidates(
+                    floorNum,
+                    wallKey,
+                    'shed',
+                    ''
+                );
+                file = pickKnownFile(candidates);
+                return file ? IMG_CALC_DIR + file : '';
             }
-            var file = CALC_PREVIEW_FILES[mapKey];
-            return file ? IMG_CALC_DIR + file : '';
+
+            if (shape === 'gable' || shape === 'hip') {
+                materials = roofKey ? [roofKey] : ROOF_MATERIALS;
+                for (i = 0; i < materials.length; i += 1) {
+                    candidates = buildCompositeCandidates(
+                        floorNum,
+                        wallKey,
+                        shape,
+                        materials[i]
+                    );
+                    file = pickKnownFile(candidates);
+                    if (file) return IMG_CALC_DIR + file;
+                }
+            }
+            return '';
         }
 
         function getWallPreviewPath(floors, walls) {
@@ -1616,28 +1839,35 @@
 
         function resolvePreviewSrc(floors, walls, roofShape, roofMaterial) {
             var wallKey = String(walls || '').trim();
+            var shape = String(roofShape || '').trim();
+            var roofKey = String(roofMaterial || '').trim();
+            var hasTerrace = terraceEl && terraceEl.value === 'yes';
 
             if (shouldUseFinishPreview()) {
-                return getFinishPreviewPath(
+                var finishPreview = getFinishPreviewPath(
                     floors,
-                    roofShape,
-                    roofMaterial
+                    shape,
+                    roofKey,
+                    hasTerrace
                 );
+                if (finishPreview) return finishPreview;
             }
 
-            if (wallKey && roofShape) {
-                var compositePreview = getCompositePreviewPath(
-                    floors,
-                    wallKey,
-                    roofShape,
-                    roofMaterial
-                );
-                if (compositePreview) return compositePreview;
-            }
-            if (wallKey && roofShape === 'flat') {
+            if (wallKey && shape === 'flat') {
                 var flatPreview = getFlatRoofWallPreviewPath(floors, wallKey);
                 if (flatPreview) return flatPreview;
             }
+
+            if (wallKey && shape) {
+                var compositePreview = getCompositePreviewPath(
+                    floors,
+                    wallKey,
+                    shape,
+                    roofKey
+                );
+                if (compositePreview) return compositePreview;
+            }
+
             if (wallKey) {
                 var wallPreview = getWallPreviewPath(floors, wallKey);
                 if (wallPreview) return wallPreview;
@@ -1652,32 +1882,20 @@
             return IMG_CALC_EMPTY;
         }
 
-        function calculate() {
-            syncAreaProgressField();
-            syncCalcSelectEmptyState();
-            syncAreaInputEmptyState();
+        function renderPrice() {
             const area = parseAreaValue();
             const isTwoFloors = floorsEl.value === '2';
-            const floorsCount =
-                floorsEl.value === ''
-                    ? 1
-                    : Math.min(2, Math.max(1, Number(floorsEl.value) || 1));
-            /** 2 этажа: (площадь / 2) × 1,7; иначе полная площадь */
             const bodyArea = isTwoFloors ? (area / 2) * 1.7 : area;
-            const projectPerSqm = getPerSqm(projectTypeEl);
-            const projectAdd = bodyArea * projectPerSqm;
+            const projectAdd = bodyArea * getPerSqm(projectTypeEl);
             const foundationAdd = bodyArea * getPerSqm(foundationEl);
-            const wallsPerSqm = getPrice(wallsEl);
-            const wallsAdd = bodyArea * wallsPerSqm;
-            const roofAdd = area * getPerSqm(roofEl);
+            const wallsAdd = bodyArea * getPrice(wallsEl);
+            const roofAdd = isRoofMaterialLocked() ? 0 : area * getPerSqm(roofEl);
             const roofShapeAdd = area * getPerSqm(roofShapeEl);
             const roofBase = roofAdd + roofShapeAdd;
             const roofTotal =
                 terraceEl && terraceEl.value === 'yes' ? roofBase * 1.2 : roofBase;
-            const exteriorPerSqm = getPerSqm(exteriorFinishEl);
-            const packagePerSqm = getPerSqm(packageEl);
-            const exteriorFinishAdd = bodyArea * exteriorPerSqm;
-            const packageAdd = bodyArea * packagePerSqm;
+            const exteriorFinishAdd = bodyArea * getPerSqm(exteriorFinishEl);
+            const packageAdd = bodyArea * getPerSqm(packageEl);
             const basementAdd =
                 basementEl && basementEl.value === 'yes'
                     ? bodyArea * getPerSqm(basementEl)
@@ -1691,7 +1909,7 @@
                 exteriorFinishAdd +
                 packageAdd +
                 basementAdd;
-            if (mansardEl && mansardEl.value === 'yes') {
+            if (mansardEl && mansardEl.value === 'yes' && isMansardAvailable()) {
                 total *= 1.3;
             }
             var perSqmHtml =
@@ -1700,18 +1918,51 @@
                     : '<span class="result-per-m2"> · — BYN/м²</span>';
             resultEl.innerHTML =
                 'Ориентировочная стоимость: <strong>' + formatBYN(total) + '</strong>' + perSqmHtml;
+            priceCalculated = true;
+            playUpdateAnimations();
+        }
+
+        function updateCalculator() {
+            syncRoofMaterialState();
+            syncMansardState();
+            syncAreaProgressField();
+            syncCalcSelectEmptyState();
+            syncAreaInputEmptyState();
+            const area = parseAreaValue();
+            const floorsCount =
+                floorsEl.value === ''
+                    ? 1
+                    : Math.min(2, Math.max(1, Number(floorsEl.value) || 1));
             updatePreview(
-                area,
                 floorsCount,
                 wallsEl.value,
-                roofEl.value,
                 roofShapeEl.value,
-                mansardEl.value
+                roofEl.value
             );
+            if (!priceCalculated) {
+                setResultPlaceholder();
+            }
             calculatePassCount += 1;
             if (calculatePassCount > 1) {
-                playUpdateAnimations();
+                playPreviewAnimations();
             }
+            scheduleFitCalculatorViewport();
+        }
+
+        function onCalculateClick() {
+            if (!areAllFieldsValid()) {
+                priceCalculated = false;
+                setResultPlaceholder();
+                highlightInvalidFields();
+                var firstError = document.querySelector('.field.field--error');
+                if (firstError && typeof firstError.scrollIntoView === 'function') {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                scheduleFitCalculatorViewport();
+                return;
+            }
+            clearFieldErrors();
+            renderPrice();
             scheduleFitCalculatorViewport();
         }
 
@@ -1845,7 +2096,7 @@
                     '"/>';
             }
 
-            if (mansard === 'yes' && roofShape !== 'flat') {
+            if (mansard === 'yes' && roofShape === 'gable') {
                 roofSvg +=
                     '<polygon points="' +
                     (houseX + 8) +
@@ -1878,7 +2129,7 @@
             }
 
             let dormerSvg = '';
-            if (mansard === 'yes' && floors >= 2) {
+            if (mansard === 'yes' && roofShape === 'gable' && floors >= 2) {
                 const upperRow = Math.max(0, rows - 1);
                 const rowY =
                     bodyY +
@@ -1956,40 +2207,21 @@
             return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
         }
 
-        function updatePreview(area, floors, walls, roofMaterial, roofShape, mansard) {
+        function updatePreview(floors, walls, roofShape, roofMaterial) {
             setHousePreviewSrc(
                 resolvePreviewSrc(floors, walls, roofShape, roofMaterial)
             );
-            metaWallsEl.textContent = getOptionText(wallsEl);
-            metaRoofEl.textContent =
-                roofMaterial === '' ? 'Не указано' : ROOF_LABELS[roofMaterial] || '—';
-            metaRoofShapeEl.textContent =
-                roofShape === '' ? 'Не указано' : ROOF_SHAPE_LABELS[roofShape] || '—';
-            metaMansardEl.textContent =
-                mansard === '' ? 'Не указано' : MANSARD_LABELS[mansard] || '—';
-            metaFloorsEl.textContent =
-                floorsEl.value === ''
-                    ? 'Не указано'
-                    : floors +
-                      (floors === 1 ? ' этаж' : floors < 5 ? ' этажа' : ' этажей');
-            metaAreaEl.textContent = area > 0 ? area + ' м2' : 'Не указано';
-            metaPackageEl.textContent =
-                packageEl.value === '' ? 'Не указано' : PACKAGE_LABELS[packageEl.value] || '—';
-            metaOptionsEl.textContent =
-                'Цокольный этаж: ' +
-                getOptionText(basementEl) +
-                ', Крытая терраса: ' +
-                getOptionText(terraceEl) +
-                ', Наруж. отделка: ' +
-                getOptionText(exteriorFinishEl);
         }
 
         function resetForm() {
-            touchedFields.clear();
+            clearFieldErrors();
+            priceCalculated = false;
             updateProgressBar();
             projectTypeEl.value = '';
             areaEl.value = '0';
             calculatePassCount = 0;
+            roofValueBeforeFlat = '';
+            mansardValueBeforeGable = '';
             floorsEl.value = '';
             foundationEl.value = '';
             wallsEl.value = '';
@@ -2000,10 +2232,11 @@
             terraceEl.value = '';
             exteriorFinishEl.value = '';
             packageEl.value = '';
-            calculate();
+            setResultPlaceholder();
+            updateCalculator();
         }
 
-        calcBtn.addEventListener('click', calculate);
+        calcBtn.addEventListener('click', onCalculateClick);
         resetBtn.addEventListener('click', resetForm);
         areaEl.addEventListener('focus', function () {
             var t = String(areaEl.value).trim().replace(',', '.');
@@ -2011,28 +2244,35 @@
             var n = parseFloat(t);
             if (!isNaN(n) && n === 0) {
                 areaEl.value = '';
-                calculate();
+                priceCalculated = false;
+                updateCalculator();
             }
         });
         areaEl.addEventListener('blur', function () {
             if (String(areaEl.value).trim() === '') {
                 areaEl.value = '0';
-                calculate();
+                priceCalculated = false;
+                updateCalculator();
             }
         });
-        areaEl.addEventListener('input', calculate);
-        projectTypeEl.addEventListener('change', calculate);
-        floorsEl.addEventListener('change', calculate);
-        foundationEl.addEventListener('change', calculate);
-        wallsEl.addEventListener('change', calculate);
-        roofEl.addEventListener('change', calculate);
-        roofShapeEl.addEventListener('change', calculate);
-        mansardEl.addEventListener('change', calculate);
-        basementEl.addEventListener('change', calculate);
-        terraceEl.addEventListener('change', calculate);
-        exteriorFinishEl.addEventListener('change', calculate);
-        packageEl.addEventListener('change', calculate);
-        calculate();
+        function onFieldChange() {
+            priceCalculated = false;
+            updateCalculator();
+        }
+        areaEl.addEventListener('input', onFieldChange);
+        projectTypeEl.addEventListener('change', onFieldChange);
+        floorsEl.addEventListener('change', onFieldChange);
+        foundationEl.addEventListener('change', onFieldChange);
+        wallsEl.addEventListener('change', onFieldChange);
+        roofEl.addEventListener('change', onFieldChange);
+        roofShapeEl.addEventListener('change', onFieldChange);
+        mansardEl.addEventListener('change', onFieldChange);
+        basementEl.addEventListener('change', onFieldChange);
+        terraceEl.addEventListener('change', onFieldChange);
+        exteriorFinishEl.addEventListener('change', onFieldChange);
+        packageEl.addEventListener('change', onFieldChange);
+        setResultPlaceholder();
+        updateCalculator();
         scheduleFitCalculatorViewport();
     </script>
 </body>

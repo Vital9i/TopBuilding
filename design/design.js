@@ -265,14 +265,14 @@ window.closeCallbackModal = function() {
 
 // Отправка сообщения в Telegram
 async function sendToTelegram(name, phone, source, userMessage = '') {
-    const nameLine = (name && name.trim()) ? name.trim() : 'не указано';
-    let message = `🔔 <b>Новая заявка с сайта!</b>\n\n` +
+    const nameLine = formatTelegramLeadName(name);
+    let message = `🔔 <b>${TELEGRAM_LEAD_TITLE}</b>\n\n` +
                   `👤 <b>Имя:</b> ${nameLine}\n` +
-                  `📱 <b>Телефон:</b> ${phone}\n` +
-                  `📍 <b>Источник:</b> ${source}\n`;
-    
+                  `📱 <b>Телефон:</b> ${formatTelegramPhone(phone)}\n` +
+                  `📍 <b>Источник:</b> ${buildTelegramLeadSource(source)}\n`;
+
     if (userMessage) {
-        message += `💬 <b>Сообщение:</b> ${userMessage}\n`;
+        message += `💬 <b>Сообщение:</b> ${escapeTelegramHtml(userMessage)}\n`;
     }
     
     message += `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU')}`;
@@ -287,7 +287,8 @@ async function sendToTelegram(name, phone, source, userMessage = '') {
         body: JSON.stringify({
             chat_id: TELEGRAM_CHAT_ID,
             text: message,
-            parse_mode: 'HTML'
+            parse_mode: 'HTML',
+            disable_web_page_preview: true
         })
     });
     
@@ -489,6 +490,14 @@ window.openProjectModal = function(type) {
             img.style.cursor = 'zoom-in';
             sliderContainer.appendChild(img);
         });
+
+        sliderContainer.scrollLeft = 0;
+
+        setTimeout(function () {
+            if (typeof initAllProjectModalSliders === 'function') {
+                initAllProjectModalSliders();
+            }
+        }, 50);
     }
 }
 
@@ -513,28 +522,8 @@ window.closeImageFullscreen = function() {
     document.body.style.overflow = 'auto';
 }
 
-// Навигация слайдера
+// Навигация слайдера — кнопки и свайп в js/site-common.js
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.slider-prev').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const container = this.parentElement.querySelector('.slider-container');
-            container.scrollBy({
-                left: -container.offsetWidth,
-                behavior: 'smooth'
-            });
-    });
-});
-
-    document.querySelectorAll('.slider-next').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const container = this.parentElement.querySelector('.slider-container');
-            container.scrollBy({
-                left: container.offsetWidth,
-                behavior: 'smooth'
-            });
-        });
-    });
-
     // Закрытие по ESC
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
