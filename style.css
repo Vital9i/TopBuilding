@@ -4031,7 +4031,6 @@ position: relative;
       var(--background-color) 100%
     );
     color: #fff;
-    overflow: visible;
     overflow: hidden;
 }
 
@@ -4077,35 +4076,35 @@ position: relative;
     border-radius: 10px;
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     min-width: 55px;
     flex-shrink: 0;
     position: relative;
     z-index: 1;
     overflow: visible;
+    font-weight: 600;
+    font-family: inherit;
 }
 
-/* Увеличиваем z-index для первой и последней кнопки, чтобы иконки не обрезались */
+.workflow-tab::before,
+.workflow-arrow::before {
+    display: none;
+    content: none;
+}
+
 .workflow-tab:first-child,
 .workflow-tab:last-child {
     z-index: 10;
     overflow: visible;
 }
 
-/* Дополнительная защита для иконок первой и последней кнопки */
-.workflow-tab:first-child i,
-.workflow-tab:last-child i {
-    position: relative;
-    z-index: 15;
-    overflow: visible;
-}
-
-/* Убеждаемся, что иконки не обрезаются */
 .workflow-tab i {
-    font-size: 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
     overflow: visible;
     position: relative;
     z-index: 2;
+    transition: color 0.3s ease;
 }
 
 .workflow-tab span {
@@ -4128,6 +4127,8 @@ position: relative;
 .workflow-slider {
     position: relative;
     min-height: 400px;
+    padding-left: 56px;
+    padding-right: 56px;
 }
 
 /* Стрелки навигации */
@@ -4150,6 +4151,11 @@ position: relative;
     border-radius: 50%;
 }
 
+.workflow-arrow i {
+    line-height: 1;
+    pointer-events: none;
+}
+
 .workflow-arrow:hover {
     background: var(--gradient-primary);
     border: 2px solid var(--secondary-color);
@@ -4159,11 +4165,11 @@ position: relative;
 }
 
 .workflow-arrow-prev {
-    left: -60px;
+    left: 0;
 }
 
 .workflow-arrow-next {
-    right: -60px;
+    right: 0;
 }
 
 .workflow-arrow.hidden {
@@ -4329,13 +4335,18 @@ position: relative;
     .workflow-slide-image {
         height: 250px;
     }
+
+    .workflow-slider {
+        padding-left: 44px;
+        padding-right: 44px;
+    }
     
     .workflow-arrow-prev {
-        left: 10px;
+        left: 0;
     }
     
     .workflow-arrow-next {
-        right: 10px;
+        right: 0;
     }
 }
 

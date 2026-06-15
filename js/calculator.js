@@ -134,6 +134,57 @@
             });
         }
 
+        function isMobileCalculatorViewport() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        function getFirstInvalidFieldContainer() {
+            for (var i = 0; i < FIELD_KEYS.length; i++) {
+                var key = FIELD_KEYS[i];
+                if (!isFieldValid(key)) {
+                    var el = document.getElementById(key);
+                    return getFieldContainer(el);
+                }
+            }
+            return null;
+        }
+
+        function scrollToFirstInvalidField() {
+            var firstError = getFirstInvalidFieldContainer();
+            if (!firstError) return;
+
+            var mobile = isMobileCalculatorViewport();
+            if (!mobile) {
+                if (typeof firstError.scrollIntoView === 'function') {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                return;
+            }
+
+            firstError.classList.add('field--error-focus');
+            window.setTimeout(function () {
+                firstError.classList.remove('field--error-focus');
+            }, 1200);
+
+            window.requestAnimationFrame(function () {
+                window.requestAnimationFrame(function () {
+                    if (typeof firstError.scrollIntoView === 'function') {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    window.setTimeout(function () {
+                        var control = firstError.querySelector('input:not(:disabled), select:not(:disabled)');
+                        if (!control || typeof control.focus !== 'function') return;
+                        try {
+                            control.focus({ preventScroll: true });
+                        } catch (err) {
+                            control.focus();
+                        }
+                    }, 350);
+                });
+            });
+        }
+
         function isFieldActiveForProgress(key) {
             if (key === 'roof' && isRoofMaterialLocked()) return false;
             if (key === 'mansard' && !isMansardAvailable()) return false;
@@ -278,15 +329,17 @@
         function renderResultHtml(priceText, perSqmHtml) {
             return (
                 '<span class="result-label">Ориентировочная стоимость дома:</span> ' +
+                '<span class="result-price-block">' +
                 '<strong>' + priceText + '</strong>' +
-                (perSqmHtml || '')
+                (perSqmHtml || '') +
+                '</span>'
             );
         }
 
         function setResultPlaceholder() {
             resultEl.innerHTML = renderResultHtml(
                 '—',
-                '<span class="result-per-m2"> · — BYN/м²</span>'
+                '<span class="result-per-m2">— BYN/м²</span>'
             );
         }
 
@@ -890,8 +943,8 @@
             }
             var perSqmHtml =
                 area > 0 && isFinite(total)
-                    ? '<span class="result-per-m2"> · ' + formatBYNPerSqm(total / area) + '</span>'
-                    : '<span class="result-per-m2"> · — BYN/м²</span>';
+                    ? '<span class="result-per-m2">' + formatBYNPerSqm(total / area) + '</span>'
+                    : '<span class="result-per-m2">— BYN/м²</span>';
             resultEl.innerHTML = renderResultHtml(formatBYN(total), perSqmHtml);
             markPriceCalculated();
             playUpdateAnimations();
@@ -938,10 +991,7 @@
                 setResultPlaceholder();
                 syncCalcBtnPrompt();
                 highlightInvalidFields();
-                var firstError = root.querySelector('.field.field--error');
-                if (firstError && typeof firstError.scrollIntoView === 'function') {
-                    firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
+                scrollToFirstInvalidField();
                 scheduleFitCalculatorViewport();
                 return;
             }
