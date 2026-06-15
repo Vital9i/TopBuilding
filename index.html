@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -69,7 +69,8 @@
     
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="style.css?v=132">
+    <link rel="stylesheet" href="style.css?v=144">
+    <link rel="stylesheet" href="css/calculator.css?v=20">
 </head>
 
 <body>
@@ -127,7 +128,7 @@
                         <li class="active">
                             <a href="#home">Главная</a>
                             <ul>
-                                <li><a href="#about">Почему выбирают нас</a></li>
+                                <li><a href="#calculator">Калькулятор стоимости</a></li>
                                 <li><a href="#youtube">Мы на YouTube</a></li>
                                 <li><a href="#our-projects">Наши проекты</a></li>
                                 <li><a href="#workflow">Как мы работаем</a></li>
@@ -366,219 +367,173 @@
                 </div>
             </section>
             
-            <section id="about" class="section about">
-                <!-- Декоративные элементы -->
+            <section id="calculator" class="section calculator-section">
                 <div class="decor decor-left-top"></div>
-                <div class="decor decor-left-bottom"></div>
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
-                
+
                 <div class="content-wrapper">
                     <div class="container">
-                        <h2 class="section-title">Почему <span class="highlight">выбирают нас</span></h2>
-                        
-                        <div class="about-intro">
-                            <p class="section-description">
-                                Мы — команда профессионалов, которая специализируется на проектировании и строительстве в
-                                Республике Беларусь. Реализуем проекты любой сложности: от загородного домостроения до административных и производственных объектов. Наш опыт позволяет воплощать в жизнь самые смелые архитектурные решения с гарантией качества.
-                                <br><br>
-                                <em class="team-intro-text-desktop">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
-                            </p>
-                            
-                            <p class="section-description">
-                                Уникальность сотрудничества с нами заключается в том, что Заказчик обращается за комплексной услугой и в качестве готового продукта получает предпроектную проработку и полностью прозрачную сметную документацию, проектную документацию, прошедшую экспертизу, авторское сопровождение проекта, выполнение всего комплекса строительно-монтажных работ, сдачу объекта и ввод в эксплуатацию совместно с Заказчиком.
-                                <br><br>
-                                <em class="team-intro-text-mobile">Познакомьтесь с людьми, которые превращают ваши мечты в реальность — часть нашей команды представлена ниже</em>
-                            </p>
-                        </div>
-            
-                        <!-- Наша команда -->
-                        <div class="team-section">
-                            <div class="team-tabs">
-                                <button class="team-tab active" data-team="management">Руководство</button>
-                                <button class="team-tab" data-team="architects">Архитекторы</button>
-                                <button class="team-tab" data-team="designers">Дизайнеры</button>
-                                <button class="team-tab" data-team="builders">Строители</button>
-                            </div>
-            
-                            <!-- Контейнер для всех карточек -->
-                            <div class="team-cards-container">
-                                <!-- Руководство -->
-                                <div class="team-cards active" id="management">
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Oleg.webp" alt="Руководитель организации">
-                                        </div>
-                                        <h3 class="team-name">Олег Олегович<br>Гриценко</h3>
-                                        <p class="team-position">Руководитель организации</p>
-                                        <p class="team-description">Опыт работы в строительстве более 15 лет. Руководит компанией с момента основания.</p>
-                                        <button class="team-contact-btn open-sidebar-btn">
-                                            <i class="fas fa-phone-alt"></i>
-                                            <span>Контакты</span>
-                                        </button>
-                                    </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/TamaraGeorgievna.webp" alt="Руководитель проектного отдела">
-                                        </div>
-                                        <h3 class="team-name">Тамара Георгиевна Спиркова</h3>
-                                        <p class="team-position">Главный инженер проекта (руководитель проектного отдела)</p>
-                                        <p class="team-description">Координирует все строительные процессы и взаимодействие между отделами.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/EvgeniaAndreevna.webp" alt="Главный бухгалтер">
-                                        </div>
-                                        <h3 class="team-name">Евгения Андреевна Кожемякина</h3>
-                                        <p class="team-position">Главный бухгалтер</p>
-                                        <p class="team-description">Обеспечивает соблюдение законодательства в области бухгалтерского и налогового учета, а также участвует в финансовом планировании и анализе.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+                        <h2 class="section-title" id="calculator-heading">Калькулятор <span class="highlight">стоимости</span> дома</h2>
+                        <p class="section-description">
+                            Выберите все параметры дома и нажмите кнопку Рассчитать
+                        </p>
 
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Zharina.webp" alt="Жарина Яна" onerror="this.src='main_img/Cast/placeholder.svg'" loading="lazy">
-                                        </div>
-                                        <h3 class="team-name">Жарина Яна</h3>
-                                        <p class="team-position">Зам. главного инженера проекта</p>
-                                        <p class="team-description">Специалист по наружным и внутренним сетям водоснабжения и канализации.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+                        <div class="calc-section calc-section--embed">
+                            <div class="calc-section-body">
+                            <div class="calc-layout">
+                            <div class="calc-form-panel">
+                            <div class="calc-fields-grid">
+                                <div class="field">
+                                    <label for="projectType" class="field-label"><i class="fas fa-pen-ruler" aria-hidden="true"></i>Проект</label>
+                                    <select id="projectType">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="own" data-persqm="0">У меня есть проект</option>
+                                        <option value="custom" data-persqm="350">Разрабатываем индивидуальный</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="area" class="field-label"><i class="fas fa-vector-square" aria-hidden="true"></i>Площадь, м²</label>
+                                    <input id="area" type="number" step="any" value="0" inputmode="decimal" aria-label="Площадь дома, м²" placeholder="Не указано">
+                                </div>
+                                <div class="field">
+                                    <label for="basement" class="field-label"><i class="fas fa-archway" aria-hidden="true"></i>Цокольный этаж</label>
+                                    <select id="basement">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="no">Нет</option>
+                                        <option value="yes" data-persqm="1200">Да</option>
+                                    </select>
+                                </div>
 
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/programmer.webp" alt="Виталик Дойняк" onerror="this.src='main_img/Cast/placeholder.svg'" loading="lazy">
-                                        </div>
-                                        <h3 class="team-name">Виталий Дойняк</h3>
-                                        <p class="team-position">IT и цифровой маркетинг</p>
-                                        <p class="team-description">Управляет IT-инструментами продвижения: сайты, реклама, видео. Создаёт систему, которая приносит клиентов и развивает бизнес.</p>
-                                        <div class="team-social-links">
-                                            <a href="https://vitalikdoiniak.pro/" target="_blank" rel="noopener" title="Сайт" aria-label="Сайт Виталика"><i class="fas fa-globe"></i></a>
-                                            <a href="https://github.com/Vital9i" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                            <a href="https://t.me/Vitalik_Doiniak" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                                            <a href="https://www.youtube.com/@vitalikdoiniak" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                                        </div>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+                                <div class="field">
+                                    <label for="foundation" class="field-label"><i class="fas fa-border-all" aria-hidden="true"></i>Тип фундамента</label>
+                                    <select id="foundation">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="strip" data-persqm="250">Лента</option>
+                                        <option value="pile" data-persqm="235">Свайно-ростверковый</option>
+                                        <option value="slab" data-persqm="350">Плитный</option>
+                                    </select>
                                 </div>
-            
-                                <!-- Архитекторы -->
-                                <div class="team-cards" id="architects">
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Tatiana_Fedorovna.webp" alt="Татьяна Федоровна">
-                                        </div>
-                                        <h3 class="team-name">Татьяна Федоровна</h3>
-                                        <p class="team-position">Главный архитектор</p>
-                                        <p class="team-description">Разрабатывает концепции домов и контролирует их техническую реализацию. Более 8 лет опыта в архитектурном проектировании.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-                                    
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/stepan.webp" alt="Архитектор Степан Сергеевич" loading="lazy">
-                                        </div>
-                                        <h3 class="team-name">Степан Сергеевич</h3>
-                                        <p class="team-position">Архитектор</p>
-                                        <p class="team-description">Создает архитектурные проекты и разрабатывает технические решения. Участвует в разработке концепций и визуализации проектов.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+
+                                <div class="field">
+                                    <label for="walls" class="field-label"><i class="fas fa-cubes" aria-hidden="true"></i>Материал стен</label>
+                                    <select id="walls">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="keramzit" data-price="385">Керамзитный блок</option>
+                                        <option value="gas" data-price="354">Газосиликат</option>
+                                        <option value="brick" data-price="420">Кирпич</option>
+                                        <option value="monolith" data-price="445">Монолитные</option>
+                                    </select>
                                 </div>
-            
-                                <!-- Дизайнеры -->
-                                <div class="team-cards" id="designers">
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Angelika_Makarevich.webp" alt="Дизайнер интерьеров Анжелика Александровна">
-                                        </div>
-                                        <h3 class="team-name">Анжелика Александровна</h3>
-                                        <p class="team-position">Дизайнер интерьеров</p>
-                                        <p class="team-description">Создает гармоничный интерьер помещений и подбирает материалы.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+
+                                <div class="field">
+                                    <label for="floors" class="field-label"><i class="fas fa-layer-group" aria-hidden="true"></i>Этажность</label>
+                                    <select id="floors">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="1">1 этаж</option>
+                                        <option value="2">2 этажа</option>
+                                    </select>
                                 </div>
-            
-                                <!-- Строители -->
-                                <div class="team-cards" id="builders">
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Alesya.webp" alt="Штукатур 3 разряда Алеся Владимировна">
-                                        </div>
-                                        <h3 class="team-name">Алеся Владимировна</h3>
-                                        <p class="team-position">Штукатур 3 разряда</p>
-                                        <p class="team-description">Специалист по внутренней и наружной отделке зданий, который подготавливает и выравнивает поверхности (стены, потолки, фасады).</p>
-                                        <div class="team-card-spacer"></div>
+
+                                <div class="field">
+                                    <label for="roofShape" class="field-label"><i class="fas fa-shapes" aria-hidden="true"></i>Покрытие крыши</label>
+                                    <select id="roofShape">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="flat" data-persqm="380">Плоское</option>
+                                        <option value="shed" data-persqm="278">Односкатное</option>
+                                        <option value="gable" data-persqm="395">Двускатное</option>
+                                        <option value="hip" data-persqm="455">Четырёхскатная / вальмовая</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="roof" class="field-label"><i class="fas fa-house-chimney" aria-hidden="true"></i>Материал крыши</label>
+                                    <select id="roof">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="flat_membrane" data-persqm="0" hidden>Полимерные мембраны</option>
+                                        <option value="tile" data-persqm="500">Металлочерепица</option>
+                                        <option value="soft" data-persqm="650">Гибкая черепица</option>
+                                        <option value="clickfalz" data-persqm="550">Клик-фальц</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="mansard" class="field-label"><i class="fas fa-building" aria-hidden="true"></i>Мансардный этаж</label>
+                                    <select id="mansard">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="no">Нет</option>
+                                        <option value="yes">Да</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="exteriorFinish" class="field-label"><i class="fas fa-paintbrush" aria-hidden="true"></i>Наружная отделка</label>
+                                    <select id="exteriorFinish">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="wet_insulated" data-persqm="280">Мокрый фасад с утеплением</option>
+                                        <option value="ventilated_insulated" data-persqm="355">Вентилируемый фасад с утеплением</option>
+                                        <option value="cold" data-persqm="142">По холодному</option>
+                                        <option value="clinker" data-persqm="440">Клинкер</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="terrace" class="field-label"><i class="fas fa-umbrella-beach" aria-hidden="true"></i>Крытая терраса</label>
+                                    <select id="terrace">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="no">Нет</option>
+                                        <option value="yes">Да</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="package" class="field-label"><i class="fas fa-box-open" aria-hidden="true"></i>Комплектация</label>
+                                    <select id="package">
+                                        <option value="" disabled hidden selected>Не указано</option>
+                                        <option value="box" data-persqm="220">Коробка (перегородки, проёмы, окна, коммуникации, заполнения)</option>
+                                        <option value="rough" data-persqm="480">Черновая (стяжка, штукатурка, внутренняя разводка инженерных сетей)</option>
+                                        <option value="turnkey" data-persqm="1255">Под ключ</option>
+                                    </select>
+                                </div>
+
+                                <div class="calc-progress calc-field-span-2">
+                                    <div class="calc-progress-track">
+                                        <div class="calc-progress-fill" id="calcProgressFill"></div>
                                     </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Said.webp" alt="Слесарь-сантехник Каримов Дмитрий">
-                                        </div>
-                                        <h3 class="team-name">Каримов Дмитрий</h3>
-                                        <p class="team-position">Слесарь-сантехник</p>
-                                        <p class="team-description">Занимается монтажом, обслуживанием, диагностикой систем водоснабжения, канализации, отопления и газоснабжения.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Andrey_Kyzmich.webp" alt="Геодезист Андрей Кузьмич">
-                                        </div>
-                                        <h3 class="team-name">Андрей Кузьмич</h3>
-                                        <p class="team-position">Геодезист</p>
-                                        <p class="team-description">Осуществляет геодезический контроль и измерения на объектах строительства.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Vladimir_Domanovsky.webp" alt="Бригадир Галуза Сергей">
-                                        </div>
-                                        <h3 class="team-name">Галуза Сергей</h3>
-                                        <p class="team-position">Бригадир</p>
-                                        <p class="team-description">Отвечает за своевременное обеспечение бригады необходимыми материалами и оборудованием.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-            
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Genadi.webp" alt="Штукатур Корнев Александр">
-                                        </div>
-                                        <h3 class="team-name">Корнев Александр</h3>
-                                        <p class="team-position">Штукатур</p>
-                                        <p class="team-description">Специалист по внутренней и наружной отделке зданий, который подготавливает и выравнивает поверхности (стены, потолки, фасады).</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
-            
-                                    <div class="team-card">
-                                        <div class="team-photo">
-                                            <img src="main_img/Cast/Andrey_Kardash.webp" alt="Мастер общестроительных работ Андрей Кардаш">
-                                        </div>
-                                        <h3 class="team-name">Андрей Кардаш</h3>
-                                        <p class="team-position">Мастер общестроительных работ</p>
-                                        <p class="team-description">Руководит бригадой или отдельным участком, контролирует соблюдение технологий и безопасности, а также следит за качеством материалов.</p>
-                                        <div class="team-card-spacer"></div>
-                                    </div>
+                                    <span class="calc-progress-label" id="calcProgressLabel">
+                                        Заполнение: <strong id="calcProgressPct">0</strong>% ·
+                                        <span class="calc-progress-hint" id="calcProgressHint">меняйте параметры — превью обновится</span>
+                                    </span>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Кнопка "Подробнее о нас" -->
-                        <div class="about-btn-wrapper">
-                            <a href="about/about.html" class="btn about-more-btn">
-                                <i class="fas fa-users"></i>
-                                <span>Подробнее о нас</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            </div>
+
+                            <div class="calc-preview-panel">
+                                <div class="preview-image-wrap">
+                                    <img id="housePreview" class="preview-image" src="img_calculator/Ychastok1.webp?v=12" alt="Предпросмотр дома">
+                                </div>
+                                <div class="result calc-preview-result" id="result">
+                                    <span class="result-label">Ориентировочная стоимость дома:</span>
+                                    <strong>—</strong><span class="result-per-m2"> · — BYN/м²</span>
+                                </div>
+                            </div>
+
+                            <div class="actions calc-section-actions">
+                                <button class="btn-primary" id="calcBtn" type="button">Рассчитать</button>
+                                <button class="btn-ghost" id="resetBtn" type="button">Сбросить</button>
+                            </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="youtube" class="section youtube-section">
+                <div class="decor decor-left-top"></div>
+                <div class="decor decor-left-bottom"></div>
+                <div class="decor decor-right-top"></div>
+                <div class="decor decor-right-bottom"></div>
+
                 <div class="content-wrapper">
                     <div class="container">
                         <h2 class="section-title">Мы на <span class="highlight">YouTube</span></h2>
@@ -1493,7 +1448,7 @@
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="#about">Почему выбирают нас</a></li>
+                            <li><a href="#calculator">Калькулятор стоимости</a></li>
                             <li><a href="#youtube">Мы на YouTube</a></li>
                             <li><a href="#our-projects">Наши проекты</a></li>
                             <li><a href="#workflow">Как мы работаем</a></li>
@@ -1594,6 +1549,7 @@
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Основной JavaScript файл -->
+    <script src="js/calculator.js?v=6" defer></script>
     <script src="index.js?v=4" defer></script>
 </body>
 </html>
