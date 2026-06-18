@@ -173,7 +173,9 @@
                     }
 
                     window.setTimeout(function () {
-                        var control = firstError.querySelector('input:not(:disabled), select:not(:disabled)');
+                        var control = firstError.querySelector(
+                            '.calc-select__trigger:not(:disabled), input:not(:disabled), select:not(:disabled)'
+                        );
                         if (!control || typeof control.focus !== 'function') return;
                         try {
                             control.focus({ preventScroll: true });
@@ -256,6 +258,166 @@
                     sel.removeAttribute('data-empty');
                 }
             });
+            refreshCalcCustomSelects();
+        }
+
+        var calcSelectInstances = [];
+
+        function refreshCalcCustomSelects() {
+            calcSelectInstances.forEach(function (instance) {
+                instance.renderOptions();
+                instance.syncTrigger();
+            });
+        }
+
+        function closeAllCalcSelects(except) {
+            calcSelectInstances.forEach(function (instance) {
+                if (except !== instance) {
+                    instance.close();
+                }
+            });
+        }
+
+        function initCalcCustomSelects() {
+            root.querySelectorAll('.calc-fields-grid select').forEach(function (sel) {
+                if (sel.closest('.calc-select')) return;
+
+                var label = root.querySelector('label[for="' + sel.id + '"]');
+                var wrap = document.createElement('div');
+                wrap.className = 'calc-select';
+                sel.parentNode.insertBefore(wrap, sel);
+                wrap.appendChild(sel);
+
+                sel.classList.add('calc-select__native');
+                sel.tabIndex = -1;
+
+                var trigger = document.createElement('button');
+                trigger.type = 'button';
+                trigger.className = 'calc-select__trigger';
+                trigger.setAttribute('aria-haspopup', 'listbox');
+                trigger.setAttribute('aria-expanded', 'false');
+                if (label) {
+                    var labelText = label.textContent.replace(/\s+/g, ' ').trim();
+                    if (label.id) {
+                        trigger.setAttribute('aria-labelledby', label.id);
+                    } else if (labelText) {
+                        trigger.setAttribute('aria-label', labelText);
+                    }
+                }
+
+                var list = document.createElement('ul');
+                list.className = 'calc-select__list';
+                list.setAttribute('role', 'listbox');
+                list.hidden = true;
+
+                wrap.appendChild(trigger);
+                wrap.appendChild(list);
+
+                var instance = {
+                    sel: sel,
+                    wrap: wrap,
+                    trigger: trigger,
+                    list: list,
+                    isOpen: false,
+                    close: function () {
+                        if (!instance.isOpen) return;
+                        instance.isOpen = false;
+                        list.hidden = true;
+                        trigger.setAttribute('aria-expanded', 'false');
+                        wrap.classList.remove('calc-select--open');
+                    },
+                    open: function () {
+                        if (sel.disabled) return;
+                        closeAllCalcSelects(instance);
+                        instance.renderOptions();
+                        instance.isOpen = true;
+                        list.hidden = false;
+                        trigger.setAttribute('aria-expanded', 'true');
+                        wrap.classList.add('calc-select--open');
+                    },
+                    toggle: function () {
+                        if (instance.isOpen) {
+                            instance.close();
+                        } else {
+                            instance.open();
+                        }
+                    },
+                    renderOptions: function () {
+                        list.innerHTML = '';
+                        Array.prototype.forEach.call(sel.options, function (opt) {
+                            if (opt.hidden || opt.value === '') return;
+
+                            var li = document.createElement('li');
+                            li.className = 'calc-select__option';
+                            li.setAttribute('role', 'option');
+                            li.textContent = opt.textContent;
+
+                            if (sel.value === opt.value) {
+                                li.setAttribute('aria-selected', 'true');
+                                li.classList.add('calc-select__option--selected');
+                            } else {
+                                li.setAttribute('aria-selected', 'false');
+                            }
+
+                            li.addEventListener('click', function (e) {
+                                e.stopPropagation();
+                                sel.value = opt.value;
+                                instance.syncTrigger();
+                                instance.renderOptions();
+                                instance.close();
+                                sel.dispatchEvent(new Event('change', { bubbles: true }));
+                            });
+                            list.appendChild(li);
+                        });
+                    },
+                    syncTrigger: function () {
+                        var selectedOption = sel.options[sel.selectedIndex];
+                        var empty = sel.value === '';
+
+                        trigger.textContent = empty
+                            ? 'Не указано'
+                            : selectedOption
+                              ? selectedOption.textContent
+                              : 'Не указано';
+
+                        if (empty) {
+                            wrap.setAttribute('data-empty', '');
+                        } else {
+                            wrap.removeAttribute('data-empty');
+                        }
+
+                        trigger.disabled = sel.disabled;
+                        if (sel.disabled) {
+                            instance.close();
+                        }
+                    }
+                };
+
+                trigger.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    instance.toggle();
+                });
+
+                list.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+
+                calcSelectInstances.push(instance);
+                instance.renderOptions();
+                instance.syncTrigger();
+            });
+
+            if (!root.dataset.calcSelectDocBound) {
+                root.dataset.calcSelectDocBound = '1';
+                document.addEventListener('click', function () {
+                    closeAllCalcSelects();
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        closeAllCalcSelects();
+                    }
+                });
+            }
         }
 
         function syncRoofMaterialState() {
@@ -1307,6 +1469,7 @@
         terraceEl.addEventListener('change', onFieldChange);
         exteriorFinishEl.addEventListener('change', onFieldChange);
         packageEl.addEventListener('change', onFieldChange);
+        initCalcCustomSelects();
         setResultPlaceholder();
         updateCalculator();
     }

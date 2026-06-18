@@ -10,18 +10,6 @@ if (typeof AOS !== 'undefined') {
 }
 
 // ============================================
-// CONTACT SIDEBAR FUNCTIONS
-// ============================================
-function openContactSidebar() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.add('active');
-    }
-}
-
-window.openContactSidebar = openContactSidebar;
-
-// ============================================
 // TELEGRAM CALLBACK SYSTEM
 // ============================================
 let currentCallbackSource = 'Страница строительства';
@@ -139,53 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 mobileMenuToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
-    }
-    
-    const contactToggleBtn = document.getElementById('contactToggleBtn');
-    const heroSidebar = document.getElementById('heroSidebar');
-    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-
-    document.querySelectorAll('.open-sidebar-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (heroSidebar) {
-                heroSidebar.classList.add('active');
-            }
-        });
-    });
-
-    if (contactToggleBtn && heroSidebar) {
-        contactToggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-            
-            heroSidebar.classList.add('active');
-        });
-
-        if (sidebarCloseBtn) {
-            sidebarCloseBtn.addEventListener('click', function() {
-                heroSidebar.classList.remove('active');
-            });
-        }
-
-        document.addEventListener('click', function(e) {
-            if (heroSidebar.classList.contains('active') && 
-                !heroSidebar.contains(e.target) && 
-                e.target !== contactToggleBtn && 
-                !contactToggleBtn.contains(e.target)) {
-                heroSidebar.classList.remove('active');
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
-                heroSidebar.classList.remove('active');
             }
         });
     }

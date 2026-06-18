@@ -10,40 +10,11 @@ if (typeof AOS !== 'undefined') {
 }
 
 // ============================================
-// CONTACT SIDEBAR FUNCTIONS
-// ============================================
-window.openContactSidebar = function() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-};
-
-function openContactSidebar() {
-    window.openContactSidebar();
-}
-
-window.closeContactSidebar = function() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-};
-
-function closeContactSidebar() {
-    window.closeContactSidebar();
-}
-
-// ============================================
-// MOBILE MENU & SIDEBAR
+// MOBILE MENU
 // ============================================
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    const contactToggleBtn = document.getElementById('contactToggleBtn');
-    const heroSidebar = document.getElementById('heroSidebar');
 
     if (mobileMenuToggle && mobileMenu) {
         mobileMenuToggle.addEventListener('click', function () {
@@ -59,47 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
         });
     });
-    
-    if (contactToggleBtn && heroSidebar) {
-        contactToggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-            
-            heroSidebar.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-    
-    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-    const sidebarBackBtn = document.getElementById('sidebarBackBtn');
-    
-    if (sidebarCloseBtn) {
-        sidebarCloseBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeContactSidebar();
-        });
-    }
-    
-    if (sidebarBackBtn) {
-        sidebarBackBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeContactSidebar();
-        });
-    }
-    
-    if (heroSidebar) {
-        heroSidebar.addEventListener('click', function(e) {
-            if (e.target === heroSidebar) {
-                closeContactSidebar();
-            }
-        });
-    }
 });
 
 // ============================================

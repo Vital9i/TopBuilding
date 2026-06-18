@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -17,7 +17,7 @@
         })(window, document, "clarity", "script", "wjjglyal80");
     </script>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ТОПБИЛДИНГ - Проектирование домов в РБ</title>
     
@@ -47,7 +47,7 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="manifest" href="../site.webmanifest">
     
-    <link rel="stylesheet" href="../style.css?v=108">
+    <link rel="stylesheet" href="../style.css?v=166">
     <link rel="stylesheet" href="design.css">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -111,7 +111,8 @@
                             <a href="https://topbuilding.by/#home" target="_blank" rel="noopener">Главная</a>
                             <ul>
                                 <li><a href="https://topbuilding.by/#home" target="_blank" rel="noopener">Главная страница</a></li>
-                                <li><a href="https://topbuilding.by/#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
+                                <li><a href="https://topbuilding.by/#calculator" target="_blank" rel="noopener">Калькулятор стоимости</a></li>
+                                <li><a href="../about/about.html#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
                                 <li><a href="https://topbuilding.by/#youtube" target="_blank" rel="noopener">Мы на YouTube</a></li>
                                 <li><a href="https://topbuilding.by/#our-projects" target="_blank" rel="noopener">Наши проекты</a></li>
                                 <li><a href="https://topbuilding.by/#workflow" target="_blank" rel="noopener">Как мы работаем</a></li>
@@ -155,6 +156,7 @@
                         <li>
                             <a href="../administrative/administrative.html" target="_blank" rel="noopener">Административные и производственные сооружения</a>
                             <ul>
+                                <li><a href="../administrative/administrative.html#factory-build" target="_blank" rel="noopener">Строим завод</a></li>
                                 <li><a href="../administrative/administrative.html#services" target="_blank" rel="noopener">Услуги и работы</a></li>
                                 <li><a href="../administrative/administrative.html#bim" target="_blank" rel="noopener">BIM-проектирование</a></li>
                                 <li><a href="../administrative/administrative.html#yandex-map" target="_blank" rel="noopener">Карта объектов</a></li>
@@ -270,62 +272,53 @@
                 <!-- Сайдбар контактов (скрыт по умолчанию) -->
                 <div class="hero-sidebar" id="heroSidebar">
                     <div class="hero-contact-card">
+                        <div class="hero-contact-card__backdrop" aria-hidden="true">
+                            <img src="../main_img/Cast/Oleg.webp" alt="" class="hero-contact-card__photo" decoding="async">
+                            <div class="hero-contact-card__shade"></div>
+                        </div>
+
                         <button class="sidebar-close-btn" id="sidebarCloseBtn">
                             <i class="fas fa-times"></i>
                         </button>
-                        
-                        <div class="ceo-highlight">
-                            <div class="ceo-avatar">
-                                <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
-                                <div class="online-badge">
-                                    <i class="fas fa-circle"></i>
+
+                        <div class="hero-contact-card__body">
+                            <div class="ceo-highlight ceo-highlight--sidebar">
+                                <div class="ceo-info">
+                                    <div class="ceo-name">Гриценко Олег Олегович</div>
+                                    <div class="ceo-title"><i class="fas fa-circle ceo-online-dot" aria-hidden="true"></i> Руководитель компании</div>
                                 </div>
                             </div>
-                            <div class="ceo-info">
-                                <div class="ceo-name">Гриценко Олег Олегович</div>
-                                <div class="ceo-title">Руководитель компании</div>
-                            </div>
-                        </div>
-                        
-                        <div class="advantage-description">
-                            Вы общаетесь <strong>напрямую с руководителем</strong>
-                        </div>
-                        
-                        <div class="contact-info-footer">
-                            <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:topbuilding.by@gmail.com">topbuilding.by@gmail.com</a></p>
-                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
-                            <p><i class="fas fa-headset"></i> 24/7 оставьте заявку — мы свяжемся в рабочее время</p>
-                        </div>
 
-                        <!-- Контактные кнопки -->
-                        <div class="hero-contact-buttons">
-                            <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (Проектирование)">
-                                <i class="fas fa-phone-alt"></i>
-                                <span>Заказать звонок</span>
-                            </a>
-                            
-                            <div class="messenger-buttons">
-                                <a href="https://t.me/+375291286217" class="messenger-btn telegram">
-                                    <i class="fab fa-telegram-plane"></i>
-                                    <span>Telegram</span>
+                            <a href="tel:+375291286217" class="sidebar-phone-link">+375 (29) 128-62-17</a>
+
+                            <div class="contact-info-footer">
+                                <p><i class="fas fa-envelope"></i> <a href="mailto:topbuilding.by@gmail.com">topbuilding.by@gmail.com</a></p>
+                                <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                                <p class="sidebar-note"><svg class="sidebar-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7.25" cy="10.25" r="2.2"/><path d="M4.75 13.5c0-.7.55-1.25 1.25-1.25h7.5c1.9 0 3.5 1.6 3.5 3.5V17c0 .55-.45 1-1 1H5.75c-.85 0-1.5-.65-1.5-1.5v-2z"/><path d="M15.75 7.1h2.05l-1.55 2h1.45v.85h-2.05l1.55-2h-1.45V7.1zm2.85-2.05h1.55l-1.15 1.55h1.05v.7h-1.55l1.15-1.55h-1.05v-.7z" opacity=".75"/></svg> 24/7 оставьте заявку — мы свяжемся в рабочее время</p>
+                            </div>
+
+                            <div class="hero-contact-buttons">
+                                <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (Проектирование)">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>Заказать звонок</span>
                                 </a>
-                                <a href="viber://chat/?number=%2B375291286217" class="messenger-btn viber">
-                                    <i class="fab fa-viber"></i>
-                                    <span>Viber</span>
-                                </a>
-                                <a href="https://wa.me/375291286217" class="messenger-btn whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
+
+                                <div class="messenger-buttons">
+                                    <a href="https://t.me/+375291286217" class="messenger-btn telegram">
+                                        <i class="fab fa-telegram-plane"></i>
+                                        <span>Telegram</span>
+                                    </a>
+                                    <a href="viber://chat/?number=%2B375291286217" class="messenger-btn viber">
+                                        <i class="fab fa-viber"></i>
+                                        <span>Viber</span>
+                                    </a>
+                                    <a href="https://wa.me/375291286217" class="messenger-btn whatsapp">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        
-                        <!-- Большая кнопка "Назад" внизу -->
-                        <button type="button" class="sidebar-back-btn" id="sidebarBackBtn" onclick="closeContactSidebar()">
-                            <i class="fas fa-arrow-left"></i>
-                            <span>Назад</span>
-                        </button>
                     </div>
                 </div>
             </section>
@@ -712,7 +705,7 @@
                 <div class="decor decor-right-top"></div>
                 <div class="decor decor-right-bottom"></div>
                 <div class="container">
-                    <h2 class="section-title">Популярные проекты домов <span class="highlight">2025</span></h2>
+                    <h2 class="section-title">Популярные проекты домов <span class="highlight">2026</span></h2>
                     <p class="section-subtitle">Современные архитектурные решения для вашего комфортного будущего</p>
                     <div class="projects-grid">
                         <!-- Индивидуальный проект -->
@@ -729,28 +722,107 @@
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 40 000 руб</span>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 183 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
                                     <button class="btn-details open-sidebar-btn" onclick="event.stopPropagation(); openContactSidebar();">Подробнее</button>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Классический стиль -->
-                        <div class="project-card" onclick="openProjectModal('classic')">
+
+                        <!-- Барнхаус 140 -->
+                        <div class="project-card" onclick="openProjectModal('barn_terrace')">
                             <div class="project-image">
-                                <img src="../main_img/projects/Classic/classic.webp" alt="Классический коттедж" loading="lazy">
-                                <div class="project-badge" style="background: #8e44ad;">Классика</div>
+                                <img src="../main_img/projects/Barn Terrase/Front.webp" alt="Барнхаус 140" loading="lazy">
+                                <div class="project-badge project-badge--hot">ТОП 2026</div>
                             </div>
                             <div class="project-info">
-                                <h3>Классический коттедж</h3>
+                                <h3>Барнхаус 140</h3>
                                 <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 60-350 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 1-2 мес</li>
+                                    <li><i class="fas fa-ruler-combined"></i> 140 м² · пятно 70 м²</li>
+                                    <li><i class="fas fa-bed"></i> 3–4 спальни · 2 санузла</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 9–12 мес</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 427 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
+                                    <button class="btn-details" onclick="event.stopPropagation(); openProjectModal('barn_terrace')">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Классик 74 -->
+                        <div class="project-card" onclick="openProjectModal('classic_74')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Классик 74/front.webp" alt="Классик 74" loading="lazy">
+                                <div class="project-badge project-badge--hot">ТОП 2026</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Классик 74</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 74 м² · 1 этаж</li>
+                                    <li><i class="fas fa-bed"></i> 2 спальни · крытая терраса</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 7–9 мес</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 226 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
+                                    <button class="btn-details" onclick="event.stopPropagation(); openProjectModal('classic_74')">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Классик 148 -->
+                        <div class="project-card" onclick="openProjectModal('classic_148')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Классик 148/Front.webp" alt="Классик 148" loading="lazy">
+                                <div class="project-badge project-badge--hot">ТОП 2026</div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Классик 148</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 148 м² · 2 этажа</li>
+                                    <li><i class="fas fa-bed"></i> 3 спальни · кабинет · 2 санузла</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 9–12 мес</li>
+                                </ul>
+                                <div class="project-footer">
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 451 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
+                                    <button class="btn-details" onclick="event.stopPropagation(); openProjectModal('classic_148')">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Классический со вторым светом -->
+                        <div class="project-card" onclick="openProjectModal('minimalism')">
+                            <div class="project-image">
+                                <img src="../main_img/projects/Classic_2/project1.webp" alt="Классический со вторым светом" loading="lazy">
+                                <div class="project-badge" style="background: #8e44ad;">С 2-м светом</div>
+                                <a href="https://youtu.be/XwDCS3asd30" class="btn-project-video btn-project-video--overlay" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">
+                                    <i class="fab fa-youtube"></i>
+                                    Смотреть видеообзор
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3>Классический со вторым светом</h3>
+                                <ul class="project-features">
+                                    <li><i class="fas fa-ruler-combined"></i> 60-280 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 1 мес</li>
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 23 000 руб</span>
-                                    <button class="btn-details" onclick="openProjectModal('classic')">Подробнее</button>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 183 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
+                                    <button class="btn-details" onclick="event.stopPropagation(); openProjectModal('minimalism')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
@@ -769,7 +841,10 @@
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 29 000 руб</span>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 548 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
                                     <button class="btn-details" onclick="openProjectModal('chalet')">Подробнее</button>
                                 </div>
                             </div>
@@ -789,28 +864,34 @@
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 33 000 руб</span>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 214 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
                                     <button class="btn-details" onclick="openProjectModal('barnhouse')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Классический со вторым светом -->
-                        <div class="project-card" onclick="openProjectModal('minimalism')">
+                        <!-- Классический стиль -->
+                        <div class="project-card" onclick="openProjectModal('classic')">
                             <div class="project-image">
-                                <img src="../main_img/projects/Classic_2/project1.webp" alt="Классический со вторым светом" loading="lazy">
+                                <img src="../main_img/projects/Classic/classic.webp" alt="Классический коттедж" loading="lazy">
                                 <div class="project-badge" style="background: #8e44ad;">Классика</div>
                             </div>
                             <div class="project-info">
-                                <h3>Классический со вторым светом</h3>
+                                <h3>Классический коттедж</h3>
                                 <ul class="project-features">
-                                    <li><i class="fas fa-ruler-combined"></i> 60-280 м²</li>
-                                    <li><i class="fas fa-calendar-alt"></i> Срок: 1 мес</li>
+                                    <li><i class="fas fa-ruler-combined"></i> 60-350 м²</li>
+                                    <li><i class="fas fa-calendar-alt"></i> Срок: 1-2 мес</li>
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 24 000 руб</span>
-                                    <button class="btn-details" onclick="openProjectModal('minimalism')">Подробнее</button>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 183 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
+                                    <button class="btn-details" onclick="openProjectModal('classic')">Подробнее</button>
                                 </div>
                             </div>
                         </div>
@@ -829,7 +910,10 @@
                                     <li><i class="fas fa-cubes"></i> Блок/кирпич/монолит</li>
                                 </ul>
                                 <div class="project-footer">
-                                    <span class="project-price">от 27 000 руб</span>
+                                    <div class="project-price-block">
+                                        <span class="project-price">≈ 427 000 руб</span>
+                                        <span class="project-price-per-m">≈ 3 044 руб/м² под ключ</span>
+                                    </div>
                                     <button class="btn-details" onclick="openProjectModal('shale_white')">Подробнее</button>
                             </div>
                         </div>
@@ -865,6 +949,7 @@
                             <button class="slider-prev">&lt;</button>
                             <button class="slider-next">&gt;</button>
                         </div>
+                        <div class="modal-project-desc" id="modalProjectDesc"></div>
                     </div>
                 </div>
             </div>
@@ -988,7 +1073,8 @@
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="https://topbuilding.by/#about">Почему выбирают нас</a></li>
+                            <li><a href="https://topbuilding.by/#calculator">Калькулятор стоимости</a></li>
+                            <li><a href="../about/about.html#about">Почему выбирают нас</a></li>
                             <li><a href="https://topbuilding.by/#youtube">Мы на YouTube</a></li>
                             <li><a href="https://topbuilding.by/#our-projects">Наши проекты</a></li>
                             <li><a href="https://topbuilding.by/#workflow">Как мы работаем</a></li>
@@ -1085,6 +1171,7 @@
     
     <!-- Конфигурация Telegram -->
     <script src="../js/site-common.js" defer></script>
+    <script src="../js/contact-sidebar.js" defer></script>
     <script src="../config.js"></script>
     <script src="design.js" defer></script>
 </body>

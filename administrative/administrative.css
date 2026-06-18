@@ -196,6 +196,103 @@
     transform: scale(1.1);
 }
 
+/* Секция «Строим завод» */
+.factory-build-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom,
+        var(--bg-color) 0%,
+        rgba(22, 24, 34, 0.98) 15%,
+        rgba(22, 24, 34, 0.98) 85%,
+        var(--bg-color) 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.factory-build-section .decor {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.factory-build-section .decor-left {
+    background-image: url('../main_img/project.webp');
+    top: 20%;
+    left: -225px;
+}
+
+.factory-build-section .decor-right {
+    background-image: url('../main_img/project.webp');
+    top: 20%;
+    right: -225px;
+    transform: rotate(90deg);
+}
+
+.factory-build-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.factory-build-section .section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.factory-build-section .section-description {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.factory-video-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.factory-video-wrap .video-container {
+    margin-bottom: 20px;
+}
+
+.factory-video-wrap .video-wrapper {
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.factory-video-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 0, 0, 0.45);
+    background: rgba(255, 0, 0, 0.08);
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.factory-video-link i {
+    color: #ff4444;
+    font-size: 1.1rem;
+}
+
+.factory-video-link:hover {
+    background: rgba(255, 0, 0, 0.16);
+    border-color: #ff4444;
+    color: #fff;
+}
+
 /* Секция услуг и работ */
 .services-section {
     padding: 80px 0;
@@ -1150,6 +1247,7 @@
         min-width: auto;
     }
 
+    .factory-build-section,
     .services-section,
     .bim-section,
     .reinforcement-section,

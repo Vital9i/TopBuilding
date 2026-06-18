@@ -113,14 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // САЙДБАР И МОДАЛЬНОЕ ОКНО
 // ============================================
 
-// Глобальная функция открытия сайдбара
-window.openContactSidebar = function() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.add('active');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     // Управление мобильным меню (бургер)
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -171,60 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 mobileMenuToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
-    }
-    
-    // Управление сайдбаром контактов
-    const contactToggleBtn = document.getElementById('contactToggleBtn');
-    const heroSidebar = document.getElementById('heroSidebar');
-    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-
-    // Открытие сайдбара из кнопок в карточках
-    document.querySelectorAll('.open-sidebar-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (heroSidebar) {
-                heroSidebar.classList.add('active');
-            }
-        });
-    });
-    
-    if (contactToggleBtn && heroSidebar) {
-        // Открытие сайдбара
-        contactToggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Закрываем мобильное меню если открыто
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-            
-            heroSidebar.classList.add('active');
-        });
-
-        // Закрытие сайдбара
-        if (sidebarCloseBtn) {
-            sidebarCloseBtn.addEventListener('click', function() {
-                heroSidebar.classList.remove('active');
-            });
-        }
-
-        // Закрытие по клику вне сайдбара
-        document.addEventListener('click', function(e) {
-            if (heroSidebar.classList.contains('active') && 
-                !heroSidebar.contains(e.target) && 
-                e.target !== contactToggleBtn && 
-                !contactToggleBtn.contains(e.target)) {
-                heroSidebar.classList.remove('active');
-            }
-        });
-
-        // Закрытие по ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && heroSidebar.classList.contains('active')) {
-                heroSidebar.classList.remove('active');
             }
         });
     }
@@ -471,12 +409,57 @@ window.openProjectModal = function(type) {
                 '../main_img/projects/Shale_white/shale_white_plan.webp',
                 '../main_img/projects/Shale_white/shale_white_plan2.webp'
             ]
+        },
+        'barn_terrace': {
+            title: 'Барнхаус 140',
+            images: [
+                '../main_img/projects/Barn Terrase/Front.webp',
+                '../main_img/projects/Barn Terrase/Left.webp',
+                '../main_img/projects/Barn Terrase/Right.webp',
+                '../main_img/projects/Barn Terrase/Back.webp',
+                '../main_img/projects/Barn Terrase/1Level.webp',
+                '../main_img/projects/Barn Terrase/2Level.webp'
+            ],
+            description: '<p>Современный двухэтажный дом в премиальном стиле барнхаус: пятно застройки 70 м², общая площадь 140 м². Вытянутый объём, двускатная крыша из кликфальца, фасад из деревянного планкена и панорамное остекление.</p><p>На первом этаже — кухня-гостиная 31,5 м², спальня, прихожая, холл, санузел и котельная. На втором — мастер-спальня, две спальни, кабинет, санузел и холл. Подходит для семьи из 4–6 человек.</p><p><strong>Цена под ключ:</strong> ≈ 1 100 $/м² (≈ 3 044 BYN/м²) · ≈ 427 000 BYN за дом.</p>'
+        },
+        'classic_74': {
+            title: 'Классик 74',
+            images: [
+                '../main_img/projects/Классик 74/front.webp',
+                '../main_img/projects/Классик 74/Left.webp',
+                '../main_img/projects/Классик 74/Right.webp',
+                '../main_img/projects/Классик 74/Back.webp',
+                '../main_img/projects/Классик 74/Plan.webp'
+            ],
+            description: '<p>Компактный одноэтажный дом 74 м² в стиле современной классики — младшая версия «Классик 148». Удобен для пары или семьи из 2–3 человек: без лестниц, с продуманной планировкой.</p><p>Кухня-гостиная с выходом на крытую террасу, две спальни, санузел, котельная-постирочная. Светлый фасад, графитовая кликфальцевая кровля, тёмные окна и деревянные акценты.</p><p><strong>Цена под ключ:</strong> ≈ 1 100 $/м² (≈ 3 044 BYN/м²) · ≈ 226 000 BYN за дом.</p>'
+        },
+        'classic_148': {
+            title: 'Классик 148',
+            images: [
+                '../main_img/projects/Классик 148/Front.webp',
+                '../main_img/projects/Классик 148/Left.webp',
+                '../main_img/projects/Классик 148/back.webp',
+                '../main_img/projects/Классик 148/Rigth.webp',
+                '../main_img/projects/Классик 148/project.webp'
+            ],
+            description: '<p>Двухэтажный коттедж 148 м² для комфортной жизни семьи за городом. На первом этаже — кухня-гостиная 36 м² с выходом на террасу 24 м², кабинет, санузел, гардероб и котельная. На втором — три спальни, ванная, гардеробная.</p><p>Современная классика: светлый фасад, графитовая кликфальцевая кровля, каменный цоколь и деревянные акценты.</p><p><strong>Цена под ключ:</strong> ≈ 1 100–1 300 $/м² (≈ 3 044–3 597 BYN/м²) · ≈ 451 000 BYN за дом.</p>'
         }
     };
     
     if (projectData[type]) {
         // Обновляем заголовок
         document.querySelector('.modal-header h3').textContent = projectData[type].title;
+
+        const modalBody = document.querySelector('#projectModal .modal-body');
+        const descEl = document.getElementById('modalProjectDesc');
+        const hasDescription = Boolean(projectData[type].description);
+
+        if (descEl) {
+            descEl.innerHTML = '';
+        }
+        if (modalBody) {
+            modalBody.classList.toggle('has-desc', hasDescription);
+        }
         
         // Обновляем изображения в слайдере
         const sliderContainer = document.querySelector('.slider-container');
@@ -486,10 +469,20 @@ window.openProjectModal = function(type) {
             const img = document.createElement('img');
             img.src = imageSrc;
             img.alt = `Фото ${index + 1}`;
+            img.className = 'slider-image-slide';
             img.onclick = function() { window.openImageFullscreen(this); };
             img.style.cursor = 'zoom-in';
             sliderContainer.appendChild(img);
         });
+
+        if (hasDescription) {
+            const descSlide = document.createElement('div');
+            descSlide.className = 'slider-desc-slide';
+            descSlide.setAttribute('role', 'group');
+            descSlide.setAttribute('aria-label', 'Описание проекта');
+            descSlide.innerHTML = projectData[type].description;
+            sliderContainer.appendChild(descSlide);
+        }
 
         sliderContainer.scrollLeft = 0;
 
@@ -512,6 +505,7 @@ window.openImageFullscreen = function(img) {
     const fullscreenImage = document.getElementById('fullscreenImage');
     fullscreenImage.src = img.src;
     fullscreenImage.alt = img.alt;
+    fullscreenImage.onclick = function(e) { e.stopPropagation(); };
     fullscreen.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
@@ -519,7 +513,8 @@ window.openImageFullscreen = function(img) {
 window.closeImageFullscreen = function() {
     const fullscreen = document.getElementById('imageFullscreen');
     fullscreen.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    const modal = document.getElementById('projectModal');
+    document.body.style.overflow = modal && modal.style.display === 'block' ? 'hidden' : 'auto';
 }
 
 // Навигация слайдера — кнопки и свайп в js/site-common.js

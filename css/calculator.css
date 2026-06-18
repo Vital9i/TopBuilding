@@ -243,6 +243,114 @@
             background-repeat: no-repeat;
             background-position: right 12px center;
             background-size: 14px 8px;
+            color-scheme: dark;
+        }
+
+        .calc-select {
+            position: relative;
+            width: 100%;
+        }
+
+        .calc-select__native {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .calc-select__trigger {
+            width: 100%;
+            min-height: 46px;
+            padding: 10px 40px 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: rgba(26, 29, 41, 0.72);
+            color: var(--text-color);
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.35;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            box-sizing: border-box;
+            position: relative;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1.5L7 6.5L13 1.5' stroke='%23D4AF37' stroke-opacity='0.85' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 14px 8px;
+        }
+
+        .calc-select[data-empty] .calc-select__trigger {
+            color: rgba(184, 188, 200, 0.48);
+        }
+
+        .calc-select--open .calc-select__trigger {
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+        }
+
+        .calc-select__list {
+            position: absolute;
+            z-index: 40;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            max-height: min(260px, 42vh);
+            overflow-y: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            background: rgba(37, 41, 54, 0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+        }
+
+        .calc-select__list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .calc-select__list::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.35);
+            border-radius: 6px;
+        }
+
+        .calc-select__option {
+            padding: 10px 12px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.35;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .calc-select__option:hover,
+        .calc-select__option--selected {
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--text-color);
+        }
+
+        .calc-select__option--selected {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .calc-select__trigger:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            background-color: rgba(26, 29, 41, 0.22);
+            border-color: rgba(255, 255, 255, 0.04);
         }
 
         .calc-fields-grid select[data-empty] {
@@ -267,7 +375,8 @@
 
         @media (min-width: 660px) {
             .calc-fields-grid .field input,
-            .calc-fields-grid .field select {
+            .calc-fields-grid .field select,
+            .calc-fields-grid .field .calc-select__trigger {
                 flex: 1 1 auto;
                 min-height: 48px;
                 max-height: 72px;
@@ -275,58 +384,45 @@
         }
 
         input:hover,
-        select:hover {
+        select:hover,
+        .calc-select__trigger:hover {
             border-color: rgba(212, 175, 55, 0.28);
         }
 
         input:focus,
-        select:focus {
+        select:focus,
+        .calc-select__trigger:focus {
             outline: none;
             border-color: rgba(212, 175, 55, 0.55);
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
         }
 
-        .calculator-section button {
-            border: none;
-            border-radius: 12px;
-            padding: 12px 22px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            font-weight: 600;
-            font-family: inherit;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+        .calculator-section button.btn-primary,
+        .calculator-section button.btn-ghost {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .calculator-section button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .calculator-section button:hover::before {
-            left: 100%;
+            min-height: 52px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.2;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
 
         .btn-primary {
             background: var(--gradient-primary);
             color: var(--dark-color);
             box-shadow: var(--shadow-gold);
-            border-radius: 50px;
+            border: none;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.45);
+            box-shadow: 0 12px 36px rgba(212, 175, 55, 0.38);
         }
 
         .btn-primary.calc-btn--nudge {
@@ -335,6 +431,8 @@
 
         .btn-primary.calc-btn--nudge:hover {
             animation-play-state: paused;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(212, 175, 55, 0.38);
         }
 
         @keyframes calcBtnNudge {
@@ -355,13 +453,15 @@
 
         .btn-ghost {
             background: transparent;
-            color: var(--secondary-color);
-            border: 2px solid var(--secondary-color);
-            border-radius: 50px;
+            border: 2px solid rgba(245, 243, 239, 0.82);
+            color: #F5F3EF;
+            box-shadow: none;
         }
 
         .btn-ghost:hover {
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(245, 243, 239, 0.1);
+            border-color: #F5F3EF;
+            transform: translateY(-2px);
         }
 
         .result {
@@ -659,7 +759,8 @@
         }
 
         .field.field--error input,
-        .field.field--error select {
+        .field.field--error select,
+        .field.field--error .calc-select__trigger {
             border-color: rgba(248, 113, 113, 0.75);
             box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.12);
         }
@@ -873,38 +974,48 @@
     }
 
     .calculator-section .calc-fields-grid .field {
-        gap: 8px;
+        gap: 10px;
     }
 
     .calculator-section .calc-fields-grid label,
     .calculator-section .calc-fields-grid .field-label {
-        font-size: 14px;
-        line-height: 1.35;
+        font-size: 16px;
+        line-height: 1.4;
     }
 
     .calculator-section .calc-fields-grid .field-label i {
-        font-size: 1.05em;
+        font-size: 1.1em;
     }
 
     .calculator-section .calc-fields-grid input,
-    .calculator-section .calc-fields-grid select {
-        min-height: 48px;
-        padding: 12px 14px;
+    .calculator-section .calc-fields-grid select,
+    .calculator-section .calc-fields-grid .calc-select__trigger {
+        min-height: 52px;
+        padding: 14px 16px;
+        font-size: 17px;
+    }
+
+    .calculator-section .calc-fields-grid .calc-select__trigger {
+        padding-right: 42px;
+    }
+
+    .calculator-section .calc-select__option {
         font-size: 16px;
+        padding: 12px 14px;
     }
 
     .calculator-section .calc-progress-label {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.45;
     }
 
     .calculator-section .calc-section-actions {
-        gap: 10px 12px;
+        gap: 12px 14px;
     }
 
     .calculator-section .calc-section-actions button {
-        min-height: 48px;
-        padding: 12px 20px;
+        min-height: 50px;
+        padding: 14px 24px;
         font-size: 1rem;
     }
 
@@ -955,13 +1066,26 @@
 
     .calculator-section .calc-fields-grid label,
     .calculator-section .calc-fields-grid .field-label {
-        font-size: 15px;
+        font-size: 17px;
+    }
+
+    .calculator-section .calc-fields-grid .field-label i {
+        font-size: 1.12em;
     }
 
     .calculator-section .calc-fields-grid input,
-    .calculator-section .calc-fields-grid select {
-        min-height: 50px;
-        padding: 13px 15px;
+    .calculator-section .calc-fields-grid select,
+    .calculator-section .calc-fields-grid .calc-select__trigger {
+        min-height: 54px;
+        padding: 14px 16px;
+        font-size: 18px;
+    }
+
+    .calculator-section .calc-fields-grid .calc-select__trigger {
+        padding-right: 42px;
+    }
+
+    .calculator-section .calc-select__option {
         font-size: 17px;
     }
 
@@ -993,7 +1117,7 @@
     }
 
     .calculator-section .calc-progress-label {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .calculator-section .calc-preview-result .result-label {
@@ -1026,7 +1150,8 @@
     }
 
     .calculator-section .field.field--error input,
-    .calculator-section .field.field--error select {
+    .calculator-section .field.field--error select,
+    .calculator-section .field.field--error .calc-select__trigger {
         border-color: rgba(248, 113, 113, 0.95);
         box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.22);
         background-color: rgba(40, 18, 18, 0.55);
@@ -1088,20 +1213,24 @@
     gap: clamp(3px, 0.6vh, 6px);
 }
 
-.calculator-section .calc-fields-grid label {
-    font-size: clamp(10px, 0.75vw, 12px);
-}
+@media (min-width: 769px) {
+    .calculator-section .calc-fields-grid label {
+        font-size: clamp(10px, 0.75vw, 12px);
+    }
 
-.calculator-section .calc-fields-grid input,
-.calculator-section .calc-fields-grid select {
-    min-height: clamp(34px, 4vh, 48px);
-    padding: clamp(5px, 0.8vh, 10px) clamp(8px, 1vw, 12px);
-    font-size: clamp(12px, 0.85vw, 14px);
+    .calculator-section .calc-fields-grid input,
+    .calculator-section .calc-fields-grid select,
+    .calculator-section .calc-fields-grid .calc-select__trigger {
+        min-height: clamp(34px, 4vh, 48px);
+        padding: clamp(5px, 0.8vh, 10px) clamp(8px, 1vw, 12px);
+        font-size: clamp(12px, 0.85vw, 14px);
+    }
 }
 
 @media (min-width: 660px) {
     .calculator-section .calc-fields-grid .field input,
-    .calculator-section .calc-fields-grid .field select {
+    .calculator-section .calc-fields-grid .field select,
+    .calculator-section .calc-fields-grid .field .calc-select__trigger {
         flex: 0 1 auto;
         max-height: none;
         min-height: clamp(34px, 4vh, 48px);

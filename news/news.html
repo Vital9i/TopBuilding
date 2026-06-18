@@ -17,7 +17,7 @@
         })(window, document, "clarity", "script", "wjjglyal80");
     </script>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости - ТОПБИЛДИНГ</title>
     
@@ -47,7 +47,7 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="manifest" href="../site.webmanifest">
     
-    <link rel="stylesheet" href="../style.css?v=108">
+    <link rel="stylesheet" href="../style.css?v=166">
     <link rel="stylesheet" href="news.css">
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -109,7 +109,8 @@
                                 <a href="https://topbuilding.by/#home" target="_blank" rel="noopener">Главная</a>
                                 <ul>
                                     <li><a href="https://topbuilding.by/#home" target="_blank" rel="noopener">Главная страница</a></li>
-                                    <li><a href="https://topbuilding.by/#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
+                                    <li><a href="https://topbuilding.by/#calculator" target="_blank" rel="noopener">Калькулятор стоимости</a></li>
+                                    <li><a href="../about/about.html#about" target="_blank" rel="noopener">Почему выбирают нас</a></li>
                                     <li><a href="https://topbuilding.by/#youtube" target="_blank" rel="noopener">Мы на YouTube</a></li>
                                     <li><a href="https://topbuilding.by/#our-projects" target="_blank" rel="noopener">Наши проекты</a></li>
                                     <li><a href="https://topbuilding.by/#workflow" target="_blank" rel="noopener">Как мы работаем</a></li>
@@ -153,6 +154,7 @@
                             <li>
                                 <a href="../administrative/administrative.html" target="_blank" rel="noopener">Административные и производственные сооружения</a>
                                 <ul>
+                                    <li><a href="../administrative/administrative.html#factory-build" target="_blank" rel="noopener">Строим завод</a></li>
                                     <li><a href="../administrative/administrative.html#services" target="_blank" rel="noopener">Услуги и работы</a></li>
                                     <li><a href="../administrative/administrative.html#bim" target="_blank" rel="noopener">BIM-проектирование</a></li>
                                     <li><a href="../administrative/administrative.html#yandex-map" target="_blank" rel="noopener">Карта объектов</a></li>
@@ -1012,62 +1014,53 @@
         <!-- Сайдбар контактов -->
         <div class="hero-sidebar" id="heroSidebar">
             <div class="hero-contact-card">
+                <div class="hero-contact-card__backdrop" aria-hidden="true">
+                    <img src="../main_img/Cast/Oleg.webp" alt="" class="hero-contact-card__photo" decoding="async">
+                    <div class="hero-contact-card__shade"></div>
+                </div>
+
                 <button class="sidebar-close-btn" id="sidebarCloseBtn">
                     <i class="fas fa-times"></i>
                 </button>
-                
-                <div class="ceo-highlight">
-                    <div class="ceo-avatar">
-                        <img src="../main_img/Cast/Oleg.webp" alt="Руководитель">
-                        <div class="online-badge">
-                            <i class="fas fa-circle"></i>
+
+                <div class="hero-contact-card__body">
+                    <div class="ceo-highlight ceo-highlight--sidebar">
+                        <div class="ceo-info">
+                            <div class="ceo-name">Гриценко Олег Олегович</div>
+                            <div class="ceo-title"><i class="fas fa-circle ceo-online-dot" aria-hidden="true"></i> Руководитель компании</div>
                         </div>
                     </div>
-                    <div class="ceo-info">
-                        <div class="ceo-name">Гриценко Олег Олегович</div>
-                        <div class="ceo-title">Руководитель компании</div>
-                    </div>
-                </div>
-                
-                <div class="advantage-description">
-                    Вы общаетесь <strong>напрямую с руководителем</strong>
-                </div>
-                
-                <div class="contact-info-footer">
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+375291286217">+375 (29) 128-62-17</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:topbuilding.by@gmail.com">topbuilding.by@gmail.com</a></p>
-                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
-                    <p><i class="fas fa-headset"></i> 24/7 оставьте заявку — мы свяжемся в рабочее время</p>
-                </div>
 
-                <!-- Контактные кнопки -->
-                <div class="hero-contact-buttons">
-                    <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (Новости)">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>Заказать звонок</span>
-                    </a>
-                    
-                    <div class="messenger-buttons">
-                        <a href="https://t.me/+375291286217" class="messenger-btn telegram" target="_blank" rel="noopener">
-                            <i class="fab fa-telegram-plane"></i>
-                            <span>Telegram</span>
+                    <a href="tel:+375291286217" class="sidebar-phone-link">+375 (29) 128-62-17</a>
+
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:topbuilding.by@gmail.com">topbuilding.by@gmail.com</a></p>
+                        <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                        <p class="sidebar-note"><svg class="sidebar-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7.25" cy="10.25" r="2.2"/><path d="M4.75 13.5c0-.7.55-1.25 1.25-1.25h7.5c1.9 0 3.5 1.6 3.5 3.5V17c0 .55-.45 1-1 1H5.75c-.85 0-1.5-.65-1.5-1.5v-2z"/><path d="M15.75 7.1h2.05l-1.55 2h1.45v.85h-2.05l1.55-2h-1.45V7.1zm2.85-2.05h1.55l-1.15 1.55h1.05v.7h-1.55l1.15-1.55h-1.05v-.7z" opacity=".75"/></svg> 24/7 оставьте заявку — мы свяжемся в рабочее время</p>
+                    </div>
+
+                    <div class="hero-contact-buttons">
+                        <a href="#" class="contact-btn primary-contact" data-source="Сайдбар контактов (Новости)">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Заказать звонок</span>
                         </a>
-                        <a href="viber://chat/?number=%2B375291286217" class="messenger-btn viber">
-                            <i class="fab fa-viber"></i>
-                            <span>Viber</span>
-                        </a>
-                        <a href="https://wa.me/375291286217" class="messenger-btn whatsapp" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
+
+                        <div class="messenger-buttons">
+                            <a href="https://t.me/+375291286217" class="messenger-btn telegram" target="_blank" rel="noopener">
+                                <i class="fab fa-telegram-plane"></i>
+                                <span>Telegram</span>
+                            </a>
+                            <a href="viber://chat/?number=%2B375291286217" class="messenger-btn viber">
+                                <i class="fab fa-viber"></i>
+                                <span>Viber</span>
+                            </a>
+                            <a href="https://wa.me/375291286217" class="messenger-btn whatsapp" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Большая кнопка "Назад" внизу -->
-                <button type="button" class="sidebar-back-btn" id="sidebarBackBtn" onclick="closeContactSidebar()">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Назад</span>
-                </button>
             </div>
         </div>
 
@@ -1122,7 +1115,8 @@
                     <div class="footer-col">
                         <h4>Меню</h4>
                         <ul class="footer-menu">
-                            <li><a href="https://topbuilding.by/#about">Почему выбирают нас</a></li>
+                            <li><a href="https://topbuilding.by/#calculator">Калькулятор стоимости</a></li>
+                            <li><a href="../about/about.html#about">Почему выбирают нас</a></li>
                             <li><a href="https://topbuilding.by/#youtube">Мы на YouTube</a></li>
                             <li><a href="https://topbuilding.by/#our-projects">Наши проекты</a></li>
                             <li><a href="https://topbuilding.by/#workflow">Как мы работаем</a></li>
@@ -1186,6 +1180,7 @@
 
     <!-- Конфигурация Telegram -->
     <script src="../js/site-common.js" defer></script>
+    <script src="../js/contact-sidebar.js" defer></script>
     <script src="../config.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Основной JavaScript файл -->

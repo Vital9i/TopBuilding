@@ -1,32 +1,4 @@
 // ============================================
-// GLOBAL FUNCTIONS FOR SIDEBAR
-// ============================================
-window.openContactSidebar = function() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-};
-
-window.closeContactSidebar = function() {
-    const heroSidebar = document.getElementById('heroSidebar');
-    if (heroSidebar) {
-        heroSidebar.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-};
-
-// Для обратной совместимости
-function openContactSidebar() {
-    window.openContactSidebar();
-}
-
-function closeContactSidebar() {
-    window.closeContactSidebar();
-}
-
-// ============================================
 // AOS INITIALIZATION
 // ============================================
 AOS.init({
@@ -213,8 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    const contactToggleBtn = document.getElementById('contactToggleBtn');
-    const heroSidebar = document.getElementById('heroSidebar');
 
     if (mobileMenuToggle && mobileMenu) {
         mobileMenuToggle.addEventListener('click', function () {
@@ -229,61 +199,6 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function () {
             if (mobileMenu) mobileMenu.classList.remove('active');
             if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-        });
-    });
-    
-    // Открытие сайдбара по кнопке контактов
-    if (contactToggleBtn && heroSidebar) {
-        contactToggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Закрываем мобильное меню если открыто
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-            
-            heroSidebar.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-    
-    // Закрытие сайдбара по кнопке закрытия
-    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-    const sidebarBackBtn = document.getElementById('sidebarBackBtn');
-    
-    if (sidebarCloseBtn) {
-        sidebarCloseBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeContactSidebar();
-        });
-    }
-    
-    if (sidebarBackBtn) {
-        sidebarBackBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeContactSidebar();
-        });
-    }
-    
-    // Закрытие сайдбара по клику вне его
-    if (heroSidebar) {
-        heroSidebar.addEventListener('click', function(e) {
-            if (e.target === heroSidebar) {
-                closeContactSidebar();
-            }
-        });
-    }
-    
-    // Обработчики для кнопок открытия сайдбара (включая кнопки в футере)
-    const openSidebarBtns = document.querySelectorAll('.open-sidebar-btn');
-    openSidebarBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            openContactSidebar();
         });
     });
 });
