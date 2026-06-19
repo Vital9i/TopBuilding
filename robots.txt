@@ -12,7 +12,7 @@ Allow: /about/
 Allow: /news/
 Allow: /partners/
 Allow: /design/
-Allow: /construction/
+Disallow: /construction/
 Allow: /administrative/
 
 
