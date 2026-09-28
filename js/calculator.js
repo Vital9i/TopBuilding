@@ -32,13 +32,13 @@
         const FIELD_KEYS = [
             'projectType',
             'area',
+            'basement',
             'foundation',
             'walls',
             'floors',
             'roofShape',
             'roof',
             'mansard',
-            'basement',
             'exteriorFinish',
             'terrace',
             'package'
@@ -216,11 +216,13 @@
                     calcProgressHint.textContent = 'все параметры выбраны — нажмите «Рассчитать»';
                 } else if (pct >= 66) {
                     calcProgressHint.textContent =
-                        'осталось немного — проверьте блок с превью и итогом';
+                        'почти готово — заполните подсвеченное поле и нажмите «Рассчитать»';
                 } else if (pct >= 33) {
-                    calcProgressHint.textContent = 'картинка дома обновляется при каждом изменении';
+                    calcProgressHint.textContent =
+                        'слева направо: заполните следующее подсвеченное поле';
                 } else {
-                    calcProgressHint.textContent = 'пройдитесь по полям — полоска покажет прогресс';
+                    calcProgressHint.textContent =
+                        'начните с подсвеченного поля — дальше слева направо по строкам';
                 }
             }
             syncCalcBtnPrompt(filled >= total);
@@ -1112,6 +1114,19 @@
             playUpdateAnimations();
         }
 
+        function updateFieldGuide() {
+            root.querySelectorAll('.field.field--guide').forEach(function (field) {
+                field.classList.remove('field--guide');
+            });
+
+            if (areAllFieldsValid()) return;
+
+            var nextField = getFirstInvalidFieldContainer();
+            if (nextField) {
+                nextField.classList.add('field--guide');
+            }
+        }
+
         function updateCalculator() {
             syncRoofMaterialState();
             syncMansardState();
@@ -1125,6 +1140,7 @@
             syncAreaProgressField();
             syncCalcSelectEmptyState();
             syncAreaInputEmptyState();
+            updateFieldGuide();
             const area = parseAreaValue();
             const floorsCount =
                 floorsEl.value === ''

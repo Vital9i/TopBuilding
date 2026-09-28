@@ -1,0 +1,1 @@
+Откройте терминал в source. Выполните node export.cjs, затем python build_kit.py и node verify-kit.cjs. Нужны Node.js, Python и Inkscape. originals содержит присланные HTML без изменений. Пересборка обновляет изображения и туры в родительской папке.

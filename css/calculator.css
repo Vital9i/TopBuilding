@@ -199,12 +199,18 @@
 
         .field {
             position: relative;
+            z-index: 1;
             display: flex;
             flex-direction: column;
             gap: 6px;
             margin-bottom: 6px;
             justify-content: flex-start;
             transition: transform 0.2s ease;
+        }
+
+        .calc-fields-grid .field:focus-within,
+        .calc-fields-grid .field:has(.calc-select--open) {
+            z-index: 80;
         }
 
         @media (min-width: 660px) {
@@ -248,7 +254,12 @@
 
         .calc-select {
             position: relative;
+            z-index: 1;
             width: 100%;
+        }
+
+        .calc-select--open {
+            z-index: 90;
         }
 
         .calc-select__native {
@@ -299,7 +310,7 @@
 
         .calc-select__list {
             position: absolute;
-            z-index: 40;
+            z-index: 100;
             top: calc(100% + 6px);
             left: 0;
             right: 0;
@@ -448,6 +459,44 @@
             }
             72% {
                 transform: translateY(-4px);
+            }
+        }
+
+        /* Подсказка следующего поля: слева направо по строкам (десктоп) */
+        @keyframes calcFieldGuidePulse {
+            0%,
+            100% {
+                border-color: rgba(212, 175, 55, 0.45);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.28);
+            }
+            50% {
+                border-color: rgba(212, 175, 55, 0.95);
+                box-shadow:
+                    0 0 0 5px rgba(212, 175, 55, 0.16),
+                    0 0 18px rgba(212, 175, 55, 0.22);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .calculator-section .field.field--guide > .calc-select > .calc-select__trigger,
+            .calculator-section .field.field--guide > input {
+                animation: calcFieldGuidePulse 1.7s ease-in-out infinite;
+                border-color: rgba(212, 175, 55, 0.7);
+            }
+
+            .calculator-section .field.field--guide > .field-label {
+                color: var(--secondary-color);
+            }
+
+            .calculator-section .field.field--guide > .field-label i {
+                color: var(--secondary-color);
+            }
+
+            .calculator-section .field.field--guide:focus-within > .calc-select > .calc-select__trigger,
+            .calculator-section .field.field--guide:focus-within > input {
+                animation: none;
+                border-color: rgba(212, 175, 55, 0.55);
+                box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
             }
         }
 
@@ -745,7 +794,9 @@
 
             .preview-image-wrap.preview-flash,
             .result.result-pop,
-            .btn-primary.calc-btn--nudge {
+            .btn-primary.calc-btn--nudge,
+            .calculator-section .field.field--guide > .calc-select > .calc-select__trigger,
+            .calculator-section .field.field--guide > input {
                 animation: none !important;
             }
         }
@@ -1191,8 +1242,16 @@
 }
 
 .calculator-section .calc-section-body,
-.calculator-section .calc-layout {
+.calculator-section .calc-layout,
+.calculator-section .calc-form-panel,
+.calculator-section .calc-fields-grid {
     overflow: visible;
+}
+
+.calculator-section .calc-progress,
+.calculator-section .calc-section-actions {
+    position: relative;
+    z-index: 1;
 }
 
 .calculator-section .calc-layout > * {

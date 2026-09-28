@@ -1,0 +1,11 @@
+const fs=require('fs'),vm=require('vm'),THREE=require('../assets/three.min.js');
+const nodes={};function node(){return {children:[],style:{},dataset:{},classList:{toggle(){},remove(){},add(){}},appendChild(b){this.children.push(b)},querySelectorAll(){return this.children},addEventListener(){},getBoundingClientRect(){return {width:1200,height:800}},getContext(){return new Proxy({},{get:()=>()=>{}})}}};THREE.WebGLRenderer=class{constructor(){this.domElement=node();this.shadowMap={}}setPixelRatio(){}setSize(){}render(){}};
+Object.assign(global,{THREE,window:global,addEventListener:()=>{},document:{getElementById:id=>nodes[id]||(nodes[id]=node()),createElement:()=>node(),querySelectorAll:()=>[],querySelector:()=>node(),addEventListener:()=>{},documentElement:{}},matchMedia:()=>({matches:false}),innerWidth:1200,devicePixelRatio:1,ResizeObserver:class{observe(){}},requestAnimationFrame:()=>{}});
+
+const zlib=require('zlib'),crypto=require('crypto');
+function fingerprint(scene){let h=crypto.createHash('sha256');scene.traverse(o=>{h.update(JSON.stringify([o.type,o.position.toArray(),o.quaternion.toArray(),o.scale.toArray(),o.material?.color?.getHex(),o.geometry?.type]));if(o.geometry?.attributes.position)h.update(Buffer.from(o.geometry.attributes.position.array.buffer));if(o.instanceMatrix)h.update(Buffer.from(o.instanceMatrix.array.buffer));});return h.digest('hex');}
+for(let n=1;n<=5;n++){
+vm.runInThisContext(fs.readFileSync(`app${n}.js`,'utf8'));const original=fingerprint(global.tourModel.scene);
+const html=fs.readFileSync(`../classic100-tour-plan${n}.html`,'utf8'),match=html.match(/atob\("([^"]+)"\)/);if(!match)throw Error('Missing payload');const code=zlib.gunzipSync(Buffer.from(match[1],'base64')).toString();vm.runInThisContext(code);const m=global.tourModel;if(fingerprint(m.scene)!==original)throw Error('Geometry changed '+n);if(Math.abs(m.netArea-100)>1e-6)throw Error('Area total');for(const r of m.rooms){const area=(r.cells||[r]).reduce((a,c)=>a+c.w*c.d,0)*m.scale*m.scale;if(Math.abs(r.target-area)>.0051)throw Error('Room area '+n+' '+r.id);}
+for(const src of html.matchAll(/(?:src)="([^"#]+)"/g))if(!fs.existsSync('../'+src[1]))throw Error('Missing dependency '+src[1]);
+console.log('PASS tour '+n+': geometry identical, measured labels, dependencies');}
